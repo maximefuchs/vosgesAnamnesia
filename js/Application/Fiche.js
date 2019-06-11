@@ -48,6 +48,7 @@ class Fiche extends DivObject {
         this._titre.html(Global.getTexteLangue(this._poi._titre, this._langue));
         this._sousTitre.html(Global.getTexteLangue(this._poi._soustitre, this._langue));
         this._texte.html(Global.getTexteLangue(this._poi._texte, this._langue));
+
         numTel.html(this._poi._tel);
         mail.html(this._poi._mail);
 
@@ -71,31 +72,33 @@ class Fiche extends DivObject {
 
 
 
-        // this._btFermer = new DivObject(this._balise, this._id + "_BtFermer");
-        // this._btFermer.addClass("ficheBt");
-        // this._btFermer.addClass("ficheBtFermer");
-        // this._btFermer.x = 377 - this._btFermer.width / 2;
-        // this._btFermer.y = 20;
+        this._btFermer = new DivObject(this._balise, this._id + "_BtFermer");
+        this._btFermer.addClass("ficheBt");
+        this._btFermer.addClass("ficheBtFermer");
+        this._btFermer.x = 500 - this._btFermer.width / 2;
+        this._btFermer.y = - this._btFermer.height / 2;
 
-        // this._bts = [];
+        // this._btFermer._balise.on("click touchstart", null, { instance: this }, this.clickBtnFermer);
 
-        // for (var i = 0; i < paramsJSON.langues.length; i++) {
-        //     var bt = new DivObject(this._balise, this._id + "_BtLang_" + paramsJSON.langues[i].langue);
-        //     bt.addClass("ficheBt");
-        //     bt.addClass("ficheBtLang");
-        //     bt.x = 377 - bt.width / 2;
-        //     bt.y = 300 + 50 * i;
-        //     bt.append('<div class="ficheBtLangTexte">' + String(paramsJSON.langues[i].langue).toUpperCase() + '</div>');
-        //     this._bts.push(bt);
+        this._bts = [];
 
-        //     bt._balise.on("click touchstart", null, { instance: this }, this.clickBtnLang);
-        // }
+        for (var i = 0; i < paramsJSON.langues.length; i++) {
+            var bt = new DivObject(this._balise, this._id + "_BtLang_" + paramsJSON.langues[i].langue);
+            bt.addClass("ficheBt");
+            bt.addClass("ficheBtLang");
+            bt.x = 500 - bt.width / 2;
+            bt.y = 250 + 70 * i;
+            bt.append('<div class="ficheBtLangTexte">' + String(paramsJSON.langues[i].langue).toUpperCase() + '</div>');
+            this._bts.push(bt);
 
-        // this._btFermer._balise.on("click touchstart", null, { instance: this }, this.clickBtn);
+            bt._balise.on("click touchstart", null, { instance: this }, this.clickBtnLang);
+        }
+
     }
 
     // FONCTION CLICK BT
     clickBtnLang(e) {
+        console.log('click langue');
         e.stopPropagation(); e.preventDefault();
         var touch;
         if (e.originalEvent.touches || e.originalEvent.changedTouches) {
@@ -108,11 +111,11 @@ class Fiche extends DivObject {
 
         instance._langue = s.replace(instance._id + "_BtLang_", '');
         console.log(instance._langue);
-        instance.texte();
+        instance.maj_texte();
     };
 
     // FONCTION CLICK BT
-    clickBtn(e) {
+    clickBtnFermer(e) {
         e.stopPropagation(); e.preventDefault();
         var touch;
         if (e.originalEvent.touches || e.originalEvent.changedTouches) {
@@ -151,7 +154,7 @@ class Fiche extends DivObject {
     //     instance.init();
     // }
 
-    afficher() {
+    maj_texte() {
         // this._diaporama.texte();
 
         // if (this._json.liens) {
@@ -169,6 +172,9 @@ class Fiche extends DivObject {
         //         this._bts[i].removeClass("FicheBtLangSelect");
         //     }
         // }
+        this._titre.html(Global.getTexteLangue(this._poi._titre, this._langue));
+        this._sousTitre.html(Global.getTexteLangue(this._poi._soustitre, this._langue));
+        this._texte.html(Global.getTexteLangue(this._poi._texte, this._langue));
     }
 
     // positionement() {

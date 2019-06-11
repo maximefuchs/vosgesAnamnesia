@@ -60,22 +60,23 @@
 
 .ficheBt {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     top: 0;
     left: 0;
     filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
+    cursor: pointer;
 }
 .ficheBtLang {
     text-align: center;
     border-radius: 50%;
-    color: #7b0023;
+    color: darkgreen;
     background-color: white;
     font-family: 'TTMoons';
 }
 .ficheBtLangSelect {
     color: white;
-    background-color: #7b0023;
+    background-color: darkgreen;
 }
 .ficheBtLangTexte {
     position: absolute;

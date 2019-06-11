@@ -113,7 +113,7 @@ function addClickHandler(overlay, viewer) {
                 placement: 'CENTER'
             }
             viewer.addOverlay(over);
-            removeOverlay(newOverlayId, viewer);
+            // removeOverlay(newOverlayId, viewer);
 
             // console.log(event);
             // var target = event.originalEvent.target;
