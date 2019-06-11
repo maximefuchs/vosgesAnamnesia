@@ -102,7 +102,7 @@ class DivObject extends BaliseObject {
     }
 }
 
-/* DivObject */
+/* BtObject */
 
 class BtObject extends BaliseObject {
     constructor(parent, id) {
@@ -117,6 +117,27 @@ class Img extends BaliseObject {
         super(parent, "img", id);
         this.src = src;
         this.attr("src", src);
+    }
+}
+
+/* Icone */
+
+class Icone extends BaliseObject {
+    constructor(parent, id, src, color) {
+        super(parent, "div", id);
+        this.addClass('divIcone');
+        this.css('background-color', color);
+        var icone = new BaliseObject(this._balise, "img");
+        icone.addClass('icone');
+        icone.attr('src', src);
+    }
+}
+
+/* Span */
+
+class Span extends BaliseObject {
+    constructor(parent, id) {
+        super(parent, 'span', id);
     }
 }
 

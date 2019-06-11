@@ -103,12 +103,10 @@ function addClickHandler(overlay, viewer) {
         element: overlay.id,
         clickHandler: function (event) {
             console.log("click on " + overlay.id);
-            console.log(p._balise);
             var fiche = new Fiche(p._balise, p, newOverlayId);
-            fiche.texte();
 
             var over = {
-                element: fiche,
+                element: fiche._balise[0],
                 id: newOverlayId,
                 x: overlay.x,
                 y: overlay.y,

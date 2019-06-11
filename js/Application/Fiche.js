@@ -21,11 +21,38 @@ class Fiche extends DivObject {
 
         // this._diaporama = new FicheDiaporama(this._balise, this,this._json.diaporama, 345, 230);
 
-        this._titre = new BaliseObject(this._balise, "h1");
-        this._sousTitre = new BaliseObject(this._balise, "h2");
-        this._texte = new BaliseObject(this._balise, "p");
+        this._img = new BaliseObject(this._balise, "img");
 
+        this._divTexte = new DivObject(this._balise, "divtxt_" + this._id);
+        this._divTexte.addClass('divTexte');
+        this._titre = new BaliseObject(this._divTexte._balise, "h1");
+        this._sousTitre = new BaliseObject(this._divTexte._balise, "h2");
+        this._texte = new BaliseObject(this._divTexte._balise, "p");
 
+        var bottom = new DivObject(this._balise, "divBottom_" + this._id);
+        bottom.addClass('divBottom');
+
+        var bottomLeft = new DivObject(bottom._balise, 'divBottomLeft_' + this._id);
+        bottomLeft.addClass('flexElt');
+        var divPhone = new DivObject(bottomLeft._balise, "divPhone_" + this._id);
+        new Icone(divPhone._balise, "iconPhone_" + this._id, 'datas/imgs/carte/poi/phone.png', 'darkgreen');
+        var numTel = new Span(divPhone._balise, "numTel_" + this._id);
+        var divMail = new DivObject(bottomLeft._balise, "divMail_" + this._id);
+        new Icone(divMail._balise, "iconMail_" + this._id, 'datas/imgs/carte/poi/mail.png', 'darkgreen');
+        var mail = new Span(divMail._balise, "mail_" + this._id);
+        
+        var bottomRight = new DivObject(bottom._balise, 'divBottomRight_' + this._id);
+        bottomRight.addClass('flexElt');
+
+        this._img.attr("src", this._poi._image);
+        this._titre.html(Global.getTexteLangue(this._poi._titre, this._langue));
+        this._sousTitre.html(Global.getTexteLangue(this._poi._soustitre, this._langue));
+        this._texte.html(Global.getTexteLangue(this._poi._texte, this._langue));
+        numTel.html(this._poi._tel);
+        mail.html(this._poi._mail);
+
+        // imagePhone.attr('src', 'datas/imgs/carte/poi/phone.png');
+        // imageMail.attr('src', 'datas/imgs/carte/poi/mail.png');
 
         // if(this._json.liens){
         //     this._liensDiv = new DivObject(this._balise, this._id + "Liens");
@@ -124,10 +151,7 @@ class Fiche extends DivObject {
     //     instance.init();
     // }
 
-    texte() {
-        this._titre.html(Global.getTexteLangue(this._poi._titre, this._langue));
-        this._sousTitre.html(Global.getTexteLangue(this._poi._soustitre, this._langue));
-        this._texte.html(Global.getTexteLangue(this._poi._texte, this._langue));
+    afficher() {
         // this._diaporama.texte();
 
         // if (this._json.liens) {

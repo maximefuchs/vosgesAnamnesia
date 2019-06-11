@@ -8,14 +8,54 @@
 }
 
 .fiche {
-    cursor: pointer;
+    width: max-content;
     font-size: 20px;
-    color: white;
+    color: black;
+    background: white;
+}
+
+.fiche img{
+    width: 500px;
+}
+
+.fiche .divTexte {
+    padding: 30px;
+    text-align: justify;
+}
+.fiche h1 {
+    font-size: 25px;
+    color: darkgreen;
+}
+.fiche h2 {
+    font-size: 22px;
     font-weight: bold;
-    background: darkseagreen;
-    border: solid darkgreen 2px;
-    border-radius: 15px;
-    padding: 15px;
+    font-style: italic;
+}
+.fiche p {
+    margin-top: 8px;
+}
+
+.fiche .divBottom{
+    padding: 0 0 30px 40px;
+    display: flex;
+}
+.fiche .divBottom .flexElt {
+    flex: 1;
+}
+.fiche .divBottom .flexElt div span {
+    font-size: 15px;
+}
+.fiche .divIcone{
+    border-radius: 50%;
+    width: 30px;
+    text-align: center;
+    padding: 4px;
+    margin: 7px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.fiche .icone{
+    width: 20px;
 }
 
 .ficheBt {
