@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "DIN";
+    src: url('fonts/DINR__.TTF');
+}
+
+@font-face {
+    font-family: "DIN";
+    src: url('fonts/DINBD_.TTF');
+    font-weight:bold;
+}
+
+@font-face {
+    font-family: "DIN";
+    src: url('fonts/DIN-RegularItalic.ttf');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "TTMoons";
+    src: url('fonts/TypeType - TTMoons-Bold.otf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "TTMoons";
+    src: url('fonts/TypeType - TTMoons-BoldItalic.otf');
+    font-weight: bold;
+    font-style: italic;
+}

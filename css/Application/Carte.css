@@ -1,0 +1,191 @@
+#Carte {
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.Poi {
+    position: absolute;
+    width: 73.6px;
+    height: 84.8px;
+    margin-left: -36.8px;
+    margin-top: -84.8px;
+    transform-origin: 36.8px 84.8px;
+    background-size: contain;
+}
+
+.PoiSelect {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    transform-origin: 50px 50px;
+}
+
+.PoiSelectHaut {
+    transform: rotate(180deg);
+}
+
+.PoiSelectBas {
+    margin-top: -100px;
+}
+
+.PoiHaut {
+    transform: rotate(180deg);
+}
+
+.PoiBas {}
+
+#CarteFiches {
+    pointer-events: none;
+    touch-action: none;
+}
+
+.Fiche {
+    position: absolute;
+    width: 377px;
+    background-color: white;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+    pointer-events: auto;
+    transform-origin: center;
+}
+
+.FicheBt {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 0;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
+}
+
+.FicheBtLang {
+    text-align: center;
+    border-radius: 50%;
+    color: #7b0023;
+    background-color: white;
+    font-family: 'TTMoons';
+}
+
+.FicheBtLangSelect {
+    color: white;
+    background-color: #7b0023;
+}
+
+.FicheBtLangTexte {
+    position: absolute;
+    /* postulat de départ */
+    top: 50%;
+    left: 50%;
+    /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%)
+}
+
+.FicheBtFermer {
+    background-image: url("../../../datas/imgs/interface/FicheBtFermer.png");
+}
+
+.Fiche h1 {
+    color: #7b0023;
+    font-family: "TTMoons";
+    font-size: 21px;
+    width: 275px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.Fiche h2 {
+    color: #7b0023;
+    font-family: "TTMoons";
+    font-size: 12px;
+    width: 275px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.Fiche p {
+    color: #1a1a1a;
+    font-family: "DIN";
+    font-size: 15px;
+    width: 275px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.FicheDiaporama {
+    width: 377px;
+}
+
+.FicheDiaporamaLigne {
+    width: 100%;
+    height: 10px;
+    background-color: #7b0023;
+}
+
+.FicheDiaporamaLegende {
+    width: 275px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #7b0023;
+    font-family: "DIN";
+    font-size: 11px;
+    margin-top: 8px;
+}
+
+.FicheDiaporamaBtGauche {
+    background-image: url("../../../datas/imgs/interface/FicheDiaporamaBtGauche.png");
+}
+
+.FicheDiaporamaBtDroite {
+    background-image: url("../../../datas/imgs/interface/FicheDiaporamaBtDroite.png");
+}
+
+.FicheDiaporamaBtZoom {
+    background-image: url("../../../datas/imgs/interface/FicheDiaporamaBtZoom.png");
+}
+
+.FicheDiaporamaImgs {
+    width: 377px;
+    height: 250px;
+}
+
+.FicheDiaporamaImgs img {
+    position: absolute;
+}
+
+.FicheLiens {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.FicheLiensTitre {
+    color: #7b0023;
+    font-family: "TTMoons";
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+
+.FicheBtLien {
+    width: 95px;
+    text-align: center;
+    display: inline-block;
+    color: #7b0023;
+    font-family: "TTMoons";
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    vertical-align: top;
+}
+
+.FicheBtLien img {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,22 @@
+.elementMenu{
+    position: absolute;
+    background-size: cover;
+    cursor: pointer;
+}
+.elementMenu_front{
+    color: white;
+    text-align: center;
+}
+
+.elementMenu_picto{
+    height: 40%;
+    width: 40%;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+}
+.elementMenu_titre{
+    position: absolute;
+    width: 100%;
+    bottom: 8%;
+}

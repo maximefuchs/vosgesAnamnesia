@@ -1,0 +1,95 @@
+:root {
+    /* RED COLLECTION */
+    --R-orange: #CD4616;
+    --R-brown: #A5500F;
+    --R-yellow: #F28E36;
+    /* GREEN COLLECTION */
+    --G-flashy: #AECA06;
+    --G-dark: #427A16;
+    --G-medium: #5B9E2D;
+    --G-light: #79BA54;
+    /* BROWN COLLECTION */
+    --B-white: #B9907C;
+    --B-wood: #AE6A3B;
+    --B-orange: #C16B30;
+    --B-dark: #643B29;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 3840px;
+    height: 2160px;
+    /* width: 100%; */
+    /* height: 100%; */
+    user-select: none;
+    background-color: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    position: absolute;
+    width: 3840px;
+    height: 2160px;
+    /* width: 100%; */
+    /* height: 100%; */
+    overflow: hidden;
+}
+
+.center {
+    text-align: center;
+}
+
+.disable {
+    pointer-events: none;
+}
+
+.zMax {
+    z-index: 1000;
+}
+
+/* **************** */
+
+/* MENU 1 Scrollbar */
+
+/* **************** */
+
+.menu1 {
+    overflow: auto;
+}
+
+.menu1::-webkit-scrollbar-track {
+    width: 10px;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.menu1::-webkit-scrollbar {
+    width: 10px;
+}
+
+.menu1::-webkit-scrollbar-button {
+    height: 15px;
+    width: 10px;
+}
+
+.menu1::-webkit-scrollbar-thumb {
+    background-color: #1e424f;
+}
+
+.menu1::-webkit-scrollbar-button:vertical:increment {
+    /* background-image: url("../../datas/imgs/interface/SliderDown.png"); */
+}
+
+.menu1::-webkit-scrollbar-button:vertical:decrement {
+    /* background-image: url("../../datas/imgs/interface/SliderUp.png"); */
+}
+
+/* **************** */
+
+/* **************** */
+
+/* **************** */

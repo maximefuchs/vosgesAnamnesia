@@ -1,0 +1,191 @@
+Global.include('dev/js/Application/FicheDiaporama.js');
+Global.include('dev/js/Application/FicheBtLien.js');
+
+class Fiche extends DivObject {
+    constructor(div, poi, id) {
+        super(div, id);
+
+        this.signaux = {
+            fermer: new signals.Signal()
+        };
+
+        this._id = id;
+        this._poi = poi;
+        // this._categorie = categorie;
+        // this._idFiche = categorie.id + "-" + this._json.id;
+        // this._x = this._json.x;
+        // this._y = this._json.y;
+        this._ouvert = false;
+        this._langue = paramsJSON.langueParDefault;
+        this.addClass("fiche");
+
+        // this._diaporama = new FicheDiaporama(this._balise, this,this._json.diaporama, 345, 230);
+
+        this._titre = new BaliseObject(this._balise, "h1");
+        this._sousTitre = new BaliseObject(this._balise, "h2");
+        this._texte = new BaliseObject(this._balise, "p");
+
+
+
+        // if(this._json.liens){
+        //     this._liensDiv = new DivObject(this._balise, this._id + "Liens");
+        //     this._liensDiv.addClass("FicheLiens");
+
+        //     this._liensTitre = new DivObject(this._liensDiv._balise, this._id + "LiensTitre");
+        //     this._liensTitre.addClass("FicheLiensTitre");
+
+        //     this._liensBtsDiv = new DivObject(this._liensDiv._balise, this._id + "LiensBts");
+        //     this._liensBts = [];
+        //     for(var i = 0; i < this._json.liens.length; i++){
+        //         var bt = new FicheBtLien(this._liensBtsDiv._balise, this._json.liens[i].idCat, this._json.liens[i].id, this);
+        //         this._liensBts.push(bt);
+        //     }
+        // }
+
+
+
+        // this._btFermer = new DivObject(this._balise, this._id + "_BtFermer");
+        // this._btFermer.addClass("ficheBt");
+        // this._btFermer.addClass("ficheBtFermer");
+        // this._btFermer.x = 377 - this._btFermer.width / 2;
+        // this._btFermer.y = 20;
+
+        // this._bts = [];
+
+        // for (var i = 0; i < paramsJSON.langues.length; i++) {
+        //     var bt = new DivObject(this._balise, this._id + "_BtLang_" + paramsJSON.langues[i].langue);
+        //     bt.addClass("ficheBt");
+        //     bt.addClass("ficheBtLang");
+        //     bt.x = 377 - bt.width / 2;
+        //     bt.y = 300 + 50 * i;
+        //     bt.append('<div class="ficheBtLangTexte">' + String(paramsJSON.langues[i].langue).toUpperCase() + '</div>');
+        //     this._bts.push(bt);
+
+        //     bt._balise.on("click touchstart", null, { instance: this }, this.clickBtnLang);
+        // }
+
+        // this._btFermer._balise.on("click touchstart", null, { instance: this }, this.clickBtn);
+    }
+
+    // FONCTION CLICK BT
+    clickBtnLang(e) {
+        e.stopPropagation(); e.preventDefault();
+        var touch;
+        if (e.originalEvent.touches || e.originalEvent.changedTouches) {
+            touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+        } else {
+            touch = e;
+        }
+        var instance = e.data.instance;
+        var s = String($(this).attr('id'));
+
+        instance._langue = s.replace(instance._id + "_BtLang_", '');
+        console.log(instance._langue);
+        instance.texte();
+    };
+
+    // FONCTION CLICK BT
+    clickBtn(e) {
+        e.stopPropagation(); e.preventDefault();
+        var touch;
+        if (e.originalEvent.touches || e.originalEvent.changedTouches) {
+            touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+        } else {
+            touch = e;
+        }
+        var instance = e.data.instance;
+        var s = String($(this).attr('id'));
+
+        if (s === instance._btFermer._id) {
+            instance.fermer();
+        }
+    };
+
+
+    // init() {
+    //     // this._diaporama.init();
+    //     this._ouvert = false;
+    //     TweenLite.to(this._balise, 0, { x: StageWidth, y: StageHeight });
+    //     TweenLite.to(this._balise, 0, { autoAlpha: 0 });
+    // }
+
+    // ouvrir(n) {
+    //     this._ouvert = true;
+    //     // this.positionement();
+    //     TweenLite.to(this._balise, 0.3, { delay: n, autoAlpha: 1 });
+    // }
+
+    // fermer() {
+    //     this.fermerSignal.dispatch(this);
+    //     TweenLite.to(this._balise, 0.3, { autoAlpha: 0, onComplete: this.finFermer, onCompleteParams: [this] });
+    // }
+
+    // finFermer(instance) {
+    //     instance.init();
+    // }
+
+    texte() {
+        this._titre.html(Global.getTexteLangue(this._poi._titre, this._langue));
+        this._sousTitre.html(Global.getTexteLangue(this._poi._soustitre, this._langue));
+        this._texte.html(Global.getTexteLangue(this._poi._texte, this._langue));
+        // this._diaporama.texte();
+
+        // if (this._json.liens) {
+        //     this._liensTitre.html(Global.getTexteLangue(textesJSON.Application.Carte.Liens, this._langue));
+
+        //     for (var i = 0; i < this._liensBts.length; i++) {
+        //         this._liensBts[i].texte();
+        //     }
+        // }
+
+        // for (var i = 0; i < this._bts.length; i++) {
+        //     if (String(this._bts[i]._id).replace(this._id + "_BtLang_", '') === this._langue) {
+        //         this._bts[i].addClass("FicheBtLangSelect");
+        //     } else {
+        //         this._bts[i].removeClass("FicheBtLangSelect");
+        //     }
+        // }
+    }
+
+    // positionement() {
+    //     TweenLite.to(this._balise, 0, { x: this.testX(), y: this.testY() });
+    //     if (this._y < StageHeight / 2) {
+    //         this.attr("rotate", 180);
+    //         TweenLite.to(this._balise, 0, { rotation: 180 });
+    //     } else {
+    //         this.attr("rotate", 0);
+    //         TweenLite.to(this._balise, 0, { rotation: 0 });
+    //     }
+    //     this.attr("data-x", this.testX());
+    //     this.attr("data-y", this.testY());
+    // }
+
+    // testX() {
+    //     var x;
+    //     console.log(this._x - this._balise.width() / 2);
+    //     if (this._x - this._balise.width() / 2 < 50) {
+    //         x = 50;
+    //     } else if (this._x + this._balise.width() / 2 > StageWidth) {
+    //         x = StageWidth - 50 - this._balise.width();
+    //     } else {
+    //         x = this._x - this._balise.width() / 2;
+    //     }
+    //     return x;
+    // }
+
+    // testY() {
+    //     var y;
+    //     if (this._y - this._balise.height() / 2 < 50) {
+    //         y = 50;
+    //     } else if (this._y + this._balise.height() / 2 > StageHeight) {
+    //         y = StageHeight - 50 - this._balise.height();
+    //     } else {
+    //         y = this._y - this._balise.height() / 2;
+    //     }
+    //     return y;
+    // }
+
+    get fermerSignal() {
+        return this.signaux.fermer;
+    }
+}
