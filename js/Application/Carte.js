@@ -369,6 +369,7 @@ class Carte extends DivObject {
         var backButton = new BtObject(div._balise, "backButton");
         backButton.html("Retour menu");
         backButton._balise.click(function () {
+            backButton._balise.toggle();
             carte.fermerCarte("menu");
         });
 

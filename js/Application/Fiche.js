@@ -15,7 +15,7 @@ class Fiche extends DivObject {
         // this._idFiche = categorie.id + "-" + this._json.id;
         // this._x = this._json.x;
         // this._y = this._json.y;
-        this._ouvert = false;
+        // this._ouvert = false;
         this._langue = paramsJSON.langueParDefault;
         this.addClass("fiche");
 
@@ -78,8 +78,8 @@ class Fiche extends DivObject {
         this._btFermer.append('<div class="ficheBtFermerTexte">+</div>');
         this._btFermer.x = 500 - this._btFermer.width / 2;
         this._btFermer.y = - this._btFermer.height / 2;
+        // fermeture de l'élément gérer dans utilsOpenseadragon.js -> removeOverlay()
 
-        // this._btFermer._balise.on("click touchstart", null, { instance: this }, this.clickBtnFermer);
 
         this._bts = [];
 
@@ -115,22 +115,6 @@ class Fiche extends DivObject {
         instance.maj_texte();
     };
 
-    // FONCTION CLICK BT
-    clickBtnFermer(e) {
-        e.stopPropagation(); e.preventDefault();
-        var touch;
-        if (e.originalEvent.touches || e.originalEvent.changedTouches) {
-            touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-        } else {
-            touch = e;
-        }
-        var instance = e.data.instance;
-        var s = String($(this).attr('id'));
-
-        if (s === instance._btFermer._id) {
-            instance.fermer();
-        }
-    };
 
 
     // init() {

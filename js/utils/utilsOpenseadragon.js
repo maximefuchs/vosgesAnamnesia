@@ -113,7 +113,7 @@ function addClickHandler(overlay, viewer) {
                 placement: 'CENTER'
             }
             viewer.addOverlay(over);
-            removeOverlay(newOverlayId, fiche._btFermer._id, viewer);
+            removeOverlay(newOverlayId, fiche, viewer);
 
             // console.log(event);
             // var target = event.originalEvent.target;
@@ -128,11 +128,12 @@ function addClickHandler(overlay, viewer) {
     });
 }
 
-function removeOverlay(overlayId, closeBtnId, viewer) {
+function removeOverlay(overlayId, fiche, viewer) {
     return new OpenSeadragon.MouseTracker({
-        element: closeBtnId,
+        element: fiche._btFermer._id,
         clickHandler: function (event) {
             viewer.removeOverlay(overlayId);
+            fiche._balise.remove();
         }
     });
 }
