@@ -128,3 +128,15 @@
     left: 30px;
     padding: 15px;
 }
+
+.zoomButtons{
+    position: fixed;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    bottom: 50px;
+    background-color: white;
+    color: darkgreen;
+    font-size: 70px;
+    font-weight: bold;
+}

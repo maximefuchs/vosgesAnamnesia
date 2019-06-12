@@ -271,11 +271,11 @@ class Carte extends DivObject {
     }
 
     fermerCarte(elementAouvrir) {
-        TweenLite.to(this._balise, 1, {opacity: 0, onComplete: this.supprimerCarte, onCompleteParams: [this]});
+        TweenLite.to(this._balise, 1, { opacity: 0, onComplete: this.supprimerCarte, onCompleteParams: [this] });
         this.finFermerSignal.dispatch(elementAouvrir);
     }
 
-    supprimerCarte(carte){
+    supprimerCarte(carte) {
         carte._balise.remove();
     }
 
@@ -326,9 +326,14 @@ class Carte extends DivObject {
                 }
             },
             overlays: overlays,
+            gestureSettingsMouse: {
+                scrollToZoom: false,
+                clickToZoom: false,
+                dblClickToZoom: false
+            },
             gestureSettingsTouch: {
                 pinchToZoom: false,
-                clickToZoom: true,
+                clickToZoom: false,
                 dblClickToZoom: false
             }
         });
@@ -359,12 +364,34 @@ class Carte extends DivObject {
                 $("#" + overlaysLayer[i].id).toggle();
             });
         }
-        
+
         var carte = this;
         var backButton = new BtObject(div._balise, "backButton");
         backButton.html("Retour menu");
-        backButton._balise.click(function(){
+        backButton._balise.click(function () {
             carte.fermerCarte("menu");
+        });
+
+        var zoomInBtn = new BtObject(div._balise, "zoomInBtn");
+        zoomInBtn.html("+");
+        zoomInBtn.addClass('zoomButtons');
+        zoomInBtn.css('left', '40%');
+        var zMax = viewer.viewport.getMaxZoom();
+        zoomInBtn._balise.click(function () {
+            var z = viewer.viewport.getZoom();
+            if (z < zMax)
+                viewer.viewport.zoomTo(z * 1.3);
+        });
+
+        var zoomOutBtn = new BtObject(div._balise, "zoomOutBtn");
+        zoomOutBtn.html("-");
+        zoomOutBtn.addClass('zoomButtons');
+        zoomOutBtn.css('right', '40%');
+        var zMin = viewer.viewport.getMinZoom();
+        zoomOutBtn._balise.click(function () {
+            var z = viewer.viewport.getZoom();
+            if (z > zMin)
+                viewer.viewport.zoomTo(z / 1.3);
         });
     }
 
