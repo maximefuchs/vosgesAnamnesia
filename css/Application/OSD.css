@@ -14,7 +14,7 @@
     background: white;
 }
 
-.fiche img{
+.fiche img {
     width: 500px;
 }
 
@@ -22,30 +22,36 @@
     padding: 30px;
     text-align: justify;
 }
+
 .fiche h1 {
     font-size: 25px;
     color: darkgreen;
 }
+
 .fiche h2 {
     font-size: 22px;
     font-weight: bold;
     font-style: italic;
 }
+
 .fiche p {
     margin-top: 8px;
 }
 
-.fiche .divBottom{
+.fiche .divBottom {
     padding: 0 0 30px 40px;
     display: flex;
 }
+
 .fiche .divBottom .flexElt {
     flex: 1;
 }
+
 .fiche .divBottom .flexElt div span {
     font-size: 15px;
 }
-.fiche .divIcone{
+
+.fiche .divIcone {
     border-radius: 50%;
     width: 30px;
     text-align: center;
@@ -54,7 +60,8 @@
     display: inline-block;
     vertical-align: middle;
 }
-.fiche .icone{
+
+.fiche .icone {
     width: 20px;
 }
 
@@ -67,6 +74,7 @@
     filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
     cursor: pointer;
 }
+
 .ficheBtLang {
     text-align: center;
     border-radius: 50%;
@@ -74,10 +82,12 @@
     background-color: white;
     font-family: 'TTMoons';
 }
+
 .ficheBtLangSelect {
     color: white;
     background-color: darkgreen;
 }
+
 .ficheBtLangTexte {
     position: absolute;
     /* postulat de départ */
@@ -86,8 +96,24 @@
     /* à 50%/50% du parent référent */
     transform: translate(-50%, -50%)
 }
+
 .ficheBtFermer {
-    background-image: url("../../../datas/imgs/interface/FicheBtFermer.png");
+    /* background-image: url("../../../datas/imgs/interface/FicheBtFermer.png");
+    background-repeat: no-repeat; */
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    color: darkgreen;
+    background-color: white;
+    /* font-family: 'TTMoons'; */
+}
+.ficheBtFermerTexte{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-weight: bold;
+    transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .layerBtn {
@@ -96,7 +122,7 @@
     padding: 10px;
 }
 
-#backButton{
+#backButton {
     position: fixed;
     bottom: 50px;
     left: 30px;

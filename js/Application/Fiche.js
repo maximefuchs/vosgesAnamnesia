@@ -75,6 +75,7 @@ class Fiche extends DivObject {
         this._btFermer = new DivObject(this._balise, this._id + "_BtFermer");
         this._btFermer.addClass("ficheBt");
         this._btFermer.addClass("ficheBtFermer");
+        this._btFermer.append('<div class="ficheBtFermerTexte">+</div>');
         this._btFermer.x = 500 - this._btFermer.width / 2;
         this._btFermer.y = - this._btFermer.height / 2;
 
