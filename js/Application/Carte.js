@@ -14,50 +14,7 @@ class Carte extends DivObject {
         this._jsonCarte = jsonCarte;
         this._jsonPoi = jsonPoi;
         this._lien = lien;
-
-        this._categories = [];
-
-        // for (var i = 0; i < this._json.categorie.length; i++) {
-        //     console.log(this._json.categorie[i].id + " " + this._json.categorie[i].img);
-        //     this._categories.push({ "id": this._json.categorie[i].id, "img": this._json.categorie[i].img })
-        // }
-
-        this._poisSelect = [];
-        this._fiches = [];
-        // this._fichesDiv = new DivObject(this._balise, "CarteFiches");
-        // this._fichesDiv.addClass("page");
-        // this._maxPoiOuvert = this._json.maxPoiOuvert;
-        this._tabZindex = [];
-
-        // for (var i = 0; i < this._json.poi.length; i++) {
-        //     console.log("new POI : " + i);
-        //     var cat;
-        //     for (var j = 0; j < this._categories.length; j++) {
-        //         console.log(this._categories[j].id + " - " + this._json.poi[i].idCat);
-        //         console.log(this._categories[j].id === this._json.poi[i].idCat);
-        //         if (this._categories[j].id === this._json.poi[i].idCat) {
-        //             cat = this._categories[j];
-        //         }
-        //     }
-        //     console.log(cat);
-        //     var poi = new Poi(this._poisDiv._balise, this._json.poi[i], cat);
-        //     this._pois.push(poi);
-        //     var poiSelect = new DivObject(this._poisDiv._balise, "PoiSelect_" + i);
-        //     poiSelect.addClass("PoiSelect");
-        //     poiSelect.css("background-image", 'url("datas/imgs/Poi/' + poPoi + '/vignette.png")');
-        //     this._poisSelect.push(poiSelect);
-        //     TweenLite.to(poiSelect._balise, 0, { x: poi._x, y: poi._y });
-        //     if (poi._y < StageHeight / 2) {
-        //         poiSelect.addClass("PoiSelectHaut");
-        //         TweenLite.to(poiSelect._balise, 0, { rotation: 180 });
-        //     } else {
-        //         poiSelect.addClass("PoiSelectBas");
-        //     }
-        //     var fiche = new Fiche(this._fichesDiv._balise, this._json.poi[i], cat);
-        //     fiche.fermerSignal.add(this.fermerFiche);
-        //     this._fiches.push(fiche);
-        // }
-
+        
         // interact('.Fiche')
         //     .draggable({
         //         onmove: this.dragMoveListener,
@@ -82,100 +39,31 @@ class Carte extends DivObject {
 
         this._pois = [];
         this._poiDiv = new DivObject(this._balise, "CartePoints");
-
         var pois = this._jsonPoi[this._lien];
         for (let i = 0; i < pois.length; i++) {
             console.log("new point : " + i);
-
             var poi = new Poi(this._poiDiv._balise, pois[i]);
             this._pois.push(poi);
         }
 
 
+        this._fiches = [];
+        for (let i = 0; i < this._pois.length; i++) {
+            var f = new Fiche(this._pois[i], i + 'fiche_' + poi._id);
+            this._fiches.push(f);
+        }
+
         this._layers = [];
         this._layersDiv = new DivObject(this._balise, "CarteLayers");
-
         var layers = this._jsonCarte.layer;
-
         for (let i = 0; i < layers.length; i++) {
             console.log("new Layer : " + i);
             var layer = new Img(this._layersDiv._balise, layers[i].id, layers[i].src);
             this._layers.push(layer);
         }
+
+        this._viewer = this.getOSDviewer();
     }
-
-    ouvrirFicheBtLien(btLien) {
-        console.log("ouvrirFicheBtLien");
-        console.log(btLien);
-
-        var count = 0;
-        for (var i = 0; i < this._fiches.length; i++) {
-            if (this._fiches[i]._ouvert) {
-                count++;
-            }
-        }
-        console.log(count + " - " + this._maxPoiOuvert);
-
-        if (count >= this._maxPoiOuvert) {
-            return;
-        }
-
-        for (var i = 0; i < this._fiches.length; i++) {
-            if (this._fiches[i]._idFiche == btLien._id) {
-                if (!this._fiches[i]._ouvert) {
-                    this._poisSelect[i].css("display", "");
-                    this._fiches[i].ouvrir();
-                    this.gestionZindex(i);
-                }
-            }
-        }
-    }
-
-    fermerFiche(fiche) {
-        console.log("fermerFiche");
-        var instance = application._carte;
-        console.log(instance);
-        console.log(fiche);
-        for (var i = 0; i < instance._fiches.length; i++) {
-            if (fiche._id === instance._fiches[i]._id) {
-                instance._poisSelect[i].css("display", "none");
-            }
-        }
-    }
-
-    gestionZindex(numFiche) {
-        var num = -1;
-        for (var i = 0; i < this._tabZindex.length; i++) {
-            if (this._tabZindex[i] === this._fiches[numFiche]) {
-                num = i;
-            }
-        }
-        console.log("gestionZindex : " + num);
-        if (num != -1) {
-            this._tabZindex = Global.array_move(this._tabZindex, num, this._tabZindex.length - 1);
-        } else {
-            this._tabZindex.push(this._fiches[numFiche]);
-        }
-
-        for (var i = 0; i < this._tabZindex.length; i++) {
-            console.log(this._tabZindex[i]);
-            this._tabZindex[i].css("z-index", 100 + i);
-        }
-    }
-
-    // // FONCTION DRAG FICHE
-    // rotateListener(event) {
-
-    //     var target = event.target,
-    //         // keep the dragged position in the data-x/data-y attributes
-    //         angle = (parseFloat(target.getAttribute('rotate')) || 0) + event.da;
-
-    //     // translate the element
-    //     TweenLite.to(target, 0, { rotation: angle });
-
-    //     // update the posiion attributes
-    //     target.setAttribute('rotate', angle);
-    // }
 
     // FONCTION DRAG FICHE
     // dragMoveListener(event) {
@@ -193,84 +81,10 @@ class Carte extends DivObject {
     //     target.setAttribute('data-y', y);
     // }
 
-    // FONCTION CLICK FICHE
-    clickFiche(e) {
-        e.stopPropagation();
-        e.preventDefault();
-        var touch;
-        if (e.originalEvent.touches || e.originalEvent.changedTouches) {
-            touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-        } else {
-            touch = e;
-        }
-
-        var instance = e.data.instance;
-        var s = String($(this).attr('id'));
-        for (var i = 0; i < instance._fiches.length; i++) {
-            if (instance._fiches[i]._id == s) {
-                instance.gestionZindex(i);
-            }
-        }
-    };
-
-    // FONCTION CLICK POI
-    clickBtn(e) {
-        e.stopPropagation();
-        e.preventDefault();
-        var touch;
-        if (e.originalEvent.touches || e.originalEvent.changedTouches) {
-            touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-        } else {
-            touch = e;
-        }
-
-        var instance = e.data.instance;
-        var count = 0;
-        for (var i = 0; i < instance._fiches.length; i++) {
-            if (instance._fiches[i]._ouvert) {
-                count++;
-            }
-        }
-        console.log(count + " - " + instance._maxPoiOuvert);
-
-        if (count >= instance._maxPoiOuvert) {
-            return;
-        }
-
-        var s = String($(this).attr('id'));
-        // $('#' + s).addClass("VeilleBtSelect");
-
-        var num = s.replace(/Poi_/, '');
-        console.log("Click : " + num);
-        for (var i = 0; i < instance._fiches.length; i++) {
-            if (instance._fiches[i]._idFiche == num) {
-                if (instance._fiches[i]._ouvert) {
-                    return;
-                }
-                instance._poisSelect[i].css("display", "");
-                instance._fiches[i].ouvrir();
-                instance.gestionZindex(i);
-                console.log("j'ouvre la fiche");
-            }
-        }
-    };
-
     init() {
-        // for (var i = 0; i < this._pois.length; i++) {
-        //     this._pois[i].init();
-        //     this._fiches[i].init();
-        //     this._poisSelect[i].css("display", "none");
-        // }
-        this.displayCarteOpenSeadragon();
-    }
-
-    ouvrirCarte() {
-        // for (var i = 0; i < this._pois.length; i++) {
-        //     // this._pois[i].ouvrir(0);
-        //     this._pois[i].ouvrir(0.02 * i);
-        // }
-
-        this._balise.toggle();
+        this.setOverlays();
+        this.setPoiClickListeners();
+        this.setOSDtools();
     }
 
     fermerCarte(elementAouvrir) {
@@ -279,30 +93,15 @@ class Carte extends DivObject {
     }
 
     supprimerCarte(carte) {
+        $(body).find('.fiche').remove();
         carte._balise.remove();
     }
 
-    texte() {
-        this.css("background-image", "url(" + Global.getTexteLangue(this._json.img, "fr") + ")");
-        for (var i = 0; i < this._fiches.length; i++) {
-            this._fiches[i].texte();
-        }
-    }
-
-    displayCarteOpenSeadragon() {
+    getOSDviewer() {
         var div = new DivObject(this._balise, "OSDandButtons");
         div.addClass('page');
 
         var seadragonView = new DivObject(div._balise, 'seadragon-viewer');
-
-        var overlaysPoints = getPointsOverlays(this._pois, this._jsonCarte.origineCarte, this._jsonCarte.finCarte);
-        console.log(overlaysPoints);
-
-        var overlaysLayer = getLayerOverlays(this._layers);
-        console.log(overlaysLayer);
-
-        var overlays = overlaysLayer.concat(overlaysPoints);
-        console.log(overlays);
 
         $("#seadragon-viewer").width("100%").height("100%");
         var viewer = OpenSeadragon({
@@ -328,7 +127,6 @@ class Carte extends DivObject {
                     }
                 }
             },
-            overlays: overlays,
             gestureSettingsMouse: {
                 scrollToZoom: false,
                 clickToZoom: false,
@@ -340,43 +138,32 @@ class Carte extends DivObject {
                 dblClickToZoom: false
             }
         });
+        return viewer;
+    }
+
+    setOSDtools() {
+        var viewer = this._viewer;
+        var div = this._balise;
+
+        // doubble ckick to reset to home zoom
         viewer.addHandler('canvas-double-click', function (args) {
-            console.log('double');
             var targetZoomLevel = viewer.viewport.getHomeZoom();
-            // if (openseadragon.viewport.getZoom() >= targetZoomLevel) {
-            //     targetZoomLevel = 1;
-            // }
             viewer.viewport.zoomTo(
                 targetZoomLevel,
                 viewer.viewport.pointFromPixel(args.position, true));
             viewer.viewport.applyConstraints();
         });
-        viewer.addHandler('open', function (e) {
-            for (let i = 0; i < overlaysPoints.length; i++) {
-                addClickHandler(overlaysPoints[i], viewer);
-            }
-        });
-        for (let i = 0; i < overlaysLayer.length; i++) {
-            $("#" + overlaysLayer[i].id).toggle();
-            var btnId = "btn_" + overlaysLayer[i].id;
-            var btn = new BtObject(div._balise, btnId);
-            $("#" + btnId).html("Toggle " + overlaysLayer[i].id)
-                .addClass('layerBtn')
-                .css("bottom", 30 + 45 * i);
-            $("#btn_" + overlaysLayer[i].id).click(function () {
-                $("#" + overlaysLayer[i].id).toggle();
-            });
-        }
 
         var carte = this;
-        var backButton = new BtObject(div._balise, "backButton");
-        backButton.html("Retour menu");
+        var backButton = new DivObject(div, "backButton");
+        var img = new Img(backButton._balise, 'bachButton_img', "datas/imgs/interface/boutons_carte/home.png");
+        img.attr('width', 60); img.attr('height', 60); img.css('margin-top', '15px');
         backButton._balise.click(function () {
-            backButton._balise.toggle();
+            carte.hideOSDtools();
             carte.fermerCarte("menu");
         });
 
-        var zoomInBtn = new BtObject(div._balise, "zoomInBtn");
+        var zoomInBtn = new BtObject(div, "zoomInBtn");
         zoomInBtn.html("+");
         zoomInBtn.addClass('zoomButtons');
         zoomInBtn.css('left', '40%');
@@ -387,7 +174,7 @@ class Carte extends DivObject {
                 viewer.viewport.zoomTo(z * 1.3);
         });
 
-        var zoomOutBtn = new BtObject(div._balise, "zoomOutBtn");
+        var zoomOutBtn = new BtObject(div, "zoomOutBtn");
         zoomOutBtn.html("-");
         zoomOutBtn.addClass('zoomButtons');
         zoomOutBtn.css('right', '40%');
@@ -396,6 +183,53 @@ class Carte extends DivObject {
             var z = viewer.viewport.getZoom();
             if (z > zMin)
                 viewer.viewport.zoomTo(z / 1.3);
+        });
+    }
+
+    hideOSDtools() {
+        $('#backButton').toggle();
+        $('#zoomInBtn').toggle();
+        $('#zoomOutBtn').toggle();
+    }
+
+    setOverlays() {
+        for (let i = 0; i < this._pois.length; i++) {
+            this._viewer.addOverlay(poiToOverlay(this._pois[i]));
+        }
+        for (let i = 0; i < this._layers.length; i++) {
+            this._viewer.addOverlay(layerToOverlay(this._layers[i]));
+        }
+    }
+
+    setPoiClickListeners() {
+        var carte = this;
+        for (let i = 0; i < carte._pois.length; i++) {
+            this._viewer.addHandler('open', function (e) {
+                new OpenSeadragon.MouseTracker({
+                    element: carte._pois[i]._id,
+                    clickHandler: function (event) {
+                        var f = carte._fiches[i];
+                        var p = f._poi;
+                        var overlay = poiToOverlay(p);
+                        console.log(overlay);
+
+                        f._balise.toggle();
+                        carte._viewer.addOverlay(f._overlay);
+                        carte.removeOverlay(f);
+                    }
+                });
+            });
+        }
+    }
+
+    removeOverlay(fiche) {
+        var carte = this;
+        return new OpenSeadragon.MouseTracker({
+            element: fiche._btFermer._id,
+            clickHandler: function (event) {
+                // fiche._balise.toggle();
+                carte._viewer.removeOverlay(fiche._id);
+            }
         });
     }
 

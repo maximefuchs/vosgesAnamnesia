@@ -2,8 +2,9 @@ Global.include('dev/js/Application/FicheDiaporama.js');
 Global.include('dev/js/Application/FicheBtLien.js');
 
 class Fiche extends DivObject {
-    constructor(div, poi, id) {
-        super(div, id);
+    // constructor(div, poi, id) {
+    constructor(poi, id) {
+        super(poi._balise, id);
 
         this.signaux = {
             fermer: new signals.Signal()
@@ -15,7 +16,7 @@ class Fiche extends DivObject {
         // this._idFiche = categorie.id + "-" + this._json.id;
         // this._x = this._json.x;
         // this._y = this._json.y;
-        // this._ouvert = false;
+        this._ouvert = false;
         this._langue = paramsJSON.langueParDefault;
         this.addClass("fiche");
 
@@ -69,9 +70,8 @@ class Fiche extends DivObject {
         //         this._liensBts.push(bt);
         //     }
         // }
-
-
-
+        
+        
         this._btFermer = new DivObject(this._balise, this._id + "_BtFermer");
         this._btFermer.addClass("ficheBt");
         this._btFermer.addClass("ficheBtFermer");
@@ -79,10 +79,10 @@ class Fiche extends DivObject {
         this._btFermer.x = 500 - this._btFermer.width / 2;
         this._btFermer.y = - this._btFermer.height / 2;
         // fermeture de l'élément gérer dans utilsOpenseadragon.js -> removeOverlay()
-
-
+        
+        
         this._bts = [];
-
+        
         for (var i = 0; i < paramsJSON.langues.length; i++) {
             var bt = new DivObject(this._balise, this._id + "_BtLang_" + paramsJSON.langues[i].langue);
             bt.addClass("ficheBt");
@@ -91,9 +91,12 @@ class Fiche extends DivObject {
             bt.y = 250 + 70 * i;
             bt.append('<div class="ficheBtLangTexte">' + String(paramsJSON.langues[i].langue).toUpperCase() + '</div>');
             this._bts.push(bt);
-
+            
             bt._balise.on("click touchstart", null, { instance: this }, this.clickBtnLang);
         }
+        
+        this._overlay = ficheToOverlay(this);
+        this._balise.toggle();
 
     }
 
@@ -116,52 +119,12 @@ class Fiche extends DivObject {
     };
 
 
-
-    // init() {
-    //     // this._diaporama.init();
-    //     this._ouvert = false;
-    //     TweenLite.to(this._balise, 0, { x: StageWidth, y: StageHeight });
-    //     TweenLite.to(this._balise, 0, { autoAlpha: 0 });
-    // }
-
-    // ouvrir(n) {
-    //     this._ouvert = true;
-    //     // this.positionement();
-    //     TweenLite.to(this._balise, 0.3, { delay: n, autoAlpha: 1 });
-    // }
-
-    // fermer() {
-    //     this.fermerSignal.dispatch(this);
-    //     TweenLite.to(this._balise, 0.3, { autoAlpha: 0, onComplete: this.finFermer, onCompleteParams: [this] });
-    // }
-
-    // finFermer(instance) {
-    //     instance.init();
-    // }
-
     maj_texte() {
-        // this._diaporama.texte();
-
-        // if (this._json.liens) {
-        //     this._liensTitre.html(Global.getTexteLangue(textesJSON.Application.Carte.Liens, this._langue));
-
-        //     for (var i = 0; i < this._liensBts.length; i++) {
-        //         this._liensBts[i].texte();
-        //     }
-        // }
-
-        // for (var i = 0; i < this._bts.length; i++) {
-        //     if (String(this._bts[i]._id).replace(this._id + "_BtLang_", '') === this._langue) {
-        //         this._bts[i].addClass("FicheBtLangSelect");
-        //     } else {
-        //         this._bts[i].removeClass("FicheBtLangSelect");
-        //     }
-        // }
         this._titre.html(Global.getTexteLangue(this._poi._titre, this._langue));
         this._sousTitre.html(Global.getTexteLangue(this._poi._soustitre, this._langue));
         this._texte.html(Global.getTexteLangue(this._poi._texte, this._langue));
     }
-
+    
     // positionement() {
     //     TweenLite.to(this._balise, 0, { x: this.testX(), y: this.testY() });
     //     if (this._y < StageHeight / 2) {
@@ -173,31 +136,6 @@ class Fiche extends DivObject {
     //     }
     //     this.attr("data-x", this.testX());
     //     this.attr("data-y", this.testY());
-    // }
-
-    // testX() {
-    //     var x;
-    //     console.log(this._x - this._balise.width() / 2);
-    //     if (this._x - this._balise.width() / 2 < 50) {
-    //         x = 50;
-    //     } else if (this._x + this._balise.width() / 2 > StageWidth) {
-    //         x = StageWidth - 50 - this._balise.width();
-    //     } else {
-    //         x = this._x - this._balise.width() / 2;
-    //     }
-    //     return x;
-    // }
-
-    // testY() {
-    //     var y;
-    //     if (this._y - this._balise.height() / 2 < 50) {
-    //         y = 50;
-    //     } else if (this._y + this._balise.height() / 2 > StageHeight) {
-    //         y = StageHeight - 50 - this._balise.height();
-    //     } else {
-    //         y = this._y - this._balise.height() / 2;
-    //     }
-    //     return y;
     // }
 
     get fermerSignal() {

@@ -18,74 +18,76 @@ function distanceBtw2Coord(lat1, lon1, lat2, lon2) {
     return c * R;
 }
 
-// params : Poi[] , Poi json , Poi json
-function getPointsOverlays(points, origineCarte, finCarte) {
+
+// params : Poi , Poi json , Poi json
+function poiToOverlay(p) {
+    var origineCarte = textesJSON.Application.Carte.origineCarte;
+    var finCarte = textesJSON.Application.Carte.finCarte;
     height = 8000;
     width = 8000;
-
-    console.log(origineCarte);
 
     var dPixel = Math.sqrt(pow(height, 2) + pow(width, 2));
     var dDistance =
         distanceBtw2Coord(finCarte.lat, finCarte.long, origineCarte.lat, origineCarte.long);
     var echelle = dDistance / dPixel; // en km/Pixel
 
-    console.log(echelle);
-    var overlays = [];
+    var coefXLat = pow(Math.cos((p._lat - origineCarte.lat) * 0.25), 2);
+    var coefXLatPixel = (1 - coefXLat) * width * echelle;
 
-    for (let i = 0; i < points.length; i++) {
-        var p = points[i];
+    var coefYLong = pow(Math.cos((p._long - origineCarte.long) * 0.22), 2);
+    var coefYLongPixel = (1 - coefYLong) * height * echelle;
 
-        var coefXLat = pow(Math.cos((p._lat - origineCarte.lat) * 0.25), 2);
-        var coefXLatPixel = (1 - coefXLat) * width * echelle;
+    var x = distanceBtw2Coord(p._lat, p._long, p._lat, origineCarte.long);
+    var y = distanceBtw2Coord(p._lat, p._long, origineCarte.lat, p._long);
 
-        var coefYLong = pow(Math.cos((p._long - origineCarte.long) * 0.22), 2);
-        var coefYLongPixel = (1 - coefYLong) * height * echelle;
+    var x = x + coefXLatPixel;
+    var y = y - coefYLongPixel;
 
-        var x = distanceBtw2Coord(p._lat, p._long, p._lat, origineCarte.long);
-        var y = distanceBtw2Coord(p._lat, p._long, origineCarte.lat, p._long);
+    x = x / echelle;
+    y = y / echelle;
 
-        var x = x + coefXLatPixel;
-        var y = y - coefYLongPixel;
+    pourcentageX = x / width;
+    pourcentageY = y / height;
 
-        x = x / echelle;
-        y = y / echelle;
-
-        pourcentageX = x / width;
-        pourcentageY = y / height;
-
-        var overlay = {
-            element: p._balise[0],
-            poi: p,
-            id: p._id,
-            x: pourcentageX,
-            y: pourcentageY,
-            placement: 'CENTER'
-        };
-
-        overlays.push(overlay);
+    var overlay = {
+        element: p._balise[0],
+        poi: p,
+        id: p._id,
+        x: pourcentageX,
+        y: pourcentageY,
+        placement: 'CENTER'
     }
-    return overlays;
+    return overlay;
 }
 
-// param : Img[]
-function getLayerOverlays(layers) {
-    var overlays = [];
-    for (let i = 0; i < layers.length; i++) {
-        var l = layers[i];
-        var overlay = {
-            element: l._balise[0],
-            layer: l,
-            id: l._id,
-            x: 0,
-            y: 0,
-            width: 1,
-            height: 1
-        }
-        overlays.push(overlay);
+// param : Img
+function layerToOverlay(l) {
+    var overlay = {
+        element: l._balise[0],
+        layer: l,
+        id: l._id,
+        x: 0,
+        y: 0,
+        width: 1,
+        height: 1
     }
-    return overlays;
+    l._balise.toggle();
+    return overlay;
 }
+
+function ficheToOverlay(f) {
+    var p = f._poi;
+    var overlay = poiToOverlay(p);
+    var over = {
+        element: f._balise[0],
+        id: f._id,
+        x: overlay.x,
+        y: overlay.y,
+        placement: 'CENTER'
+    }
+    return over;
+}
+
 
 function newpushPin() {
     var img = document.createElement("img");
@@ -124,16 +126,6 @@ function addClickHandler(overlay, viewer) {
             //         location.href = target.getAttribute('href');
             //     }
             // }
-        }
-    });
-}
-
-function removeOverlay(overlayId, fiche, viewer) {
-    return new OpenSeadragon.MouseTracker({
-        element: fiche._btFermer._id,
-        clickHandler: function (event) {
-            viewer.removeOverlay(overlayId);
-            fiche._balise.remove();
         }
     });
 }
