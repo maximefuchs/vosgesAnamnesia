@@ -1,4 +1,4 @@
-Global.includeCSS('dev/css/Application/menu.css');
+Global.includeCSS('dev/css/Application/ElementMenu.css');
 
 class ElementMenu extends DivObject {
     constructor(parent, json) {

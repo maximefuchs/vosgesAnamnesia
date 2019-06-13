@@ -3,8 +3,7 @@ Global.include('dev/js/Application/Fiche.js');
 
 Global.include('dev/js/utils/utilsOpenseadragon.js');
 
-// Global.includeCSS('dev/css/Application/Carte.css');
-Global.includeCSS('dev/css/Application/OSD.css');
+Global.includeCSS('dev/css/Application/Carte.css');
 
 class Carte extends DivObject {
     constructor(div, jsonCarte, jsonPoi, lien) {

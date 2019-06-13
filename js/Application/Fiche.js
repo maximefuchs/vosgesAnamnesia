@@ -1,5 +1,7 @@
-Global.include('dev/js/Application/FicheDiaporama.js');
-Global.include('dev/js/Application/FicheBtLien.js');
+// Global.include('dev/js/Application/FicheDiaporama.js');
+// Global.include('dev/js/Application/FicheBtLien.js');
+
+Global.includeCSS('dev/css/Application/Fiche.css');
 
 class Fiche extends DivObject {
     // constructor(div, poi, id) {

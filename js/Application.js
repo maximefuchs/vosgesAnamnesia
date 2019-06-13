@@ -1,7 +1,8 @@
-Global.include('dev/js/Application/Carte.js');
-Global.include('dev/js/Application/Diaporama.js');
 Global.include('dev/js/Application/Menu.js');
-Global.include('dev/js/Application/MenuLang.js');
+Global.include('dev/js/Application/Carte.js');
+Global.include('dev/js/Application/FichePerenne.js');
+// Global.include('dev/js/Application/Diaporama.js');
+// Global.include('dev/js/Application/MenuLang.js');
 
 class Application extends DivObject {
     constructor() {
@@ -19,8 +20,7 @@ class Application extends DivObject {
                     application.ouvrirCarte(lien);
                     break;
                 case "perenne":
-                    console.log("perenne");
-                    application._menu.ouvrirMenu();
+                    application.ouvrirPerenne();
                     break;
             }
         });
@@ -50,6 +50,19 @@ class Application extends DivObject {
                     break;
             }
         });
+    }
+
+    ouvrirPerenne() {
+        var application = this;
+        var perenne = new FichePerenne(this._balise, "fichePerenne", textesJSON.Application);
+        perenne.init();
+        perenne.finFermerSignal.add(function(element){
+            switch (element) {
+                case "menu":
+                    application._menu.ouvrirMenu();
+                    break;
+            }
+        })
     }
 
     texte() {

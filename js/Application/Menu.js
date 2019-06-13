@@ -14,7 +14,7 @@ class Menu extends DivObject {
         }
 
         this._fondImgs = [];
-        for (let i = 0; i < this._json.diaporama.length; i++) {
+        for (let i = 0; i < this._json.diaporama.menu.length; i++) {
             console.log("new back image : " + i);
             var img = this._json.diaporama[i];
             var image = new Img(this._balise, "fond_img_" + img.id, img.src);
@@ -53,12 +53,10 @@ class Menu extends DivObject {
         }
         var type = $(this).attr('type');
         var lien = $(this).attr('lien');
-        console.log(type);
-        console.log(lien);
-        console.log(this);
         e.data.instance.fermerMenu(type, lien);
     }
 
+    // fond d'écran changeant toutes les 8 secondes
     displayBackground() {
         var images = this._fondImgs;
         var nbImgs = images.length;
@@ -70,7 +68,7 @@ class Menu extends DivObject {
             TweenLite.to(images[current]._balise, 1, { opacity: 0 });
             TweenLite.to(images[next]._balise, 1, { opacity: 1 });
             i++;
-        }, 8000);
+        }, 6000);
     }
 
     ouvrirMenu() {
@@ -80,10 +78,8 @@ class Menu extends DivObject {
     }
 
     fermerMenu(ouvrirType, lien) {
-        if (ouvrirType == 'carte') {
-            TweenLite.to(this._balise, 1, { opacity: 0, onComplete: this.toggleMenu, onCompleteParams: [this] });
-            this.finFermerSignal.dispatch(ouvrirType, lien);
-        }
+        TweenLite.to(this._balise, 1, { opacity: 0, onComplete: this.toggleMenu, onCompleteParams: [this] });
+        this.finFermerSignal.dispatch(ouvrirType, lien);
     }
 
     toggleMenu(menu) {
