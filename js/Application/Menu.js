@@ -16,7 +16,7 @@ class Menu extends DivObject {
         this._fondImgs = [];
         for (let i = 0; i < this._json.diaporama.menu.length; i++) {
             console.log("new back image : " + i);
-            var img = this._json.diaporama[i];
+            var img = this._json.diaporama.menu[i];
             var image = new Img(this._balise, "fond_img_" + img.id, img.src);
             image.addClass('page');
             image.css('opacity', 0);

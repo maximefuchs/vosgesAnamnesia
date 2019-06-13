@@ -1,0 +1,109 @@
+{
+    "veille": {
+        "bt": {
+            "fr": "Commencer",
+            "en": "Start",
+            "de": "Beginnen"
+        }
+    },
+    "Application": {
+        "Carte": {
+            "img": {
+                "fr": "datas/imgs/carte/carte_tuiles_FR/",
+                "en": "datas/imgs/carte/carte_EN.jpg"
+            },
+            "boutonsCarte": "datas/imgs/interface/boutons_carte/",
+            "Liens": {
+                "fr": "Fiches en lien",
+                "en": "Linked files"
+            },
+            "maxPoiOuvert": 11,
+            "origineCarte": {
+                "id": "origineCarte",
+                "lat": 48.435253,
+                "long": 6.244146
+            },
+            "finCarte": {
+                "id": "finCarte",
+                "lat": 47.492474,
+                "long": 7.516484
+            },
+            "layer": [
+                {
+                    "id": "plan",
+                    "src": "datas/imgs/carte/layer/plan-min.png",
+                    "color": "#FF0000"
+                }
+            ]
+        },
+        "Menu": {
+            "diaporama": {
+                "menu": [
+                    {
+                        "id": "diapo1",
+                        "src": "datas/imgs/menu/diaporama/diapo_1.jpg",
+                        "color": "#FF0000"
+                    }
+                ],
+                "categorie": {
+                    "parc": [
+                        {
+                            "id": "",
+                            "src": "",
+                            "color": ""
+                        }
+                    ]
+                }
+            },
+            "element": [
+                {
+                    "id": "0",
+                    "couleur": "#1b8417b0",
+                    "src_fond": "datas/imgs/menu/element/nature.jpg",
+                    "picto": "datas/imgs/menu/picto/tree.png",
+                    "titre": {
+                        "fr": "Nature",
+                        "de": "Natur",
+                        "en": "Nature"
+                    },
+                    "type": "perenne",
+                    "lien": "nature",
+                    "x": 800,
+                    "y": 800,
+                    "taille": 500
+                }
+            ]
+        }
+    },
+    "poi": {
+        "parc": [
+            {
+                "id": 0,
+                "lat": 48.125167,
+                "long": 7.093361,
+                "titre": {
+                    "fr": "Lac Blanc",
+                    "en": "White lake",
+                    "de": "Weiss See"
+                },
+                "soustitre": {
+                    "fr": "sous titre lac blanc",
+                    "en": "undertitle white lake",
+                    "de": "untertitel weiss see"
+                },
+                "image": "datas/imgs/carte/poi/parc/0.jpg",
+                "texte": {
+                    "fr": "texte lac blanc",
+                    "en": "text white lake",
+                    "de": "text weiss see"
+                },
+                "adresse": "",
+                "tel": "0123456789",
+                "mail": "test@mail.fr",
+                "site": "",
+                "coeur": 0,
+                "categorie": "Schlucht"
+            }
+        ]
+    }
+}
