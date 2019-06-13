@@ -8,6 +8,7 @@ var langue;
 
 var textesJSON;
 var paramsJSON;
+var poisJSON;
 
 var body;
 var head;
@@ -22,7 +23,8 @@ var application;
 function initApplication() {
     //Chargement du fichier de params
     $.when($.getJSON("datas/params.json", finChargementParams),
-        $.getJSON("datas/texte.json", finChargementJSON)
+        $.getJSON("datas/texte.json", finChargementJSON),
+        $.getJSON("datas/poi.json", finChargementPois)
     ).then(createApplication);
 };
 
@@ -66,6 +68,10 @@ function finChargementParams(data) {
 
 function finChargementJSON(data) {
     textesJSON = data;
+}
+
+function finChargementPois(data) {
+    poisJSON = data;
 }
 
 function addInactivityTime() {

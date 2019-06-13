@@ -13,7 +13,7 @@ class Application extends DivObject {
         // this._menuLang = new MenuLang(this._balise);
 
         var application = this;
-        this._menu.finFermerSignal.add(function(type, lien){                
+        this._menu.finFermerSignal.add(function (type, lien) {
             switch (type) {
                 case "carte":
                     application.ouvrirCarte(lien);
@@ -39,11 +39,11 @@ class Application extends DivObject {
         // this._menuLang.ouvrir();
     }
 
-    ouvrirCarte(lien){
+    ouvrirCarte(lien) {
         var application = this;
-        var carte = new Carte(this._balise, textesJSON.Application.Carte, lien);
+        var carte = new Carte(this._balise, textesJSON.Application.Carte, poisJSON, lien);
         carte.init();
-        carte.finFermerSignal.add(function(element){
+        carte.finFermerSignal.add(function (element) {
             switch (element) {
                 case "menu":
                     application._menu.ouvrirMenu();

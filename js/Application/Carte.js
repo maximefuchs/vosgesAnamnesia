@@ -7,11 +7,12 @@ Global.include('dev/js/utils/utilsOpenseadragon.js');
 Global.includeCSS('dev/css/Application/OSD.css');
 
 class Carte extends DivObject {
-    constructor(div, json, lien) {
+    constructor(div, jsonCarte, jsonPoi, lien) {
         super(div, "Carte");
         this.addClass("page");
 
-        this._json = json;
+        this._jsonCarte = jsonCarte;
+        this._jsonPoi = jsonPoi;
         this._lien = lien;
 
         this._categories = [];
@@ -43,7 +44,7 @@ class Carte extends DivObject {
         //     this._pois.push(poi);
         //     var poiSelect = new DivObject(this._poisDiv._balise, "PoiSelect_" + i);
         //     poiSelect.addClass("PoiSelect");
-        //     poiSelect.css("background-image", 'url("datas/imgs/carte/' + poi._id + '/vignette.png")');
+        //     poiSelect.css("background-image", 'url("datas/imgs/Poi/' + poPoi + '/vignette.png")');
         //     this._poisSelect.push(poiSelect);
         //     TweenLite.to(poiSelect._balise, 0, { x: poi._x, y: poi._y });
         //     if (poi._y < StageHeight / 2) {
@@ -82,7 +83,7 @@ class Carte extends DivObject {
         this._pois = [];
         this._poiDiv = new DivObject(this._balise, "CartePoints");
 
-        var pois = this._json.poi[this._lien];
+        var pois = this._jsonPoi[this._lien];
         for (let i = 0; i < pois.length; i++) {
             console.log("new point : " + i);
 
@@ -94,9 +95,11 @@ class Carte extends DivObject {
         this._layers = [];
         this._layersDiv = new DivObject(this._balise, "CarteLayers");
 
-        for (let i = 0; i < this._json.layer.length; i++) {
+        var layers = this._jsonCarte.layer;
+
+        for (let i = 0; i < layers.length; i++) {
             console.log("new Layer : " + i);
-            var layer = new Img(this._layersDiv._balise, this._json.layer[i].id, this._json.layer[i].src);
+            var layer = new Img(this._layersDiv._balise, layers[i].id, layers[i].src);
             this._layers.push(layer);
         }
     }
@@ -160,35 +163,35 @@ class Carte extends DivObject {
         }
     }
 
+    // // FONCTION DRAG FICHE
+    // rotateListener(event) {
+
+    //     var target = event.target,
+    //         // keep the dragged position in the data-x/data-y attributes
+    //         angle = (parseFloat(target.getAttribute('rotate')) || 0) + event.da;
+
+    //     // translate the element
+    //     TweenLite.to(target, 0, { rotation: angle });
+
+    //     // update the posiion attributes
+    //     target.setAttribute('rotate', angle);
+    // }
+
     // FONCTION DRAG FICHE
-    rotateListener(event) {
+    // dragMoveListener(event) {
 
-        var target = event.target,
-            // keep the dragged position in the data-x/data-y attributes
-            angle = (parseFloat(target.getAttribute('rotate')) || 0) + event.da;
+    //     var target = event.target,
+    //         // keep the dragged position in the data-x/data-y attributes
+    //         x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+    //         y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
 
-        // translate the element
-        TweenLite.to(target, 0, { rotation: angle });
+    //     // translate the element
+    //     TweenLite.to(target, 0, { x: x, y: y });
 
-        // update the posiion attributes
-        target.setAttribute('rotate', angle);
-    }
-
-    // FONCTION DRAG FICHE
-    dragMoveListener(event) {
-
-        var target = event.target,
-            // keep the dragged position in the data-x/data-y attributes
-            x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-            y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
-
-        // translate the element
-        TweenLite.to(target, 0, { x: x, y: y });
-
-        // update the posiion attributes
-        target.setAttribute('data-x', x);
-        target.setAttribute('data-y', y);
-    }
+    //     // update the posiion attributes
+    //     target.setAttribute('data-x', x);
+    //     target.setAttribute('data-y', y);
+    // }
 
     // FONCTION CLICK FICHE
     clickFiche(e) {
@@ -292,7 +295,7 @@ class Carte extends DivObject {
 
         var seadragonView = new DivObject(div._balise, 'seadragon-viewer');
 
-        var overlaysPoints = getPointsOverlays(this._pois, this._json.origineCarte, this._json.finCarte);
+        var overlaysPoints = getPointsOverlays(this._pois, this._jsonCarte.origineCarte, this._jsonCarte.finCarte);
         console.log(overlaysPoints);
 
         var overlaysLayer = getLayerOverlays(this._layers);
@@ -304,7 +307,7 @@ class Carte extends DivObject {
         $("#seadragon-viewer").width("100%").height("100%");
         var viewer = OpenSeadragon({
             id: "seadragon-viewer",
-            prefixUrl: this._json.boutonsCarte,
+            prefixUrl: this._jsonCarte.boutonsCarte,
             maxZoomLevel: 3,
             visibilityRatio: 1,
             // defaultZoomLevel: 1.2, // no white borders
@@ -315,7 +318,7 @@ class Carte extends DivObject {
             tileSources: {
                 Image: {
                     xmlns: "http://schemas.microsoft.com/deepzoom/2009",
-                    Url: Global.getTexteLangue(this._json.img, "fr"),
+                    Url: Global.getTexteLangue(this._jsonCarte.img, "fr"),
                     Format: "jpg",
                     Overlap: "1",
                     TileSize: "256",
