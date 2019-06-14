@@ -8,7 +8,9 @@ var langue;
 
 var textesJSON;
 var paramsJSON;
+
 var poisJSON;
+// var jeuxJSON;
 
 var body;
 var head;
@@ -23,8 +25,8 @@ var application;
 function initApplication() {
     //Chargement du fichier de params
     $.when($.getJSON("datas/params.json", finChargementParams),
-        $.getJSON("datas/texte.json", finChargementJSON),
-        $.getJSON("datas/poi.json", finChargementPois)
+        $.getJSON("datas/texte.json", finChargementTexte),
+        $.getJSON("datas/poi.json", finChargementPoi)
     ).then(createApplication);
 };
 
@@ -66,13 +68,15 @@ function finChargementParams(data) {
     }
 }
 
-function finChargementJSON(data) {
+function finChargementTexte(data) {
     textesJSON = data;
 }
-
-function finChargementPois(data) {
+function finChargementPoi(data) {
     poisJSON = data;
 }
+// function finChargementJeu(data) {
+//     jeuxJSON = data;
+// }
 
 function addInactivityTime() {
     console.log("addInactivityTime : " + document);

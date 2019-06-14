@@ -1,5 +1,6 @@
 Global.include('dev/js/Application/ElementMenu.js');
 Global.include('dev/js/Application/ElementDecoMenu.js');
+Global.include('dev/js/Application/ElementSousMenu.js');
 
 class Menu extends DivObject {
     constructor(parent, json) {
@@ -11,6 +12,7 @@ class Menu extends DivObject {
         this._json = json;
 
         this.signaux = {
+            finClick: new signals.Signal(),
             finFermer: new signals.Signal()
         }
 
@@ -33,14 +35,14 @@ class Menu extends DivObject {
             this._menuElements.push(element);
         }
 
+        this._sousMenuElement = []; // permet d'avoir facilement accès aux sous éléments et de savoir si un menu est ouvert
+
         this._decoMenuElements = [];
         for (let i = 0; i < this._json.deco.length; i++) {
             var eltDeco = new ElementDecoMenu(this._balise, this._json.deco[i], this._couleursAssociees[0]);
-            this._decoMenuElements.push(eltDeco);            
+            this._decoMenuElements.push(eltDeco);
         }
 
-        console.log(this._menuElements);
-        console.log(this._decoMenuElements);
 
         this._balise.find(".elementMenu").on("click touchstart", null, { instance: this }, this.clickBtn);
 
@@ -66,9 +68,10 @@ class Menu extends DivObject {
         } else {
             touch = e;
         }
-        var type = $(this).attr('type');
-        var lien = $(this).attr('lien');
-        e.data.instance.fermerMenu(type, lien);
+        // var type = $(this).attr('type');
+        // var lien = $(this).attr('lien');
+        // e.data.instance.fermerMenu(type, lien);
+        e.data.instance.clickMenu($(this));
     }
 
     // fond d'écran changeant toutes les 8 secondes
@@ -99,6 +102,20 @@ class Menu extends DivObject {
         // this.toggleMenu();
     }
 
+    clickMenu(menuElt) {
+        var type = menuElt.attr('type');
+        switch (type) {
+            case "menu":
+                this.toggleSousMenu(menuElt);
+                break;
+
+            default:
+                var lien = menuElt.attr('lien');
+                this.fermerMenu(type, lien);
+                break;
+        }
+    }
+
     fermerMenu(ouvrirType, lien) {
         TweenLite.to(this._balise, 1, { opacity: 0, onComplete: this.toggleMenu, onCompleteParams: [this] });
         this.finFermerSignal.dispatch(ouvrirType, lien);
@@ -108,9 +125,90 @@ class Menu extends DivObject {
         menu._balise.toggle();
     }
 
+    toggleSousMenu(menuElt) {
+        var id = menuElt.attr('id');
+        if (this._sousMenuElement.length == 0) {
+            this.hideAllElementsButOne(id);
+            this.showSousMenu(menuElt);
+        } else {
+            this.deleteSousMenu();
+            this.showAllElements(id);
+        }
+    }
+
+    hideAllElementsButOne(id) {
+        var menu = this;
+        this._menuElements.forEach(menuE => {
+            if (menuE._id != id)
+                TweenLite.to(menuE._balise, 1, { opacity: 0, onComplete: menu.toggleElement, onCompleteParams: [menuE] });
+        });
+        this._decoMenuElements.forEach(decoE => {
+            TweenLite.to(decoE._balise, 1, { opacity: 0, onComplete: menu.toggleElement, onCompleteParams: [decoE] });
+        });
+    }
+    showAllElements(id) {
+        var menu = this;
+        this._menuElements.forEach(menuE => {
+            if (menuE._id != id) {
+                menu.toggleElement(menuE);
+                TweenLite.to(menuE._balise, 1, { opacity: 1 });
+            }
+        });
+        this._decoMenuElements.forEach(decoE => {
+            menu.toggleElement(decoE);
+            TweenLite.to(decoE._balise, 1, { opacity: decoE._alpha });
+        });
+    }
+    toggleElement(element) {
+        element._balise.toggle();
+    }
+
+
+    showSousMenu(menuElt) {
+        var lien = menuElt.attr('lien');
+        var couleur = menuElt.children().css('background-color');
+        var json = this._json.SousMenu[lien];
+        var size = 150;
+        var oX = parseInt(menuElt.css('left'));
+        var oY = parseInt(menuElt.css('top')) - size;
+        // on commence les éléments de sous menu juste au dussus de l'élément séléctionné
+        var ligne = 0;
+        var colonne = 0;
+        for (let i = 0; i < json.length; i++) {
+            var menu = this;
+            setTimeout(function () {
+                var x = oX + size * colonne;
+                var y = oY - size * ligne;
+                console.log(json[i]);
+                var bloc = new ElementSousMenu(menu._balise, json[i], x, y, size, couleur);
+                bloc.init();
+                menu._sousMenuElement.push(bloc);
+                colonne++;
+                if (colonne == 5) {
+                    colonne = 0;
+                    ligne++;
+                }
+            }, i * 50);
+        }
+    }
+
+    deleteSousMenu() {
+        var menu = this;
+        for (let i = 0; i < this._sousMenuElement.length; i++) {
+            setTimeout(function () {
+                menu._sousMenuElement[i].close();
+                if(i == menu._sousMenuElement.length - 1)
+                    menu._sousMenuElement = []; // on vide la tableau à la fin de la boucle
+            }, i * 50);
+        }
+    }
+
     // GETTERS
 
     get finFermerSignal() {
         return this.signaux.finFermer;
+    }
+    get finClickSignal() {
+        return this.signaux.finClick;
     }
 }

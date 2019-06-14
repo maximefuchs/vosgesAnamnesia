@@ -189,3 +189,47 @@ class Video extends BaliseObject {
     }
 
 }
+
+/* Bloc Menu Element */
+class BlocMenu extends BaliseObject {
+    constructor(parent, id, x, y, taille, couleur) {
+        super(parent, 'div', id);
+
+        this._id = id;
+        this._x = x;
+        this._y = y;
+        this._couleur = couleur;
+        this._taille = taille;
+    }
+
+    init() {
+        this._balise.css({
+            "width": this._taille,
+            "height": this._taille,
+            "left": Math.random() * 2500,
+            "top": Math.random() * 2500,
+            "background": this._couleur,
+            "opacity": 0
+        });
+        TweenLite.to(this._balise, 3, { left: this._x, top: this._y, opacity: 1 });
+    }
+
+    click() {
+        console.log("click id : " + this._id);
+    }
+
+    changeColor(color) {
+        TweenLite.to(this._balise, 1, { background: color });
+    }
+
+    hide() {
+        TweenLite.to(this._balise, 2, { opacity: 0, onComplete: this.toggle });
+    }
+    toggle() {
+        this._balise.toggle();
+    }
+    show() {
+        this._balise.toggle();
+        TweenLite.to(this._balise, 2, { opacity: 1 });
+    }
+}

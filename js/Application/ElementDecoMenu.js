@@ -1,17 +1,15 @@
 Global.includeCSS('dev/css/Application/ElementMenu.css');
 
-class ElementDecoMenu extends DivObject {
+class ElementDecoMenu extends BlocMenu {
     constructor(parent, json, couleur) {
-        super(parent, "decoElement_" + json.id);
-        this._json = json;
-        this.addClass('elementDecoMenu');
 
-        this._id = this._json.id;
-        this._x = this._json.x;
-        this._y = this._json.y;
+        // params: parent, id, x, y, taille, couleur
+        super(parent, "decoElement_" + json.id, json.x, json.y, 100, couleur);
+
+        this._json = json;
         this._alpha = this._json.a;
-        this._couleur = couleur;
-        this._taille = 100;
+
+        this.addClass('elementDecoMenu');
     }
 
     init() {
@@ -23,14 +21,12 @@ class ElementDecoMenu extends DivObject {
             "background": this._couleur,
             "opacity": 0
         });
-        TweenLite.to(this._balise, 3, { left: this._x, top: this._y, opacity: this._alpha, delay: 2 });
-    }
-
-    click() {
-        console.log("click id : " + this._id);
-    }
-
-    changeColor(color) {
-        TweenLite.to(this._balise, 1, { background: color });
+        TweenLite.to(this._balise, 3,
+            {
+                left: this._x,
+                top: this._y,
+                opacity: this._alpha,
+                delay: 2
+            });
     }
 }
