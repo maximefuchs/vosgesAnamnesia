@@ -1,4 +1,5 @@
 Global.include('dev/js/Application/ElementMenu.js');
+Global.include('dev/js/Application/ElementDecoMenu.js');
 
 class Menu extends DivObject {
     constructor(parent, json) {
@@ -14,6 +15,7 @@ class Menu extends DivObject {
         }
 
         this._fondImgs = [];
+        this._couleursAssociees = [];
         for (let i = 0; i < this._json.diaporama.menu.length; i++) {
             console.log("new back image : " + i);
             var img = this._json.diaporama.menu[i];
@@ -21,6 +23,7 @@ class Menu extends DivObject {
             image.addClass('page');
             image.css('opacity', 0);
             this._fondImgs.push(image);
+            this._couleursAssociees.push(img.color);
         }
 
         this._menuElements = [];
@@ -30,6 +33,15 @@ class Menu extends DivObject {
             this._menuElements.push(element);
         }
 
+        this._decoMenuElements = [];
+        for (let i = 0; i < this._json.deco.length; i++) {
+            var eltDeco = new ElementDecoMenu(this._balise, this._json.deco[i], this._couleursAssociees[0]);
+            this._decoMenuElements.push(eltDeco);            
+        }
+
+        console.log(this._menuElements);
+        console.log(this._decoMenuElements);
+
         this._balise.find(".elementMenu").on("click touchstart", null, { instance: this }, this.clickBtn);
 
 
@@ -37,8 +49,11 @@ class Menu extends DivObject {
 
     init() {
         this.displayBackground();
-        this._menuElements.forEach(e => {
-            e.init();
+        this._menuElements.forEach(menuElement => {
+            menuElement.init();
+        });
+        this._decoMenuElements.forEach(decoElement => {
+            decoElement.init();
         });
     }
 
@@ -61,12 +76,19 @@ class Menu extends DivObject {
         var images = this._fondImgs;
         var nbImgs = images.length;
         var i = 0;
+        var menu = this;
         TweenLite.to(images[i]._balise, 1, { opacity: 1 });
         setInterval(function () {
             var current = i % nbImgs;
             var next = (i + 1) % nbImgs;
             TweenLite.to(images[current]._balise, 1, { opacity: 0 });
             TweenLite.to(images[next]._balise, 1, { opacity: 1 });
+
+            var newColor = menu._couleursAssociees[next];
+            menu._decoMenuElements.forEach(e => {
+                e.changeColor(newColor);
+            });
+
             i++;
         }, 6000);
     }

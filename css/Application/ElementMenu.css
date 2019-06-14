@@ -3,6 +3,10 @@
     background-size: cover;
     cursor: pointer;
 }
+.elementDecoMenu{
+    position: absolute;
+    background-size: cover;
+}
 .elementMenu_front{
     color: white;
     text-align: center;
