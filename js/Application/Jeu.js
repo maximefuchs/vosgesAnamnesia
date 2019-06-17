@@ -43,8 +43,10 @@ class Jeu extends DivObject {
         modal.addClass('modal');
         var message = new BaliseObject(modal._balise, 'h2');
         message.addClass('message');
+        var continuer = new BtObject(modal._balise, 'continuer');
+        continuer.addClass('buttonMemory'); continuer.html('Continuer');
         var restart = new BtObject(modal._balise, 'rejouer');
-        restart.addClass('buttonMemory'); restart.html('Rejouer ?');
+        restart.addClass('buttonMemory'); restart.html('Rejouer');
         var retour = new BtObject(modal._balise, 'retour');
         retour.addClass('buttonMemory'); retour.html('Retour');
 
@@ -58,6 +60,7 @@ class Jeu extends DivObject {
                 this.$modal = $(".modal");
                 this.$message = $('.message');
                 this.$overlay = $(".modal-overlay");
+                this.$continuerButton = $("button#continuer");
                 this.$restartButton = $("button#rejouer");
                 this.$returnButton = $("button#retour");
                 this.$pauseButton = $("button#pause");
@@ -81,6 +84,7 @@ class Jeu extends DivObject {
 
             binding: function () {
                 this.$memoryCards.on("click", this.cardClicked);
+                this.$continuerButton.on("click", $.proxy(this.continue, this));
                 this.$restartButton.on("click", $.proxy(this.reset, this));
                 this.$returnButton.on("click", $.proxy(this.return, this));
                 this.$pauseButton.on("click", $.proxy(this.pause, this));
@@ -111,21 +115,27 @@ class Jeu extends DivObject {
             },
 
             win: function () {
+                this.$continuerButton.css('display','none');
                 this.$message.html('Bien joué !');
                 this.paused = true;
                 setTimeout(function () {
                     Memory.showModal();
                     Memory.$game.fadeOut();
-                }, 1000);
+                }, 5000);
             },
 
             pause: function () {
+                this.$continuerButton.css('display','block');
                 this.$message.html('Pause');
                 this.paused = true;
-                setTimeout(function () {
-                    Memory.showModal();
-                    Memory.$game.fadeOut();
-                }, 1000);
+                this.showModal();
+                this.$game.fadeOut();
+            },
+
+            continue: function () {
+                this.paused = false;
+                this.hideModal();
+                this.$game.show("slow");
             },
 
             showModal: function () {
