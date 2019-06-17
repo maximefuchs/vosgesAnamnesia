@@ -1,17 +1,17 @@
 class ElementSousMenu extends BlocMenu {
-    constructor(parent, json, x, y, taille, couleur) {
+    constructor(parent, json, x, y, taille, couleur, element) {
 
-        // params: parent, id, x, y, taille, couleur
+        // params: parent, id, x, y, taille, couleur, nom du menu auquel il appartient
         super(parent, 'sousMenuElement_' + json.id, x, y, taille, couleur);
 
         this._json = json;
+        this._element = element;
+        this._lien = this._json.lien;
         this.addClass('elementSousMenu');
 
         var titre = new BaliseObject(this._balise, 'h2', 'titre_' + this._id)
-        titre.css('vertical-align', 'middle');
+        titre.css('margin', '15px');
         titre.html(this._json.titre);
-
-        this._balise.click(this.click);
 
     }
 

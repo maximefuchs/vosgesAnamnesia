@@ -2,6 +2,8 @@ Global.include('dev/js/Application/ElementMenu.js');
 Global.include('dev/js/Application/ElementDecoMenu.js');
 Global.include('dev/js/Application/ElementSousMenu.js');
 
+Global.include('dev/js/Application/Jeu.js');
+
 class Menu extends DivObject {
     constructor(parent, json) {
         super(parent, "menu");
@@ -35,7 +37,9 @@ class Menu extends DivObject {
             this._menuElements.push(element);
         }
 
-        this._sousMenuElement = []; // permet d'avoir facilement accès aux sous éléments et de savoir si un menu est ouvert
+        this._sousMenuElement = [];
+        // permet d'avoir facilement accès aux sous éléments et de savoir si un menu est ouvert
+        // vide si pas de sous menu ouvert
 
         this._decoMenuElements = [];
         for (let i = 0; i < this._json.deco.length; i++) {
@@ -168,7 +172,7 @@ class Menu extends DivObject {
         var lien = menuElt.attr('lien');
         var couleur = menuElt.children().css('background-color');
         var json = this._json.SousMenu[lien];
-        var size = 150;
+        var size = 250;
         var oX = parseInt(menuElt.css('left'));
         var oY = parseInt(menuElt.css('top')) - size;
         // on commence les éléments de sous menu juste au dussus de l'élément séléctionné
@@ -179,8 +183,20 @@ class Menu extends DivObject {
             setTimeout(function () {
                 var x = oX + size * colonne;
                 var y = oY - size * ligne;
-                console.log(json[i]);
-                var bloc = new ElementSousMenu(menu._balise, json[i], x, y, size, couleur);
+                var bloc = new ElementSousMenu(menu._balise, json[i], x, y, size, couleur, lien);
+                bloc.clickSignal.add(function(bloc){
+                    var element = bloc._element;
+                    switch (element) {
+                        case "jeu":
+                            var lien = bloc._lien;
+                            var jeu = new Jeu(menu._parent, lien, couleur);
+                            jeu.init();
+                            break;
+                    
+                        default:
+                            break;
+                    }
+                });
                 bloc.init();
                 menu._sousMenuElement.push(bloc);
                 colonne++;
@@ -197,7 +213,7 @@ class Menu extends DivObject {
         for (let i = 0; i < this._sousMenuElement.length; i++) {
             setTimeout(function () {
                 menu._sousMenuElement[i].close();
-                if(i == menu._sousMenuElement.length - 1)
+                if (i == menu._sousMenuElement.length - 1)
                     menu._sousMenuElement = []; // on vide la tableau à la fin de la boucle
             }, i * 50);
         }

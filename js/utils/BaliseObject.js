@@ -195,11 +195,17 @@ class BlocMenu extends BaliseObject {
     constructor(parent, id, x, y, taille, couleur) {
         super(parent, 'div', id);
 
+        this.signaux = {
+            click: new signals.Signal()
+        }
+
         this._id = id;
         this._x = x;
         this._y = y;
         this._couleur = couleur;
         this._taille = taille;
+
+        this._balise.click({param: this},this.click);
     }
 
     init() {
@@ -214,8 +220,10 @@ class BlocMenu extends BaliseObject {
         TweenLite.to(this._balise, 3, { left: this._x, top: this._y, opacity: 1 });
     }
 
-    click() {
-        console.log("click id : " + this._id);
+    click(event) {
+        var element = event.data.param;
+        console.log("click id : " + element._id);
+        element.clickSignal.dispatch(element);
     }
 
     changeColor(color) {
@@ -231,5 +239,11 @@ class BlocMenu extends BaliseObject {
     show() {
         this._balise.toggle();
         TweenLite.to(this._balise, 2, { opacity: 1 });
+    }
+
+     // GETTERS
+
+     get clickSignal() {
+        return this.signaux.click;
     }
 }
