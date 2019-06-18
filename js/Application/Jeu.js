@@ -22,6 +22,14 @@ class Jeu extends DivObject {
                 this.memory();
                 break;
 
+            case "faune":
+                this.faune();
+                break;
+
+            case "flore":
+                this.faune();
+                break;
+
             default:
                 console.log('nothing : ' + this._lien);
                 break;
@@ -115,7 +123,7 @@ class Jeu extends DivObject {
             },
 
             win: function () {
-                this.$continuerButton.css('display','none');
+                this.$continuerButton.css('display', 'none');
                 this.$message.html('Bien joué !');
                 this.paused = true;
                 setTimeout(function () {
@@ -125,7 +133,7 @@ class Jeu extends DivObject {
             },
 
             pause: function () {
-                this.$continuerButton.css('display','block');
+                this.$continuerButton.css('display', 'block');
                 this.$message.html('Pause');
                 this.paused = true;
                 this.showModal();
@@ -192,9 +200,119 @@ class Jeu extends DivObject {
             }
         };
 
-        var cards = memoryJson.cards;
-
-        Memory.init(cards);
+        Memory.init(memoryJson);
 
     }
+
+    faune() {
+        Global.includeCSS('dev/css/Application/Jeux/Faune.css');
+
+        var fauneJson = this._json.faune;
+
+        var content = new DivObject(this._balise, 'content');
+        var cardPile = new DivObject(content._balise, 'cardPile');
+        var cardSlots = new DivObject(content._balise, 'cardSlots');
+
+        var successMessage = new DivObject(content._balise, 'successMessage');
+        successMessage.html('<h2>Congratulations</h2>');
+        var btnRestart = new BtObject(successMessage._balise, 'btnRestart');
+        btnRestart.html('Rejouer');
+        btnRestart._balise.click(init);
+        var btnReturn = new BtObject(successMessage._balise, 'btnReturn');
+        btnReturn.html('Retour au menu');
+        btnReturn._balise.click(retour);
+
+        var correctCards = 0;
+        $(init);
+
+        function retour(){
+            $("#jeu").remove();
+            $('#menu').toggle();
+        }
+
+        function init() {
+
+            // Hide the success message
+            $('#successMessage').toggle();
+
+            // Reset the game
+            correctCards = 0;
+            $('#cardPile').html('');
+            $('#cardSlots').html('');
+
+            var numberOfCards = fauneJson.length;
+            var taille = 1800 / numberOfCards;
+
+            // Create the card slots
+            // var words = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+            for (var i = 0; i < numberOfCards; i++) {
+                $('<div><h1>' + fauneJson[i].name + '</h1></div>')
+                    .css({ height: taille, width: taille })
+                    .data('number', fauneJson[i].id)
+                    .data('nbCards', numberOfCards)
+                    .appendTo('#cardSlots')
+                    .droppable({
+                        accept: '#cardPile div',
+                        hoverClass: 'hovered',
+                        drop: handleCardDrop
+                    });
+            }
+
+
+            // Create the pile of shuffled cards
+            // var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            shuffle(fauneJson);
+
+            for (var i = 0; i < numberOfCards; i++) {
+                $('<div></div>')
+                    .css({
+                        height: taille,
+                        width: taille,
+                        background: 'url(' + fauneJson[i].img + ')',
+                        'background-size': 'cover'
+                    })
+                    .data('number', fauneJson[i].id)
+                    .attr('id', 'card' + fauneJson[i].id)
+                    .appendTo('#cardPile')
+                    .draggable({
+                        stack: '#cardPile div',
+                        cursor: 'move',
+                        revert: true
+                    });
+            }
+
+
+        }
+
+        function handleCardDrop(event, ui) {
+            var slotNumber = $(this).data('number');
+            var numberOfCards = $(this).data('nbCards');
+            var cardNumber = ui.draggable.data('number');
+
+            // If the card was dropped to the correct slot,
+            // change the card colour, position it directly
+            // on top of the slot, and prevent it being dragged
+            // again
+
+            if (slotNumber == cardNumber) {
+                // ui.draggable.addClass('correct');
+                ui.draggable.draggable('disable');
+                $(this).droppable('disable');
+                ui.draggable.position({ of: $(this), my: 'left top', at: 'left top' });
+                ui.draggable.draggable('option', 'revert', false);
+                correctCards++;
+            }
+
+            // If all the cards have been placed correctly then display a message
+            // and reset the cards for another go
+
+            if (correctCards == numberOfCards) {
+                $('#successMessage').toggle();
+                TweenLite.to($('#successMessage'), 1, {top: '50%', opacity: 1});
+            }
+        }
+    }
+
+
+
 }

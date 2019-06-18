@@ -1,0 +1,107 @@
+/* Give headings their own font */
+
+h1, h2, h3, h4 {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* Main content area */
+
+#content {
+    margin: 80px 70px;
+    text-align: center;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Slots for final card positions */
+
+#cardSlots {}
+
+/* The initial pile of unsorted cards */
+
+#cardPile {}
+
+#cardSlots, #cardPile {
+    padding: .85em;
+    border: 2px solid #333;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+    box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+    height: max-content;
+    max-height: 50%;
+    width: max-content;
+    max-width: 100%;
+    background: transparent;
+}
+
+/* Individual cards and slots */
+
+#cardSlots div, #cardPile div {
+    text-align: center;
+    border: 2px solid #333;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin: 0 5px;
+    background: #fff;
+    display: inline-block;
+}
+
+/*#cardSlots div:first-child, #cardPile div:first-child {
+    margin-left: 0;
+  }*/
+
+#cardSlots div.hovered {
+    background: #aaa;
+}
+
+#cardSlots div {
+    border-style: dashed;
+}
+
+#cardPile div {
+    background: #666;
+    color: #fff;
+    font-size: 1em;
+    text-shadow: 0 0 3px #000;
+    text-align: center;
+}
+
+#cardPile div.ui-draggable-dragging {
+    -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+    box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+}
+
+/* "You did it!" message */
+
+#successMessage {
+    position: absolute;
+    left: 45%;
+    top: 48%;
+    opacity: 0;
+    width: 400px;
+    z-index: 100;
+    background: #dfd;
+    border: 2px solid #333;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+    -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+    box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+    padding: 20px;
+    text-align: center;
+}
+
+#successMessage button {
+    background: #fff;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0 10px;
+}
