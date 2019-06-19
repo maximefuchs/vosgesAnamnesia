@@ -66,29 +66,6 @@
     filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
     cursor: pointer;
 }
-
-.ficheBtLang {
-    text-align: center;
-    border-radius: 50%;
-    color: darkgreen;
-    background-color: white;
-    font-family: 'TTMoons';
-}
-
-.ficheBtLangSelect {
-    color: white;
-    background-color: darkgreen;
-}
-
-.ficheBtLangTexte {
-    position: absolute;
-    /* postulat de départ */
-    top: 50%;
-    left: 50%;
-    /* à 50%/50% du parent référent */
-    transform: translate(-50%, -50%)
-}
-
 .ficheBtFermer {
     /* background-image: url("../../../datas/imgs/interface/FicheBtFermer.png");
     background-repeat: no-repeat; */

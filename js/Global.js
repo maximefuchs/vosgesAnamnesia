@@ -15,6 +15,10 @@ class Global {
         return this.s;
     }
 
+    static getLangue(){
+        return langue;
+    }
+
     static include(file, mod = "text/javascript") {
         console.log("Je veux ajouter : " + file);
         // console.log($("head")[0].children);

@@ -4,6 +4,8 @@ Global.include('dev/js/Application/ElementSousMenu.js');
 
 Global.include('dev/js/Application/Jeu.js');
 
+Global.includeCSS('dev/css/Application/Menu.css');
+
 class Menu extends DivObject {
     constructor(parent, json) {
         super(parent, "menu");
@@ -30,10 +32,40 @@ class Menu extends DivObject {
             this._couleursAssociees.push(img.color);
         }
 
+        var scale = 140;
+        this._scale = scale;
+
+        var maxHeight = 0;
+
+        this._divEltsMenu = new DivObject(this._parent, "elementsMenu");
+
+        var bandeauLangues = new DivObject(this._divEltsMenu._balise, "bandeauLangues");
+        bandeauLangues.css('height', scale + 'px');
+        this._btnLangues = [];
+        for (var i = 0; i < paramsJSON.langues.length; i++) {
+            var langue = paramsJSON.langues[i].langue;
+            var bt = new DivObject(bandeauLangues._balise,
+                this._id + "_BtLang_" + langue);
+            bt.addClass("menuBtn");
+            bt.addClass("menuBtnLangue");
+            if (langue == Global.getLangue())
+                bt.addClass('menuBtnLangueSelect')
+            var right = 40 + 120 * i;
+            bt.css('right', right + 'px');
+            bt.append('<div class="menuBtnLangueTexte">'
+                + String(langue).toUpperCase()
+                + '</div>');
+            this._btnLangues.push(bt);
+
+            bt._balise.on("click touchstart", null, { instance: this }, this.clickBtnLang);
+        }
+
         this._menuElements = [];
         for (let i = 0; i < this._json.element.length; i++) {
             console.log("new menu element : " + i);
-            var element = new ElementMenu(this._balise, this._json.element[i]);
+            var element = new ElementMenu(this._divEltsMenu._balise, this._json.element[i], scale);
+            var bas = element._y + element._taille;
+            if (bas > maxHeight) { maxHeight = bas; }
             this._menuElements.push(element);
         }
 
@@ -42,14 +74,25 @@ class Menu extends DivObject {
         // vide si pas de sous menu ouvert
 
         this._decoMenuElements = [];
-        for (let i = 0; i < this._json.deco.length; i++) {
-            var eltDeco = new ElementDecoMenu(this._balise, this._json.deco[i], this._couleursAssociees[0]);
+        this._divEltsDeco = new DivObject(this._balise, "elementsDeco");
+        for (let i = 0; i < this._json.deco.menu.length; i++) {
+            var eltDeco = new ElementDecoMenu(this._divEltsDeco._balise,
+                this._json.deco.menu[i],
+                this._couleursAssociees[0],
+                scale);
+            var bas = eltDeco._y + 1;
+            if (bas > maxHeight) { maxHeight = bas; }
             this._decoMenuElements.push(eltDeco);
         }
 
+        var tailleDiv = maxHeight * scale;
+        this._divEltsMenu.css('height', tailleDiv + 'px');
+        this._divEltsDeco.css('height', tailleDiv + 'px');
 
-        this._balise.find(".elementMenu").on("click touchstart", null, { instance: this }, this.clickBtn);
 
+        this._divEltsMenu._balise
+            .find(".elementMenu")
+            .on("click touchstart", null, { instance: this }, this.clickBtn);
 
     }
 
@@ -64,6 +107,7 @@ class Menu extends DivObject {
     }
 
     clickBtn(e) {
+        console.log('click');
         e.stopPropagation();
         e.preventDefault();
         var touch;
@@ -72,13 +116,31 @@ class Menu extends DivObject {
         } else {
             touch = e;
         }
-        // var type = $(this).attr('type');
-        // var lien = $(this).attr('lien');
+        var menu = e.data.instance;
         // e.data.instance.fermerMenu(type, lien);
-        e.data.instance.clickMenu($(this));
+        // e.data.instance.clickMenu($(this));
+        menu.tidyElements(menu, $(this).attr('id'));
+        menu.moveDecoElements(menu);
     }
 
-    // fond d'écran changeant toutes les 8 secondes
+    clickBtnLang(e) {
+        console.log('click langue');
+        e.stopPropagation(); e.preventDefault();
+        var touch;
+        if (e.originalEvent.touches || e.originalEvent.changedTouches) {
+            touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+        } else {
+            touch = e;
+        }
+        var instance = e.data.instance;
+        var s = String($(this).attr('id'));
+
+        instance._langue = s.replace(instance._id + "_BtLang_", '');
+        console.log(instance._langue);
+        // instance.maj_texte();
+    }
+
+    // fond d'écran changeant toutes les 6 secondes
     displayBackground() {
         var images = this._fondImgs;
         var nbImgs = images.length;
@@ -108,6 +170,7 @@ class Menu extends DivObject {
 
     clickMenu(menuElt) {
         var type = menuElt.attr('type');
+        console.log('type');
         switch (type) {
             case "menu":
                 this.toggleSousMenu(menuElt);
@@ -139,34 +202,51 @@ class Menu extends DivObject {
             this.showAllElements(id);
         }
     }
-
-    hideAllElementsButOne(id) {
-        var menu = this;
-        this._menuElements.forEach(menuE => {
-            if (menuE._id != id)
-                TweenLite.to(menuE._balise, 1, { opacity: 0, onComplete: menu.toggleElement, onCompleteParams: [menuE] });
-        });
-        this._decoMenuElements.forEach(decoE => {
-            TweenLite.to(decoE._balise, 1, { opacity: 0, onComplete: menu.toggleElement, onCompleteParams: [decoE] });
-        });
-    }
-    showAllElements(id) {
-        var menu = this;
-        this._menuElements.forEach(menuE => {
-            if (menuE._id != id) {
-                menu.toggleElement(menuE);
-                TweenLite.to(menuE._balise, 1, { opacity: 1 });
-            }
-        });
-        this._decoMenuElements.forEach(decoE => {
-            menu.toggleElement(decoE);
-            TweenLite.to(decoE._balise, 1, { opacity: decoE._alpha });
-        });
-    }
     toggleElement(element) {
         element._balise.toggle();
     }
 
+    tidyElements(menu, id) {
+        var left = 0;
+        var tailleSelect = 3;
+        menu._menuElements.forEach(element => {
+            if (element._id == id) {
+                element.tweenAnimate({
+                    height: tailleSelect * menu._scale,
+                    width: tailleSelect * menu._scale,
+                    top: '',
+                    bottom: 0,
+                    left: left * menu._scale,
+                    'font-size': '1.5vw'
+                });
+                left += tailleSelect;
+            }
+            else {
+                element.tweenAnimate({
+                    height: menu._scale,
+                    width: menu._scale,
+                    top: '',
+                    bottom: 0,
+                    left: left * menu._scale,
+                    'font-size': '0.6vw'
+                });
+                left++;
+            }
+        });
+    }
+    moveDecoElements(menu) {
+        menu._divEltsDeco.tweenAnimate({ bottom: menu._scale + 'px' });
+        for (let i = 0; i < menu._decoMenuElements.length; i++) {
+            var element = menu._decoMenuElements[i];
+            var jsonElt = menu._json.deco.sousmenu[i];
+            var newParams = {
+                left: jsonElt.x * menu._scale,
+                top: jsonElt.y * menu._scale,
+                opacity: jsonElt.a
+            };
+            element.tweenAnimate(newParams);
+        }
+    }
 
     showSousMenu(menuElt) {
         var lien = menuElt.attr('lien');
@@ -183,8 +263,8 @@ class Menu extends DivObject {
             setTimeout(function () {
                 var x = oX + size * colonne;
                 var y = oY - size * ligne;
-                var bloc = new ElementSousMenu(menu._balise, json[i], x, y, size, couleur, lien);
-                bloc.clickSignal.add(function(bloc){
+                var bloc = new ElementSousMenu(menu._divEltsMenu._balise, json[i], x, y, size, couleur, lien);
+                bloc.clickSignal.add(function (bloc) {
                     var element = bloc._element;
                     switch (element) {
                         case "jeu":
@@ -192,7 +272,7 @@ class Menu extends DivObject {
                             var jeu = new Jeu(menu._parent, lien, couleur);
                             jeu.init();
                             break;
-                    
+
                         default:
                             break;
                     }

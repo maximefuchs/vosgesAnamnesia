@@ -1,11 +1,12 @@
 Global.includeCSS('dev/css/Application/ElementMenu.css');
 
 class ElementMenu extends BlocMenu {
-    constructor(parent, json) {
+    constructor(parent, json, scale) {
 
         // params: parent, id, x, y, taille, couleur
         super(parent, 'menuElement_' + json.id, json.x, json.y, json.taille, json.couleur);
 
+        this._scale = scale;
         this._json = json;
         this.addClass('elementMenu');
 
@@ -29,8 +30,8 @@ class ElementMenu extends BlocMenu {
         this._balise.css({
             "background": "url(" + this._src_fond + ") center center",
             "background-size": "cover",
-            "width": this._taille,
-            "height": this._taille,
+            "width": this._taille * this._scale,
+            "height": this._taille * this._scale,
             "left": Math.random() * 2500,
             "top": Math.random() * 2500,
             "opacity": 0
@@ -42,6 +43,12 @@ class ElementMenu extends BlocMenu {
             "width": "100%",
             "height": "100%"
         });
-        TweenLite.to(this._balise, 3, { left: this._x, top: this._y, opacity: 1, delay: 2 });
+        TweenLite.to(this._balise, 3,
+            {
+                left: this._x * this._scale,
+                top: this._y * this._scale,
+                opacity: 1,
+                delay: 2
+            });
     }
 }

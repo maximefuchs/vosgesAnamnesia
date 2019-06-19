@@ -92,6 +92,10 @@ class BaliseObject {
     get height() {
         return this._balise.height();
     }
+
+    tweenAnimate(params) {
+        TweenLite.to(this._balise, 1, params);
+    }
 }
 
 /* DivObject */

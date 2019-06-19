@@ -1,0 +1,48 @@
+#elementsMenu, #elementsDeco{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#bandeauLangues{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: #0008;
+}
+
+
+.menuBtn {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 10px;
+    cursor: pointer;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.menuBtnLangue {
+    text-align: center;
+    border-radius: 50%;
+    color: white;
+    background-color: transparent;
+    font-family: 'TTMoons';
+}
+
+.menuBtnLangue.menuBtnLangueSelect, .menuBtnLangue:hover {
+    color: black;
+    background-color: white;
+}
+
+.menuBtnLangueTexte {
+    position: absolute;
+    font-size: 30px;
+    /* postulat de départ */
+    top: 50%;
+    left: 50%;
+    /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%)
+}

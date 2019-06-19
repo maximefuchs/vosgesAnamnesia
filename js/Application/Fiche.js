@@ -82,43 +82,10 @@ class Fiche extends DivObject {
         this._btFermer.y = - this._btFermer.height / 2;
         // fermeture de l'élément gérer dans utilsOpenseadragon.js -> removeOverlay()
         
-        
-        this._bts = [];
-        
-        for (var i = 0; i < paramsJSON.langues.length; i++) {
-            var bt = new DivObject(this._balise, this._id + "_BtLang_" + paramsJSON.langues[i].langue);
-            bt.addClass("ficheBt");
-            bt.addClass("ficheBtLang");
-            bt.x = 500 - bt.width / 2;
-            bt.y = 250 + 70 * i;
-            bt.append('<div class="ficheBtLangTexte">' + String(paramsJSON.langues[i].langue).toUpperCase() + '</div>');
-            this._bts.push(bt);
-            
-            bt._balise.on("click touchstart", null, { instance: this }, this.clickBtnLang);
-        }
-        
         this._overlay = ficheToOverlay(this);
         this._balise.toggle();
 
     }
-
-    // FONCTION CLICK BT
-    clickBtnLang(e) {
-        console.log('click langue');
-        e.stopPropagation(); e.preventDefault();
-        var touch;
-        if (e.originalEvent.touches || e.originalEvent.changedTouches) {
-            touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-        } else {
-            touch = e;
-        }
-        var instance = e.data.instance;
-        var s = String($(this).attr('id'));
-
-        instance._langue = s.replace(instance._id + "_BtLang_", '');
-        console.log(instance._langue);
-        instance.maj_texte();
-    };
 
 
     maj_texte() {
