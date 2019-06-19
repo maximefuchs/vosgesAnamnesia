@@ -1,6 +1,7 @@
 Global.include('dev/js/Application/ElementMenu.js');
 Global.include('dev/js/Application/ElementDecoMenu.js');
-Global.include('dev/js/Application/ElementSousMenu.js');
+
+Global.include('dev/js/Application/SousMenu.js');
 
 Global.include('dev/js/Application/Jeu.js');
 
@@ -121,6 +122,7 @@ class Menu extends DivObject {
         // e.data.instance.clickMenu($(this));
         menu.tidyElements(menu, $(this).attr('id'));
         menu.moveDecoElements(menu);
+        menu.showSousMenu($(this));
     }
 
     clickBtnLang(e) {
@@ -252,40 +254,8 @@ class Menu extends DivObject {
         var lien = menuElt.attr('lien');
         var couleur = menuElt.children().css('background-color');
         var json = this._json.SousMenu[lien];
-        var size = 250;
-        var oX = parseInt(menuElt.css('left'));
-        var oY = parseInt(menuElt.css('top')) - size;
-        // on commence les éléments de sous menu juste au dussus de l'élément séléctionné
-        var ligne = 0;
-        var colonne = 0;
-        for (let i = 0; i < json.length; i++) {
-            var menu = this;
-            setTimeout(function () {
-                var x = oX + size * colonne;
-                var y = oY - size * ligne;
-                var bloc = new ElementSousMenu(menu._divEltsMenu._balise, json[i], x, y, size, couleur, lien);
-                bloc.clickSignal.add(function (bloc) {
-                    var element = bloc._element;
-                    switch (element) {
-                        case "jeu":
-                            var lien = bloc._lien;
-                            var jeu = new Jeu(menu._parent, lien, couleur);
-                            jeu.init();
-                            break;
-
-                        default:
-                            break;
-                    }
-                });
-                bloc.init();
-                menu._sousMenuElement.push(bloc);
-                colonne++;
-                if (colonne == 5) {
-                    colonne = 0;
-                    ligne++;
-                }
-            }, i * 50);
-        }
+        $('.sousmenu').remove();
+        new SousMenu(this._balise, json, couleur, this._scale);
     }
 
     deleteSousMenu() {

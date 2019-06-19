@@ -1,0 +1,37 @@
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+
+#sousmenu {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.text_sousmenu {
+  background: white;
+}
+
+.text_sousmenu h1 {
+  font-size: 4vw;
+}
+
+.text_sousmenu p {
+  font-size: 2vw;
+  overflow: auto;
+}
+
+.enSavoirPlus{
+  font-size: 1.5vw;
+  font-weight: bold;
+  cursor: pointer;
+}
