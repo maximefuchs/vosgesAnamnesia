@@ -108,7 +108,7 @@ class Menu extends DivObject {
     }
 
     clickBtn(e) {
-        console.log('click');
+        console.log('click Element in menu');
         e.stopPropagation();
         e.preventDefault();
         var touch;
@@ -219,7 +219,7 @@ class Menu extends DivObject {
                     top: '',
                     bottom: 0,
                     left: left * menu._scale,
-                    'font-size': '1.5vw'
+                    'font-size': '25px'
                 });
                 left += tailleSelect;
             }
@@ -230,7 +230,7 @@ class Menu extends DivObject {
                     top: '',
                     bottom: 0,
                     left: left * menu._scale,
-                    'font-size': '0.6vw'
+                    'font-size': '10px'
                 });
                 left++;
             }
@@ -238,14 +238,20 @@ class Menu extends DivObject {
     }
     moveDecoElements(menu) {
         menu._divEltsDeco.tweenAnimate({ bottom: menu._scale + 'px' });
+        var height = menu._divEltsDeco._balise.height();
         for (let i = 0; i < menu._decoMenuElements.length; i++) {
             var element = menu._decoMenuElements[i];
             var jsonElt = menu._json.deco.sousmenu[i];
+            var bottom = jsonElt.y * menu._scale;
             var newParams = {
                 left: jsonElt.x * menu._scale,
-                top: jsonElt.y * menu._scale,
+                bottom: bottom,
                 opacity: jsonElt.a
             };
+            if (bottom + menu._scale > height) {
+                height = top + menu._scale;
+                menu._divEltsDeco.tweenAnimate({ height: height });
+            }
             element.tweenAnimate(newParams);
         }
     }
@@ -253,9 +259,14 @@ class Menu extends DivObject {
     showSousMenu(menuElt) {
         var lien = menuElt.attr('lien');
         var couleur = menuElt.children().css('background-color');
+        couleur = couleur.split(/[()]/);
+        couleur = couleur[1].split(',');
+        couleur = 'rgb(' + couleur[0] + ',' + couleur[1] + ',' + couleur[2] + ')';
         var json = this._json.SousMenu[lien];
         $('.sousmenu').remove();
-        new SousMenu(this._balise, json, couleur, this._scale);
+        var titre = menuElt.find('.elementMenu_titre').html();
+        var sm = new SousMenu(this._balise, json, titre, couleur, this._scale);
+        sm.init();
     }
 
     deleteSousMenu() {

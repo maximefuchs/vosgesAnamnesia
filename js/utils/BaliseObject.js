@@ -70,19 +70,7 @@ class BaliseObject {
     }
 
     css(element, value) {
-        console.log(element + " - " + value);
         this._balise.css(element, value);
-        console.log(this._balise.css(element))
-    }
-
-    set x(num) {
-        this._x = num;
-        TweenLite.to(this._balise, 0, { x: this._x });
-    }
-
-    set y(num) {
-        this._y = num;
-        TweenLite.to(this._balise, 0, { y: this._y });
     }
 
     get width() {
@@ -93,8 +81,13 @@ class BaliseObject {
         return this._balise.height();
     }
 
-    tweenAnimate(params) {
-        TweenLite.to(this._balise, 1, params);
+    tweenAnimate(params, delay, time) {
+        if (time === undefined)
+            time = 1;
+        if (time === undefined)
+            delay = 0;
+        params.delay = delay;
+        TweenLite.to(this._balise, time, params);
     }
 }
 
@@ -209,7 +202,7 @@ class BlocMenu extends BaliseObject {
         this._couleur = couleur;
         this._taille = taille;
 
-        this._balise.click({param: this},this.click);
+        this._balise.click({ param: this }, this.click);
     }
 
     init() {
@@ -217,7 +210,7 @@ class BlocMenu extends BaliseObject {
             "width": this._taille,
             "height": this._taille,
             "left": Math.random() * 2500,
-            "top": Math.random() * 2500,
+            "bottom": Math.random() * 2500,
             "background": this._couleur,
             "opacity": 0
         });
@@ -245,9 +238,9 @@ class BlocMenu extends BaliseObject {
         TweenLite.to(this._balise, 2, { opacity: 1 });
     }
 
-     // GETTERS
+    // GETTERS
 
-     get clickSignal() {
+    get clickSignal() {
         return this.signaux.click;
     }
 }

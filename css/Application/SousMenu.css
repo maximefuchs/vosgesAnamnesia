@@ -1,14 +1,15 @@
-/* width */
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  background: transparent; 
+  background: #bbb;
 }
 
+::-webkit-scrollbar-thumb {
+  height: 10px;
+}
 
 #sousmenu {
   position: absolute;
@@ -18,20 +19,75 @@
 }
 
 .text_sousmenu {
+  position: absolute;
   background: white;
 }
 
-.text_sousmenu h1 {
-  font-size: 4vw;
-}
 
 .text_sousmenu p {
-  font-size: 2vw;
+  font-size: 33px;
   overflow: auto;
 }
 
-.enSavoirPlus{
-  font-size: 1.5vw;
+.enSavoirPlus {
+  font-size: 28px;
   font-weight: bold;
+}
+
+.btnFermerSousMenu {
+  position: absolute;
+  left: 0;
+  z-index: -1;
   cursor: pointer;
+}
+
+.btnFermerSousMenu span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  font-size: 120px;
+  font-weight: bold;
+  color: white;
+}
+
+.elementSousMenu {
+  position: absolute;
+  color: white;
+  cursor: pointer;
+}
+
+.elementSousMenu h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ssSousMenu {
+  position: absolute;
+  color: white;
+  opacity: 0.9;
+  font-size: 17px;
+}
+
+.ssSousMenu h1 {
+  margin-bottom: 50px;
+}
+
+.ssSousMenu span {
+  cursor: pointer;
+}
+.ssSousMenu span.selected{
+  font-weight: bold;
+}
+.ssSousMenu span.selected:before {
+  content: '⮞ ';
+}
+
+.ssSousMenu hr {
+  height: 0px;
+  width: 100%;
+  border: 1px solid white;
+  margin: 8px 0;
 }

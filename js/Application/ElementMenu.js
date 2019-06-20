@@ -18,12 +18,16 @@ class ElementMenu extends BlocMenu {
 
         this._front = new DivObject(this._balise, this._id + "_front");
         this._front.addClass('elementMenu_front');
-        this._front.html("<h1 class='elementMenu_titre'>" + this._titre + "</h1>");
+        var titre = new BaliseObject(this._front._balise, 'h1');
+        titre.addClass('elementMenu_titre'); titre.html(this._titre);
 
         if (this._picto != "#") {
             var pictogramme = new Img(this._front._balise, this._id + "_picto", this._picto);
-            pictogramme.addClass('elementMenu_picto')
+            pictogramme.addClass('elementMenu_picto');
         }
+
+        var frontBackColor = this._src_fond != '#' ? this._couleur + 'b0' : this._couleur;
+        this._front.css('background', frontBackColor);
     }
 
     init() {
@@ -33,22 +37,19 @@ class ElementMenu extends BlocMenu {
             "width": this._taille * this._scale,
             "height": this._taille * this._scale,
             "left": Math.random() * 2500,
-            "top": Math.random() * 2500,
+            "bottom": Math.random() * 2500,
             "opacity": 0
         })
             .attr('lien', this._lien)
             .attr('type', this._type);
         this._front._balise.css({
-            "background": this._couleur,
             "width": "100%",
             "height": "100%"
         });
-        TweenLite.to(this._balise, 3,
-            {
-                left: this._x * this._scale,
-                top: this._y * this._scale,
-                opacity: 1,
-                delay: 2
-            });
+        this.tweenAnimate({
+            left: this._x * this._scale,
+            bottom: this._y * this._scale,
+            opacity: 1
+        }, 1, 2);
     }
 }
