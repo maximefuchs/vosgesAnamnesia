@@ -33,34 +33,388 @@
                     "id": "plan",
                     "src": "datas/imgs/carte/layer/plan-min.png",
                     "color": "#FF0000"
+                },
+                {
+                    "id": "reseau",
+                    "src": "datas/imgs/carte/layer/reseau-min.png",
+                    "color": "#FF0000"
+                },
+                {
+                    "id": "eau",
+                    "src": "datas/imgs/carte/layer/eau-min.png",
+                    "color": "#FF0000"
                 }
             ]
         },
         "Menu": {
-            "diaporama": {
+            "diaporama": [
+                {
+                    "id": "diapo1",
+                    "src": "datas/imgs/menu/diaporama/diapo_1.jpg",
+                    "color": "#FF0000"
+                },
+                {
+                    "id": "diapo2",
+                    "src": "datas/imgs/menu/diaporama/diapo_2.jpg",
+                    "color": "#FFFF00"
+                }
+            ],
+            "deco": {
                 "menu": [
                     {
-                        "id": "diapo1",
-                        "src": "datas/imgs/menu/diaporama/diapo_1.jpg",
-                        "color": "#FF0000"
+                        "id": 0,
+                        "x": 1,
+                        "y": 0,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 1,
+                        "x": 1,
+                        "y": 5,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 2,
+                        "x": 2,
+                        "y": 1,
+                        "a": 0.9
+                    },
+                    {
+                        "id": 3,
+                        "x": 2,
+                        "y": 5,
+                        "a": 0.9
+                    },
+                    {
+                        "id": 4,
+                        "x": 2,
+                        "y": 6,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 5,
+                        "x": 4,
+                        "y": 6,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 6,
+                        "x": 6,
+                        "y": 7,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 7,
+                        "x": 7,
+                        "y": 3,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 8,
+                        "x": 8,
+                        "y": 6,
+                        "a": 0.9
+                    },
+                    {
+                        "id": 9,
+                        "x": 8,
+                        "y": 7,
+                        "a": 0.1
+                    },
+                    {
+                        "id": 10,
+                        "x": 9,
+                        "y": 7,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 11,
+                        "x": 13,
+                        "y": 0,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 12,
+                        "x": 13,
+                        "y": 5,
+                        "a": 0.9
+                    },
+                    {
+                        "id": 13,
+                        "x": 13,
+                        "y": 6,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 14,
+                        "x": 14,
+                        "y": 5,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 15,
+                        "x": 15,
+                        "y": 3,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 16,
+                        "x": 16,
+                        "y": 3,
+                        "a": 0.9
+                    },
+                    {
+                        "id": 17,
+                        "x": 16,
+                        "y": 5,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 18,
+                        "x": 17,
+                        "y": 4,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 19,
+                        "x": 23,
+                        "y": 3,
+                        "a": 0.9
+                    },
+                    {
+                        "id": 20,
+                        "x": 23,
+                        "y": 4,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 21,
+                        "x": 25,
+                        "y": 2,
+                        "a": 0.3
                     }
                 ],
-                "categorie": {
-                    "parc": [
-                        {
-                            "id": "",
-                            "src": "",
-                            "color": ""
-                        }
-                    ]
-                }
+                "sousmenu": [
+                    {
+                        "id": 0,
+                        "x": 0,
+                        "y": 1,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 1,
+                        "x": 1,
+                        "y": 1,
+                        "a": 0.9
+                    },
+                    {
+                        "id": 2,
+                        "x": 1,
+                        "y": 9.5,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 3,
+                        "x": 2,
+                        "y": 2,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 4,
+                        "x": 3,
+                        "y": 9.5,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 5,
+                        "x": 4,
+                        "y": 1,
+                        "a": 0
+                    },
+                    {
+                        "id": 6,
+                        "x": 6,
+                        "y": 3,
+                        "a": 0
+                    },
+                    {
+                        "id": 7,
+                        "x": 7,
+                        "y": 2,
+                        "a": 0
+                    },
+                    {
+                        "id": 8,
+                        "x": 7,
+                        "y": 3,
+                        "a": 0
+                    },
+                    {
+                        "id": 9,
+                        "x": 8,
+                        "y": 4,
+                        "a": 0
+                    },
+                    {
+                        "id": 10,
+                        "x": 10,
+                        "y": 0,
+                        "a": 0.9
+                    },
+                    {
+                        "id": 11,
+                        "x": 10,
+                        "y": 2,
+                        "a": 0
+                    },
+                    {
+                        "id": 12,
+                        "x": 10,
+                        "y": 3,
+                        "a": 0
+                    },
+                    {
+                        "id": 13,
+                        "x": 11,
+                        "y": 2,
+                        "a": 0
+                    },
+                    {
+                        "id": 14,
+                        "x": 14,
+                        "y": 0,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 15,
+                        "x": 15,
+                        "y": 1,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 16,
+                        "x": 16,
+                        "y": 1,
+                        "a": 0.9
+                    },
+                    {
+                        "id": 17,
+                        "x": 16,
+                        "y": 3,
+                        "a": 0
+                    },
+                    {
+                        "id": 18,
+                        "x": 17,
+                        "y": 2,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 19,
+                        "x": 20,
+                        "y": 1,
+                        "a": 0.9
+                    },
+                    {
+                        "id": 20,
+                        "x": 20,
+                        "y": 2,
+                        "a": 0.3
+                    },
+                    {
+                        "id": 21,
+                        "x": 21,
+                        "y": 0,
+                        "a": 0.3
+                    }
+                ]
             },
             "element": [
                 {
-                    "id": "0",
-                    "couleur": "#1b8417b0",
+                    "id": 0,
+                    "couleur": "#ffa86b",
+                    "src_fond": "#",
+                    "picto": "datas/imgs/menu/picto/aDeguster.png",
+                    "titre": {
+                        "fr": "A déguster",
+                        "de": "Zu essen",
+                        "en": "To eat"
+                    },
+                    "type": "carte",
+                    "lien": "aDeguster",
+                    "x": 0,
+                    "y": 2,
+                    "taille": 3
+                },
+                {
+                    "id": 1,
+                    "couleur": "#d64211",
+                    "src_fond": "datas/imgs/menu/element/aVoir.jpg",
+                    "picto": "#",
+                    "titre": {
+                        "fr": "A voir, A visiter",
+                        "de": "Zu sehen, Zu besichtigen",
+                        "en": "To see, To visit"
+                    },
+                    "type": "carte",
+                    "lien": "aVoir",
+                    "x": 3,
+                    "y": 0,
+                    "taille": 4
+                },
+                {
+                    "id": 2,
+                    "couleur": "#a85a23",
+                    "src_fond": "#",
+                    "picto": "datas/imgs/menu/picto/jeu.png",
+                    "titre": {
+                        "fr": "A toi de jouer",
+                        "de": "Spiel selbst",
+                        "en": "Your turn to play"
+                    },
+                    "type": "menu",
+                    "lien": "jeu",
+                    "x": 3,
+                    "y": 4,
+                    "taille": 2
+                },
+                {
+                    "id": 3,
+                    "couleur": "#e05008",
+                    "src_fond": "#",
+                    "picto": "datas/imgs/menu/picto/coeur.png",
+                    "titre": {
+                        "fr": "Coups de coeur",
+                        "de": "Was wir lieben",
+                        "en": "What we love"
+                    },
+                    "type": "perenne",
+                    "lien": "coeur",
+                    "x": 5,
+                    "y": 4,
+                    "taille": 3
+                },
+                {
+                    "id": 4,
+                    "couleur": "#becc47",
+                    "src_fond": "#",
+                    "picto": "datas/imgs/menu/picto/paysage.png",
+                    "titre": {
+                        "fr": "Paysages",
+                        "de": "Landschaften",
+                        "en": "Views"
+                    },
+                    "type": "perenne",
+                    "lien": "paysage",
+                    "x": 7,
+                    "y": 0,
+                    "taille": 3
+                },
+                {
+                    "id": 5,
+                    "couleur": "#1b8417",
                     "src_fond": "datas/imgs/menu/element/nature.jpg",
-                    "picto": "datas/imgs/menu/picto/tree.png",
+                    "picto": "datas/imgs/menu/picto/nature.png",
                     "titre": {
                         "fr": "Nature",
                         "de": "Natur",
@@ -68,42 +422,530 @@
                     },
                     "type": "perenne",
                     "lien": "nature",
-                    "x": 800,
-                    "y": 800,
-                    "taille": 500
+                    "x": 9,
+                    "y": 3,
+                    "taille": 4
+                },
+                {
+                    "id": 6,
+                    "couleur": "#38ce33",
+                    "src_fond": "datas/imgs/menu/element/activite.jpg",
+                    "picto": "datas/imgs/menu/picto/actiNature.png",
+                    "titre": {
+                        "fr": "Activités nature",
+                        "de": "Naturen Aktivitäten",
+                        "en": "Nature activities"
+                    },
+                    "type": "carte",
+                    "lien": "actiNature",
+                    "x": 10,
+                    "y": 0,
+                    "taille": 3
+                },
+                {
+                    "id": 7,
+                    "couleur": "#1d910b",
+                    "src_fond": "datas/imgs/menu/element/culture.jpg",
+                    "picto": "datas/imgs/menu/picto/culture.png",
+                    "titre": {
+                        "fr": "Culture",
+                        "de": "Kultur",
+                        "en": "Culture"
+                    },
+                    "type": "perenne",
+                    "lien": "culture",
+                    "x": 13,
+                    "y": 1,
+                    "taille": 2
+                },
+                {
+                    "id": 8,
+                    "couleur": "#d1c0b1",
+                    "src_fond": "#",
+                    "picto": "datas/imgs/menu/picto/parc.png",
+                    "titre": {
+                        "fr": "Le parc",
+                        "de": "Der Park",
+                        "en": "The park"
+                    },
+                    "type": "carte",
+                    "lien": "parc",
+                    "x": 15,
+                    "y": 0,
+                    "taille": 3
+                },
+                {
+                    "id": 9,
+                    "couleur": "#c1732e",
+                    "src_fond": "#",
+                    "picto": "datas/imgs/menu/picto/marqueParc.png",
+                    "titre": {
+                        "fr": "La marque parc",
+                        "de": "Die parc Marke",
+                        "en": "The brand parc"
+                    },
+                    "type": "carte",
+                    "lien": "marqueParc",
+                    "x": 18,
+                    "y": 0,
+                    "taille": 2
+                },
+                {
+                    "id": 10,
+                    "couleur": "#af7b42",
+                    "src_fond": "#",
+                    "picto": "datas/imgs/menu/picto/seDeplacer.png",
+                    "titre": {
+                        "fr": "Se déplacer",
+                        "de": "Zu bewegen",
+                        "en": "Move around"
+                    },
+                    "type": "perenne",
+                    "lien": "seDeplacer",
+                    "x": 18,
+                    "y": 2,
+                    "taille": 3
+                },
+                {
+                    "id": 11,
+                    "couleur": "#603b13",
+                    "src_fond": "#",
+                    "picto": "datas/imgs/menu/picto/info.png",
+                    "titre": {
+                        "fr": "S'informer",
+                        "de": "Sich informieren",
+                        "en": "Get information"
+                    },
+                    "type": "carte",
+                    "lien": "info",
+                    "x": 20,
+                    "y": 0,
+                    "taille": 2
+                },
+                {
+                    "id": 12,
+                    "couleur": "#73179b",
+                    "src_fond": "#",
+                    "picto": "datas/imgs/menu/picto/local.png",
+                    "titre": {
+                        "fr": "Autour de moi",
+                        "de": "Um mich herum",
+                        "en": "Around me"
+                    },
+                    "type": "carte",
+                    "lien": "local",
+                    "x": 21,
+                    "y": 3,
+                    "taille": 2
                 }
-            ]
-        }
-    },
-    "poi": {
-        "parc": [
-            {
-                "id": 0,
-                "lat": 48.125167,
-                "long": 7.093361,
-                "titre": {
-                    "fr": "Lac Blanc",
-                    "en": "White lake",
-                    "de": "Weiss See"
+            ],
+            "SousMenu": {
+                "aDeguster": {
+                    "texte": "Encourager les circuits courts et faire connaître les produits et les savoir faire de son territoire sont deux actions essentielles pour le Parc des Ballons des Vosges.",
+                    "elements": [
+                        {
+                            "id": 0,
+                            "titre": "Titre0",
+                            "lien": "lien0"
+                        },
+                        {
+                            "id": 1,
+                            "titre": "Titre 1",
+                            "lien": "lien1"
+                        },
+                        {
+                            "id": 2,
+                            "titre": "Titre 2",
+                            "lien": "lien1"
+                        },
+                        {
+                            "id": 3,
+                            "titre": "Titre 3",
+                            "lien": "lien1"
+                        },
+                        {
+                            "id": 4,
+                            "titre": "Titre 4",
+                            "lien": "lien1"
+                        },
+                        {
+                            "id": 5,
+                            "titre": "Titre 5",
+                            "lien": "lien1"
+                        },
+                        {
+                            "id": 6,
+                            "titre": "Titre 6",
+                            "lien": "lien1"
+                        },
+                        {
+                            "id": 7,
+                            "titre": "Titre 7",
+                            "lien": "lien1"
+                        },
+                        {
+                            "id": 8,
+                            "titre": "Titre 8",
+                            "lien": "lien1"
+                        }
+                    ],
+                    "diaporama": [
+                        {
+                            "id": "diapo1",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
+                            "color": "#FF0000"
+                        },
+                        {
+                            "id": "diapo2",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
+                            "color": "#FFFF00"
+                        }
+                    ]
                 },
-                "soustitre": {
-                    "fr": "sous titre lac blanc",
-                    "en": "undertitle white lake",
-                    "de": "untertitel weiss see"
+                "jeu": {
+                    "texte": "Jouer !",
+                    "elements": [
+                        {
+                            "id": 0,
+                            "titre": "Faune du parc",
+                            "lien": "faune"
+                        },
+                        {
+                            "id": 1,
+                            "titre": "Flore du parc",
+                            "lien": "flore"
+                        },
+                        {
+                            "id": 2,
+                            "titre": "Les différents paysages",
+                            "lien": "paysages"
+                        },
+                        {
+                            "id": 3,
+                            "titre": "Mémory du parc",
+                            "lien": "memory"
+                        }
+                    ],
+                    "diaporama": [
+                        {
+                            "id": "diapo1",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
+                            "color": "#FF0000"
+                        },
+                        {
+                            "id": "diapo2",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
+                            "color": "#FFFF00"
+                        }
+                    ]
                 },
-                "image": "datas/imgs/carte/poi/parc/0.jpg",
-                "texte": {
-                    "fr": "texte lac blanc",
-                    "en": "text white lake",
-                    "de": "text weiss see"
+                "aVoir": {
+                    "texte": "Une soixantaine de musées, sites patrimoine (moulin, scierie hydraulique, galerie de mine…) et centres d’interprétation animés par des associations et acteurs locaux sont l’occasion de découvrir la richesse des patrimoines du Parc. Des thèmes d’une grande variété y sont traités : de la forêt à l’agriculture et les savoir-faire, en passant par les patrimoines industriels et techniques, à l’art et l’histoire et enfin la mémoire. En lien avec ces acteurs, le Parc mène des projets visant à améliorer la connaissance et expérimente de nouvelles approches du patrimoine.",
+                    "elements": [
+                        {
+                            "id": 0,
+                            "titre": "Titre 0",
+                            "lien": "lien0"
+                        },
+                        {
+                            "id": 1,
+                            "titre": "Titre 1",
+                            "lien": "lien1"
+                        }
+                    ],
+                    "diaporama": [
+                        {
+                            "id": "diapo1",
+                            "src": "datas/imgs/menu/diaporama/aVoir/diapo_1.jpg",
+                            "color": "#FF0000"
+                        },
+                        {
+                            "id": "diapo2",
+                            "src": "datas/imgs/menu/diaporama/aVoir/diapo_2.jpg",
+                            "color": "#FFFF00"
+                        }
+                    ]
                 },
-                "adresse": "",
-                "tel": "0123456789",
-                "mail": "test@mail.fr",
-                "site": "",
-                "coeur": 0,
-                "categorie": "Schlucht"
+                "paysage": {
+                    "texte": "Le sud du massif des Vosges accueille des patrimoines naturels et culturels remarquables et offre des paysages emblématiques qui font son attractivité et lui confère son statut de Parc naturel régional. Partir à la découverte du Parc naturel régional des Ballons des Vosges, c’est aller à la rencontre de ces patrimoines et des hommes qui les font vivre.",
+                    "elements": [
+                        {
+                            "id": 0,
+                            "titre": "Titre 0",
+                            "lien": "lien0"
+                        },
+                        {
+                            "id": 1,
+                            "titre": "Titre 1",
+                            "lien": "lien1"
+                        }
+                    ],
+                    "diaporama": [
+                        {
+                            "id": "diapo1",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
+                            "color": "#FF0000"
+                        },
+                        {
+                            "id": "diapo2",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
+                            "color": "#FFFF00"
+                        }
+                    ]
+                },
+                "nature": {
+                    "texte": "Le Parc naturel régional des Ballons des Vosges offre une vaste palette de milieux naturels. À lui seul, le massif forestier couvre les deux tiers du territoire. Pour autant, le Parc est riche d’une multitude d’autres milieux. Les hautes chaumes (prairies d’altitude), les tourbières, les cirques glaciaires, les falaises rocheuses, les éboulis, les lacs et autres rivières s’entremêlent dans une rare harmonie.",
+                    "diaporama": [
+                        {
+                            "id": "diapo1",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
+                            "color": "#FF0000"
+                        },
+                        {
+                            "id": "diapo2",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
+                            "color": "#FFFF00"
+                        }
+                    ],
+                    "sousmenu": [
+                        {
+                            "id": 0,
+                            "titre": "Milieux",
+                            "elements": [
+                                {
+                                    "id": 0,
+                                    "titre": "Vergers",
+                                    "lien": "lien0"
+                                },
+                                {
+                                    "id": 1,
+                                    "titre": "Hautes chaumes",
+                                    "lien": "lien0"
+                                },
+                                {
+                                    "id": 2,
+                                    "titre": "Forêts",
+                                    "lien": "lien0"
+                                },
+                                {
+                                    "id": 3,
+                                    "titre": "Lacs, étangs et tourbières",
+                                    "lien": "lien0"
+                                },
+                                {
+                                    "id": 5,
+                                    "titre": "ravins, falaises et éboulis",
+                                    "lien": "lien0"
+                                },
+                                {
+                                    "id": 6,
+                                    "titre": "pelouses calcaires",
+                                    "lien": "lien0"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 1,
+                            "titre": "Géologie et Climat",
+                            "elements": [
+                                {
+                                    "id": 0,
+                                    "titre": "Titre 0",
+                                    "lien": "lien0"
+                                },
+                                {
+                                    "id": 1,
+                                    "titre": "Titre 1",
+                                    "lien": "lien1"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "titre": "Espaces protégés",
+                            "elements": [
+                                {
+                                    "id": 0,
+                                    "titre": "Titre 0",
+                                    "lien": "lien0"
+                                },
+                                {
+                                    "id": 1,
+                                    "titre": "Titre 1",
+                                    "lien": "lien1"
+                                },
+                                {
+                                    "id": 2,
+                                    "titre": "Titre 2",
+                                    "lien": "lien2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "actiNature": {
+                    "texte": "La diversité des paysages du Parc permet la pratique de nombreuses activités de pleine nature. Il accompagne plus particulièrement la pratique de ces activités respectueuses du territoire.",
+                    "elements": [
+                        {
+                            "id": 0,
+                            "titre": "Titre 0",
+                            "lien": "lien0"
+                        },
+                        {
+                            "id": 1,
+                            "titre": "Titre 1",
+                            "lien": "lien1"
+                        }
+                    ],
+                    "diaporama": [
+                        {
+                            "id": "diapo1",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
+                            "color": "#FF0000"
+                        },
+                        {
+                            "id": "diapo2",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
+                            "color": "#FFFF00"
+                        }
+                    ]
+                },
+                "culture": {
+                    "texte": "Le Parc naturel régional des Ballons des Vosges est un territoire vivant, dont l’homme a su très tôt exploiter l’eau, le bois, la pierre et le sous-sol pour développer l’industrie et l’artisanat. Il est également l’héritier d’une histoire mouvementée liée aux conflits mondiaux.",
+                    "elements": [
+                        {
+                            "id": 0,
+                            "titre": "Titre 0",
+                            "lien": "lien0"
+                        },
+                        {
+                            "id": 1,
+                            "titre": "Titre 1",
+                            "lien": "lien1"
+                        }
+                    ],
+                    "diaporama": [
+                        {
+                            "id": "diapo1",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
+                            "color": "#FF0000"
+                        },
+                        {
+                            "id": "diapo2",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
+                            "color": "#FFFF00"
+                        }
+                    ]
+                },
+                "parc": {
+                    "texte": "Créé en 1989 à l'initiative des deux régions Grand Est et Bourgogne Franche-Comté, le Parc naturel régional des Ballons des Vosges regroupe, 197 communes réparties sur quatre départements : les Vosges, le Haut-Rhin, le Territoire de Belfort et la Haute-Saône.",
+                    "elements": [
+                        {
+                            "id": 0,
+                            "titre": "Titre 0",
+                            "lien": "lien0"
+                        },
+                        {
+                            "id": 1,
+                            "titre": "Titre 1",
+                            "lien": "lien1"
+                        }
+                    ],
+                    "diaporama": [
+                        {
+                            "id": "diapo1",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
+                            "color": "#FF0000"
+                        },
+                        {
+                            "id": "diapo2",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
+                            "color": "#FFFF00"
+                        }
+                    ]
+                },
+                "marqueParc": {
+                    "texte": "La marque nationale \"Valeurs Parc naturel régional\" distingue des entreprises engagées dans un développement économique durable dans leurs territoires. Elle s’articule autour de 3 valeurs fortes : l’humain, la préservation de l’environnement et l’attachement au territoire.",
+                    "elements": [
+                        {
+                            "id": 0,
+                            "titre": "Titre 0",
+                            "lien": "lien0"
+                        },
+                        {
+                            "id": 1,
+                            "titre": "Titre 1",
+                            "lien": "lien1"
+                        }
+                    ],
+                    "diaporama": [
+                        {
+                            "id": "diapo1",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
+                            "color": "#FF0000"
+                        },
+                        {
+                            "id": "diapo2",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
+                            "color": "#FFFF00"
+                        }
+                    ]
+                },
+                "seDeplacer": {
+                    "texte": "Train, bus, navettes, pistes cyclables et voies vertes pour oublier la voiture… \"Poumon vert\" de l'est de la France, le Parc naturel régional des Ballons des Vosges est un vaste territoire de 2700 km2 qui compte à ses portes plusieurs grandes villes. Elles sont autant de points de départ pour une découverte vraiment…verte.",
+                    "elements": [
+                        {
+                            "id": 0,
+                            "titre": "Titre 0",
+                            "lien": "lien0"
+                        },
+                        {
+                            "id": 1,
+                            "titre": "Titre 1",
+                            "lien": "lien1"
+                        }
+                    ],
+                    "diaporama": [
+                        {
+                            "id": "diapo1",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
+                            "color": "#FF0000"
+                        },
+                        {
+                            "id": "diapo2",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
+                            "color": "#FFFF00"
+                        }
+                    ]
+                },
+                "info": {
+                    "texte": "Les Offices du tourisme sont là pour donner une information complète : manger, dormir, marcher, visiter … Il suffit de contacter le plus proche de son lieu de vacances… 4 comités départementaux et 3 comités régionaux du tourisme diffusent également de la documentation.",
+                    "elements": [
+                        {
+                            "id": 0,
+                            "titre": "Titre 0",
+                            "lien": "lien0"
+                        },
+                        {
+                            "id": 1,
+                            "titre": "Titre 1",
+                            "lien": "lien1"
+                        }
+                    ],
+                    "diaporama": [
+                        {
+                            "id": "diapo1",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
+                            "color": "#FF0000"
+                        },
+                        {
+                            "id": "diapo2",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
+                            "color": "#FFFF00"
+                        }
+                    ]
+                }
             }
-        ]
+        }
     }
 }

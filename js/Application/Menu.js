@@ -97,6 +97,20 @@ class Menu extends DivObject {
             .find(".elementMenu")
             .on("click touchstart", null, { instance: this }, this.clickBtn);
 
+
+        var btn = new BtObject(this._balise, 'btnPerenneTest');
+        btn._balise.css({
+            position: 'fixed',
+            top: '50px',
+            left: '50px'
+        });
+        btn.html('Afficher pérenne');
+        btn._balise.click({ param: this }, function (e) {
+            var menu = e.data.param;
+            var fp = new FichePerenne(menu._balise, 'fichePerenne', null, 'rgb(31, 136, 31)');
+            fp.init();
+        });
+
     }
 
     init() {

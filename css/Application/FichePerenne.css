@@ -1,34 +1,42 @@
-.pagePerenne{
-    width: 90%;
-    height: 90%;
-    display: flex;
-    margin: auto;
-}
-
-.flexElement {
-    flex: 1;
+.pagePerenne {
+    position: absolute;
     width: 50%;
-}
-
-#backButton {
-    position: fixed;
-    bottom: 50px;
-    left: 30px;
-    padding: 15px;
-    background-color: darkslategray;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    text-align: center;
-    cursor: pointer;
-}
-
-.divDroit{
-    background-color: white;
-    padding: 100px;
+    right: 0;
+    top: 0;
     font-size: 25px;
 }
 
-.divDroit p {
-    margin: 50px;
+.divTop {
+    position: relative;
+    max-height: 700px;
+}
+
+.topImage {
+    width: 100%;
+    max-height: 700px;
+}
+
+.topTitre {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%);
+    text-align: center;
+    background: white;
+    padding: 50px;
+}
+
+.divContain {
+    width: 90%;
+    padding: 5%;
+    background: white;
+    display: flex;
+}
+
+.flex {
+    flex: 1;
+    padding: 2%;
+}
+.flex h2{
+    margin: 25px 0;
 }
