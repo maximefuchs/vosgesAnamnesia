@@ -1,4 +1,7 @@
 Global.includeCSS('dev/css/Application/FichePerenne.css');
+Global.includeCSS('dev/css/Application/zSlider.css');
+
+Global.include('dev/js/utils/zSlider.js');
 
 class FichePerenne extends DivObject {
     constructor(parent, id, json, couleur) {
@@ -48,6 +51,42 @@ class FichePerenne extends DivObject {
 
         var paraLeft = new BaliseObject(divLeft._balise, 'p', 'paraLeft_' + this._id);
         paraLeft.html(lorem);
+
+
+        var divSliderComm = new DivObject(divRight._balise, 'divSliderComm_' + this._id);
+        divSliderComm.addClass('sliderComm');
+        var divSlider = new DivObject(divSliderComm._balise, 'divSlider_' + this._id);
+        divSlider.addClass('divSlider');
+        var carousselRight = new DivObject(divSlider._balise, 'caroussel1');
+        carousselRight.addClass('z-slide-wrap');
+        carousselRight.addClass('top');
+        var ul = new BaliseObject(carousselRight._balise, 'ul');
+        ul.addClass('z-slide-content');
+        var colors = ['lightgreen', 'lightblue', 'lightpink'];
+        for (let i = 0; i < 3; i++) {
+            var li = new BaliseObject(ul._balise, 'li', 'li_' + i);
+            li.css('background', colors[i]);
+            li.addClass('z-slide-item');
+        }
+        new Slider('#caroussel1', '.z-slide-item', {
+            interval: 4,
+            duration: 0.5
+        });
+        $('.z-slide-indicator').css('background', couleur);
+
+        var squareRight = new DivObject(divSliderComm._balise, 'squareRight_' + this._id);
+        squareRight.addClass('squareRight');
+        squareRight.css('background', couleur);
+        squareRight.html(loremShort);
+
+        var textRight = new DivObject(divRight._balise, 'textRight_' + this._id);
+        textRight.addClass('textRight');
+        textRight.html(loremLong + loremLong + loremLong + loremLong + loremLong + loremLong);
+        var s = $('<style></style>')
+            .html('.textRight::-webkit-scrollbar-thumb {\
+            background: '+ couleur + "; \
+          }");
+        textRight._balise.after(s);
 
         this.css('opacity', 0);
     }

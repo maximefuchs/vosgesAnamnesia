@@ -1,13 +1,13 @@
-::-webkit-scrollbar {
+.text_sousmenu p::-webkit-scrollbar {
   width: 5px;
   height: 5px;
 }
 
-::-webkit-scrollbar-track {
+.text_sousmenu p::-webkit-scrollbar-track {
   background: #bbb;
 }
 
-::-webkit-scrollbar-thumb {
+.text_sousmenu p::-webkit-scrollbar-thumb {
   height: 10px;
 }
 

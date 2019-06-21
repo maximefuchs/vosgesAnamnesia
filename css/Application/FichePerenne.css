@@ -1,9 +1,12 @@
 .pagePerenne {
     position: absolute;
     width: 50%;
+    height: 95%;
+    padding-bottom: 5%;
     right: 0;
     top: 0;
     font-size: 25px;
+    z-index: 10;
 }
 
 .divTop {
@@ -37,6 +40,47 @@
     flex: 1;
     padding: 2%;
 }
-.flex h2{
+
+.flex h2 {
     margin: 25px 0;
 }
+.sliderComm{
+    display: flex;
+    position: relative;
+}
+
+.divSlider{
+    flex: 1.8;
+}
+#caroussel1 {
+    top: 0;
+    left: 0;
+}
+
+.squareRight {
+    flex: 1;
+    padding: 50px;
+    color: black;
+    top: 0;
+    right: 0;
+    height: fit-content;
+}
+
+.textRight{
+    margin-top: 100px;
+    overflow: -webkit-paged-y;
+    height: -webkit-fill-available;
+}
+
+.textRight::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  .textRight::-webkit-scrollbar-track {
+    background: #bbb;
+  }
+  
+  .textRight::-webkit-scrollbar-thumb {
+    height: 10px;
+  }
