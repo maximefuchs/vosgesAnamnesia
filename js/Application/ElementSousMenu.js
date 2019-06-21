@@ -15,11 +15,12 @@ class ElementSousMenu extends BlocMenu {
         this.addClass('elementSousMenu');
 
         var titre = new BaliseObject(this._balise, 'h2', 'titre_' + this._id)
-        titre.html(this._json.titre);
-
+        titre.html(this._json.titre.toUpperCase());
     }
 
     init(decalage) {
+        if (decalage === undefined)
+            decalage = 0;
         this._balise.css({
             "width": this._taille,
             "height": this._taille,

@@ -121,6 +121,14 @@ function shuffle(a) {
     return a;
 }
 
+function somme(int) {
+    var somme = 0;
+    for (let i = 1; i < int; i++) {
+        somme += i;
+    }
+    return somme;
+}
+
 function dragMoveListener(event) {
     console.log(event.target);
     var target = event.target,

@@ -10,11 +10,12 @@ class SousMenu extends DivObject {
         this._json = json;
         this._scale = scale;
         this._couleur = couleur;
+        this._titreElement = titreElement;
 
 
         this.css('bottom', 1 * scale);
 
-        var tailleEltTxt = 5;
+        var tailleEltTxt = 5.5;
 
         /////////////////////////////////
         // element avec titre et texte
@@ -22,7 +23,7 @@ class SousMenu extends DivObject {
         this._divText = new DivObject(this._balise, "divText_" + this._id);
         this._divText.addClass('text_sousmenu');
         this._divText._balise.css({
-            bottom: (tailleEltTxt - 1) * scale,
+            bottom: 4 * scale,
             left: -tailleEltTxt * scale,
             height: (tailleEltTxt - 2) * scale,
             width: (tailleEltTxt - 1) * scale,
@@ -58,7 +59,7 @@ class SousMenu extends DivObject {
         this._btnFermer = new DivObject(this._divText._balise, 'btnFermer_' + this._id);
         this._btnFermer.addClass('btnFermerSousMenu');
         this._btnFermer._balise.css({
-            bottom: 4 * scale,
+            bottom: 4.5 * scale,
             height: scale,
             width: scale,
             background: couleur
@@ -68,81 +69,109 @@ class SousMenu extends DivObject {
         /////////////////////////////////////////
 
         this._ssSousMenu = (json.sousmenu != undefined);
-        var jsonElements = this._ssSousMenu ? json.sousmenu[0].elements : json.elements;
+        var jsonElements = this._ssSousMenu ? json.sousmenu : json.elements;
 
         ////////////////////////////////
         // sous elements
 
         this._divSousElements = [];
-        var nbParDoubleCol = 5, taille = 2, doubleCol = 0, nbLignes = 0;
-        var compteurColonne = 0, decalageY = 0;
-        for (let i = 0; i < jsonElements.length; i++) {
-            var jsonElt = jsonElements[i];
-            var params = {
-                x: tailleEltTxt + (doubleCol * taille * 2) + (i % 2) * taille,
-                y: 2 + (i % 2) * taille + (nbLignes * 2) * taille - decalageY,
-                taille: taille,
-                couleur: couleur,
-                opacity: (Math.floor(Math.random() * 2) == 0) ? 1 : 0.9
-            }
-            var eltSsMenu = new ElementSousMenu(this._balise, jsonElt, params, scale);
-            this._divSousElements.push(eltSsMenu);
-
-            if (i % 2 == 1) {
-                nbLignes++;
-            }
-            compteurColonne++;
-            if (compteurColonne == nbParDoubleCol) {
-                compteurColonne = 0; decalageY = 0; doubleCol++; nbLignes = 0;
-            } else {
-                decalageY = Math.floor(Math.random() * 2);
-            }
-        }
+        this.divSousElements = jsonElements;
 
         ///////////////////////////////////
 
         //////////////////////////////////
         // if sous menu
 
-        this._divssSousMenu;
-        if (this._ssSousMenu) {
-            var s = json.sousmenu[0].titre.toUpperCase();
-            var size = 840 / s.length;
-        if (size > 65) { size = 65; }
-            this._titre.html(s);
-            this._titre.css('font-size', size + 'px');
-
-            this._divssSousMenu = new DivObject(this._balise, 'ssSousMenu_' + this._id);
-            this._divssSousMenu.addClass('ssSousMenu');
-            this._divssSousMenu._balise.css({
-                bottom: 4 * scale,
-                left: -3 * scale,
-                width: 1.5 * scale,
-                height: (tailleEltTxt - 0.5) * scale,
-                padding: 0.25 * scale,
-                background: couleur
-            });
-            var ssTitre = new BaliseObject(this._divssSousMenu._balise, 'h1');
-            ssTitre.html(titreElement.toUpperCase());
-
-            this._divssSousMenu.append('<hr>');
-            for (let i = 0; i < json.sousmenu.length; i++) {
-                var span = new BaliseObject(this._divssSousMenu._balise, 'span', 'spanSSMenu_' + i);
-                span.html(json.sousmenu[i].titre.toUpperCase());
-                if (i == 0) { span.addClass('selected'); }
-                this._divssSousMenu.append('<hr>');
-            }
-        }
+        this._divssSousMenu = new DivObject(this._balise, 'ssSousMenu_' + this._id);
+        this._divssSousMenu.addClass('ssSousMenu');
+        this._divssSousMenu._balise.css({
+            bottom: 4 * scale,
+            left: -3 * scale,
+            width: 1.5 * scale,
+            height: (tailleEltTxt - 0.5) * scale,
+            padding: 0.25 * scale,
+            background: couleur
+        });
     }
 
     init() {
-        this._divText.tweenAnimate({ left: this._ssSousMenu ? 2 * this._scale : 0 });
-        this._btnFermer.tweenAnimate({ bottom: 5 * this._scale }, 1, 0.3);
+        this._divText.tweenAnimate({ left: 2 * this._scale });
+        this._btnFermer.tweenAnimate({ bottom: 5.5 * this._scale }, 1, 0.3);
         this._divSousElements.forEach(element => {
-            var decalage = this._ssSousMenu ? 2 * this._scale : 0;
-            element.init(decalage);
+            element.init();
         });
-        if (this._ssSousMenu)
-            this._divssSousMenu.tweenAnimate({ left: 0 });
+        this._divssSousMenu.tweenAnimate({ left: 0 });
+    }
+
+    displaySSMenuByElement(e) {
+        var sMenu = e.data.param;
+        var num = e.data.num;
+        var s = sMenu._json.sousmenu[num].titre.toUpperCase();
+        var size = 840 / s.length;
+        if (size > 65) { size = 65; }
+        sMenu._titre.html(s);
+        sMenu._titre.css('font-size', size + 'px');
+
+        $('#divLeft').remove();
+        var divLeft = new DivObject(sMenu._divssSousMenu._balise, 'divLeft');
+        var ssTitre = new BaliseObject(divLeft._balise, 'h1');
+        ssTitre.html(sMenu._titreElement.toUpperCase());
+
+        divLeft.append('<hr>');
+        for (let i = 0; i < sMenu._json.sousmenu.length; i++) {
+            var span = new BaliseObject(divLeft._balise, 'span', 'spanSSMenu_' + i);
+            span.html(sMenu._json.sousmenu[i].titre.toUpperCase());
+            var event = { "data": { "param": sMenu, "num": i } };
+            if (i == num) { span.addClass('selected'); }
+            span._balise.click({param: sMenu, num: i}, sMenu.displaySSMenuByTitle);
+            divLeft.append('<hr>');
+        }
+
+        var jsonElements = sMenu._json.sousmenu[num].elements;
+        sMenu.divSousElements = jsonElements;
+        sMenu._divSousElements.forEach(element => {
+            element.init();
+        });
+    }
+
+    displaySSMenuByTitle(e){
+        $('.selected').removeClass('selected');
+        $(this).addClass('selected');
+        var sMenu = e.data.param;
+        var num = e.data.num;
+        var jsonElements = sMenu._json.sousmenu[num].elements;
+        sMenu.divSousElements = jsonElements;
+        sMenu._divSousElements.forEach(element => {
+            element.init();
+        });
+    }
+
+    set divSousElements(jsonElements){
+        $('.elementSousMenu').remove();
+        this._divSousElements = [];
+        var emplacements = [
+            { x: 9.5, y: 1.5 },
+            { x: 7.5, y: 3.5 },
+            { x: 9.5, y: 5.5 },
+            { x: 7.5, y: 7.5 },
+            { x: 9.5, y: 9.5 },
+            { x: 6.5, y: 9.5 },
+            { x: 4.5, y: 10 },
+            { x: 2.5, y: 11 },
+            { x: 6, y: 12 }];
+        var taille = 2;
+        for (let i = 0; i < jsonElements.length; i++) {
+            var jsonElt = jsonElements[i];
+            var params = {
+                x: emplacements[i].x,
+                y: emplacements[i].y,
+                taille: taille,
+                couleur: this._couleur,
+                opacity: (Math.floor(Math.random() * 2) == 0) ? 1 : 0.9
+            }
+            var eltSsMenu = new ElementSousMenu(this._balise, jsonElt, params, this._scale);
+            eltSsMenu._balise.click({ param: this, num: i }, this.displaySSMenuByElement);
+            this._divSousElements.push(eltSsMenu);
+        }
     }
 }

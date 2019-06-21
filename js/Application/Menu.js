@@ -23,15 +23,17 @@ class Menu extends DivObject {
 
         this._fondImgs = [];
         this._couleursAssociees = [];
-        for (let i = 0; i < this._json.diaporama.menu.length; i++) {
+        console.log(json);
+        for (let i = 0; i < json.diaporama.length; i++) {
             console.log("new back image : " + i);
-            var img = this._json.diaporama.menu[i];
+            var img = json.diaporama[i];
             var image = new Img(this._balise, "fond_img_" + img.id, img.src);
             image.addClass('page');
             image.css('opacity', 0);
             this._fondImgs.push(image);
             this._couleursAssociees.push(img.color);
         }
+        this._setIntervalFonction = 0; // id of the setInterval founction used to switch between background images
 
         var scale = 140;
         this._scale = scale;
@@ -62,9 +64,9 @@ class Menu extends DivObject {
         }
 
         this._menuElements = [];
-        for (let i = 0; i < this._json.element.length; i++) {
+        for (let i = 0; i < json.element.length; i++) {
             console.log("new menu element : " + i);
-            var element = new ElementMenu(this._divEltsMenu._balise, this._json.element[i], scale);
+            var element = new ElementMenu(this._divEltsMenu._balise, json.element[i], scale);
             var bas = element._y + element._taille;
             if (bas > maxHeight) { maxHeight = bas; }
             this._menuElements.push(element);
@@ -76,7 +78,7 @@ class Menu extends DivObject {
 
         this._decoMenuElements = [];
         this._divEltsDeco = new DivObject(this._balise, "elementsDeco");
-        for (let i = 0; i < this._json.deco.menu.length; i++) {
+        for (let i = 0; i < json.deco.menu.length; i++) {
             var eltDeco = new ElementDecoMenu(this._divEltsDeco._balise,
                 this._json.deco.menu[i],
                 this._couleursAssociees[0],
@@ -142,18 +144,19 @@ class Menu extends DivObject {
         // instance.maj_texte();
     }
 
-    // fond d'écran changeant toutes les 6 secondes
+    // fond d'écran changeant
     displayBackground() {
         var images = this._fondImgs;
         var nbImgs = images.length;
         var i = 0;
         var menu = this;
-        TweenLite.to(images[i]._balise, 1, { opacity: 1 });
-        setInterval(function () {
+        var duree = paramsJSON.dureeFadeFond;
+        TweenLite.to(images[i]._balise, duree, { opacity: 1 });
+        this._setIntervalFonction = setInterval(function () {
             var current = i % nbImgs;
             var next = (i + 1) % nbImgs;
-            TweenLite.to(images[current]._balise, 1, { opacity: 0 });
-            TweenLite.to(images[next]._balise, 1, { opacity: 1 });
+            TweenLite.to(images[current]._balise, duree, { opacity: 0 });
+            TweenLite.to(images[next]._balise, duree, { opacity: 1 });
 
             var newColor = menu._couleursAssociees[next];
             menu._decoMenuElements.forEach(e => {
@@ -161,7 +164,7 @@ class Menu extends DivObject {
             });
 
             i++;
-        }, 6000);
+        }, paramsJSON.dureeFond * 1000); // temps entre chaque execution de la fonction
     }
 
     ouvrirMenu() {
@@ -210,7 +213,7 @@ class Menu extends DivObject {
 
     tidyElements(menu, id) {
         var left = 0;
-        var tailleSelect = 3;
+        var tailleSelect = 2.5;
         menu._menuElements.forEach(element => {
             if (element._id == id) {
                 element.tweenAnimate({
@@ -267,6 +270,10 @@ class Menu extends DivObject {
         var titre = menuElt.find('.elementMenu_titre').html();
         var sm = new SousMenu(this._balise, json, titre, couleur, this._scale);
         sm.init();
+
+        clearInterval(this._setIntervalFonction);
+        this.backgroundDiaporama = json.diaporama;
+        this.displayBackground();
     }
 
     deleteSousMenu() {
@@ -287,5 +294,22 @@ class Menu extends DivObject {
     }
     get finClickSignal() {
         return this.signaux.finClick;
+    }
+
+    set backgroundDiaporama(imagesJson) {
+        for (let i = 0; i < this._fondImgs.length; i++) {
+            this._fondImgs[i]._balise.remove();
+        }
+        this._fondImgs = [];
+        this._couleursAssociees = [];
+        for (let i = 0; i < imagesJson.length; i++) {
+            console.log("new back image : " + i);
+            var img = imagesJson[i];
+            var image = new Img(this._balise, "fond_img_" + img.id, img.src);
+            image.addClass('page');
+            image.css('opacity', 0);
+            this._fondImgs.push(image);
+            this._couleursAssociees.push(img.color);
+        }
     }
 }
