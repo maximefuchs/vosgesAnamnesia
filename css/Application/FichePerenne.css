@@ -82,6 +82,41 @@
     height: fit-content;
 }
 
+.squareRight h1, .squareRight h2, .squareRight h3 {
+    color: white!important;
+    margin: 15px 0;
+}
+
 .textRight {
     margin-top: 100px;
+}
+
+.divBottom {
+    margin-top: 150px;
+    padding: 20px;
+}
+
+.divBottom div h1, .divBottom div h2, .divBottom div h3 {
+    color: white!important;
+    margin: 15px 0;
+}
+
+.divImage {
+    margin-top: 100px;
+}
+
+.divImage img {
+    width: 700px;
+    height: 700px;
+}
+
+.divImage div {
+    width: 300px;
+    padding: 50px;
+    margin: -6px 0;
+}
+
+.divImage div h1, .divImage div h2, .divImage div h3 {
+    color: white!important;
+    margin: 0 0 15px 0;
 }

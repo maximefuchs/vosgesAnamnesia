@@ -4,6 +4,10 @@
     height: 400px;
     width: 400px;
 }
+.z-slide-wrap.large{
+    width: 750px;
+    height: 750px;
+}
 
 .z-slide-content {
     position: relative;
@@ -51,7 +55,7 @@
     position: absolute;
     left: 0!important;
     z-index: 10;
-    padding: 20px;
+    padding: 30px;
 }
 
 .z-slide-indicator .z-slide-dot {
