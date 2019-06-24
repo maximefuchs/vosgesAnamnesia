@@ -1,22 +1,35 @@
 .pagePerenne {
     position: absolute;
     width: 50%;
-    height: 95%;
-    padding-bottom: 5%;
+    height: 100%;
     right: 0;
     top: 0;
     font-size: 25px;
     z-index: 10;
+    overflow-y: scroll;
+}
+
+.pagePerenne::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.pagePerenne::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.pagePerenne::-webkit-scrollbar-thumb {
+    background: #FFF9;
 }
 
 .divTop {
-    position: relative;
-    max-height: 700px;
+    position: absolute;
+    height: 600px;
 }
 
 .topImage {
     width: 100%;
-    max-height: 700px;
+    height: 600px;
 }
 
 .topTitre {
@@ -34,6 +47,8 @@
     padding: 5%;
     background: white;
     display: flex;
+    position: absolute;
+    top: 600px;
 }
 
 .flex {
@@ -44,14 +59,15 @@
 .flex h2 {
     margin: 25px 0;
 }
-.sliderComm{
+
+.sliderComm {
     display: flex;
-    position: relative;
 }
 
-.divSlider{
+.divSlider {
     flex: 1.8;
 }
+
 #caroussel1 {
     top: 0;
     left: 0;
@@ -66,21 +82,6 @@
     height: fit-content;
 }
 
-.textRight{
+.textRight {
     margin-top: 100px;
-    overflow: -webkit-paged-y;
-    height: -webkit-fill-available;
 }
-
-.textRight::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-  }
-  
-  .textRight::-webkit-scrollbar-track {
-    background: #bbb;
-  }
-  
-  .textRight::-webkit-scrollbar-thumb {
-    height: 10px;
-  }

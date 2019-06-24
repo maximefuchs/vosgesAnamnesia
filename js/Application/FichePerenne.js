@@ -82,11 +82,7 @@ class FichePerenne extends DivObject {
         var textRight = new DivObject(divRight._balise, 'textRight_' + this._id);
         textRight.addClass('textRight');
         textRight.html(loremLong + loremLong + loremLong + loremLong + loremLong + loremLong);
-        var s = $('<style></style>')
-            .html('.textRight::-webkit-scrollbar-thumb {\
-            background: '+ couleur + "; \
-          }");
-        textRight._balise.after(s);
+
 
         this.css('opacity', 0);
     }

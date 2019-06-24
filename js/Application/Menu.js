@@ -17,7 +17,7 @@ class Menu extends DivObject {
         this._json = json;
 
         this.signaux = {
-            finClick: new signals.Signal(),
+            click: new signals.Signal(),
             finFermer: new signals.Signal()
         }
 
@@ -98,18 +98,18 @@ class Menu extends DivObject {
             .on("click touchstart", null, { instance: this }, this.clickBtn);
 
 
-        var btn = new BtObject(this._balise, 'btnPerenneTest');
-        btn._balise.css({
-            position: 'fixed',
-            top: '50px',
-            left: '50px'
-        });
-        btn.html('Afficher pérenne');
-        btn._balise.click({ param: this }, function (e) {
-            var menu = e.data.param;
-            var fp = new FichePerenne(menu._balise, 'fichePerenne', null, 'rgb(31, 136, 31)');
-            fp.init();
-        });
+        // var btn = new BtObject(this._balise, 'btnPerenneTest');
+        // btn._balise.css({
+        //     position: 'fixed',
+        //     top: '50px',
+        //     left: '50px'
+        // });
+        // btn.html('Afficher pérenne');
+        // btn._balise.click({ param: this }, function (e) {
+        //     var menu = e.data.param;
+        //     var fp = new FichePerenne(menu._parent, 'fichePerenne', null, 'rgb(31, 136, 31)');
+        //     fp.init();
+        // });
 
     }
 
@@ -306,8 +306,8 @@ class Menu extends DivObject {
     get finFermerSignal() {
         return this.signaux.finFermer;
     }
-    get finClickSignal() {
-        return this.signaux.finClick;
+    get clickSignal() {
+        return this.signaux.click;
     }
 
     set backgroundDiaporama(imagesJson) {

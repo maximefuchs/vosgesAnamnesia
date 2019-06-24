@@ -50,6 +50,7 @@ class SousMenu extends DivObject {
             background: "+ couleur + "; \
           }");
         texte._balise.after(s);
+        this._texte = texte;
 
         this._enSavoirPlus = new DivObject(this._divText._balise, 'enSavoirPlus_' + this._id);
         this._enSavoirPlus.addClass('enSavoirPlus');
@@ -68,7 +69,7 @@ class SousMenu extends DivObject {
 
         /////////////////////////////////////////
 
-        this._ssSousMenu = (json.sousmenu != undefined);
+        this._ssSousMenu = (json.sousmenu !== undefined);
         var jsonElements = this._ssSousMenu ? json.sousmenu : json.elements;
 
         ////////////////////////////////
@@ -76,6 +77,26 @@ class SousMenu extends DivObject {
 
         this._divSousElements = [];
         this.divSousElements = jsonElements;
+        if (this._ssSousMenu) {
+            var i = 0;
+            this._divSousElements.forEach(element => {
+                element._balise.click({ param: this, num: i }, this.displaySSMenuByElement);
+                i++;
+            });
+        } else {
+            var i = 0;
+            this._divSousElements.forEach(element => {
+                element._balise.click(function () {
+                    console.log('lien : ' + element._lien);
+                    if (element._lien == 'perenne'){
+                        $('.pagePerenne').remove();
+                        var fp = new FichePerenne($('#Application'), 'fichePerenne', null, element._params.couleur);
+                        fp.init();
+                    }
+                });
+                i++;
+            });
+        }
 
         ///////////////////////////////////
 
@@ -112,6 +133,10 @@ class SousMenu extends DivObject {
         sMenu._titre.html(s);
         sMenu._titre.css('font-size', size + 'px');
 
+        if (sMenu._json.sousmenu[num].texte !== undefined) {
+            sMenu._texte.html(sMenu._json.sousmenu[num].texte);
+        }
+
         $('#divLeft').remove();
         var divLeft = new DivObject(sMenu._divssSousMenu._balise, 'divLeft');
         var ssTitre = new BaliseObject(divLeft._balise, 'h1');
@@ -121,9 +146,8 @@ class SousMenu extends DivObject {
         for (let i = 0; i < sMenu._json.sousmenu.length; i++) {
             var span = new BaliseObject(divLeft._balise, 'span', 'spanSSMenu_' + i);
             span.html(sMenu._json.sousmenu[i].titre.toUpperCase());
-            var event = { "data": { "param": sMenu, "num": i } };
             if (i == num) { span.addClass('selected'); }
-            span._balise.click({param: sMenu, num: i}, sMenu.displaySSMenuByTitle);
+            span._balise.click({ param: sMenu, num: i }, sMenu.displaySSMenuByTitle);
             divLeft.append('<hr>');
         }
 
@@ -131,10 +155,18 @@ class SousMenu extends DivObject {
         sMenu.divSousElements = jsonElements;
         sMenu._divSousElements.forEach(element => {
             element.init();
+            element._balise.click(function () {
+                console.log('lien : ' + element._lien);
+                if (element._lien == 'perenne'){
+                    $('.pagePerenne').remove();
+                    var fp = new FichePerenne($('#Application'), 'fichePerenne', null, element._params.couleur);
+                    fp.init();
+                }
+            });
         });
     }
 
-    displaySSMenuByTitle(e){
+    displaySSMenuByTitle(e) {
         $('.selected').removeClass('selected');
         $(this).addClass('selected');
         var sMenu = e.data.param;
@@ -143,10 +175,18 @@ class SousMenu extends DivObject {
         sMenu.divSousElements = jsonElements;
         sMenu._divSousElements.forEach(element => {
             element.init();
+            element._balise.click(function () {
+                console.log('lien : ' + element._lien);
+                if (element._lien == 'perenne'){
+                    $('.pagePerenne').remove();
+                    var fp = new FichePerenne($('#Application'), 'fichePerenne', null, element._params.couleur);
+                    fp.init();
+                }
+            });
         });
     }
 
-    set divSousElements(jsonElements){
+    set divSousElements(jsonElements) {
         $('.elementSousMenu').remove();
         this._divSousElements = [];
         var emplacements = [
@@ -170,7 +210,6 @@ class SousMenu extends DivObject {
                 opacity: (Math.floor(Math.random() * 2) == 0) ? 1 : 0.9
             }
             var eltSsMenu = new ElementSousMenu(this._balise, jsonElt, params, this._scale);
-            eltSsMenu._balise.click({ param: this, num: i }, this.displaySSMenuByElement);
             this._divSousElements.push(eltSsMenu);
         }
     }
