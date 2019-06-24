@@ -93,23 +93,14 @@ class Menu extends DivObject {
         this._divEltsDeco.css('height', tailleDiv + 'px');
 
 
-        this._divEltsMenu._balise
-            .find(".elementMenu")
-            .on("click touchstart", null, { instance: this }, this.clickBtn);
-
-
-        // var btn = new BtObject(this._balise, 'btnPerenneTest');
-        // btn._balise.css({
-        //     position: 'fixed',
-        //     top: '50px',
-        //     left: '50px'
-        // });
-        // btn.html('Afficher pérenne');
-        // btn._balise.click({ param: this }, function (e) {
-        //     var menu = e.data.param;
-        //     var fp = new FichePerenne(menu._parent, 'fichePerenne', null, 'rgb(31, 136, 31)');
-        //     fp.init();
-        // });
+        var i = 0;
+        this._menuElements.forEach(element => {
+            element._balise.click({ menu: this, element: this._menuElements[i] }, this.clickBtn);
+            i++;
+        });
+        // this._divEltsMenu._balise
+        //     .find(".elementMenu")
+        //     .on("click touchstart", null, { instance: this }, this.clickBtn);
 
     }
 
@@ -133,11 +124,17 @@ class Menu extends DivObject {
         } else {
             touch = e;
         }
-        var menu = e.data.instance;
-        // e.data.instance.fermerMenu(type, lien);
-        // e.data.instance.clickMenu($(this));
+        var menu = e.data.menu;
+        var element = e.data.element;
         menu.tidyElements(menu, $(this).attr('id'));
-        menu.moveDecoElements(menu);
+        if (element._type == 'carte') {
+            menu.backgroundDiaporama = [];
+            menu.hideDecoElements(menu);
+            var carte = new Carte(menu._parent, textesJSON.Application.Carte, poisJSON, null);
+            carte.init();
+        } else {
+            menu.moveDecoElements(menu);
+        }
         menu.showSousMenu($(this));
     }
 
@@ -187,21 +184,6 @@ class Menu extends DivObject {
         // this.toggleMenu();
     }
 
-    clickMenu(menuElt) {
-        var type = menuElt.attr('type');
-        console.log('type');
-        switch (type) {
-            case "menu":
-                this.toggleSousMenu(menuElt);
-                break;
-
-            default:
-                var lien = menuElt.attr('lien');
-                this.fermerMenu(type, lien);
-                break;
-        }
-    }
-
     fermerMenu(ouvrirType, lien) {
         TweenLite.to(this._balise, 1, { opacity: 0, onComplete: this.toggleMenu, onCompleteParams: [this] });
         this.finFermerSignal.dispatch(ouvrirType, lien);
@@ -209,20 +191,6 @@ class Menu extends DivObject {
 
     toggleMenu(menu) {
         menu._balise.toggle();
-    }
-
-    toggleSousMenu(menuElt) {
-        var id = menuElt.attr('id');
-        if (this._sousMenuElement.length == 0) {
-            this.hideAllElementsButOne(id);
-            this.showSousMenu(menuElt);
-        } else {
-            this.deleteSousMenu();
-            this.showAllElements(id);
-        }
-    }
-    toggleElement(element) {
-        element._balise.toggle();
     }
 
     tidyElements(menu, id) {
@@ -272,6 +240,11 @@ class Menu extends DivObject {
             element.tweenAnimate(newParams);
         }
     }
+    hideDecoElements(menu){
+        menu._decoMenuElements.forEach(element => {
+            element.tweenAnimate({opacity: 0});
+        });
+    }
 
     showSousMenu(menuElt) {
         var lien = menuElt.attr('lien');
@@ -290,17 +263,6 @@ class Menu extends DivObject {
         this.displayBackground();
     }
 
-    deleteSousMenu() {
-        var menu = this;
-        for (let i = 0; i < this._sousMenuElement.length; i++) {
-            setTimeout(function () {
-                menu._sousMenuElement[i].close();
-                if (i == menu._sousMenuElement.length - 1)
-                    menu._sousMenuElement = []; // on vide la tableau à la fin de la boucle
-            }, i * 50);
-        }
-    }
-
     // GETTERS
 
     get finFermerSignal() {
@@ -316,14 +278,16 @@ class Menu extends DivObject {
         }
         this._fondImgs = [];
         this._couleursAssociees = [];
-        for (let i = 0; i < imagesJson.length; i++) {
-            console.log("new back image : " + i);
-            var img = imagesJson[i];
-            var image = new Img(this._balise, "fond_img_" + img.id, img.src);
-            image.addClass('page');
-            image.css('opacity', 0);
-            this._fondImgs.push(image);
-            this._couleursAssociees.push(img.color);
+        if (imagesJson.length != 0) {
+            for (let i = 0; i < imagesJson.length; i++) {
+                console.log("new back image : " + i);
+                var img = imagesJson[i];
+                var image = new Img(this._balise, "fond_img_" + img.id, img.src);
+                image.addClass('page');
+                image.css('opacity', 0);
+                this._fondImgs.push(image);
+                this._couleursAssociees.push(img.color);
+            }
         }
     }
 }

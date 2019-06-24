@@ -27,11 +27,11 @@
 }
 
 .zoomButtons{
-    position: fixed;
+    position: absolute;
     width: 130px;
     height: 130px;
     border-radius: 50%;
-    bottom: 50px;
+    top: 450px;
     background-color: white;
     color: darkgreen;
     font-size: 70px;

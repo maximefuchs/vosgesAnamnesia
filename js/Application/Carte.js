@@ -12,25 +12,8 @@ class Carte extends DivObject {
 
         this._jsonCarte = jsonCarte;
         this._jsonPoi = jsonPoi;
+        lien = "parc";
         this._lien = lien;
-        
-        // interact('.Fiche')
-        //     .draggable({
-        //         onmove: this.dragMoveListener,
-        //         ignoreFrom: '.FicheBt, .FicheBtLien',
-        //         restrict: {
-        //             restriction: 'parent',
-        //             elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
-        //         },
-        //     });
-
-        // interact('.Fiche')
-        //     .gesturable({
-        //         onmove: this.rotateListener
-        //     });
-
-        // this._balise.find(".Poi").on("click touchstart", null, { instance: this }, this.clickBtn);
-        // this._balise.find(".Fiche").on("mousedown touchstart", null, { instance: this }, this.clickFiche);
 
         this.signaux = {
             finFermer: new signals.Signal()
@@ -38,7 +21,7 @@ class Carte extends DivObject {
 
         this._pois = [];
         this._poiDiv = new DivObject(this._balise, "CartePoints");
-        var pois = this._jsonPoi[this._lien];
+        var pois = jsonPoi[lien];
         for (let i = 0; i < pois.length; i++) {
             console.log("new point : " + i);
             var poi = new Poi(this._poiDiv._balise, pois[i]);
@@ -54,7 +37,7 @@ class Carte extends DivObject {
 
         this._layers = [];
         this._layersDiv = new DivObject(this._balise, "CarteLayers");
-        var layers = this._jsonCarte.layer;
+        var layers = jsonCarte.layer;
         for (let i = 0; i < layers.length; i++) {
             console.log("new Layer : " + i);
             var layer = new Img(this._layersDiv._balise, layers[i].id, layers[i].src);
@@ -63,22 +46,6 @@ class Carte extends DivObject {
 
         this._viewer = this.getOSDviewer();
     }
-
-    // FONCTION DRAG FICHE
-    // dragMoveListener(event) {
-
-    //     var target = event.target,
-    //         // keep the dragged position in the data-x/data-y attributes
-    //         x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-    //         y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
-
-    //     // translate the element
-    //     TweenLite.to(target, 0, { x: x, y: y });
-
-    //     // update the posiion attributes
-    //     target.setAttribute('data-x', x);
-    //     target.setAttribute('data-y', y);
-    // }
 
     init() {
         this.setOverlays();
@@ -154,18 +121,19 @@ class Carte extends DivObject {
         });
 
         var carte = this;
-        var backButton = new DivObject(div, "backButton");
-        var img = new Img(backButton._balise, 'bachButton_img', "datas/imgs/interface/boutons_carte/home.png");
-        img.attr('width', 60); img.attr('height', 60); img.css('margin-top', '15px');
-        backButton._balise.click(function () {
-            carte.hideOSDtools();
-            carte.fermerCarte("menu");
-        });
+
+        // var backButton = new DivObject(div, "backButton");
+        // var img = new Img(backButton._balise, 'bachButton_img', "datas/imgs/interface/boutons_carte/home.png");
+        // img.attr('width', 60); img.attr('height', 60); img.css('margin-top', '15px');
+        // backButton._balise.click(function () {
+        //     carte.hideOSDtools();
+        //     carte.fermerCarte("menu");
+        // });
 
         var zoomInBtn = new BtObject(div, "zoomInBtn");
         zoomInBtn.html("+");
         zoomInBtn.addClass('zoomButtons');
-        zoomInBtn.css('left', '40%');
+        zoomInBtn.css('right', '400px');
         var zMax = viewer.viewport.getMaxZoom();
         zoomInBtn._balise.click(function () {
             var z = viewer.viewport.getZoom();
@@ -176,7 +144,7 @@ class Carte extends DivObject {
         var zoomOutBtn = new BtObject(div, "zoomOutBtn");
         zoomOutBtn.html("-");
         zoomOutBtn.addClass('zoomButtons');
-        zoomOutBtn.css('right', '40%');
+        zoomOutBtn.css('right', '250px');
         var zMin = viewer.viewport.getMinZoom();
         zoomOutBtn._balise.click(function () {
             var z = viewer.viewport.getZoom();
