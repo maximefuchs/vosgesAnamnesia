@@ -6,7 +6,7 @@ Global.include('dev/js/utils/utilsOpenseadragon.js');
 Global.includeCSS('dev/css/Application/Carte.css');
 
 class Carte extends DivObject {
-    constructor(div, jsonCarte, jsonPoi, lien) {
+    constructor(div, jsonCarte, jsonPoi, lien, couleur) {
         super(div, "Carte");
         this.addClass("page");
 
@@ -27,11 +27,12 @@ class Carte extends DivObject {
             var poi = new Poi(this._poiDiv._balise, pois[i]);
             this._pois.push(poi);
         }
+        $('.poi').css('border', '5px solid ' + couleur);
 
 
         this._fiches = [];
         for (let i = 0; i < this._pois.length; i++) {
-            var f = new Fiche(this._pois[i], i + 'fiche_' + poi._id);
+            var f = new Fiche(this._pois[i], i + 'fiche_' + poi._id, couleur);
             this._fiches.push(f);
         }
 
@@ -59,7 +60,7 @@ class Carte extends DivObject {
     }
 
     supprimerCarte(carte) {
-        $(body).find('.fiche').remove();
+        $(body).find('.elementFiche').remove();
         carte._balise.remove();
     }
 
@@ -120,16 +121,6 @@ class Carte extends DivObject {
             viewer.viewport.applyConstraints();
         });
 
-        var carte = this;
-
-        // var backButton = new DivObject(div, "backButton");
-        // var img = new Img(backButton._balise, 'bachButton_img', "datas/imgs/interface/boutons_carte/home.png");
-        // img.attr('width', 60); img.attr('height', 60); img.css('margin-top', '15px');
-        // backButton._balise.click(function () {
-        //     carte.hideOSDtools();
-        //     carte.fermerCarte("menu");
-        // });
-
         var zoomInBtn = new BtObject(div, "zoomInBtn");
         zoomInBtn.html("+");
         zoomInBtn.addClass('zoomButtons');
@@ -154,7 +145,6 @@ class Carte extends DivObject {
     }
 
     hideOSDtools() {
-        $('#backButton').toggle();
         $('#zoomInBtn').toggle();
         $('#zoomOutBtn').toggle();
     }

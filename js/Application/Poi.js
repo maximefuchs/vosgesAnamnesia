@@ -11,7 +11,7 @@ class Poi extends DivObject {
         this._long = this._json.long;
         this._titre = this._json.titre;
         this._soustitre = this._json.soustitre;
-        this._image = this._json.image;
+        this._images = this._json.images;
         this._texte = this._json.texte;
         this._adresse = this._json.adresse;
         this._tel = this._json.tel;

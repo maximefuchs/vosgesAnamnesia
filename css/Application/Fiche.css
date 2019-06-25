@@ -1,60 +1,27 @@
 
 .fiche {
-    width: max-content;
+    width: 1000px;
+    height: 500px;
     font-size: 20px;
     color: black;
     background: white;
-}
-
-.fiche img {
-    width: 500px;
-}
-
-.fiche .divTexte {
-    padding: 30px;
-    text-align: justify;
-}
-
-.fiche h1 {
-    font-size: 25px;
-    color: darkgreen;
-}
-
-.fiche h2 {
-    font-size: 22px;
-    font-weight: bold;
-    font-style: italic;
-}
-
-.fiche p {
-    margin-top: 8px;
-}
-
-.fiche .divBottom {
-    padding: 0 0 30px 40px;
     display: flex;
 }
 
-.fiche .divBottom .flexElt {
+.fiche .divTexte {
+    flex: 1;
+    height: 380;
+    width: 380;
+    padding: 70px 70px 50px 50px;
+    text-align: justify;
+}
+
+.fiche .divSlider{
     flex: 1;
 }
 
-.fiche .divBottom .flexElt div span {
-    font-size: 15px;
-}
-
-.fiche .divIcone {
-    border-radius: 50%;
-    width: 30px;
-    text-align: center;
-    padding: 4px;
-    margin: 7px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.fiche .icone {
-    width: 20px;
+.fiche .divBottom{
+    margin: 20px;
 }
 
 .ficheBt {
@@ -63,19 +30,12 @@
     height: 50px;
     top: 0;
     left: 0;
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
     cursor: pointer;
 }
 .ficheBtFermer {
-    /* background-image: url("../../../datas/imgs/interface/FicheBtFermer.png");
-    background-repeat: no-repeat; */
-    width: 30px;
-    height: 30px;
     text-align: center;
-    border-radius: 50%;
-    color: darkgreen;
-    background-color: white;
-    /* font-family: 'TTMoons'; */
+    color: white;
+    font-size: 40px;
 }
 .ficheBtFermerTexte{
     position: absolute;

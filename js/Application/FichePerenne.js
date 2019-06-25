@@ -1,7 +1,6 @@
 Global.includeCSS('dev/css/Application/FichePerenne.css');
-Global.includeCSS('dev/css/Application/zSlider.css');
 
-Global.include('dev/js/utils/zSlider.js');
+Global.include('dev/js/Application/SliderDiaporama.js');
 
 class FichePerenne extends DivObject {
     constructor(parent, id, json, couleur) {
@@ -87,30 +86,13 @@ class FichePerenne extends DivObject {
         ////////// premier slider
         var divSliderComm = new DivObject(divRight._balise, 'divSliderComm_' + this._id);
         divSliderComm.addClass('sliderComm');
-        var divSlider = new DivObject(divSliderComm._balise, 'divSlider_' + this._id);
-        divSlider.addClass('divSlider');
-        var carousselRight = new DivObject(divSlider._balise, 'caroussel1');
-        carousselRight.addClass('z-slide-wrap');
-        carousselRight.addClass('top');
-        var ul = new BaliseObject(carousselRight._balise, 'ul');
-        ul.addClass('z-slide-content');
-        var colors = ['lightgreen', 'lightblue', 'lightpink'];
-        for (let i = 0; i < 3; i++) {
-            var li = new BaliseObject(ul._balise, 'li', 'li_' + i);
-            li.css('background', colors[i]);
-            li.addClass('z-slide-item');
-        }
-        new Slider('#caroussel1', '.z-slide-item', {
-            interval: 4,
-            duration: 0.5
-        });
-        $('.z-slide-indicator').css('background', couleur);
+        new SliderDiaporama(divSliderComm._balise, 'slider1_' + this._id, null, couleur, 400, 4, 0.5);
         /////////////////////
 
         var squareRight = new DivObject(divSliderComm._balise, 'squareRight_' + this._id);
         squareRight.addClass('squareRight');
         squareRight.css('background', couleur);
-        squareRight.html(titreH2+loremShort);
+        squareRight.html(titreH2 + loremShort);
 
         var textRight = new DivObject(divRight._balise, 'textRight_' + this._id);
         textRight.addClass('textRight');
@@ -119,32 +101,14 @@ class FichePerenne extends DivObject {
         ////////// deuxième slider
         var divSliderComm2 = new DivObject(divRight._balise, 'divSliderComm2_' + this._id);
         divSliderComm2.addClass('sliderComm');
-        divSliderComm2.css('margin', '5% 0');
-        var divSlider2 = new DivObject(divSliderComm2._balise, 'divSlider2_' + this._id);
-        divSlider2.addClass('divSlider');
-        var caroussel = new DivObject(divSlider2._balise, 'caroussel2');
-        caroussel.addClass('z-slide-wrap');
-        caroussel.addClass('large');
-        caroussel.addClass('top');
-        var ul = new BaliseObject(caroussel._balise, 'ul');
-        ul.addClass('z-slide-content');
-        var colors = ['lightgreen', 'lightblue', 'lightpink'];
-        for (let i = 0; i < 3; i++) {
-            var li = new BaliseObject(ul._balise, 'li', 'li_' + i);
-            li.css('background', colors[i]);
-            li.addClass('z-slide-item');
-        }
-        new Slider('#caroussel2', '.z-slide-item', {
-            interval: 4,
-            duration: 0.5
-        });
-        $('.z-slide-indicator').css('background', couleur);
+        new SliderDiaporama(divSliderComm2._balise, 'slider2_' + this._id, null, couleur, 700, 4, 0.5);
+        divSliderComm2.css('margin-top', '70px');
         /////////////////////
 
         var divBottom = new DivObject(divRight._balise, 'divBottom_' + this._id);
         divBottom.addClass('divBottom');
         divBottom.css('background', couleur);
-        divBottom.html(titreH2+lorem);
+        divBottom.html(titreH2 + lorem);
 
 
         ///////////////////////////

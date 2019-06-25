@@ -1,19 +1,25 @@
-#elementsMenu, #elementsDeco{
+#menu #sousmenuCarte>* {
+    z-index: 11;
+}
+
+#elementsMenu, #elementsDeco {
     width: 100%;
     position: absolute;
     bottom: 0;
     left: 0;
+}
+
+#elementsMenu>*, #elementsDeco>* {
     z-index: 10;
 }
 
-#bandeauLangues{
+#bandeauLangues {
     position: absolute;
     width: 100%;
     bottom: 0;
     left: 0;
     background: #0008;
 }
-
 
 .menuBtn {
     position: absolute;

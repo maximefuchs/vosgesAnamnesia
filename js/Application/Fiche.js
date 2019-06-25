@@ -1,11 +1,10 @@
-// Global.include('dev/js/Application/FicheDiaporama.js');
-// Global.include('dev/js/Application/FicheBtLien.js');
+Global.include('dev/js/Application/SliderDiaporama.js');
 
 Global.includeCSS('dev/css/Application/Fiche.css');
 
 class Fiche extends DivObject {
     // constructor(div, poi, id) {
-    constructor(poi, id) {
+    constructor(poi, id, couleur) {
         super(poi._balise, id);
 
         this.signaux = {
@@ -14,74 +13,53 @@ class Fiche extends DivObject {
 
         this._id = id;
         this._poi = poi;
-        // this._categorie = categorie;
-        // this._idFiche = categorie.id + "-" + this._json.id;
-        // this._x = this._json.x;
-        // this._y = this._json.y;
+        this._couleur = couleur;
         this._ouvert = false;
-        this._langue = paramsJSON.langueParDefault;
-        this.addClass("fiche");
+        // this._langue = paramsJSON.langueParDefault;
 
-        // this._diaporama = new FicheDiaporama(this._balise, this,this._json.diaporama, 345, 230);
+        this.addClass('elementFiche'); 
+        //permet la suppression de toutes les fiches avec $('.elementFiche').remove()
 
-        this._img = new BaliseObject(this._balise, "img");
+        var divFiche = new DivObject(this._balise, 'divFiche_' + this._id);
+        divFiche.addClass("fiche");
 
-        this._divTexte = new DivObject(this._balise, "divtxt_" + this._id);
+        var lorem = "Ut aute enim tempor veniam anim excepteur enim magna. Minim occaecat dolore Lorem quis. Do et sunt duis veniam nisi sit. Pariatur officia labore mollit sit duis excepteur cillum voluptate magna quis sit. Laborum nisi exercitation amet reprehenderit pariatur officia exercitation.";
+        var t = 'titre titre titre';
+        var st = 'soustitre soustitre'
+
+        this._divTexte = new DivObject(divFiche._balise, "divtxt_" + this._id);
         this._divTexte.addClass('divTexte');
         this._titre = new BaliseObject(this._divTexte._balise, "h1");
-        this._sousTitre = new BaliseObject(this._divTexte._balise, "h2");
+        this._titre.css('color', couleur)
+        this._titre.html(t);
+        this._sousTitre = new BaliseObject(this._divTexte._balise, "h3");
+        this._sousTitre.html(st);
         this._texte = new BaliseObject(this._divTexte._balise, "p");
+        this._texte.html(lorem);
 
-        var bottom = new DivObject(this._balise, "divBottom_" + this._id);
+        var bottom = new DivObject(this._divTexte._balise, "divBottom_" + this._id);
         bottom.addClass('divBottom');
 
-        var bottomLeft = new DivObject(bottom._balise, 'divBottomLeft_' + this._id);
-        bottomLeft.addClass('flexElt');
-        var divPhone = new DivObject(bottomLeft._balise, "divPhone_" + this._id);
-        new Icone(divPhone._balise, "iconPhone_" + this._id, 'datas/imgs/carte/poi/phone.png', 'darkgreen');
-        var numTel = new Span(divPhone._balise, "numTel_" + this._id);
-        var divMail = new DivObject(bottomLeft._balise, "divMail_" + this._id);
-        new Icone(divMail._balise, "iconMail_" + this._id, 'datas/imgs/carte/poi/mail.png', 'darkgreen');
-        var mail = new Span(divMail._balise, "mail_" + this._id);
-        
-        var bottomRight = new DivObject(bottom._balise, 'divBottomRight_' + this._id);
-        bottomRight.addClass('flexElt');
 
-        this._img.attr("src", this._poi._image);
-        this._titre.html(Global.getTexteLangue(this._poi._titre, this._langue));
-        this._sousTitre.html(Global.getTexteLangue(this._poi._soustitre, this._langue));
-        this._texte.html(Global.getTexteLangue(this._poi._texte, this._langue));
 
-        numTel.html(this._poi._tel);
-        mail.html(this._poi._mail);
+        // this._titre.html(poi._titre);
+        // this._sousTitre.html(poi._soustitre);
+        // this._texte.html(poi._texte);
 
-        // imagePhone.attr('src', 'datas/imgs/carte/poi/phone.png');
-        // imageMail.attr('src', 'datas/imgs/carte/poi/mail.png');
 
-        // if(this._json.liens){
-        //     this._liensDiv = new DivObject(this._balise, this._id + "Liens");
-        //     this._liensDiv.addClass("FicheLiens");
-
-        //     this._liensTitre = new DivObject(this._liensDiv._balise, this._id + "LiensTitre");
-        //     this._liensTitre.addClass("FicheLiensTitre");
-
-        //     this._liensBtsDiv = new DivObject(this._liensDiv._balise, this._id + "LiensBts");
-        //     this._liensBts = [];
-        //     for(var i = 0; i < this._json.liens.length; i++){
-        //         var bt = new FicheBtLien(this._liensBtsDiv._balise, this._json.liens[i].idCat, this._json.liens[i].id, this);
-        //         this._liensBts.push(bt);
-        //     }
-        // }
-        
-        
-        this._btFermer = new DivObject(this._balise, this._id + "_BtFermer");
+        this._btFermer = new DivObject(divFiche._balise, this._id + "_BtFermer");
         this._btFermer.addClass("ficheBt");
         this._btFermer.addClass("ficheBtFermer");
+        this._btFermer.css('background', couleur);
         this._btFermer.append('<div class="ficheBtFermerTexte">+</div>');
         this._btFermer.x = 500 - this._btFermer.width / 2;
         this._btFermer.y = - this._btFermer.height / 2;
         // fermeture de l'élément gérer dans utilsOpenseadragon.js -> removeOverlay()
-        
+
+        var divSlider = new BaliseObject(divFiche._balise, 'divSlider_' + this._id);
+        divSlider.addClass('divSlider');
+        new SliderDiaporama(divSlider._balise, 'slider_' + this._id, null, couleur, 500, 3, 0.5);
+
         this._overlay = ficheToOverlay(this);
         this._balise.toggle();
 
@@ -93,7 +71,7 @@ class Fiche extends DivObject {
         this._sousTitre.html(Global.getTexteLangue(this._poi._soustitre, this._langue));
         this._texte.html(Global.getTexteLangue(this._poi._texte, this._langue));
     }
-    
+
     // positionement() {
     //     TweenLite.to(this._balise, 0, { x: this.testX(), y: this.testY() });
     //     if (this._y < StageHeight / 2) {

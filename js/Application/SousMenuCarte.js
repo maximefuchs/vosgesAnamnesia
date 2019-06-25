@@ -1,16 +1,24 @@
 Global.include('dev/js/Application/ElementSousMenu.js');
 
-Global.includeCSS('dev/css/Application/SousMenu.css');
+// Global.includeCSS('dev/css/Application/SousMenu.css');
+// Global.includeCSS('dev/css/Application/SousMenuCarte.css');
 
-class SousMenu extends DivObject {
-    constructor(parent, json, titreElement, couleur, scale) {
-        super(parent, 'sousmenu');
+class SousMenuCarte extends DivObject {
+    constructor(parent, json, titreElement, couleur, scale, lien) {
+        super(parent, 'sousmenuCarte');
         this.addClass('sousmenu');
 
         this._json = json;
         this._scale = scale;
         this._couleur = couleur;
         this._titreElement = titreElement;
+
+        this._carte = new Carte(
+            $('#Application'),
+            textesJSON.Application.Carte,
+            poisJSON,
+            lien,
+            couleur);
 
 
         this.css('bottom', 1 * scale);
@@ -122,6 +130,7 @@ class SousMenu extends DivObject {
             element.init();
         });
         this._divssSousMenu.tweenAnimate({ left: 0 });
+        this._carte.init();
     }
 
     displaySSMenuByElement(e) {

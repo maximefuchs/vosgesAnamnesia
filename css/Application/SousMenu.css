@@ -15,7 +15,7 @@
   position: absolute;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 11;
 }
 
 .text_sousmenu {
@@ -27,6 +27,7 @@
 .text_sousmenu p {
   font-size: 33px;
   overflow: auto;
+  height: 250px;
 }
 
 .enSavoirPlus {

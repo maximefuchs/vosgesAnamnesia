@@ -2,6 +2,7 @@ Global.include('dev/js/Application/ElementMenu.js');
 Global.include('dev/js/Application/ElementDecoMenu.js');
 
 Global.include('dev/js/Application/SousMenu.js');
+Global.include('dev/js/Application/SousMenuCarte.js');
 
 Global.include('dev/js/Application/Jeu.js');
 
@@ -128,14 +129,25 @@ class Menu extends DivObject {
         var element = e.data.element;
         menu.tidyElements(menu, $(this).attr('id'));
         if (element._type == 'carte') {
-            menu.backgroundDiaporama = [];
+            menu.supprimerPerenne();
             menu.hideDecoElements(menu);
-            var carte = new Carte(menu._parent, textesJSON.Application.Carte, poisJSON, null);
-            carte.init();
+            menu._divEltsDeco.css('display', 'none');
+            menu.showSousMenuCarte($(this), element._lien);
         } else {
+            menu.supprimerCarte();
+            menu.supprimerPerenne();
+            menu._divEltsDeco.css('display', 'block');
             menu.moveDecoElements(menu);
+            menu.showSousMenu($(this));
         }
-        menu.showSousMenu($(this));
+    }
+
+    supprimerCarte() {
+        $('#Carte').remove();
+        $(body).find('.elementFiche').remove();
+    }
+    supprimerPerenne() {
+        $('.pagePerenne').remove();
     }
 
     clickBtnLang(e) {
@@ -162,20 +174,24 @@ class Menu extends DivObject {
         var i = 0;
         var menu = this;
         var duree = paramsJSON.dureeFadeFond;
-        TweenLite.to(images[i]._balise, duree, { opacity: 1 });
-        this._setIntervalFonction = setInterval(function () {
-            var current = i % nbImgs;
-            var next = (i + 1) % nbImgs;
-            TweenLite.to(images[current]._balise, duree, { opacity: 0 });
-            TweenLite.to(images[next]._balise, duree, { opacity: 1 });
+        if (nbImgs == 0)
+            this._setIntervalFonction = 0;
+        else {
+            TweenLite.to(images[i]._balise, duree, { opacity: 1 });
+            this._setIntervalFonction = setInterval(function () {
+                var current = i % nbImgs;
+                var next = (i + 1) % nbImgs;
+                TweenLite.to(images[current]._balise, duree, { opacity: 0});
+                TweenLite.to(images[next]._balise, duree, { opacity: 1 });
 
-            var newColor = menu._couleursAssociees[next];
-            menu._decoMenuElements.forEach(e => {
-                e.changeColor(newColor);
-            });
+                var newColor = menu._couleursAssociees[next];
+                menu._decoMenuElements.forEach(e => {
+                    e.changeColor(newColor);
+                });
 
-            i++;
-        }, paramsJSON.dureeFond * 1000); // temps entre chaque execution de la fonction
+                i++;
+            }, paramsJSON.dureeFond * 1000); // temps entre chaque execution de la fonction
+        }
     }
 
     ouvrirMenu() {
@@ -240,9 +256,9 @@ class Menu extends DivObject {
             element.tweenAnimate(newParams);
         }
     }
-    hideDecoElements(menu){
+    hideDecoElements(menu) {
         menu._decoMenuElements.forEach(element => {
-            element.tweenAnimate({opacity: 0});
+            element.tweenAnimate({ opacity: 0 });
         });
     }
 
@@ -262,6 +278,24 @@ class Menu extends DivObject {
         this.backgroundDiaporama = json.diaporama;
         this.displayBackground();
     }
+
+    showSousMenuCarte(menuElt, lien) {
+        var lien = menuElt.attr('lien');
+        var couleur = menuElt.children().css('background-color');
+        couleur = couleur.split(/[()]/);
+        couleur = couleur[1].split(',');
+        couleur = 'rgb(' + couleur[0] + ',' + couleur[1] + ',' + couleur[2] + ')';
+        var json = this._json.SousMenu[lien];
+        $('.sousmenu').remove();
+        var titre = menuElt.find('.elementMenu_titre').html();
+        var sm = new SousMenuCarte(this._balise, json, titre, couleur, this._scale, lien);
+        sm.init();
+
+        clearInterval(this._setIntervalFonction);
+        this.backgroundDiaporama = [];
+        this.displayBackground();
+    }
+
 
     // GETTERS
 

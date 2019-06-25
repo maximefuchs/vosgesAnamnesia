@@ -96,7 +96,7 @@
     padding: 20px;
 }
 
-.divBottom div h1, .divBottom div h2, .divBottom div h3 {
+.divBottom h1, .divBottom h2, .divBottom h3 {
     color: white!important;
     margin: 15px 0;
 }
