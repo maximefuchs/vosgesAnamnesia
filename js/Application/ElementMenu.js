@@ -28,9 +28,7 @@ class ElementMenu extends BlocMenu {
 
         var frontBackColor = this._src_fond != '#' ? this._couleur + 'b0' : this._couleur;
         this._front.css('background', frontBackColor);
-    }
 
-    init() {
         this._balise.css({
             "background": "url(" + this._src_fond + ") center center",
             "background-size": "cover",
@@ -46,10 +44,16 @@ class ElementMenu extends BlocMenu {
             "width": "100%",
             "height": "100%"
         });
+    }
+
+    init() {
         this.tweenAnimate({
+            width: this._taille * this._scale,
+            height: this._taille * this._scale,
+            'font-size': "",
             left: this._x * this._scale,
             bottom: this._y * this._scale,
             opacity: 1
-        }, 1, 2);
+        }, 0, 2);
     }
 }

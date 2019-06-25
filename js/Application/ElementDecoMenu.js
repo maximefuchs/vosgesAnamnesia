@@ -11,9 +11,6 @@ class ElementDecoMenu extends BlocMenu {
         this._scale = scale;
 
         this.addClass('elementDecoMenu');
-    }
-
-    init() {
         this._balise.css({
             "width": this._taille,
             "height": this._taille,
@@ -22,11 +19,14 @@ class ElementDecoMenu extends BlocMenu {
             "background": this._couleur,
             "opacity": 0
         });
+    }
+
+    init() {
         this.tweenAnimate(
             {
                 left: this._x * this._scale,
                 bottom: this._y * this._scale,
                 opacity: this._alpha,
-            }, 2, 1);
+            }, 1, 1);
     }
 }

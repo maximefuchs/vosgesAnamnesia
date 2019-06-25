@@ -2,7 +2,6 @@ Global.include('dev/js/Application/ElementMenu.js');
 Global.include('dev/js/Application/ElementDecoMenu.js');
 
 Global.include('dev/js/Application/SousMenu.js');
-Global.include('dev/js/Application/SousMenuCarte.js');
 
 Global.include('dev/js/Application/Jeu.js');
 
@@ -17,23 +16,20 @@ class Menu extends DivObject {
 
         this._json = json;
 
-        this.signaux = {
-            click: new signals.Signal(),
-            finFermer: new signals.Signal()
-        }
-
         this._fondImgs = [];
         this._couleursAssociees = [];
-        console.log(json);
-        for (let i = 0; i < json.diaporama.length; i++) {
-            console.log("new back image : " + i);
-            var img = json.diaporama[i];
-            var image = new Img(this._balise, "fond_img_" + img.id, img.src);
-            image.addClass('page');
-            image.css('opacity', 0);
-            this._fondImgs.push(image);
-            this._couleursAssociees.push(img.color);
-        }
+
+        this.backgroundDiaporama = json.diaporama;
+        // console.log(json);
+        // for (let i = 0; i < json.diaporama.length; i++) {
+        //     console.log("new back image : " + i);
+        //     var img = json.diaporama[i];
+        //     var image = new Img(this._balise, "fond_img_" + img.id, img.src);
+        //     image.addClass('page');
+        //     image.css('opacity', 0);
+        //     this._fondImgs.push(image);
+        //     this._couleursAssociees.push(img.color);
+        // }
         this._setIntervalFonction = 0; // id of the setInterval founction used to switch between background images
 
         var scale = 140;
@@ -99,9 +95,6 @@ class Menu extends DivObject {
             element._balise.click({ menu: this, element: this._menuElements[i] }, this.clickBtn);
             i++;
         });
-        // this._divEltsMenu._balise
-        //     .find(".elementMenu")
-        //     .on("click touchstart", null, { instance: this }, this.clickBtn);
 
     }
 
@@ -128,14 +121,13 @@ class Menu extends DivObject {
         var menu = e.data.menu;
         var element = e.data.element;
         menu.tidyElements(menu, $(this).attr('id'));
+        menu.supprimerCarte();
+        menu.supprimerPerenne();
         if (element._type == 'carte') {
-            menu.supprimerPerenne();
             menu.hideDecoElements(menu);
             menu._divEltsDeco.css('display', 'none');
-            menu.showSousMenuCarte($(this), element._lien);
+            menu.showSousMenu($(this), element._lien);
         } else {
-            menu.supprimerCarte();
-            menu.supprimerPerenne();
             menu._divEltsDeco.css('display', 'block');
             menu.moveDecoElements(menu);
             menu.showSousMenu($(this));
@@ -148,6 +140,9 @@ class Menu extends DivObject {
     }
     supprimerPerenne() {
         $('.pagePerenne').remove();
+    }
+    supprimerSousMenu() {
+        $('.sousmenu').remove();
     }
 
     clickBtnLang(e) {
@@ -181,7 +176,7 @@ class Menu extends DivObject {
             this._setIntervalFonction = setInterval(function () {
                 var current = i % nbImgs;
                 var next = (i + 1) % nbImgs;
-                TweenLite.to(images[current]._balise, duree, { opacity: 0});
+                TweenLite.to(images[current]._balise, duree, { opacity: 0 });
                 TweenLite.to(images[next]._balise, duree, { opacity: 1 });
 
                 var newColor = menu._couleursAssociees[next];
@@ -262,7 +257,7 @@ class Menu extends DivObject {
         });
     }
 
-    showSousMenu(menuElt) {
+    showSousMenu(menuElt, link) { // if link is undefined -> show normal menu. if not, -> means we open a map
         var lien = menuElt.attr('lien');
         var couleur = menuElt.children().css('background-color');
         couleur = couleur.split(/[()]/);
@@ -271,40 +266,39 @@ class Menu extends DivObject {
         var json = this._json.SousMenu[lien];
         $('.sousmenu').remove();
         var titre = menuElt.find('.elementMenu_titre').html();
-        var sm = new SousMenu(this._balise, json, titre, couleur, this._scale);
+        if (link === undefined) {
+            var sm = new SousMenu(this._balise, json, titre, couleur, this._scale);
+            this.backgroundDiaporama = json.diaporama;
+        } else {
+            var sm = new SousMenuCarte(this._balise, json, titre, couleur, this._scale, lien);
+            this.backgroundDiaporama = [];
+        }
+        var menu = this;
+        sm.signalFermer.add(function () {
+            menu.fermerSousMenu(menu);
+        });
         sm.init();
 
         clearInterval(this._setIntervalFonction);
-        this.backgroundDiaporama = json.diaporama;
         this.displayBackground();
     }
 
-    showSousMenuCarte(menuElt, lien) {
-        var lien = menuElt.attr('lien');
-        var couleur = menuElt.children().css('background-color');
-        couleur = couleur.split(/[()]/);
-        couleur = couleur[1].split(',');
-        couleur = 'rgb(' + couleur[0] + ',' + couleur[1] + ',' + couleur[2] + ')';
-        var json = this._json.SousMenu[lien];
-        $('.sousmenu').remove();
-        var titre = menuElt.find('.elementMenu_titre').html();
-        var sm = new SousMenuCarte(this._balise, json, titre, couleur, this._scale, lien);
-        sm.init();
-
-        clearInterval(this._setIntervalFonction);
-        this.backgroundDiaporama = [];
-        this.displayBackground();
+    fermerSousMenu(menu) {
+        menu.supprimerCarte();
+        menu.supprimerPerenne();
+        menu._divEltsDeco.tweenAnimate({ bottom: 0, onComplete: function () { menu.supprimerSousMenu(); } });
+        menu._menuElements.forEach(menuElement => {
+            menuElement.init();
+        });
+        menu._decoMenuElements.forEach(decoElement => {
+            decoElement.init();
+        });
+        menu.backgroundDiaporama = menu._json.diaporama;
+        menu.displayBackground();
     }
 
 
     // GETTERS
-
-    get finFermerSignal() {
-        return this.signaux.finFermer;
-    }
-    get clickSignal() {
-        return this.signaux.click;
-    }
 
     set backgroundDiaporama(imagesJson) {
         for (let i = 0; i < this._fondImgs.length; i++) {

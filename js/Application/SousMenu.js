@@ -12,6 +12,8 @@ class SousMenu extends DivObject {
         this._couleur = couleur;
         this._titreElement = titreElement;
 
+        this.signalFermer = new signals.Signal();
+
 
         this.css('bottom', 1 * scale);
 
@@ -67,6 +69,11 @@ class SousMenu extends DivObject {
             background: couleur
         });
         this._btnFermer.html('<span>+</span>');
+        var ssMenu = this;
+        this._btnFermer._balise.click(function () {
+            ssMenu.close();
+            ssMenu.signalFermer.dispatch();
+        });
 
         /////////////////////////////////////////
 
@@ -123,6 +130,16 @@ class SousMenu extends DivObject {
             element.init();
         });
         this._divssSousMenu.tweenAnimate({ left: 0 });
+    }
+
+    close() {
+        this._btnFermer.tweenAnimate({ bottom: 5.5 * this._scale }, 0, 0.3);
+        this._divText.tweenAnimate({ left: -2 * this._scale, opacity: 0 });
+        this._divSousElements.forEach(element => {
+            element.tweenAnimate({ opacity: 0 });
+        });
+        var ssMenu = this;
+        this._divssSousMenu.tweenAnimate({ left: - 2 * this._scale});
     }
 
     displaySSMenuByElement(e) {
@@ -226,4 +243,25 @@ class SousMenu extends DivObject {
             this._divSousElements.push(eltSsMenu);
         }
     }
+}
+
+
+class SousMenuCarte extends SousMenu {
+    constructor(parent, json, titreElement, couleur, scale, lien) {
+        super(parent, json, titreElement, couleur, scale);
+
+        this._carte = new Carte(
+            $('#Application'),
+            textesJSON.Application.Carte,
+            poisJSON,
+            lien,
+            couleur);
+
+    }
+
+    init() {
+        super.init();
+        this._carte.init();
+    }
+
 }
