@@ -17,7 +17,7 @@ class Fiche extends DivObject {
         this._ouvert = false;
         // this._langue = paramsJSON.langueParDefault;
 
-        this.addClass('elementFiche'); 
+        this.addClass('elementFiche');
         //permet la suppression de toutes les fiches avec $('.elementFiche').remove()
 
         var divFiche = new DivObject(this._balise, 'divFiche_' + this._id);
@@ -31,23 +31,35 @@ class Fiche extends DivObject {
         this._divTexte.addClass('divTexte');
         this._titre = new BaliseObject(this._divTexte._balise, "h1");
         this._titre.css('color', couleur)
-        this._titre.html(t);
+        // this._titre.html(t);
+        this._titre.html(poi._titre);
         this._sousTitre = new BaliseObject(this._divTexte._balise, "h3");
-        this._sousTitre.html(st);
+        // this._sousTitre.html(st);
+        this._sousTitre.html(poi._soustitre);
         this._texte = new BaliseObject(this._divTexte._balise, "p");
-        this._texte.html(lorem);
+        // this._texte.html(lorem);
+        this._texte.html(poi._texte);
+        var s = $('<style></style>')
+            .html(".fiche p::-webkit-scrollbar-thumb {\
+            background: "+ couleur + "; \
+          }");
+        this._texte._balise.after(s);
 
         var bottom = new DivObject(this._divTexte._balise, "divBottom_" + this._id);
         bottom.addClass('divBottom');
+        var ti = new BaliseObject(bottom._balise, 'h4');
+        ti.html(poi._titre);
+        if (poi._adresse != "") { bottom.append(poi._adresse + '<br>') };
+        if (poi._tel != "") { bottom.append(poi._tel + '<br>') };
+        if (poi._mail != "") { bottom.append(poi._mail + '<br>') };
+        if (poi._site != "") { bottom.append(poi._site + '<br>') };
 
 
 
-        // this._titre.html(poi._titre);
-        // this._sousTitre.html(poi._soustitre);
-        // this._texte.html(poi._texte);
 
 
-        this._btFermer = new DivObject(divFiche._balise, this._id + "_BtFermer");
+
+        this._btFermer = new DivObject(this._divTexte._balise, this._id + "_BtFermer");
         this._btFermer.addClass("ficheBt");
         this._btFermer.addClass("ficheBtFermer");
         this._btFermer.css('background', couleur);
@@ -56,9 +68,9 @@ class Fiche extends DivObject {
         this._btFermer.y = - this._btFermer.height / 2;
         // fermeture de l'élément gérer dans utilsOpenseadragon.js -> removeOverlay()
 
-        var divSlider = new BaliseObject(divFiche._balise, 'divSlider_' + this._id);
+        var divSlider = new DivObject(divFiche._balise, 'divSlider_' + this._id);
         divSlider.addClass('divSlider');
-        new SliderDiaporama(divSlider._balise, 'slider_' + this._id, null, couleur, 500, 3, 0.5);
+        new SliderDiaporama(divSlider._balise, 'slider_' + this._id, poi._images, couleur, 500, 3, 0.5);
 
         this._overlay = ficheToOverlay(this);
         this._balise.toggle();

@@ -5,6 +5,11 @@
     border-radius: 50%;
     cursor: pointer;
 }
+.poi.large{
+    width: 90px;
+    height: 90px;
+    border-color: white!important;
+}
 
 .layerBtn {
     position: fixed;

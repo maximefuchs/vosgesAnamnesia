@@ -34,6 +34,7 @@ class SousMenu extends DivObject {
         var s = titreElement.toUpperCase();
         var size = 840 / s.length;
         if (size > 65) { size = 65; }
+        if (size < 37) { size = 37; }
         titre.html(s);
         titre.css('color', couleur);
         titre.css('font-size', size + 'px');
@@ -130,6 +131,7 @@ class SousMenu extends DivObject {
         var s = sMenu._json.sousmenu[num].titre.toUpperCase();
         var size = 840 / s.length;
         if (size > 65) { size = 65; }
+        if (size < 37) { size = 37; }
         sMenu._titre.html(s);
         sMenu._titre.css('font-size', size + 'px');
 
@@ -176,6 +178,7 @@ class SousMenu extends DivObject {
         var s = sMenu._json.sousmenu[num].titre.toUpperCase();
         var size = 840 / s.length;
         if (size > 65) { size = 65; }
+        if (size < 37) { size = 37; }
         sMenu._titre.html(s);
         sMenu._titre.css('font-size', size + 'px');
         if (sMenu._json.sousmenu[num].texte !== undefined) {

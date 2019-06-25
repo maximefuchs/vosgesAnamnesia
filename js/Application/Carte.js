@@ -167,25 +167,33 @@ class Carte extends DivObject {
                     clickHandler: function (event) {
                         var f = carte._fiches[i];
                         var p = f._poi;
-                        var overlay = poiToOverlay(p);
-                        console.log(overlay);
+                        if (!f._ouvert) {
+                            p.addClass('large');
+                            p._balise.css({ 'background': 'url(' + p._images[0] + ')', 'background-size': 'cover', 'background-position': 'center' });
+                            var overlay = poiToOverlay(p);
+                            console.log(overlay);
 
-                        f._balise.toggle();
-                        carte._viewer.addOverlay(f._overlay);
-                        carte.removeOverlay(f);
+                            f._balise.toggle();
+                            f._ouvert = true;
+                            carte._viewer.addOverlay(f._overlay);
+                            carte.removeOverlay(f, p);
+                        }
                     }
                 });
             });
         }
     }
 
-    removeOverlay(fiche) {
+    removeOverlay(fiche, poi) {
         var carte = this;
         return new OpenSeadragon.MouseTracker({
             element: fiche._btFermer._id,
             clickHandler: function (event) {
                 // fiche._balise.toggle();
                 carte._viewer.removeOverlay(fiche._id);
+                fiche._ouvert = false;
+                poi.removeClass('large');
+                poi.css('background', 'white');
             }
         });
     }

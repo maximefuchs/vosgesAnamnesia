@@ -1,3 +1,6 @@
+.elementFiche {
+    margin-top: 400px;
+}
 
 .fiche {
     width: 1000px;
@@ -16,12 +19,34 @@
     text-align: justify;
 }
 
-.fiche .divSlider{
+.fiche h2, .fiche h3, .fiche p {
+    margin-top: 20px;
+}
+
+.fiche p {
+    height: 170px;
+    overflow-y: scroll;
+}
+
+.fiche p::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.fiche p::-webkit-scrollbar-track {
+    background: #bbb;
+}
+
+.fiche p::-webkit-scrollbar-thumb {
+    height: 10px;
+}
+
+.fiche .divSlider {
     flex: 1;
 }
 
-.fiche .divBottom{
-    margin: 20px;
+.fiche .divBottom {
+    margin: 20px 0;
 }
 
 .ficheBt {
@@ -32,12 +57,14 @@
     left: 0;
     cursor: pointer;
 }
+
 .ficheBtFermer {
     text-align: center;
     color: white;
     font-size: 40px;
 }
-.ficheBtFermerTexte{
+
+.ficheBtFermerTexte {
     position: absolute;
     top: 50%;
     left: 50%;

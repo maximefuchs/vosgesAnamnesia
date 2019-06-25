@@ -22,17 +22,17 @@
     background: #FFF9;
 }
 
-.divTop {
+.pagePerenne .divTop {
     position: absolute;
     height: 600px;
 }
 
-.topImage {
+.pagePerenne .topImage {
     width: 100%;
     height: 600px;
 }
 
-.topTitre {
+.pagePerenne .topTitre {
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -42,7 +42,7 @@
     padding: 50px;
 }
 
-.divContain {
+.pagePerenne .divContain {
     width: 90%;
     padding: 5%;
     background: white;
@@ -51,29 +51,29 @@
     top: 600px;
 }
 
-.flex {
+.pagePerenne .flex {
     flex: 1;
     padding: 2%;
 }
 
-.flex h2 {
+.pagePerenne .flex h2 {
     margin: 25px 0;
 }
 
-.sliderComm {
+.pagePerenne .sliderComm {
     display: flex;
 }
 
-.divSlider {
+.pagePerenne .divSlider {
     flex: 1.8;
 }
 
-#caroussel1 {
+.pagePerenne #caroussel1 {
     top: 0;
     left: 0;
 }
 
-.squareRight {
+.pagePerenne .squareRight {
     flex: 1;
     padding: 50px;
     color: black;
@@ -82,41 +82,41 @@
     height: fit-content;
 }
 
-.squareRight h1, .squareRight h2, .squareRight h3 {
+.pagePerenne .squareRight h1, .pagePerenne .squareRight h2, .pagePerenne .squareRight h3 {
     color: white!important;
     margin: 15px 0;
 }
 
-.textRight {
+.pagePerenne .textRight {
     margin-top: 100px;
 }
 
-.divBottom {
+.pagePerenne .divBottom {
     margin-top: 150px;
     padding: 20px;
 }
 
-.divBottom h1, .divBottom h2, .divBottom h3 {
+.pagePerenne .divBottom h1, .pagePerenne .divBottom h2, .pagePerenne .divBottom h3 {
     color: white!important;
     margin: 15px 0;
 }
 
-.divImage {
+.pagePerenne .divImage {
     margin-top: 100px;
 }
 
-.divImage img {
+.pagePerenne .divImage img {
     width: 700px;
     height: 700px;
 }
 
-.divImage div {
+.pagePerenne .divImage div {
     width: 300px;
     padding: 50px;
     margin: -6px 0;
 }
 
-.divImage div h1, .divImage div h2, .divImage div h3 {
+.pagePerenne .divImage div h1, .pagePerenne .divImage div h2, .pagePerenne .divImage div h3 {
     color: white!important;
     margin: 0 0 15px 0;
 }
