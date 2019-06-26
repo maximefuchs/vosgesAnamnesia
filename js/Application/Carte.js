@@ -6,14 +6,12 @@ Global.include('dev/js/utils/utilsOpenseadragon.js');
 Global.includeCSS('dev/css/Application/Carte.css');
 
 class Carte extends DivObject {
-    constructor(div, jsonCarte, jsonPoi, lien, couleur) {
+    constructor(div, jsonCarte, couleur) {
         super(div, "Carte");
         this.addClass("page");
 
         this._jsonCarte = jsonCarte;
-        this._jsonPoi = jsonPoi;
-        lien = "parc";
-        this._lien = lien;
+        this._couleur = couleur;
 
         this.signaux = {
             finFermer: new signals.Signal()
@@ -21,37 +19,41 @@ class Carte extends DivObject {
 
         this._pois = [];
         this._poiDiv = new DivObject(this._balise, "CartePoints");
-        var pois = jsonPoi[lien];
-        for (let i = 0; i < pois.length; i++) {
-            console.log("new point : " + i);
-            var poi = new Poi(this._poiDiv._balise, pois[i]);
-            this._pois.push(poi);
-        }
-        $('.poi').css('border', '5px solid ' + couleur);
-
 
         this._fiches = [];
-        for (let i = 0; i < this._pois.length; i++) {
-            var f = new Fiche(this._pois[i], i + 'fiche_' + poi._id, couleur);
-            this._fiches.push(f);
-        }
 
-        this._layers = [];
-        this._layersDiv = new DivObject(this._balise, "CarteLayers");
-        var layers = jsonCarte.layer;
-        for (let i = 0; i < layers.length; i++) {
-            console.log("new Layer : " + i);
-            var layer = new Img(this._layersDiv._balise, layers[i].id, layers[i].src);
-            this._layers.push(layer);
-        }
+        // this._layers = [];
+        // this._layersDiv = new DivObject(this._balise, "CarteLayers");
+        // var layers = jsonCarte.layer;
+        // for (let i = 0; i < layers.length; i++) {
+        //     console.log("new Layer : " + i);
+        //     var layer = new Img(this._layersDiv._balise, layers[i].id, layers[i].src);
+        //     this._layers.push(layer);
+        // }
 
         this._viewer = this.getOSDviewer();
+        this._balise.toggle();
+    }
+
+    initPOIsandFiches(jsonPOIs) {
+        this.removeAllOverlays();
+        this._pois = [];
+        this._fiches = [];
+        for (let i = 0; i < jsonPOIs.length; i++) {
+            console.log("new point + fiche : " + i);
+            var poi = new Poi(this._poiDiv._balise, jsonPOIs[i]);
+            this._pois.push(poi);
+            var f = new Fiche(poi, i + 'fiche_' + poi._id, this._couleur);
+            this._fiches.push(f);
+        }
+        this.setOverlays();
     }
 
     init() {
-        this.setOverlays();
+        $('.poi').css('border', '5px solid ' + this._couleur);
         this.setPoiClickListeners();
         this.setOSDtools();
+        this._balise.css('display', 'block');
     }
 
     fermerCarte(elementAouvrir) {
@@ -153,9 +155,9 @@ class Carte extends DivObject {
         for (let i = 0; i < this._pois.length; i++) {
             this._viewer.addOverlay(poiToOverlay(this._pois[i]));
         }
-        for (let i = 0; i < this._layers.length; i++) {
-            this._viewer.addOverlay(layerToOverlay(this._layers[i]));
-        }
+        // for (let i = 0; i < this._layers.length; i++) {
+        //     this._viewer.addOverlay(layerToOverlay(this._layers[i]));
+        // }
     }
 
     setPoiClickListeners() {
@@ -165,6 +167,7 @@ class Carte extends DivObject {
                 new OpenSeadragon.MouseTracker({
                     element: carte._pois[i]._id,
                     clickHandler: function (event) {
+                        console.log('click poi');
                         var f = carte._fiches[i];
                         var p = f._poi;
                         if (!f._ouvert) {
@@ -196,6 +199,10 @@ class Carte extends DivObject {
                 poi.css('background', 'white');
             }
         });
+    }
+
+    removeAllOverlays(){
+        this._viewer.clearOverlays();
     }
 
     // GETTERS 

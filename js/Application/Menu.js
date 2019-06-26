@@ -257,8 +257,9 @@ class Menu extends DivObject {
         });
     }
 
-    showSousMenu(menuElt, link) { // if link is undefined -> show normal menu. if not, -> means we open a map
+    showSousMenu(menuElt) {
         var lien = menuElt.attr('lien');
+        console.log('lien : ' + lien);
         var couleur = menuElt.children().css('background-color');
         couleur = couleur.split(/[()]/);
         couleur = couleur[1].split(',');
@@ -266,13 +267,8 @@ class Menu extends DivObject {
         var json = this._json.SousMenu[lien];
         $('.sousmenu').remove();
         var titre = menuElt.find('.elementMenu_titre').html();
-        if (link === undefined) {
-            var sm = new SousMenu(this._balise, json, titre, couleur, this._scale);
-            this.backgroundDiaporama = json.diaporama;
-        } else {
-            var sm = new SousMenuCarte(this._balise, json, titre, couleur, this._scale, lien);
-            this.backgroundDiaporama = [];
-        }
+        var sm = new SousMenu(this._balise, json, titre, couleur, this._scale, lien);
+        this.backgroundDiaporama = json.type == 'carte' ? [] : json.diaporama;
         var menu = this;
         sm.signalFermer.add(function () {
             menu.fermerSousMenu(menu);

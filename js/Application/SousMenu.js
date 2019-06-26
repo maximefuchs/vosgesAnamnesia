@@ -3,7 +3,7 @@ Global.include('dev/js/Application/ElementSousMenu.js');
 Global.includeCSS('dev/css/Application/SousMenu.css');
 
 class SousMenu extends DivObject {
-    constructor(parent, json, titreElement, couleur, scale) {
+    constructor(parent, json, titreElement, couleur, scale, lien) {
         super(parent, 'sousmenu');
         this.addClass('sousmenu');
 
@@ -11,6 +11,17 @@ class SousMenu extends DivObject {
         this._scale = scale;
         this._couleur = couleur;
         this._titreElement = titreElement;
+        this._lien = lien;
+        this._jsonPoi = poisJSON[lien];
+
+        console.log(poisJSON);
+        console.log(lien);
+        console.log(this._jsonPoi);
+
+        this._carte = new Carte(
+            $('#Application'),
+            textesJSON.Application.Carte,
+            couleur);
 
         this.signalFermer = new signals.Signal();
 
@@ -77,34 +88,13 @@ class SousMenu extends DivObject {
 
         /////////////////////////////////////////
 
-        this._ssSousMenu = (json.sousmenu !== undefined);
-        var jsonElements = this._ssSousMenu ? json.sousmenu : json.elements;
-
         ////////////////////////////////
         // sous elements
 
         this._divSousElements = [];
-        this.divSousElements = jsonElements;
-        if (this._ssSousMenu) {
-            var i = 0;
-            this._divSousElements.forEach(element => {
-                element._balise.click({ param: this, num: i }, this.displaySSMenuByElement);
-                i++;
-            });
-        } else {
-            var i = 0;
-            this._divSousElements.forEach(element => {
-                element._balise.click(function () {
-                    console.log('lien : ' + element._lien);
-                    if (element._lien == 'perenne') {
-                        $('.pagePerenne').remove();
-                        var fp = new FichePerenne($('#Application'), 'fichePerenne', null, element._params.couleur);
-                        fp.init();
-                    }
-                });
-                i++;
-            });
-        }
+        this.updateDivSousElements(json.sousmenu);
+
+
 
         ///////////////////////////////////
 
@@ -126,10 +116,17 @@ class SousMenu extends DivObject {
     init() {
         this._divText.tweenAnimate({ left: 2 * this._scale });
         this._btnFermer.tweenAnimate({ bottom: 5.5 * this._scale }, 1, 0.3);
+        this.initSousMenuElement();
+        this._divssSousMenu.tweenAnimate({ left: 0 });
+        if (this._json.type == 'carte') {
+            this._carte.init();
+        }
+    }
+
+    initSousMenuElement() {
         this._divSousElements.forEach(element => {
             element.init();
         });
-        this._divssSousMenu.tweenAnimate({ left: 0 });
     }
 
     close() {
@@ -138,13 +135,12 @@ class SousMenu extends DivObject {
         this._divSousElements.forEach(element => {
             element.tweenAnimate({ opacity: 0 });
         });
-        var ssMenu = this;
-        this._divssSousMenu.tweenAnimate({ left: - 2 * this._scale});
+        this._divssSousMenu.tweenAnimate({ left: - 2 * this._scale });
     }
 
-    displaySSMenuByElement(e) {
-        var sMenu = e.data.param;
-        var num = e.data.num;
+    displaySSMenuByElement(sMenu, num) {
+        // var sMenu = e.data.param;
+        // var num = e.data.num;
         var s = sMenu._json.sousmenu[num].titre.toUpperCase();
         var size = 840 / s.length;
         if (size > 65) { size = 65; }
@@ -163,27 +159,18 @@ class SousMenu extends DivObject {
 
         divLeft.append('<hr>');
         for (let i = 0; i < sMenu._json.sousmenu.length; i++) {
-            var span = new BaliseObject(divLeft._balise, 'span', 'spanSSMenu_' + i);
-            span.html(sMenu._json.sousmenu[i].titre.toUpperCase());
-            if (i == num) { span.addClass('selected'); }
-            span._balise.click({ param: sMenu, num: i }, sMenu.displaySSMenuByTitle);
-            divLeft.append('<hr>');
+            if (sMenu._json.sousmenu[i].sousmenu !== undefined) {
+                var span = new BaliseObject(divLeft._balise, 'span', 'spanSSMenu_' + i);
+                span.html(sMenu._json.sousmenu[i].titre.toUpperCase());
+                if (i == num) { span.addClass('selected'); }
+                span._balise.click({ param: sMenu, num: i }, sMenu.displaySSMenuByTitle);
+                divLeft.append('<hr>');
+            }
         }
 
-        var jsonElements = sMenu._json.sousmenu[num].elements;
-        sMenu.divSousElements = jsonElements;
-        sMenu._divSousElements.forEach(element => {
-            element.init();
-            element._balise.click(function () {
-                console.log('lien : ' + element._lien);
-                if (element._lien == 'perenne') {
-                    $('.pagePerenne').remove();
-                    var fp = new FichePerenne($('#Application'), 'fichePerenne', null, element._params.couleur);
-                    fp.init();
-                }
-                // if carte -> nouvelle classe sousMenu carte
-            });
-        });
+        var jsonElements = sMenu._json.sousmenu[num].sousmenu;
+        sMenu.updateDivSousElements(jsonElements);
+        sMenu.initSousMenuElement();
     }
 
     displaySSMenuByTitle(e) {
@@ -191,7 +178,7 @@ class SousMenu extends DivObject {
         $(this).addClass('selected');
         var sMenu = e.data.param;
         var num = e.data.num;
-        var jsonElements = sMenu._json.sousmenu[num].elements;
+        var jsonElements = sMenu._json.sousmenu[num].sousmenu;
         var s = sMenu._json.sousmenu[num].titre.toUpperCase();
         var size = 840 / s.length;
         if (size > 65) { size = 65; }
@@ -201,18 +188,61 @@ class SousMenu extends DivObject {
         if (sMenu._json.sousmenu[num].texte !== undefined) {
             sMenu._texte.html(sMenu._json.sousmenu[num].texte);
         }
-        sMenu.divSousElements = jsonElements;
-        sMenu._divSousElements.forEach(element => {
-            element.init();
+        sMenu.updateDivSousElements(jsonElements);
+        sMenu.initSousMenuElement();
+    }
+
+    updatePoiJson(sMenu, json) {
+        sMenu._jsonPoi = json;
+        console.log(sMenu._jsonPoi);
+    }
+
+
+    updateDivSousElements(json) {
+        this.divSousElements = json;
+        var i = 0;
+        var sMenu = this;
+        this._divSousElements.forEach(element => {
+            var num = i;
+            var lien = element._lien;
+            var type = element._type;
+            var jsonPoi = sMenu._jsonPoi;
             element._balise.click(function () {
-                console.log('lien : ' + element._lien);
-                if (element._lien == 'perenne') {
-                    console.log('click perenne : ' + element._id);
-                    $('.pagePerenne').remove();
-                    var fp = new FichePerenne($('#Application'), 'fichePerenne', null, element._params.couleur);
-                    fp.init();
+                console.log('click lien : ' + lien);
+                console.log('click type : ' + type);
+                switch (type) {
+                    case 'perenne':
+                        $('.pagePerenne').remove();
+                        var fp = new FichePerenne($('#Application'), 'fichePerenne', null, element._params.couleur);
+                        fp.init();
+                        break;
+
+                    case 'carte':
+                        console.log('carte');
+                        sMenu.updatePoiJson(sMenu, jsonPoi[lien]);
+                        sMenu.displaySSMenuByElement(sMenu, num);
+
+                        sMenu._carte.init();
+
+                        break;
+
+                    case 'poi':
+                        console.log('poi');
+                        sMenu.updatePoiJson(sMenu, jsonPoi[lien]);
+
+                        sMenu._carte.initPOIsandFiches(sMenu._jsonPoi);
+                        sMenu._carte.init();
+
+                        break;
+
+                    default:
+                        sMenu.updatePoiJson(sMenu, jsonPoi[lien]);
+                        console.log(sMenu._jsonPoi);
+                        sMenu.displaySSMenuByElement(sMenu, num);
+                        break;
                 }
             });
+            i++;
         });
     }
 
@@ -228,7 +258,10 @@ class SousMenu extends DivObject {
             { x: 6.5, y: 9.5 },
             { x: 4.5, y: 10 },
             { x: 2.5, y: 11 },
-            { x: 6, y: 12 }];
+            { x: 6, y: 12 },
+            { x: 5.5, y: 2 },
+            { x: 3.5, y: 1.5 }
+        ];
         var taille = 2;
         for (let i = 0; i < jsonElements.length; i++) {
             var jsonElt = jsonElements[i];
@@ -243,25 +276,4 @@ class SousMenu extends DivObject {
             this._divSousElements.push(eltSsMenu);
         }
     }
-}
-
-
-class SousMenuCarte extends SousMenu {
-    constructor(parent, json, titreElement, couleur, scale, lien) {
-        super(parent, json, titreElement, couleur, scale);
-
-        this._carte = new Carte(
-            $('#Application'),
-            textesJSON.Application.Carte,
-            poisJSON,
-            lien,
-            couleur);
-
-    }
-
-    init() {
-        super.init();
-        this._carte.init();
-    }
-
 }

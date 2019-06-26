@@ -13,11 +13,6 @@
                 "en": "datas/imgs/carte/carte_EN.jpg"
             },
             "boutonsCarte": "datas/imgs/interface/boutons_carte/",
-            "Liens": {
-                "fr": "Fiches en lien",
-                "en": "Linked files"
-            },
-            "maxPoiOuvert": 11,
             "origineCarte": {
                 "id": "origineCarte",
                 "lat": 48.435253,
@@ -37,26 +32,36 @@
                 {
                     "id": "reseau",
                     "src": "datas/imgs/carte/layer/reseau-min.png",
-                    "color": "#FF0000"
+                    "color": "#FFF000"
                 },
                 {
                     "id": "eau",
                     "src": "datas/imgs/carte/layer/eau-min.png",
-                    "color": "#FF0000"
+                    "color": "#FFFF00"
                 }
             ]
         },
         "Menu": {
             "diaporama": [
                 {
+                    "id": "diapo0",
+                    "src": "datas/imgs/menu/diaporama/diapo_0.jpg",
+                    "color": "#90cef0"
+                },
+                {
                     "id": "diapo1",
                     "src": "datas/imgs/menu/diaporama/diapo_1.jpg",
-                    "color": "#FF0000"
+                    "color": "#90ceb0"
                 },
                 {
                     "id": "diapo2",
                     "src": "datas/imgs/menu/diaporama/diapo_2.jpg",
-                    "color": "#FFFF00"
+                    "color": "#ad8548"
+                },
+                {
+                    "id": "diapo3",
+                    "src": "datas/imgs/menu/diaporama/diapo_3.jpg",
+                    "color": "#479944"
                 }
             ],
             "deco": {
@@ -332,7 +337,7 @@
             "element": [
                 {
                     "id": 0,
-                    "couleur": "#ffa86b",
+                    "couleur": "#55A7C0",
                     "src_fond": "#",
                     "picto": "datas/imgs/menu/picto/aDeguster.png",
                     "titre": {
@@ -340,7 +345,6 @@
                         "de": "Zu essen",
                         "en": "To eat"
                     },
-                    "type": "carte",
                     "lien": "aDeguster",
                     "x": 0,
                     "y": 2,
@@ -348,15 +352,14 @@
                 },
                 {
                     "id": 1,
-                    "couleur": "#d64211",
+                    "couleur": "#2B75BB",
                     "src_fond": "datas/imgs/menu/element/aVoir.jpg",
-                    "picto": "#",
+                    "picto": "datas/imgs/menu/picto/aVoir.png",
                     "titre": {
                         "fr": "A voir, A visiter",
                         "de": "Zu sehen, Zu besichtigen",
                         "en": "To see, To visit"
                     },
-                    "type": "carte",
                     "lien": "aVoir",
                     "x": 3,
                     "y": 0,
@@ -364,15 +367,14 @@
                 },
                 {
                     "id": 2,
-                    "couleur": "#a85a23",
-                    "src_fond": "#",
+                    "couleur": "#1092A0",
+                    "src_fond": "datas/imgs/menu/element/jeu.jpg",
                     "picto": "datas/imgs/menu/picto/jeu.png",
                     "titre": {
                         "fr": "A toi de jouer",
                         "de": "Spiel selbst",
                         "en": "Your turn to play"
                     },
-                    "type": "menu",
                     "lien": "jeu",
                     "x": 3,
                     "y": 4,
@@ -380,7 +382,7 @@
                 },
                 {
                     "id": 3,
-                    "couleur": "#e05008",
+                    "couleur": "#FF173A",
                     "src_fond": "#",
                     "picto": "datas/imgs/menu/picto/coeur.png",
                     "titre": {
@@ -388,7 +390,6 @@
                         "de": "Was wir lieben",
                         "en": "What we love"
                     },
-                    "type": "perenne",
                     "lien": "coeur",
                     "x": 5,
                     "y": 4,
@@ -396,7 +397,7 @@
                 },
                 {
                     "id": 4,
-                    "couleur": "#becc47",
+                    "couleur": "#AEC905",
                     "src_fond": "#",
                     "picto": "datas/imgs/menu/picto/paysage.png",
                     "titre": {
@@ -404,7 +405,6 @@
                         "de": "Landschaften",
                         "en": "Views"
                     },
-                    "type": "perenne",
                     "lien": "paysage",
                     "x": 7,
                     "y": 0,
@@ -412,7 +412,7 @@
                 },
                 {
                     "id": 5,
-                    "couleur": "#1b8417",
+                    "couleur": "#7AB955",
                     "src_fond": "datas/imgs/menu/element/nature.jpg",
                     "picto": "datas/imgs/menu/picto/nature.png",
                     "titre": {
@@ -420,7 +420,6 @@
                         "de": "Natur",
                         "en": "Nature"
                     },
-                    "type": "perenne",
                     "lien": "nature",
                     "x": 9,
                     "y": 3,
@@ -428,15 +427,14 @@
                 },
                 {
                     "id": 6,
-                    "couleur": "#38ce33",
-                    "src_fond": "datas/imgs/menu/element/activite.jpg",
+                    "couleur": "#5B9D2E",
+                    "src_fond": "datas/imgs/menu/element/actiNature.png",
                     "picto": "datas/imgs/menu/picto/actiNature.png",
                     "titre": {
                         "fr": "Activités nature",
                         "de": "Naturen Aktivitäten",
                         "en": "Nature activities"
                     },
-                    "type": "carte",
                     "lien": "actiNature",
                     "x": 10,
                     "y": 0,
@@ -444,15 +442,14 @@
                 },
                 {
                     "id": 7,
-                    "couleur": "#1d910b",
-                    "src_fond": "datas/imgs/menu/element/culture.jpg",
+                    "couleur": "#427A15",
+                    "src_fond": "#",
                     "picto": "datas/imgs/menu/picto/culture.png",
                     "titre": {
                         "fr": "Culture",
                         "de": "Kultur",
                         "en": "Culture"
                     },
-                    "type": "perenne",
                     "lien": "culture",
                     "x": 13,
                     "y": 1,
@@ -460,15 +457,14 @@
                 },
                 {
                     "id": 8,
-                    "couleur": "#d1c0b1",
-                    "src_fond": "#",
+                    "couleur": "#2B83BF",
+                    "src_fond": "datas/imgs/menu/element/parc.jpg",
                     "picto": "datas/imgs/menu/picto/parc.png",
                     "titre": {
                         "fr": "Le parc",
                         "de": "Der Park",
                         "en": "The park"
                     },
-                    "type": "carte",
                     "lien": "parc",
                     "x": 15,
                     "y": 0,
@@ -476,7 +472,7 @@
                 },
                 {
                     "id": 9,
-                    "couleur": "#c1732e",
+                    "couleur": "#55A7C0",
                     "src_fond": "#",
                     "picto": "datas/imgs/menu/picto/marqueParc.png",
                     "titre": {
@@ -484,7 +480,6 @@
                         "de": "Die parc Marke",
                         "en": "The brand parc"
                     },
-                    "type": "carte",
                     "lien": "marqueParc",
                     "x": 18,
                     "y": 0,
@@ -492,7 +487,7 @@
                 },
                 {
                     "id": 10,
-                    "couleur": "#af7b42",
+                    "couleur": "#5B9D2E",
                     "src_fond": "#",
                     "picto": "datas/imgs/menu/picto/seDeplacer.png",
                     "titre": {
@@ -500,7 +495,6 @@
                         "de": "Zu bewegen",
                         "en": "Move around"
                     },
-                    "type": "perenne",
                     "lien": "seDeplacer",
                     "x": 18,
                     "y": 2,
@@ -508,7 +502,7 @@
                 },
                 {
                     "id": 11,
-                    "couleur": "#603b13",
+                    "couleur": "#2B75BB",
                     "src_fond": "#",
                     "picto": "datas/imgs/menu/picto/info.png",
                     "titre": {
@@ -516,7 +510,6 @@
                         "de": "Sich informieren",
                         "en": "Get information"
                     },
-                    "type": "carte",
                     "lien": "info",
                     "x": 20,
                     "y": 0,
@@ -524,7 +517,7 @@
                 },
                 {
                     "id": 12,
-                    "couleur": "#73179b",
+                    "couleur": "#9E0E24",
                     "src_fond": "#",
                     "picto": "datas/imgs/menu/picto/local.png",
                     "titre": {
@@ -532,7 +525,6 @@
                         "de": "Um mich herum",
                         "en": "Around me"
                     },
-                    "type": "carte",
                     "lien": "local",
                     "x": 21,
                     "y": 3,
@@ -542,53 +534,7 @@
             "SousMenu": {
                 "aDeguster": {
                     "texte": "Encourager les circuits courts et faire connaître les produits et les savoir faire de son territoire sont deux actions essentielles pour le Parc des Ballons des Vosges.",
-                    "elements": [
-                        {
-                            "id": 0,
-                            "titre": "Titre0",
-                            "lien": "lien0"
-                        },
-                        {
-                            "id": 1,
-                            "titre": "Titre 1",
-                            "lien": "lien1"
-                        },
-                        {
-                            "id": 2,
-                            "titre": "Titre 2",
-                            "lien": "lien1"
-                        },
-                        {
-                            "id": 3,
-                            "titre": "Titre 3",
-                            "lien": "lien1"
-                        },
-                        {
-                            "id": 4,
-                            "titre": "Titre 4",
-                            "lien": "lien1"
-                        },
-                        {
-                            "id": 5,
-                            "titre": "Titre 5",
-                            "lien": "lien1"
-                        },
-                        {
-                            "id": 6,
-                            "titre": "Titre 6",
-                            "lien": "lien1"
-                        },
-                        {
-                            "id": 7,
-                            "titre": "Titre 7",
-                            "lien": "lien1"
-                        },
-                        {
-                            "id": 8,
-                            "titre": "Titre 8",
-                            "lien": "lien1"
-                        }
-                    ],
+                    "type": "carte",
                     "diaporama": [
                         {
                             "id": "diapo1",
@@ -600,11 +546,45 @@
                             "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
                             "color": "#FFFF00"
                         }
+                    ],
+                    "sousmenu": [
+                        {
+                            "id": 0,
+                            "titre": "Fermes auberges",
+                            "type": "poi"
+                        },
+                        {
+                            "id": 1,
+                            "titre": "Marchés paysans",
+                            "type": "poi"
+                        },
+                        {
+                            "id": 2,
+                            "titre": "Magasins paysans",
+                            "type": "poi"
+                        },
+                        {
+                            "id": 3,
+                            "titre": "Trésor des Ballons",
+                            "type": "perenne"
+                        }
                     ]
                 },
                 "jeu": {
                     "texte": "Jouer !",
-                    "elements": [
+                    "diaporama": [
+                        {
+                            "id": "diapo1",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
+                            "color": "#FF0000"
+                        },
+                        {
+                            "id": "diapo2",
+                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
+                            "color": "#FFFF00"
+                        }
+                    ],
+                    "sousmenu": [
                         {
                             "id": 0,
                             "titre": "Faune du parc",
@@ -625,71 +605,147 @@
                             "titre": "Mémory du parc",
                             "lien": "memory"
                         }
-                    ],
-                    "diaporama": [
-                        {
-                            "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
-                            "color": "#FF0000"
-                        },
-                        {
-                            "id": "diapo2",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
-                            "color": "#FFFF00"
-                        }
                     ]
                 },
                 "aVoir": {
-                    "texte": "Une soixantaine de musées, sites patrimoine (moulin, scierie hydraulique, galerie de mine…) et centres d’interprétation animés par des associations et acteurs locaux sont l’occasion de découvrir la richesse des patrimoines du Parc. Des thèmes d’une grande variété y sont traités : de la forêt à l’agriculture et les savoir-faire, en passant par les patrimoines industriels et techniques, à l’art et l’histoire et enfin la mémoire. En lien avec ces acteurs, le Parc mène des projets visant à améliorer la connaissance et expérimente de nouvelles approches du patrimoine.",
-                    "elements": [
+                    "texte": "Dialoguer, sensibiliser et être compris par les habitants et les visiteurs. Pour atteindre ces objectifs, le Parc naturel régional des Ballons des Vosges dispose de différents points d’accueil. Ces lieux vivants et ouverts sont de formidables points de départ pour partir à la découverte du sud du massif des Vosges. Ils proposent une documentation spécifique et différentes expositions temporaires",
+                    "diaporama": [],
+                    "type": "carte",
+                    "sousmenu": [
                         {
                             "id": 0,
-                            "titre": "Titre 0",
-                            "lien": "lien0"
+                            "titre": "Routes touristiques",
+                            "type": "poi"
                         },
                         {
                             "id": 1,
-                            "titre": "Titre 1",
-                            "lien": "lien1"
-                        }
-                    ],
-                    "diaporama": [
-                        {
-                            "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/aVoir/diapo_1.jpg",
-                            "color": "#FF0000"
+                            "titre": "Parcs et jardins",
+                            "type": "poi"
                         },
                         {
-                            "id": "diapo2",
-                            "src": "datas/imgs/menu/diaporama/aVoir/diapo_2.jpg",
-                            "color": "#FFFF00"
+                            "id": 2,
+                            "titre": "Lieux de sensibilisation à l'environnement",
+                            "type": "poi"
+                        },
+                        {
+                            "id": 3,
+                            "titre": "Lieux de spactables et d'expositions",
+                            "texte": "La diversité des paysages du Parc permet la pratique de nombreuses activités de pleine nature. Il accompagne plus particulièrement la pratique des activités respectueuses du territoire.",
+                            "sousmenu": [
+                                {
+                                    "id": 0,
+                                    "titre": "Lieux d'expositions",
+                                    "type": "poi"
+                                },
+                                {
+                                    "id": 1,
+                                    "titre": "Lieux de spectacles et de concerts",
+                                    "type": "poi"
+                                },
+                                {
+                                    "id": 2,
+                                    "titre": "Lieux de créations artistiques",
+                                    "type": "poi"
+                                },
+                                {
+                                    "id": 3,
+                                    "titre": "Lieux de convivialité",
+                                    "type": "poi"
+                                },
+                                {
+                                    "id": 4,
+                                    "titre": "Cinémas",
+                                    "type": "poi"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "titre": "Musées et sites patrimoines",
+                            "sousmenu": [
+                                {
+                                    "id": 0,
+                                    "titre": "Arts et histoire",
+                                    "type": "poi"
+                                },
+                                {
+                                    "id": 1,
+                                    "titre": "Châteaux",
+                                    "type": "poi"
+                                },
+                                {
+                                    "id": 2,
+                                    "titre": "Patrimoine de mémoire",
+                                    "type": "poi"
+                                },
+                                {
+                                    "id": 3,
+                                    "titre": "Patrimoine industriel et savoir faire",
+                                    "type": "poi"
+                                },
+                                {
+                                    "id": 4,
+                                    "titre": "Patrimoine religieux",
+                                    "type": "poi"
+                                },
+                                {
+                                    "id": 5,
+                                    "titre": "Traditions populaires",
+                                    "type": "poi"
+                                }
+                            ]
                         }
                     ]
                 },
                 "paysage": {
                     "texte": "Le sud du massif des Vosges accueille des patrimoines naturels et culturels remarquables et offre des paysages emblématiques qui font son attractivité et lui confère son statut de Parc naturel régional. Partir à la découverte du Parc naturel régional des Ballons des Vosges, c’est aller à la rencontre de ces patrimoines et des hommes qui les font vivre.",
-                    "elements": [
-                        {
-                            "id": 0,
-                            "titre": "Titre 0",
-                            "lien": "lien0"
-                        },
-                        {
-                            "id": 1,
-                            "titre": "Titre 1",
-                            "lien": "lien1"
-                        }
-                    ],
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
+                            "src": "datas/imgs/menu/diaporama/paysage/diapo_1.jpg",
                             "color": "#FF0000"
                         },
                         {
                             "id": "diapo2",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
+                            "src": "datas/imgs/menu/diaporama/paysage/diapo_2.jpg",
                             "color": "#FFFF00"
+                        }
+                    ],
+                    "sousmenu": [
+                        {
+                            "id": 0,
+                            "titre": "Hautes-Vosges",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 1,
+                            "titre": "Ballons comtois",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 2,
+                            "titre": "Plateau des Mille étangs",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 3,
+                            "titre": "Vallées des Fougerolles et Val d'Ajol",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 4,
+                            "titre": "Vallées Vosgiennes",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 5,
+                            "titre": "Vallées haut-rhinoises",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 6,
+                            "titre": "Piémont viticole",
+                            "type": "perenne"
                         }
                     ]
                 },
@@ -711,92 +767,53 @@
                         {
                             "id": 0,
                             "titre": "Milieux",
-                            "elements": [
+                            "sousmenu": [
                                 {
                                     "id": 0,
                                     "titre": "Vergers",
-                                    "lien": "lien0"
+                                    "type": "perenne"
                                 },
                                 {
                                     "id": 1,
                                     "titre": "Hautes chaumes",
-                                    "lien": "lien0"
+                                    "type": "perenne"
                                 },
                                 {
                                     "id": 2,
                                     "titre": "Forêts",
-                                    "lien": "lien0"
+                                    "type": "perenne"
                                 },
                                 {
                                     "id": 3,
                                     "titre": "Lacs, étangs et tourbières",
-                                    "lien": "lien0"
+                                    "type": "perenne"
                                 },
                                 {
                                     "id": 5,
                                     "titre": "ravins, falaises et éboulis",
-                                    "lien": "lien0"
+                                    "type": "perenne"
                                 },
                                 {
                                     "id": 6,
                                     "titre": "pelouses calcaires",
-                                    "lien": "lien0"
+                                    "type": "perenne"
                                 }
                             ]
                         },
                         {
                             "id": 1,
                             "titre": "Géologie et Climat",
-                            "elements": [
-                                {
-                                    "id": 0,
-                                    "titre": "Titre 0",
-                                    "lien": "lien0"
-                                },
-                                {
-                                    "id": 1,
-                                    "titre": "Titre 1",
-                                    "lien": "lien1"
-                                }
-                            ]
+                            "type": "perenne"
                         },
                         {
                             "id": 2,
                             "titre": "Espaces protégés",
-                            "elements": [
-                                {
-                                    "id": 0,
-                                    "titre": "Titre 0",
-                                    "lien": "lien0"
-                                },
-                                {
-                                    "id": 1,
-                                    "titre": "Titre 1",
-                                    "lien": "lien1"
-                                },
-                                {
-                                    "id": 2,
-                                    "titre": "Titre 2",
-                                    "lien": "lien2"
-                                }
-                            ]
+                            "type": "perenne"
                         }
                     ]
                 },
                 "actiNature": {
                     "texte": "La diversité des paysages du Parc permet la pratique de nombreuses activités de pleine nature. Il accompagne plus particulièrement la pratique de ces activités respectueuses du territoire.",
-                    "elements": [
-                        {
-                            "id": 0,
-                            "titre": "Titre 0",
-                            "lien": "lien0"
-                        },
-                        {
-                            "id": 1,
-                            "titre": "Titre 1",
-                            "lien": "lien1"
-                        }
-                    ],
                     "diaporama": [
                         {
                             "id": "diapo1",
@@ -807,23 +824,90 @@
                             "id": "diapo2",
                             "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
                             "color": "#FFFF00"
+                        }
+                    ],
+                    "sousmenu": [
+                        {
+                            "id": 0,
+                            "titre": "Quiétitude attitude",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 1,
+                            "titre": "Balades et randonnées",
+                            "type": "carte",
+                            "sousmenu": [
+                                {
+                                    "id": 0,
+                                    "titre": "randonnées pedestres",
+                                    "type": "perenne"
+                                },
+                                {
+                                    "id": 1,
+                                    "titre": "Balades paysagères le long de la route des crêtes",
+                                    "type": "perenne"
+                                },
+                                {
+                                    "id": 2,
+                                    "titre": "Balades 30 ans",
+                                    "type": "poi"
+                                },
+                                {
+                                    "id": 3,
+                                    "titre": "Balades apéritives: une ferme, une randonnée",
+                                    "type": "poi"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "titre": "Activités hivernales",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 3,
+                            "titre": "Aéromodélisme",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 4,
+                            "titre": "Loisirs nautiques",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 5,
+                            "titre": "Pêche",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 6,
+                            "titre": "activités équestres",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 7,
+                            "titre": "VTT et cyclotourisme",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 8,
+                            "titre": "Escalade",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 9,
+                            "titre": "Trail",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 10,
+                            "titre": "Vol libre",
+                            "type": "perenne"
                         }
                     ]
                 },
                 "culture": {
                     "texte": "Le Parc naturel régional des Ballons des Vosges est un territoire vivant, dont l’homme a su très tôt exploiter l’eau, le bois, la pierre et le sous-sol pour développer l’industrie et l’artisanat. Il est également l’héritier d’une histoire mouvementée liée aux conflits mondiaux.",
-                    "elements": [
-                        {
-                            "id": 0,
-                            "titre": "Titre 0",
-                            "lien": "lien0"
-                        },
-                        {
-                            "id": 1,
-                            "titre": "Titre 1",
-                            "lien": "lien1"
-                        }
-                    ],
                     "diaporama": [
                         {
                             "id": "diapo1",
@@ -834,23 +918,53 @@
                             "id": "diapo2",
                             "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
                             "color": "#FFFF00"
+                        }
+                    ],
+                    "sousmenu": [
+                        {
+                            "id": 0,
+                            "titre": "Patrimoine industriel",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 1,
+                            "titre": "Patrimoine thermal",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 2,
+                            "titre": "Patrimoine de mémoire",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 3,
+                            "titre": "Patrimoine religieux",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 4,
+                            "titre": "Patrtimoine culturel immatériel",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 5,
+                            "titre": "Bâti rural",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 6,
+                            "titre": "Pays d'art et d'histoire",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 7,
+                            "titre": "châteaux",
+                            "type": "perenne"
                         }
                     ]
                 },
                 "parc": {
                     "texte": "Créé en 1989 à l'initiative des deux régions Grand Est et Bourgogne Franche-Comté, le Parc naturel régional des Ballons des Vosges regroupe, 197 communes réparties sur quatre départements : les Vosges, le Haut-Rhin, le Territoire de Belfort et la Haute-Saône.",
-                    "elements": [
-                        {
-                            "id": 0,
-                            "titre": "Titre 0",
-                            "lien": "lien0"
-                        },
-                        {
-                            "id": 1,
-                            "titre": "Titre 1",
-                            "lien": "lien1"
-                        }
-                    ],
                     "diaporama": [
                         {
                             "id": "diapo1",
@@ -862,20 +976,146 @@
                             "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
                             "color": "#FFFF00"
                         }
+                    ],
+                    "sousmenu": [
+                        {
+                            "id": 0,
+                            "titre": "Communes",
+                            "type": "carte",
+                            "sousmenu": [
+                                {
+                                    "id": 0,
+                                    "titre": "197 communes adhérentes",
+                                    "type": "poi"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 1,
+                            "titre": "Points d'accueil du parc",
+                            "texte": "Dialoguer, sensibiliser et être compris par les habitants et les visiteurs. Pour atteindre ces objectifs, le Parc naturel régional des Ballons des Vosges dispose de différents points d’accueil. Ces lieux vivants et ouverts sont de formidables points de départ pour partir à la découverte du sud du massif des Vosges. Ils proposent une documentation spécifique et différentes expositions temporaires.",
+                            "sousmenu": [
+                                {
+                                    "id": 0,
+                                    "titre": "ENC",
+                                    "type": "perenne"
+                                },
+                                {
+                                    "id": 1,
+                                    "titre": "Château Lambert",
+                                    "type": "perenne"
+                                },
+                                {
+                                    "id": 2,
+                                    "titre": "Munster",
+                                    "type": "perenne"
+                                },
+                                {
+                                    "id": 3,
+                                    "titre": "Schlucht",
+                                    "type": "perenne"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "titre": "Fiche d'identité du parc",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 3,
+                            "titre": "Philosophie et engagement",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 4,
+                            "titre": "Sommets",
+                            "type": "poi"
+                        },
+                        {
+                            "id": 5,
+                            "titre": "Cols",
+                            "type": "poi"
+                        }
                     ]
                 },
                 "marqueParc": {
                     "texte": "La marque nationale \"Valeurs Parc naturel régional\" distingue des entreprises engagées dans un développement économique durable dans leurs territoires. Elle s’articule autour de 3 valeurs fortes : l’humain, la préservation de l’environnement et l’attachement au territoire.",
-                    "elements": [
+                    "sousmenu": [
                         {
                             "id": 0,
-                            "titre": "Titre 0",
-                            "lien": "lien0"
+                            "titre": "Valeurs Parc naturel régional",
+                            "type": "perenne"
                         },
                         {
                             "id": 1,
-                            "titre": "Titre 1",
-                            "lien": "lien1"
+                            "titre": "Secteurs d'activités",
+                            "type": "carte",
+                            "sousmenu": [
+                                {
+                                    "id": 0,
+                                    "titre": "agriculture",
+                                    "sousmenu": [
+                                        {
+                                            "id": 0,
+                                            "titre": "Jus de fruits",
+                                            "type": "poi"
+                                        },
+                                        {
+                                            "id": 1,
+                                            "titre": "Miel",
+                                            "type": "poi"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 1,
+                                    "titre": "artisanat et industrie",
+                                    "sousmenu": [
+                                        {
+                                            "id": 0,
+                                            "titre": "bardage bois",
+                                            "type": "poi"
+                                        },
+                                        {
+                                            "id": 1,
+                                            "titre": "jouets et mobilier en bois",
+                                            "type": "poi"
+                                        },
+                                        {
+                                            "id": 2,
+                                            "titre": "eaux de sources et minérales",
+                                            "type": "poi"
+                                        },
+                                        {
+                                            "id": 3,
+                                            "titre": "granit",
+                                            "type": "poi"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 2,
+                                    "titre": "tourisme, hébergements et loisirs",
+                                    "sousmenu": [
+                                        {
+                                            "id": 0,
+                                            "titre": "Hôtels restaurants",
+                                            "type": "poi"
+                                        },
+                                        {
+                                            "id": 1,
+                                            "titre": "Meublés de tourisme et chambres d'hôtes",
+                                            "type": "poi"
+                                        },
+                                        {
+                                            "id": 2,
+                                            "titre": "Accompagnateurs en montagne",
+                                            "type": "poi"
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ],
                     "diaporama": [
@@ -893,18 +1133,6 @@
                 },
                 "seDeplacer": {
                     "texte": "Train, bus, navettes, pistes cyclables et voies vertes pour oublier la voiture… \"Poumon vert\" de l'est de la France, le Parc naturel régional des Ballons des Vosges est un vaste territoire de 2700 km2 qui compte à ses portes plusieurs grandes villes. Elles sont autant de points de départ pour une découverte vraiment…verte.",
-                    "elements": [
-                        {
-                            "id": 0,
-                            "titre": "Titre 0",
-                            "lien": "lien0"
-                        },
-                        {
-                            "id": 1,
-                            "titre": "Titre 1",
-                            "lien": "lien1"
-                        }
-                    ],
                     "diaporama": [
                         {
                             "id": "diapo1",
@@ -915,23 +1143,39 @@
                             "id": "diapo2",
                             "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
                             "color": "#FFFF00"
+                        }
+                    ],
+                    "sousmenu": [
+                        {
+                            "id": 0,
+                            "titre": "En train ou en bus",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 1,
+                            "titre": "en bus",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 2,
+                            "titre": "à pied",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 3,
+                            "titre": "en vélo",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 4,
+                            "titre": "en voiture",
+                            "type": "perenne"
                         }
                     ]
                 },
                 "info": {
                     "texte": "Les Offices du tourisme sont là pour donner une information complète : manger, dormir, marcher, visiter … Il suffit de contacter le plus proche de son lieu de vacances… 4 comités départementaux et 3 comités régionaux du tourisme diffusent également de la documentation.",
-                    "elements": [
-                        {
-                            "id": 0,
-                            "titre": "Titre 0",
-                            "lien": "lien0"
-                        },
-                        {
-                            "id": 1,
-                            "titre": "Titre 1",
-                            "lien": "lien1"
-                        }
-                    ],
+                    "type": "carte",
                     "diaporama": [
                         {
                             "id": "diapo1",
@@ -942,6 +1186,28 @@
                             "id": "diapo2",
                             "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
                             "color": "#FFFF00"
+                        }
+                    ],
+                    "sousmenu": [
+                        {
+                            "id": 0,
+                            "titre": "Offices du tourisme",
+                            "type": "poi"
+                        },
+                        {
+                            "id": 1,
+                            "titre": "Points d'informations touristiques",
+                            "type": "poi"
+                        },
+                        {
+                            "id": 2,
+                            "titre": "Points d'accueil du parc",
+                            "type": "poi"
+                        },
+                        {
+                            "id": 3,
+                            "titre": "Structures d'éducation à l'environnement",
+                            "type": "poi"
                         }
                     ]
                 }

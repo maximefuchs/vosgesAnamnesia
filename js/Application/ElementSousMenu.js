@@ -11,6 +11,7 @@ class ElementSousMenu extends BlocMenu {
         this._json = json;
         this._scale = scale;
         this._lien = json.lien;
+        this._type = json.type;
         this._params = params;
         this.addClass('elementSousMenu');
 

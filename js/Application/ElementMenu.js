@@ -13,7 +13,6 @@ class ElementMenu extends BlocMenu {
         this._src_fond = this._json.src_fond;
         this._picto = this._json.picto;
         this._titre = Global.getTexteLangue(this._json.titre);
-        this._type = this._json.type;
         this._lien = this._json.lien;
 
         this._front = new DivObject(this._balise, this._id + "_front");
@@ -26,7 +25,7 @@ class ElementMenu extends BlocMenu {
             pictogramme.addClass('elementMenu_picto');
         }
 
-        var frontBackColor = this._src_fond != '#' ? this._couleur + 'b0' : this._couleur;
+        var frontBackColor = this._src_fond != '#' ? this._couleur + 'A5' : this._couleur;
         this._front.css('background', frontBackColor);
 
         this._balise.css({
@@ -39,7 +38,6 @@ class ElementMenu extends BlocMenu {
             "opacity": 0
         })
             .attr('lien', this._lien)
-            .attr('type', this._type);
         this._front._balise.css({
             "width": "100%",
             "height": "100%"
