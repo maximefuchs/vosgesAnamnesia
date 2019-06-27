@@ -394,7 +394,7 @@
         var count;
         var width;
         var self;
-        console.log(containerSelector);
+        // console.log(containerSelector);
 
         if(!containerSelector || !itemSelector) {
             console.error('Slider: arguments error.');

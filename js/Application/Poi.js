@@ -18,10 +18,6 @@ class Poi extends DivObject {
         this._mail = this._json.mail;
         this._site = this._json.site;
         this.addClass("poi");
-
-        // not yet implemented
-        // this.css("background-image", "url(" + this._json.img + ")");
-
     }
 
 }

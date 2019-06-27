@@ -24,6 +24,7 @@ class SousMenu extends DivObject {
             couleur);
 
         this.signalFermer = new signals.Signal();
+        this.closeCarteSignal = new signals.Signal();
 
 
         this.css('bottom', 1 * scale);
@@ -133,7 +134,7 @@ class SousMenu extends DivObject {
         this._divssSousMenu.tweenAnimate({ left: - 2 * this._scale });
     }
 
-    displaySSMenuByElement(sMenu, num) {
+    displaySSMenuByElement(sMenu, num, type) {
         // var sMenu = e.data.param;
         // var num = e.data.num;
         var s = sMenu._json.sousmenu[num].titre.toUpperCase();
@@ -159,22 +160,26 @@ class SousMenu extends DivObject {
                 span.html(sMenu._json.sousmenu[i].titre.toUpperCase());
                 if (i == num) { span.addClass('selected'); }
                 span._balise.click(function () {
-                    sMenu.displaySSMenuByTitle(sMenu, num);
+                    sMenu.displaySSMenuByTitle(sMenu, i, sMenu._json.sousmenu[i].type);
                 });
                 divLeft.append('<hr>');
             }
         }
 
         var jsonElements = sMenu._json.sousmenu[num].sousmenu;
-        sMenu.updateDivSousElements(jsonElements);
-        sMenu.initSousMenuElement();
+
+        if (type == 'carte') {
+            sMenu.updateCarteSousElements(jsonElements);
+        } else {
+            sMenu.updateDivSousElements(jsonElements);
+        }
     }
 
-    displaySSMenuByTitle(sMenu, num) {
+
+    displaySSMenuByTitle(sMenu, num, type) {
+        sMenu._carte.removeAllOverlays();
         $('.selected').removeClass('selected');
-        $(this).addClass('selected');
-        var sMenu = e.data.param;
-        var num = e.data.num;
+        $('#spanSSMenu_' + num).addClass('selected');
         var jsonElements = sMenu._json.sousmenu[num].sousmenu;
         var s = sMenu._json.sousmenu[num].titre.toUpperCase();
         var size = 840 / s.length;
@@ -185,42 +190,11 @@ class SousMenu extends DivObject {
         if (sMenu._json.sousmenu[num].texte !== undefined) {
             sMenu._texte.html(sMenu._json.sousmenu[num].texte);
         }
-        sMenu.updateDivSousElements(jsonElements);
-        sMenu.initSousMenuElement();
-    }
-
-    displaySSMenuForCarte(sMenu, num) {
-        var s = sMenu._json.sousmenu[num].titre.toUpperCase();
-        var size = 840 / s.length;
-        if (size > 65) { size = 65; }
-        if (size < 37) { size = 37; }
-        sMenu._titre.html(s);
-        sMenu._titre.css('font-size', size + 'px');
-
-        if (sMenu._json.sousmenu[num].texte !== undefined) {
-            sMenu._texte.html(sMenu._json.sousmenu[num].texte);
+        if (type == 'carte') {
+            sMenu.updateCarteSousElements(jsonElements);
+        } else {
+            sMenu.updateDivSousElements(jsonElements);
         }
-
-        $('#divLeft').remove();
-        var divLeft = new DivObject(sMenu._divssSousMenu._balise, 'divLeft');
-        var ssTitre = new BaliseObject(divLeft._balise, 'h1');
-        ssTitre.html(sMenu._titreElement.toUpperCase());
-
-        divLeft.append('<hr>');
-        for (let i = 0; i < sMenu._json.sousmenu.length; i++) {
-            if (sMenu._json.sousmenu[i].sousmenu !== undefined) {
-                var span = new BaliseObject(divLeft._balise, 'span', 'spanSSMenu_' + i);
-                span.html(sMenu._json.sousmenu[i].titre.toUpperCase());
-                if (i == num) { span.addClass('selected'); }
-                span._balise.click(function () {
-                    sMenu.displaySSMenuByTitle(sMenu, num);
-                });
-                divLeft.append('<hr>');
-            }
-        }
-
-        var jsonElements = sMenu._json.sousmenu[num].sousmenu;
-        sMenu.updateCarteSousElements(jsonElements);
     }
 
     updatePoiJson(sMenu, json) {
@@ -228,7 +202,8 @@ class SousMenu extends DivObject {
         console.log(sMenu._jsonPoi);
     }
 
-
+    // AFFICHAGE DE SOUS ELEMENTS DE MENU NORMAUX
+    // LIENS VERS UNE FICHE PERENNE, UNE CARTE, OU UN AUTRE SOUS MENU
     updateDivSousElements(json) {
         this.divSousElements = json;
         var i = 0;
@@ -249,9 +224,8 @@ class SousMenu extends DivObject {
                         break;
 
                     case 'carte':
-                        console.log('carte');
                         sMenu.updatePoiJson(sMenu, jsonPoi[lien]);
-                        sMenu.displaySSMenuForCarte(sMenu, num);
+                        sMenu.displaySSMenuByElement(sMenu, num, 'carte');
                         break;
 
                     case 'poi':
@@ -260,18 +234,18 @@ class SousMenu extends DivObject {
 
                         sMenu._carte.initPOIsandFiches(sMenu._jsonPoi);
                         sMenu._carte.init();
-
                         break;
 
                     default:
-                        sMenu.updatePoiJson(sMenu, jsonPoi[lien]);
-                        console.log(sMenu._jsonPoi);
+                        if (lien !== undefined && jsonPoi[lien] !== undefined)
+                            sMenu.updatePoiJson(sMenu, jsonPoi[lien]);
                         sMenu.displaySSMenuByElement(sMenu, num);
                         break;
                 }
             });
             i++;
         });
+        sMenu.initSousMenuElement();
     }
 
     updateCarteSousElements(json) {
@@ -284,6 +258,7 @@ class SousMenu extends DivObject {
         divBtn.css('margin-top', '30px');
         var divs = [];
         var allPOIs = [];
+        $('.btnsFiltre').remove();
         for (let i = 0; i < json.length; i++) {
             var jsonElt = json[i];
             var div = new DivObject(divBtn._balise, i + 'btnsFiltre_' + sMenu._id);

@@ -80,7 +80,7 @@
   font-weight: bold;
 }
 .ssSousMenu span.selected:before {
-  content: '⮞ ';
+  content: '› ';
 }
 
 .ssSousMenu hr {

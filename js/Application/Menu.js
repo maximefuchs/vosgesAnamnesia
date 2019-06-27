@@ -20,16 +20,7 @@ class Menu extends DivObject {
         this._couleursAssociees = [];
 
         this.backgroundDiaporama = json.diaporama;
-        // console.log(json);
-        // for (let i = 0; i < json.diaporama.length; i++) {
-        //     console.log("new back image : " + i);
-        //     var img = json.diaporama[i];
-        //     var image = new Img(this._balise, "fond_img_" + img.id, img.src);
-        //     image.addClass('page');
-        //     image.css('opacity', 0);
-        //     this._fondImgs.push(image);
-        //     this._couleursAssociees.push(img.color);
-        // }
+        this.backPause = false;
         this._setIntervalFonction = 0; // id of the setInterval founction used to switch between background images
 
         var scale = 140;
@@ -137,6 +128,7 @@ class Menu extends DivObject {
     supprimerCarte() {
         $('#Carte').remove();
         $(body).find('.elementFiche').remove();
+        this.playBackground();
     }
     supprimerPerenne() {
         $('.pagePerenne').remove();
@@ -174,19 +166,29 @@ class Menu extends DivObject {
         else {
             TweenLite.to(images[i]._balise, duree, { opacity: 1 });
             this._setIntervalFonction = setInterval(function () {
-                var current = i % nbImgs;
-                var next = (i + 1) % nbImgs;
-                TweenLite.to(images[current]._balise, duree, { opacity: 0 });
-                TweenLite.to(images[next]._balise, duree, { opacity: 1 });
+                if (!menu.backPause) {
+                    var current = i % nbImgs;
+                    var next = (i + 1) % nbImgs;
+                    TweenLite.to(images[current]._balise, duree, { opacity: 0 });
+                    TweenLite.to(images[next]._balise, duree, { opacity: 1 });
 
-                var newColor = menu._couleursAssociees[next];
-                menu._decoMenuElements.forEach(e => {
-                    e.changeColor(newColor);
-                });
+                    var newColor = menu._couleursAssociees[next];
+                    menu._decoMenuElements.forEach(e => {
+                        e.changeColor(newColor);
+                    });
 
-                i++;
+                    i++;
+                }
             }, paramsJSON.dureeFond * 1000); // temps entre chaque execution de la fonction
         }
+    }
+
+    pauseBackground(){
+        this.backPause = true;
+    }
+
+    playBackground(){
+        this.backPause = false;
     }
 
     ouvrirMenu() {
@@ -267,7 +269,14 @@ class Menu extends DivObject {
         var json = this._json.SousMenu[lien];
         $('.sousmenu').remove();
         var titre = menuElt.find('.elementMenu_titre').html();
+        var menu = this;
         var sm = new SousMenu(this._balise, json, titre, couleur, this._scale, lien);
+        sm._carte.carteOpenSignal.add(function(){
+            menu.pauseBackground();
+        });
+        sm.closeCarteSignal.add(function(){
+            menu.playBackground();
+        });
         this.backgroundDiaporama = json.type == 'carte' ? [] : json.diaporama;
         var menu = this;
         sm.signalFermer.add(function () {

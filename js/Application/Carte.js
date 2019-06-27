@@ -13,9 +13,8 @@ class Carte extends DivObject {
         this._jsonCarte = jsonCarte;
         this._couleur = couleur;
 
-        this.signaux = {
-            finFermer: new signals.Signal()
-        }
+        this.carteOpenSignal = new signals.Signal()
+
 
         this._pois = [];
         this._poiDiv = new DivObject(this._balise, "CartePoints");
@@ -54,16 +53,7 @@ class Carte extends DivObject {
         this.setPoiClickListeners();
         this.setOSDtools();
         this._balise.css('display', 'block');
-    }
-
-    fermerCarte(elementAouvrir) {
-        TweenLite.to(this._balise, 1, { opacity: 0, onComplete: this.supprimerCarte, onCompleteParams: [this] });
-        this.finFermerSignal.dispatch(elementAouvrir);
-    }
-
-    supprimerCarte(carte) {
-        $(body).find('.elementFiche').remove();
-        carte._balise.remove();
+        this.carteOpenSignal.dispatch();
     }
 
     getOSDviewer() {
@@ -78,8 +68,8 @@ class Carte extends DivObject {
             prefixUrl: this._jsonCarte.boutonsCarte,
             maxZoomLevel: 3,
             visibilityRatio: 1,
-            // defaultZoomLevel: 1.2, // no white borders
-            defaultZoomLevel: 1,
+            defaultZoomLevel: 1.2, // no white borders
+            // defaultZoomLevel: 1,
             constrainDuringPan: true,
             showNavigator: true,
             navigatorAutoFade: false,
@@ -200,11 +190,8 @@ class Carte extends DivObject {
 
     removeAllOverlays() {
         this._viewer.clearOverlays();
-    }
-
-    // GETTERS 
-
-    get finFermerSignal() {
-        return this.signaux.finFermer;
+        $('.poi').remove();
+        // <.poi><.elementFiche></></> donc pas besoin d'enlever les fiches. 
+        // Elles seront supprimées en meme temps que les poi
     }
 }
