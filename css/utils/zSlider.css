@@ -52,7 +52,6 @@
 .z-slide-indicator {
     position: absolute;
     left: 0!important;
-    z-index: 10;
     padding: 30px;
 }
 

@@ -41,7 +41,7 @@ class Carte extends DivObject {
         this._fiches = [];
         for (let i = 0; i < jsonPOIs.length; i++) {
             console.log("new point + fiche : " + i);
-            var poi = new Poi(this._poiDiv._balise, jsonPOIs[i]);
+            var poi = new Poi(this._poiDiv._balise, i + 'poi_' + this._id, jsonPOIs[i]);
             this._pois.push(poi);
             var f = new Fiche(poi, i + 'fiche_' + poi._id, this._couleur);
             this._fiches.push(f);
@@ -161,9 +161,7 @@ class Carte extends DivObject {
     }
 
     setPoiClickListeners() {
-        console.log('set click listener');
         var carte = this;
-        console.log(carte._pois);
 
         for (let i = 0; i < carte._pois.length; i++) {
             $('#' + carte._pois[i]._id).click(function () {

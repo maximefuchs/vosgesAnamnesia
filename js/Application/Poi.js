@@ -1,12 +1,12 @@
 class Poi extends DivObject {
-    constructor(div, json, viewer) {
-        super(div, "Poi_" + json.id); // parent and id
+    constructor(div, id, json, viewer) {
+        super(div, id + json.id); // parent and id
 
         this._json = json;
 
         this._viewer = viewer;
 
-        this._id = "Poi_" + json.id;
+        this._id = id + json.id;
         this._lat = this._json.lat;
         this._long = this._json.long;
         this._titre = this._json.titre;
