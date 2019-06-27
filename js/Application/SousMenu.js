@@ -66,11 +66,6 @@ class SousMenu extends DivObject {
         texte._balise.after(s);
         this._texte = texte;
 
-        this._enSavoirPlus = new DivObject(this._divText._balise, 'enSavoirPlus_' + this._id);
-        this._enSavoirPlus.addClass('enSavoirPlus');
-        this._enSavoirPlus.css('margin-top', scale / 2 + 'px')
-        this._enSavoirPlus.html("En savoir plus →");
-
         this._btnFermer = new DivObject(this._divText._balise, 'btnFermer_' + this._id);
         this._btnFermer.addClass('btnFermerSousMenu');
         this._btnFermer._balise.css({
@@ -163,7 +158,9 @@ class SousMenu extends DivObject {
                 var span = new BaliseObject(divLeft._balise, 'span', 'spanSSMenu_' + i);
                 span.html(sMenu._json.sousmenu[i].titre.toUpperCase());
                 if (i == num) { span.addClass('selected'); }
-                span._balise.click({ param: sMenu, num: i }, sMenu.displaySSMenuByTitle);
+                span._balise.click(function () {
+                    sMenu.displaySSMenuByTitle(sMenu, num);
+                });
                 divLeft.append('<hr>');
             }
         }
@@ -173,7 +170,7 @@ class SousMenu extends DivObject {
         sMenu.initSousMenuElement();
     }
 
-    displaySSMenuByTitle(e) {
+    displaySSMenuByTitle(sMenu, num) {
         $('.selected').removeClass('selected');
         $(this).addClass('selected');
         var sMenu = e.data.param;
@@ -190,6 +187,40 @@ class SousMenu extends DivObject {
         }
         sMenu.updateDivSousElements(jsonElements);
         sMenu.initSousMenuElement();
+    }
+
+    displaySSMenuForCarte(sMenu, num) {
+        var s = sMenu._json.sousmenu[num].titre.toUpperCase();
+        var size = 840 / s.length;
+        if (size > 65) { size = 65; }
+        if (size < 37) { size = 37; }
+        sMenu._titre.html(s);
+        sMenu._titre.css('font-size', size + 'px');
+
+        if (sMenu._json.sousmenu[num].texte !== undefined) {
+            sMenu._texte.html(sMenu._json.sousmenu[num].texte);
+        }
+
+        $('#divLeft').remove();
+        var divLeft = new DivObject(sMenu._divssSousMenu._balise, 'divLeft');
+        var ssTitre = new BaliseObject(divLeft._balise, 'h1');
+        ssTitre.html(sMenu._titreElement.toUpperCase());
+
+        divLeft.append('<hr>');
+        for (let i = 0; i < sMenu._json.sousmenu.length; i++) {
+            if (sMenu._json.sousmenu[i].sousmenu !== undefined) {
+                var span = new BaliseObject(divLeft._balise, 'span', 'spanSSMenu_' + i);
+                span.html(sMenu._json.sousmenu[i].titre.toUpperCase());
+                if (i == num) { span.addClass('selected'); }
+                span._balise.click(function () {
+                    sMenu.displaySSMenuByTitle(sMenu, num);
+                });
+                divLeft.append('<hr>');
+            }
+        }
+
+        var jsonElements = sMenu._json.sousmenu[num].sousmenu;
+        sMenu.updateCarteSousElements(jsonElements);
     }
 
     updatePoiJson(sMenu, json) {
@@ -220,7 +251,7 @@ class SousMenu extends DivObject {
                     case 'carte':
                         console.log('carte');
                         sMenu.updatePoiJson(sMenu, jsonPoi[lien]);
-                        sMenu.displaySSMenuByElement(sMenu, num);
+                        sMenu.displaySSMenuForCarte(sMenu, num);
 
                         sMenu._carte.init();
 
@@ -244,6 +275,57 @@ class SousMenu extends DivObject {
             });
             i++;
         });
+    }
+
+    updateCarteSousElements(json) {
+        var sMenu = this;
+        sMenu.divSousElements = [];
+        var iconEyeClosed = "<svg id='Calque_1' data-name='Calque 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><defs><style>.cls-1{fill:none;stroke: " + sMenu._couleur + ";stroke-linecap:round;stroke-linejoin:round;stroke-width:6.24px;}</style></defs><path class='cls-1' d='M26.54,69.69s20.17,39.6,74,39.6,74-39.6,74-39.6'/><line class='cls-1' x1='100.5' y1='109.29' x2='100.5' y2='129.38'/><line class='cls-1' x1='129.64' y1='106.15' x2='138.62' y2='124.12'/><line class='cls-1' x1='154.02' y1='92.86' x2='166.46' y2='108.63'/><line class='cls-1' x1='45.61' y1='91.91' x2='33.16' y2='107.69'/><line class='cls-1' x1='68.73' y1='106.15' x2='62.37' y2='125.21'/></svg>";
+        var iconEyeOpen = "<svg id='Calque_2' data-name='Calque 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><defs><style>.cls-1{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:9.18px;}.cls-1,.cls-2{stroke:" + sMenu._couleur + ";}.cls-2{fill:" + sMenu._couleur + ";stroke-miterlimit:10;stroke-width:3.19px;}</style></defs><title>Plan de travail 1</title><path class='cls-1' d='M100.66,56.49c-59,0-81.08,43.41-81.08,43.41s22.11,43.4,81.08,43.4,81.08-43.4,81.08-43.4S159.62,56.49,100.66,56.49Z'/><circle class='cls-1' cx='100.66' cy='99.9' r='26.89'/><path class='cls-2' d='M90.72,76.14s-7.41,36.48,33,34.44C123.71,110.58,130.75,64.2,90.72,76.14Z'/></svg>";
+        var iconPerenne = "<svg viewBox='-66 0 569 569.286' style='fill: " + sMenu._couleur + "' xmlns='http://www.w3.org/2000/svg'><path d='m.109375 66.382812v493.132813c0 5.238281 4.246094 9.484375 9.484375 9.484375h360.367188c5.234374 0 9.480468-4.246094 9.480468-9.484375v-398.296875c0-.210938-.101562-.390625-.121094-.597656-.046874-.832032-.210937-1.652344-.484374-2.4375-.105469-.304688-.179688-.597656-.3125-.894532-.460938-1.03125-1.101563-1.972656-1.898438-2.777343l-94.832031-94.832031c-.804688-.800782-1.75-1.441407-2.789063-1.898438-.285156-.121094-.574218-.222656-.871094-.3125-.792968-.273438-1.617187-.4375-2.457031-.492188-.160156.027344-.347656-.074218-.546875-.074218h-265.535156c-5.238281 0-9.484375 4.242187-9.484375 9.480468zm346.957031 85.351563h-62.457031v-62.457031zm-327.992187-75.867187h246.570312v85.351562c0 5.234375 4.246094 9.480469 9.480469 9.480469h85.351562v379.335937h-341.402343zm0 0' /><path d='m398.410156 493.132812v18.964844h28.449219c5.238281 0 9.484375-4.242187 9.484375-9.480468v-493.132813c0-5.238281-4.246094-9.484375-9.484375-9.484375h-360.367187c-5.238282 0-9.484376 4.246094-9.484376 9.484375v28.449219h18.96875v-18.96875h341.398438v474.167968zm0 0' /><path d='m75.976562 189.667969h227.597657v18.964843h-227.597657zm0 0' /><path d='m75.976562 132.765625h75.867188v18.96875h-75.867188zm0 0' /><path d='m75.976562 246.566406h151.734376v18.96875h-151.734376zm0 0' /><path d='m246.675781 246.566406h56.898438v18.96875h-56.898438zm0 0' /><path d='m75.976562 303.464844h227.597657v18.96875h-227.597657zm0 0' /><path d='m75.976562 417.265625h227.597657v18.96875h-227.597657zm0 0' /><path d='m161.324219 360.367188h142.25v18.964843h-142.25zm0 0' /><path d='m75.976562 360.367188h66.382813v18.964843h-66.382813zm0 0' /><path d='m75.976562 474.167969h37.933594v18.964843h-37.933594zm0 0' /><path d='m132.875 474.167969h170.699219v18.964843h-170.699219zm0 0' /></svg>";
+        var divBtn = new DivObject(sMenu._divText._balise, 'divBtnFiltre_' + sMenu._id);
+        divBtn.css('margin-top', '30px');
+        var divs = [];
+        for (let i = 0; i < json.length; i++) {
+            var jsonElt = json[i];
+            var div = new DivObject(divBtn._balise, i + 'btnsFiltre_' + sMenu._id);
+            div.addClass('btnsFiltre');
+            var text = jsonElt.titre;
+            div.html(text.toUpperCase());
+            var icone = new DivObject(div._balise, i + 'icone_' + sMenu._id);
+            icone.addClass('iconCarteElement');
+            switch (jsonElt.type) {
+                case 'poi':
+                    icone.html(iconEyeClosed);
+                    div.isOpen = false;
+                    div._balise.click(function () {
+                        $('.pagePerenne').remove();
+                        if (!divs[i].isOpen){
+                            $('#' + i + 'icone_' + sMenu._id).html(iconEyeOpen);
+                            divs[i].isOpen = true;
+                        } else {
+                            $('#' + i + 'icone_' + sMenu._id).html(iconEyeClosed);
+                            divs[i].isOpen = false;
+                        }
+                    });
+                    break;
+
+                case 'perenne':
+                    icone.html(iconPerenne);
+                    div._balise.click(function () {
+                        $('.pagePerenne').remove();
+                        var fp = new FichePerenne($('#Application'), 'fichePerenne', null, sMenu._couleur);
+                        fp.init();
+                    });
+                    break;
+
+                default:
+                    console.log('Non existant : ' + jsonElt.type);
+                    break;
+            }
+            div.css('color', sMenu._couleur);
+            divs.push(div);
+        }
     }
 
     set divSousElements(jsonElements) {

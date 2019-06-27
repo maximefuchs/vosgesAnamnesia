@@ -30,11 +30,6 @@
   height: 250px;
 }
 
-.enSavoirPlus {
-  font-size: 28px;
-  font-weight: bold;
-}
-
 .btnFermerSousMenu {
   position: absolute;
   left: 0;
@@ -93,4 +88,23 @@
   width: 100%;
   border: 1px solid white;
   margin: 8px 0;
+}
+
+.btnsFiltre{
+  display: inline-block;
+  width: 42%;
+  padding: 0 3%;
+  margin: 1%;
+  font-weight: bold;
+  background: #EEE;
+  line-height: 70px;
+  vertical-align: middle;
+}
+
+.iconCarteElement{
+  float: right;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    top: 10px;
 }

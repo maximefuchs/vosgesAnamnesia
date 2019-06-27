@@ -161,47 +161,46 @@ class Carte extends DivObject {
     }
 
     setPoiClickListeners() {
+        console.log('set click listener');
         var carte = this;
-        for (let i = 0; i < carte._pois.length; i++) {
-            this._viewer.addHandler('open', function (e) {
-                new OpenSeadragon.MouseTracker({
-                    element: carte._pois[i]._id,
-                    clickHandler: function (event) {
-                        console.log('click poi');
-                        var f = carte._fiches[i];
-                        var p = f._poi;
-                        if (!f._ouvert) {
-                            p.addClass('large');
-                            p._balise.css({ 'background': 'url(' + p._images[0] + ')', 'background-size': 'cover', 'background-position': 'center' });
-                            var overlay = poiToOverlay(p);
-                            console.log(overlay);
+        console.log(carte._pois);
 
-                            f._balise.toggle();
-                            f._ouvert = true;
-                            carte._viewer.addOverlay(f._overlay);
-                            carte.removeOverlay(f, p);
-                        }
-                    }
-                });
+        for (let i = 0; i < carte._pois.length; i++) {
+            $('#' + carte._pois[i]._id).click(function () {
+                var f = carte._fiches[i];
+                var p = f._poi;
+                if (!f._ouvert) {
+                    p.addClass('large');
+                    p._balise.css({ 'background': 'url(' + p._images[0] + ')', 'background-size': 'cover', 'background-position': 'center' });
+                    var overlay = poiToOverlay(p);
+                    console.log(overlay);
+
+                    f._balise.toggle();
+                    f._ouvert = true;
+                    carte._viewer.addOverlay(f._overlay);
+                    carte.removeOverlay(f, p);
+                }
             });
         }
     }
 
     removeOverlay(fiche, poi) {
         var carte = this;
-        return new OpenSeadragon.MouseTracker({
-            element: fiche._btFermer._id,
-            clickHandler: function (event) {
-                // fiche._balise.toggle();
-                carte._viewer.removeOverlay(fiche._id);
-                fiche._ouvert = false;
-                poi.removeClass('large');
-                poi.css('background', 'white');
-            }
+        $('#' + fiche._btFermer._id).click(function () {
+            carte._viewer.removeOverlay(fiche._id);
+            fiche._ouvert = false;
+            poi.removeClass('large');
+            poi.css('background', 'white');
         });
+        // OTHER METHOD
+        // return new OpenSeadragon.MouseTracker({
+        //     element: fiche._btFermer._id,
+        //     clickHandler: function (event) {
+        //     }
+        // });
     }
 
-    removeAllOverlays(){
+    removeAllOverlays() {
         this._viewer.clearOverlays();
     }
 
