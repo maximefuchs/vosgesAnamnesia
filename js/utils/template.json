@@ -551,16 +551,19 @@
                         {
                             "id": 0,
                             "titre": "Fermes auberges",
+                            "lien": "fermes",
                             "type": "poi"
                         },
                         {
                             "id": 1,
                             "titre": "Marchés paysans",
+                            "lien": "marches",
                             "type": "poi"
                         },
                         {
                             "id": 2,
                             "titre": "Magasins paysans",
+                            "lien": "magasins",
                             "type": "poi"
                         },
                         {
@@ -609,52 +612,73 @@
                 },
                 "aVoir": {
                     "texte": "Dialoguer, sensibiliser et être compris par les habitants et les visiteurs. Pour atteindre ces objectifs, le Parc naturel régional des Ballons des Vosges dispose de différents points d’accueil. Ces lieux vivants et ouverts sont de formidables points de départ pour partir à la découverte du sud du massif des Vosges. Ils proposent une documentation spécifique et différentes expositions temporaires",
-                    "diaporama": [],
-                    "type": "carte",
+                    "lien": "a voir a visiter",
+                    "diaporama": [
+                        {
+                            "id": "diapo1",
+                            "src": "datas/imgs/menu/diaporama/paysage/diapo_1.jpg",
+                            "color": "#FF0000"
+                        },
+                        {
+                            "id": "diapo2",
+                            "src": "datas/imgs/menu/diaporama/paysage/diapo_2.jpg",
+                            "color": "#FFFF00"
+                        }
+                    ],
                     "sousmenu": [
                         {
                             "id": 0,
                             "titre": "Routes touristiques",
+                            "lien": "routes",
                             "type": "poi"
                         },
                         {
                             "id": 1,
                             "titre": "Parcs et jardins",
+                            "lien": "parcs",
                             "type": "poi"
                         },
                         {
                             "id": 2,
                             "titre": "Lieux de sensibilisation à l'environnement",
+                            "lien": "lieux sensibilisation",
                             "type": "poi"
                         },
                         {
                             "id": 3,
                             "titre": "Lieux de spactables et d'expositions",
+                            "type": "carte",
+                            "lien": "lieux spectacles et expos",
                             "texte": "La diversité des paysages du Parc permet la pratique de nombreuses activités de pleine nature. Il accompagne plus particulièrement la pratique des activités respectueuses du territoire.",
                             "sousmenu": [
                                 {
                                     "id": 0,
                                     "titre": "Lieux d'expositions",
+                                    "lien": "expos",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 1,
                                     "titre": "Lieux de spectacles et de concerts",
+                                    "lien": "spectacles",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 2,
                                     "titre": "Lieux de créations artistiques",
+                                    "lien": "creaction",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 3,
                                     "titre": "Lieux de convivialité",
+                                    "lien": "convivialite",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 4,
                                     "titre": "Cinémas",
+                                    "lien": "cinema",
                                     "type": "poi"
                                 }
                             ]
@@ -662,6 +686,7 @@
                         {
                             "id": 4,
                             "titre": "Musées et sites patrimoines",
+                            "type": "carte",
                             "sousmenu": [
                                 {
                                     "id": 0,
@@ -835,6 +860,7 @@
                         {
                             "id": 1,
                             "titre": "Balades et randonnées",
+                            "lien": "balades",
                             "type": "carte",
                             "sousmenu": [
                                 {
@@ -850,11 +876,13 @@
                                 {
                                     "id": 2,
                                     "titre": "Balades 30 ans",
+                                    "lien": "30 ans",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 3,
                                     "titre": "Balades apéritives: une ferme, une randonnée",
+                                    "lien": "aperitives",
                                     "type": "poi"
                                 }
                             ]
@@ -982,10 +1010,12 @@
                             "id": 0,
                             "titre": "Communes",
                             "type": "carte",
+                            "lien": "communes",
                             "sousmenu": [
                                 {
                                     "id": 0,
-                                    "titre": "197 communes adhérentes",
+                                    "titre": "197 communes",
+                                    "lien": "197 communes",
                                     "type": "poi"
                                 }
                             ]
@@ -993,27 +1023,33 @@
                         {
                             "id": 1,
                             "titre": "Points d'accueil du parc",
-                            "texte": "Dialoguer, sensibiliser et être compris par les habitants et les visiteurs. Pour atteindre ces objectifs, le Parc naturel régional des Ballons des Vosges dispose de différents points d’accueil. Ces lieux vivants et ouverts sont de formidables points de départ pour partir à la découverte du sud du massif des Vosges. Ils proposent une documentation spécifique et différentes expositions temporaires.",
+                            "texte": "Dialoguer sensibiliser et être compris par les habitants et les visiteurs. Pour atteindre ces objectifs, le Parc naturel régional des Ballons des Vosges dispose de différents points d’accueil. Ces lieux vivants et ouverts sont de formidables points de départ pour partir à la découverte du sud du massif des Vosges. Ils proposent une documentation spécifique et différentes expositions temporaires.",
+                            "type": "carte",
+                            "lien": "points d'accueil du parc",
                             "sousmenu": [
                                 {
                                     "id": 0,
                                     "titre": "ENC",
-                                    "type": "perenne"
+                                    "type": "poi",
+                                    "lien": "enc"
                                 },
                                 {
                                     "id": 1,
                                     "titre": "Château Lambert",
-                                    "type": "perenne"
+                                    "type": "poi",
+                                    "lien": "chateau lambert"
                                 },
                                 {
                                     "id": 2,
                                     "titre": "Munster",
-                                    "type": "perenne"
+                                    "type": "poi",
+                                    "lien": "munster"
                                 },
                                 {
                                     "id": 3,
                                     "titre": "Schlucht",
-                                    "type": "perenne"
+                                    "type": "poi",
+                                    "lien": "schlucht"
                                 }
                             ]
                         },
@@ -1030,94 +1066,19 @@
                         {
                             "id": 4,
                             "titre": "Sommets",
-                            "type": "poi"
+                            "type": "poi",
+                            "lien": "sommets"
                         },
                         {
                             "id": 5,
                             "titre": "Cols",
-                            "type": "poi"
+                            "type": "poi",
+                            "lien": "cols"
                         }
                     ]
                 },
                 "marqueParc": {
                     "texte": "La marque nationale \"Valeurs Parc naturel régional\" distingue des entreprises engagées dans un développement économique durable dans leurs territoires. Elle s’articule autour de 3 valeurs fortes : l’humain, la préservation de l’environnement et l’attachement au territoire.",
-                    "sousmenu": [
-                        {
-                            "id": 0,
-                            "titre": "Valeurs Parc naturel régional",
-                            "type": "perenne"
-                        },
-                        {
-                            "id": 1,
-                            "titre": "Secteurs d'activités",
-                            "type": "carte",
-                            "sousmenu": [
-                                {
-                                    "id": 0,
-                                    "titre": "agriculture",
-                                    "sousmenu": [
-                                        {
-                                            "id": 0,
-                                            "titre": "Jus de fruits",
-                                            "type": "poi"
-                                        },
-                                        {
-                                            "id": 1,
-                                            "titre": "Miel",
-                                            "type": "poi"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "id": 1,
-                                    "titre": "artisanat et industrie",
-                                    "sousmenu": [
-                                        {
-                                            "id": 0,
-                                            "titre": "bardage bois",
-                                            "type": "poi"
-                                        },
-                                        {
-                                            "id": 1,
-                                            "titre": "jouets et mobilier en bois",
-                                            "type": "poi"
-                                        },
-                                        {
-                                            "id": 2,
-                                            "titre": "eaux de sources et minérales",
-                                            "type": "poi"
-                                        },
-                                        {
-                                            "id": 3,
-                                            "titre": "granit",
-                                            "type": "poi"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "id": 2,
-                                    "titre": "tourisme, hébergements et loisirs",
-                                    "sousmenu": [
-                                        {
-                                            "id": 0,
-                                            "titre": "Hôtels restaurants",
-                                            "type": "poi"
-                                        },
-                                        {
-                                            "id": 1,
-                                            "titre": "Meublés de tourisme et chambres d'hôtes",
-                                            "type": "poi"
-                                        },
-                                        {
-                                            "id": 2,
-                                            "titre": "Accompagnateurs en montagne",
-                                            "type": "poi"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
                     "diaporama": [
                         {
                             "id": "diapo1",
@@ -1128,6 +1089,98 @@
                             "id": "diapo2",
                             "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
                             "color": "#FFFF00"
+                        }
+                    ],
+                    "sousmenu": [
+                        {
+                            "id": 0,
+                            "titre": "Valeurs Parc naturel régional",
+                            "type": "perenne"
+                        },
+                        {
+                            "id": 1,
+                            "titre": "Secteurs d'activités",
+                            "lien": "secteurs",
+                            "sousmenu": [
+                                {
+                                    "id": 0,
+                                    "titre": "agriculture",
+                                    "type": "carte",
+                                    "lien": "agriculture",
+                                    "sousmenu": [
+                                        {
+                                            "id": 0,
+                                            "titre": "Jus de fruits",
+                                            "lien": "jus de fruits",
+                                            "type": "poi"
+                                        },
+                                        {
+                                            "id": 1,
+                                            "titre": "Miel",
+                                            "lien": "miel",
+                                            "type": "poi"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 1,
+                                    "titre": "artisanat et industrie",
+                                    "lien": "artisanat",
+                                    "type": "carte",
+                                    "sousmenu": [
+                                        {
+                                            "id": 0,
+                                            "titre": "bardage bois",
+                                            "lien": "bardage",
+                                            "type": "poi"
+                                        },
+                                        {
+                                            "id": 1,
+                                            "titre": "jouets et mobilier en bois",
+                                            "lien": "jouets",
+                                            "type": "poi"
+                                        },
+                                        {
+                                            "id": 2,
+                                            "titre": "eaux de sources et minérales",
+                                            "lien": "eaux",
+                                            "type": "poi"
+                                        },
+                                        {
+                                            "id": 3,
+                                            "titre": "granit",
+                                            "lien": "granit",
+                                            "type": "poi"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 2,
+                                    "titre": "tourisme, hébergements et loisirs",
+                                    "lien": "tourisme",
+                                    "type": "carte",
+                                    "sousmenu": [
+                                        {
+                                            "id": 0,
+                                            "titre": "Hôtels restaurants",
+                                            "lien": "hotels",
+                                            "type": "poi"
+                                        },
+                                        {
+                                            "id": 1,
+                                            "titre": "Meublés de tourisme et chambres d'hôtes",
+                                            "lien": "chambres",
+                                            "type": "poi"
+                                        },
+                                        {
+                                            "id": 2,
+                                            "titre": "Accompagnateurs en montagne",
+                                            "lien": "accompagnateurs",
+                                            "type": "poi"
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 },
@@ -1192,21 +1245,25 @@
                         {
                             "id": 0,
                             "titre": "Offices du tourisme",
+                            "lien": "offices",
                             "type": "poi"
                         },
                         {
                             "id": 1,
                             "titre": "Points d'informations touristiques",
+                            "lien": "informations",
                             "type": "poi"
                         },
                         {
                             "id": 2,
                             "titre": "Points d'accueil du parc",
+                            "lien": "accueil",
                             "type": "poi"
                         },
                         {
                             "id": 3,
                             "titre": "Structures d'éducation à l'environnement",
+                            "lien": "education",
                             "type": "poi"
                         }
                     ]

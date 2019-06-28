@@ -23,11 +23,9 @@
   background: white;
 }
 
-
 .text_sousmenu p {
   font-size: 33px;
   overflow: auto;
-  height: 250px;
 }
 
 .btnFermerSousMenu {
@@ -45,6 +43,10 @@
   font-size: 120px;
   font-weight: bold;
   color: white;
+}
+
+.btnFermerSousMenu span.noRotation {
+  transform: translate(-50%, -50%);
 }
 
 .elementSousMenu {
@@ -76,9 +78,11 @@
 .ssSousMenu span {
   cursor: pointer;
 }
-.ssSousMenu span.selected{
+
+.ssSousMenu span.selected {
   font-weight: bold;
 }
+
 .ssSousMenu span.selected:before {
   content: '› ';
 }
@@ -90,7 +94,7 @@
   margin: 8px 0;
 }
 
-.btnsFiltre{
+.btnsFiltre {
   display: inline-block;
   width: 42%;
   padding: 0 3%;
@@ -101,10 +105,10 @@
   vertical-align: middle;
 }
 
-.iconCarteElement{
+.iconCarteElement {
   float: right;
-    position: relative;
-    width: 50px;
-    height: 50px;
-    top: 10px;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  top: 10px;
 }
