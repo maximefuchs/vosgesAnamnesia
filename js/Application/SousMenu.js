@@ -26,6 +26,18 @@ class SousMenu extends DivObject {
         this.signalFermer = new signals.Signal();
         this.closeCarteSignal = new signals.Signal();
 
+        this._tempsInactivite = 0;
+        var tempsInactifMax = paramsJSON.tempsInactivity;
+        var sMenu = this;
+        var veille = setInterval(function () {
+            if (sMenu._tempsInactivite == tempsInactifMax) {
+                sMenu.close();
+                sMenu.signalFermer.dispatch();
+                clearInterval(veille);
+            }
+            sMenu._tempsInactivite++;
+        }, 1000);
+
 
         this.css('bottom', 1 * scale);
 
@@ -84,6 +96,7 @@ class SousMenu extends DivObject {
                 ssMenu.close();
                 ssMenu.signalFermer.dispatch();
             } else {
+                ssMenu._tempsInactivite = 0;
                 ssMenu.btnShouldClose = true;
                 ssMenu.reinitializeContent();
                 $('.divBtnCarteElement').remove();
@@ -184,6 +197,7 @@ class SousMenu extends DivObject {
                 span.html(json[i].titre.toUpperCase());
                 if (i == num) { span.addClass('selected'); }
                 span._balise.click(function () {
+                    sMenu._tempsInactivite = 0;
                     sMenu.displaySSMenuByTitle(sMenu, i, json);
                 });
                 divLeft.append('<hr>');
@@ -254,6 +268,7 @@ class SousMenu extends DivObject {
             var type = element._type;
             var jsonPoi = sMenu._jsonPoi;
             element._balise.click(function () {
+                sMenu._tempsInactivite = 0;
                 console.log('click lien : ' + lien);
                 console.log('click type : ' + type);
                 switch (type) {
@@ -323,6 +338,7 @@ class SousMenu extends DivObject {
                     div.jsonPOIs = sMenu._jsonPoi[jsonElt.lien];
                     allPOIs = allPOIs.concat(div.jsonPOIs);
                     div._balise.click(function () {
+                        sMenu._tempsInactivite = 0;
                         sMenu.reinitializeContent();
                         if (!divs[i].isOpen) {
                             for (let k = 0; k < json.length; k++) {
@@ -351,6 +367,7 @@ class SousMenu extends DivObject {
                 case 'perenne':
                     icone.html(iconPerenne);
                     div._balise.click(function () {
+                        sMenu._tempsInactivite = 0;
                         sMenu.reinitializeContent();
                         var fp = new FichePerenne($('#Application'), 'fichePerenne', null, sMenu._couleur);
                         fp.init();

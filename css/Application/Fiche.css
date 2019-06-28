@@ -1,5 +1,6 @@
 .elementFiche {
     margin-top: 400px;
+    z-index: 11;
 }
 
 .fiche {
