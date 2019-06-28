@@ -94,21 +94,29 @@
   margin: 8px 0;
 }
 
+.divBtnCarteElement{
+  margin-top: 30px;
+  position: relative;
+}
+
 .btnsFiltre {
-  display: inline-block;
+  position: absolute;
   width: 42%;
-  padding: 0 3%;
+  height: 30px;
+  padding: 15px;
   margin: 1%;
   font-weight: bold;
   background: #EEE;
-  line-height: 70px;
-  vertical-align: middle;
+}
+
+.btnsFiltre span{
+  margin-right: 60px;
 }
 
 .iconCarteElement {
-  float: right;
-  position: relative;
   width: 50px;
   height: 50px;
-  top: 10px;
+  position: absolute;
+  top: 7px;
+  right: 15px;
 }

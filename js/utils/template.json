@@ -360,7 +360,7 @@
                         "de": "Zu sehen, Zu besichtigen",
                         "en": "To see, To visit"
                     },
-                    "lien": "aVoir",
+                    "lien": "a voir a visiter",
                     "x": 3,
                     "y": 0,
                     "taille": 4
@@ -610,7 +610,7 @@
                         }
                     ]
                 },
-                "aVoir": {
+                "a voir a visiter": {
                     "texte": "Dialoguer, sensibiliser et être compris par les habitants et les visiteurs. Pour atteindre ces objectifs, le Parc naturel régional des Ballons des Vosges dispose de différents points d’accueil. Ces lieux vivants et ouverts sont de formidables points de départ pour partir à la découverte du sud du massif des Vosges. Ils proposent une documentation spécifique et différentes expositions temporaires",
                     "lien": "a voir a visiter",
                     "diaporama": [
@@ -653,25 +653,25 @@
                             "sousmenu": [
                                 {
                                     "id": 0,
-                                    "titre": "Lieux d'expositions",
+                                    "titre": "Expositions",
                                     "lien": "expos",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 1,
-                                    "titre": "Lieux de spectacles et de concerts",
+                                    "titre": "Spectacles et concerts",
                                     "lien": "spectacles",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 2,
-                                    "titre": "Lieux de créations artistiques",
-                                    "lien": "creaction",
+                                    "titre": "Créations artistiques",
+                                    "lien": "creation",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 3,
-                                    "titre": "Lieux de convivialité",
+                                    "titre": "Convivialité",
                                     "lien": "convivialite",
                                     "type": "poi"
                                 },
@@ -686,36 +686,43 @@
                         {
                             "id": 4,
                             "titre": "Musées et sites patrimoines",
+                            "lien": "musees",
                             "type": "carte",
                             "sousmenu": [
                                 {
                                     "id": 0,
                                     "titre": "Arts et histoire",
+                                    "lien": "arts",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 1,
                                     "titre": "Châteaux",
+                                    "lien": "chateaux",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 2,
                                     "titre": "Patrimoine de mémoire",
+                                    "lien": "memoire",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 3,
                                     "titre": "Patrimoine industriel et savoir faire",
+                                    "lien": "industriel",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 4,
                                     "titre": "Patrimoine religieux",
+                                    "lien": "religieux",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 5,
                                     "titre": "Traditions populaires",
+                                    "lien": "traditions",
                                     "type": "poi"
                                 }
                             ]
