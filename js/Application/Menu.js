@@ -114,6 +114,7 @@ class Menu extends DivObject {
         menu.tidyElements(menu, $(this).attr('id'));
         menu.supprimerCarte();
         menu.supprimerPerenne();
+        $('.sousMenuListePoi').remove();
         if (element._type == 'carte') {
             menu.hideDecoElements(menu);
             menu._divEltsDeco.css('display', 'none');
@@ -135,6 +136,7 @@ class Menu extends DivObject {
     }
     supprimerSousMenu() {
         $('.sousmenu').remove();
+        $('.sousMenuListePoi').remove();
     }
 
     clickBtnLang(e) {

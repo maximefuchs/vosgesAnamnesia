@@ -94,7 +94,7 @@
   margin: 8px 0;
 }
 
-.divBtnCarteElement{
+.divBtnCarteElement {
   margin-top: 30px;
   position: relative;
 }
@@ -109,7 +109,7 @@
   background: #EEE;
 }
 
-.btnsFiltre span{
+.btnsFiltre span {
   margin-right: 60px;
 }
 
@@ -120,3 +120,44 @@
   top: 7px;
   right: 15px;
 }
+
+/* ******************************** */
+
+/* ELEMENT LISTE POI */
+
+.sousMenuListePoi{
+  position: absolute;
+  left: 0;
+  background: white;
+  z-index: 10;
+}
+
+.divListePoi {
+  max-height: inherit;
+  overflow-y: scroll;
+}
+
+.divListePoi::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.divListePoi::-webkit-scrollbar-track {
+  background: #bbb;
+}
+
+.elementListePoi{
+  width: 95%;
+}
+
+.elementListePoi .divImgEltLiPoi {
+  float: left;
+}
+
+.poiLiEltTexte {
+  font-size: 23px;
+  padding-top: 25px;
+  margin-left: 350px;
+}
+
+/* ******************************** */

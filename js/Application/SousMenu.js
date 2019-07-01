@@ -1,6 +1,8 @@
 Global.include('dev/js/Application/ElementSousMenu.js');
 Global.includeCSS('dev/css/Application/SousMenu.css');
 
+Global.include('dev/js/Application/SousMenuListePoi.js');
+
 class SousMenu extends DivObject {
     constructor(parent, json, titreElement, couleur, scale, lien) {
         super(parent, 'sousmenu');
@@ -96,20 +98,23 @@ class SousMenu extends DivObject {
                 ssMenu.close();
                 ssMenu.signalFermer.dispatch();
             } else {
-                ssMenu._tempsInactivite = 0;
-                ssMenu.btnShouldClose = true;
-                ssMenu.reinitializeContent();
+                $('.sousMenuListePoi').remove();
                 $('.divBtnCarteElement').remove();
-                ssMenu.oldPoiJson(ssMenu);
                 ssMenu._btnFermer.html('<span>+</span>');
-                ssMenu._divSousElements = [];
-                ssMenu.updateDivSousElements(json.sousmenu);
-                ssMenu.initSousMenuElement();
                 ssMenu._divssSousMenu.html("");
-                ssMenu._jsonPoi = poisJSON[lien];
                 titre.html(s);
                 titre.css('font-size', size + 'px');
                 texte.html(json.texte);
+                ssMenu._tempsInactivite = 0;
+                ssMenu.btnShouldClose = true;
+                ssMenu.reinitializeContent();
+                ssMenu.oldPoiJson(ssMenu);
+                ssMenu._divSousElements = [];
+                ssMenu.updateDivSousElements(json.sousmenu);
+                ssMenu.initSousMenuElement();
+                ssMenu._jsonPoi = poisJSON[lien];
+                sMenu._divText.tweenAnimate({ bottom: 4 * scale + 'px' });
+                sMenu._divssSousMenu.tweenAnimate({ bottom: 4 * scale + 'px' });
             }
         });
 
@@ -138,6 +143,7 @@ class SousMenu extends DivObject {
             padding: 0.25 * scale,
             background: couleur
         });
+
     }
 
     reinitializeContent() {
@@ -256,6 +262,28 @@ class SousMenu extends DivObject {
         console.log(sMenu._jsonPoi);
     }
 
+    displayPoiOnMap(json) {
+        var b;
+        switch (json.length) {
+            case 1:
+                b = 4;
+                break;
+            case 2:
+                b = 4;
+                break;
+            default:
+                b = 1.5 + json.length;
+                break;
+        }
+        if (b > 8) { b = 8; }
+        this._divText.tweenAnimate({ bottom: b * this._scale + 'px' });
+        this._divssSousMenu.tweenAnimate({ bottom: b * this._scale + 'px' });
+        $('#sousMenuListePOI').remove();
+        new SousMenuListePoi(this._parent, 'sousMenuListePOI', json, this._scale, this._couleur);
+        this._carte.initPOIsandFiches(json);
+        this._carte.init();
+    }
+
     // AFFICHAGE DE SOUS ELEMENTS DE MENU NORMAUX
     // LIENS VERS UNE FICHE PERENNE, UNE CARTE, OU UN AUTRE SOUS MENU
     updateDivSousElements(json) {
@@ -266,7 +294,6 @@ class SousMenu extends DivObject {
             var num = i;
             var lien = element._lien;
             var type = element._type;
-            var jsonPoi = sMenu._jsonPoi;
             element._balise.click(function () {
                 sMenu._tempsInactivite = 0;
                 console.log('click lien : ' + lien);
@@ -286,11 +313,9 @@ class SousMenu extends DivObject {
 
                     case 'poi':
                         sMenu.reinitializeContent();
-                        console.log('poi');
                         sMenu.updatePoiJson(sMenu, lien);
 
-                        sMenu._carte.initPOIsandFiches(sMenu._jsonPoi);
-                        sMenu._carte.init();
+                        sMenu.displayPoiOnMap(sMenu._jsonPoi);
                         sMenu.oldPoiJson(sMenu); // get back to previous state for next click
                         break;
 
@@ -350,16 +375,14 @@ class SousMenu extends DivObject {
                             }
                             divs[i].isOpen = true;
                             sMenu._carte.removeAllOverlays();
-                            sMenu._carte.initPOIsandFiches(divs[i].jsonPOIs);
-                            sMenu._carte.init();
+                            sMenu.displayPoiOnMap(divs[i].jsonPOIs);
                         } else {
                             for (let k = 0; k < json.length; k++) {
                                 $('#' + k + 'icone_' + sMenu._id).html(iconEyeOpen);
                             }
                             divs[i].isOpen = false;
                             sMenu._carte.removeAllOverlays();
-                            sMenu._carte.initPOIsandFiches(allPOIs);
-                            sMenu._carte.init();
+                            sMenu.displayPoiOnMap(allPOIs);
                         }
                     });
                     break;
@@ -382,8 +405,7 @@ class SousMenu extends DivObject {
             divs.push(div);
         }
         console.log(allPOIs);
-        sMenu._carte.initPOIsandFiches(allPOIs);
-        sMenu._carte.init();
+        sMenu.displayPoiOnMap(allPOIs);
     }
 
     set divSousElements(jsonElements) {
