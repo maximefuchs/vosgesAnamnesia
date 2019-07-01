@@ -38,7 +38,6 @@ class Menu extends DivObject {
                 menu._sousMenu = null;
             }
             menu._tempsInactivite++;
-            console.log(menu._tempsInactivite);
         }, 1000);
 
         this._balise.click(function(){

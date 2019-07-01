@@ -100,8 +100,8 @@ class SousMenu extends DivObject {
                 ssMenu.updateDivSousElements(json.sousmenu);
                 ssMenu.initSousMenuElement();
                 ssMenu._jsonPoi = poisJSON[lien];
-                sMenu._divText.tweenAnimate({ bottom: 4 * scale + 'px' });
-                sMenu._divssSousMenu.tweenAnimate({ bottom: 4 * scale + 'px' });
+                ssMenu._divText.tweenAnimate({ bottom: 4 * scale + 'px' });
+                ssMenu._divssSousMenu.tweenAnimate({ bottom: 4 * scale + 'px' });
             }
         });
 
