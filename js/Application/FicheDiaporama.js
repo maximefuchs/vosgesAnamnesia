@@ -53,7 +53,7 @@ class FicheDiaporama extends DivObject{
 
     // FONCTION CLICK BT
     clickBtn(e) {
-        e.stopPropagation(); e.preventDefault();
+        // e.stopPropagation(); e.preventDefault();
         var touch;
         if (e.originalEvent.touches || e.originalEvent.changedTouches) {
             touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];

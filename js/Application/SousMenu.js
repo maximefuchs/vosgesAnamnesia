@@ -27,19 +27,7 @@ class SousMenu extends DivObject {
 
         this.signalFermer = new signals.Signal();
         this.closeCarteSignal = new signals.Signal();
-
-        this._tempsInactivite = 0;
-        var tempsInactifMax = paramsJSON.tempsInactivity;
-        var sMenu = this;
-        var veille = setInterval(function () {
-            if (sMenu._tempsInactivite == tempsInactifMax) {
-                sMenu.close();
-                sMenu.signalFermer.dispatch();
-                clearInterval(veille);
-            }
-            sMenu._tempsInactivite++;
-        }, 1000);
-
+        this.clickPerenne = new signals.Signal();
 
         this.css('bottom', 1 * scale);
 
@@ -105,7 +93,6 @@ class SousMenu extends DivObject {
                 titre.html(s);
                 titre.css('font-size', size + 'px');
                 texte.html(json.texte);
-                ssMenu._tempsInactivite = 0;
                 ssMenu.btnShouldClose = true;
                 ssMenu.reinitializeContent();
                 ssMenu.oldPoiJson(ssMenu);
@@ -150,6 +137,7 @@ class SousMenu extends DivObject {
         this._carte.removeAllOverlays();
         $('.poi').remove();
         $('.pagePerenne').remove();
+        this._fichePerenne = null;
     }
 
     init() {
@@ -203,7 +191,6 @@ class SousMenu extends DivObject {
                 span.html(json[i].titre.toUpperCase());
                 if (i == num) { span.addClass('selected'); }
                 span._balise.click(function () {
-                    sMenu._tempsInactivite = 0;
                     sMenu.displaySSMenuByTitle(sMenu, i, json);
                 });
                 divLeft.append('<hr>');
@@ -279,7 +266,12 @@ class SousMenu extends DivObject {
         this._divText.tweenAnimate({ bottom: b * this._scale + 'px' });
         this._divssSousMenu.tweenAnimate({ bottom: b * this._scale + 'px' });
         $('#sousMenuListePOI').remove();
-        new SousMenuListePoi(this._parent, 'sousMenuListePOI', json, this._scale, this._couleur);
+        var sMenu = this;
+        var smlp = new SousMenuListePoi(this._parent, 'sousMenuListePOI', json, this._scale, this._couleur);
+        smlp.clickSignal.add(function (num) {
+            console.log(num);
+            sMenu._carte.clickOnPoi(sMenu._carte._fiches[num], sMenu._carte);
+        });
         this._carte.initPOIsandFiches(json);
         this._carte.init();
     }
@@ -295,13 +287,15 @@ class SousMenu extends DivObject {
             var lien = element._lien;
             var type = element._type;
             element._balise.click(function () {
-                sMenu._tempsInactivite = 0;
                 console.log('click lien : ' + lien);
                 console.log('click type : ' + type);
                 switch (type) {
                     case 'perenne':
                         sMenu.reinitializeContent();
                         var fp = new FichePerenne($('#Application'), 'fichePerenne', null, element._params.couleur);
+                        fp.clickSignal.add(function(){
+                            sMenu.clickPerenne.dispatch();
+                        });
                         fp.init();
                         break;
 
@@ -363,12 +357,13 @@ class SousMenu extends DivObject {
                     div.jsonPOIs = sMenu._jsonPoi[jsonElt.lien];
                     allPOIs = allPOIs.concat(div.jsonPOIs);
                     div._balise.click(function () {
-                        sMenu._tempsInactivite = 0;
                         sMenu.reinitializeContent();
                         if (!divs[i].isOpen) {
                             for (let k = 0; k < json.length; k++) {
-                                if (k != i)
+                                if (k != i){
+                                    divs[k].isOpen = false;
                                     $('#' + k + 'icone_' + sMenu._id).html(iconEyeClosed);
+                                }
                                 else
                                     $('#' + k + 'icone_' + sMenu._id).html(iconEyeOpen);
 
@@ -379,8 +374,8 @@ class SousMenu extends DivObject {
                         } else {
                             for (let k = 0; k < json.length; k++) {
                                 $('#' + k + 'icone_' + sMenu._id).html(iconEyeOpen);
+                                divs[k].isOpen = false;
                             }
-                            divs[i].isOpen = false;
                             sMenu._carte.removeAllOverlays();
                             sMenu.displayPoiOnMap(allPOIs);
                         }
@@ -390,9 +385,11 @@ class SousMenu extends DivObject {
                 case 'perenne':
                     icone.html(iconPerenne);
                     div._balise.click(function () {
-                        sMenu._tempsInactivite = 0;
                         sMenu.reinitializeContent();
                         var fp = new FichePerenne($('#Application'), 'fichePerenne', null, sMenu._couleur);
+                        fp.clickSignal.add(function(){
+                            sMenu.clickPerenne.dispatch();
+                        });
                         fp.init();
                     });
                     break;

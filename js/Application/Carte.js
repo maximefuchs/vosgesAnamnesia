@@ -13,7 +13,7 @@ class Carte extends DivObject {
         this._jsonCarte = jsonCarte;
         this._couleur = couleur;
 
-        this.carteOpenSignal = new signals.Signal()
+        this.carteOpenSignal = new signals.Signal();
 
 
         this._pois = [];
@@ -29,6 +29,12 @@ class Carte extends DivObject {
         //     var layer = new Img(this._layersDiv._balise, layers[i].id, layers[i].src);
         //     this._layers.push(layer);
         // }
+
+        this.clickSignal = new signals.Signal();
+        var carte = this;
+        this._balise.click(function () {
+            carte.clickSignal.dispatch();
+        });
 
         this._viewer = this.getOSDviewer();
         this._balise.toggle();
@@ -156,19 +162,23 @@ class Carte extends DivObject {
         for (let i = 0; i < carte._pois.length; i++) {
             $('#' + carte._pois[i]._id).click(function () {
                 var f = carte._fiches[i];
-                var p = f._poi;
-                if (!f._ouvert) {
-                    p.addClass('large');
-                    p._balise.css({ 'background': 'url(' + p._images[0] + ')', 'background-size': 'cover', 'background-position': 'center' });
-                    var overlay = poiToOverlay(p);
-                    console.log(overlay);
-
-                    f._balise.toggle();
-                    f._ouvert = true;
-                    carte._viewer.addOverlay(f._overlay);
-                    carte.removeOverlay(f, p);
-                }
+                carte.clickOnPoi(f, carte);
             });
+        }
+    }
+
+    clickOnPoi(f, carte) {
+        var p = f._poi;
+        if (!f._ouvert) {
+            p.addClass('large');
+            p._balise.css({ 'background': 'url(' + p._images[0] + ')', 'background-size': 'cover', 'background-position': 'center' });
+            var overlay = poiToOverlay(p);
+            console.log(overlay);
+
+            f._balise.toggle();
+            f._ouvert = true;
+            carte._viewer.addOverlay(f._overlay);
+            carte.removeOverlay(f, p);
         }
     }
 

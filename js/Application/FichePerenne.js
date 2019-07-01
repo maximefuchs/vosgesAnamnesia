@@ -28,6 +28,12 @@ class FichePerenne extends DivObject {
         this.signaux = {
             finFermer: new signals.Signal()
         }
+        this.clickSignal = new signals.Signal();
+        
+        var fp = this;
+        this._balise.click(function(){
+            fp.clickSignal.dispatch();
+        });
 
         ////////////////
         // TOP

@@ -26,6 +26,26 @@ class Menu extends DivObject {
         var scale = 140;
         this._scale = scale;
 
+        this._sousMenu = null;
+        this._tempsInactivite = 0;
+        var tempsInactifMax = paramsJSON.tempsInactivity;
+        var menu = this;
+        var veille = setInterval(function () {
+            if (menu._sousMenu != null && menu._tempsInactivite == tempsInactifMax) {
+                menu._sousMenu.close();
+                menu._sousMenu.signalFermer.dispatch();
+                // clearInterval(veille);
+                menu._sousMenu = null;
+            }
+            menu._tempsInactivite++;
+            console.log(menu._tempsInactivite);
+        }, 1000);
+
+        this._balise.click(function(){
+            menu._tempsInactivite = 0;
+        });
+
+
         var maxHeight = 0;
 
         this._divEltsMenu = new DivObject(this._parent, "elementsMenu");
@@ -101,8 +121,7 @@ class Menu extends DivObject {
 
     clickBtn(e) {
         console.log('click Element in menu');
-        e.stopPropagation();
-        e.preventDefault();
+        // e.stopPropagation();e.preventDefault();
         var touch;
         if (e.originalEvent.touches || e.originalEvent.changedTouches) {
             touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
@@ -110,6 +129,7 @@ class Menu extends DivObject {
             touch = e;
         }
         var menu = e.data.menu;
+        menu._tempsInactivite = 0;
         var element = e.data.element;
         menu.tidyElements(menu, $(this).attr('id'));
         menu.supprimerCarte();
@@ -137,11 +157,12 @@ class Menu extends DivObject {
     supprimerSousMenu() {
         $('.sousmenu').remove();
         $('.sousMenuListePoi').remove();
+        this._sousMenu = null;
     }
 
     clickBtnLang(e) {
         console.log('click langue');
-        e.stopPropagation(); e.preventDefault();
+        // e.stopPropagation(); e.preventDefault();
         var touch;
         if (e.originalEvent.touches || e.originalEvent.changedTouches) {
             touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
@@ -288,6 +309,14 @@ class Menu extends DivObject {
 
         clearInterval(this._setIntervalFonction);
         this.displayBackground();
+
+        sm._carte.clickSignal.add(function (){
+            menu._tempsInactivite = 0;
+        });
+        sm.clickPerenne.add(function (){
+            menu._tempsInactivite = 0;
+        });
+        this._sousMenu = sm;
     }
 
     fermerSousMenu(menu) {

@@ -1,7 +1,6 @@
 Global.include('dev/librairies/Signal.js');
 Global.include('dev/librairies/SignalBinding.js');
 
-Global.include('dev/js/Veille.js');
 Global.include('dev/js/Application.js');
 
 var langue;
@@ -19,7 +18,6 @@ var StageHeight;
 
 var t;
 
-var veille;
 var application;
 
 function initApplication() {
@@ -42,16 +40,8 @@ function createApplication() {
     console.log(StageWidth + " - " + StageHeight);
 
     application = new Application();
-    // veille = new Veille();
-    // veille.finFermerSignal.add(finFermerVeille);
-    // veille.finOuvrirSignal.add(function() { application.init() });
 };
 
-function finFermerVeille() {
-    resetTimer();
-    addInactivityTime();
-    application.ouvrir();
-}
 
 function gestionLangue() {
     application.texte();
