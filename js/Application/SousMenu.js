@@ -15,6 +15,7 @@ class SousMenu extends DivObject {
         // enregistrement de tous les liens successifs dans un tableau pour pouvoir faire un retour en arrière
         this._lien = [lien];
         this._jsonPoi = poisJSON[lien];
+        this._jsonPerenne = perennesJSON[lien];
 
         console.log(poisJSON);
         console.log(lien);
@@ -100,6 +101,7 @@ class SousMenu extends DivObject {
                 ssMenu.updateDivSousElements(json.sousmenu);
                 ssMenu.initSousMenuElement();
                 ssMenu._jsonPoi = poisJSON[lien];
+                ssMenu._jsonPerenne = perennesJSON[lien];
                 ssMenu._divText.tweenAnimate({ bottom: 4 * scale + 'px' });
                 ssMenu._divssSousMenu.tweenAnimate({ bottom: 4 * scale + 'px' });
             }
@@ -224,19 +226,21 @@ class SousMenu extends DivObject {
         }
         if (type == 'carte') {
             sMenu.oldPoiJson(sMenu);
-            sMenu.updatePoiJson(sMenu, json[num].lien);
+            sMenu.updateJson(sMenu, json[num].lien);
             sMenu.updateCarteSousElements(jsonElements);
         } else {
             sMenu.updateDivSousElements(jsonElements);
         }
     }
 
-    updatePoiJson(sMenu, lien) {
-        var json = sMenu._jsonPoi;
-        sMenu._jsonPoi = json[lien];
+    updateJson(sMenu, lien) {
+        var jsonPoi = sMenu._jsonPoi;
+        if (jsonPoi !== undefined)
+            sMenu._jsonPoi = jsonPoi[lien];
+        var jsonPer = sMenu._jsonPerenne;
+        if (jsonPer !== undefined)
+            sMenu._jsonPerenne = jsonPer[lien];
         sMenu._lien.push(lien);
-        console.log(sMenu._jsonPoi);
-        console.log(sMenu._lien);
     }
 
     oldPoiJson(sMenu) {
@@ -292,8 +296,8 @@ class SousMenu extends DivObject {
                 switch (type) {
                     case 'perenne':
                         sMenu.reinitializeContent();
-                        var fp = new FichePerenne($('#Application'), 'fichePerenne', null, element._params.couleur);
-                        fp.clickSignal.add(function(){
+                        var fp = new FichePerenne($('#Application'), 'fichePerenne', sMenu._jsonPerenne[lien], element._params.couleur);
+                        fp.clickSignal.add(function () {
                             sMenu.clickPerenne.dispatch();
                         });
                         fp.init();
@@ -301,13 +305,13 @@ class SousMenu extends DivObject {
 
                     case 'carte':
                         sMenu.reinitializeContent();
-                        sMenu.updatePoiJson(sMenu, lien);
+                        sMenu.updateJson(sMenu, lien);
                         sMenu.displaySSMenuByElement(sMenu, json, num, 'carte');
                         break;
 
                     case 'poi':
                         sMenu.reinitializeContent();
-                        sMenu.updatePoiJson(sMenu, lien);
+                        sMenu.updateJson(sMenu, lien);
 
                         sMenu.displayPoiOnMap(sMenu._jsonPoi);
                         sMenu.oldPoiJson(sMenu); // get back to previous state for next click
@@ -315,7 +319,7 @@ class SousMenu extends DivObject {
 
                     default:
                         if (lien !== undefined)
-                            sMenu.updatePoiJson(sMenu, lien);
+                            sMenu.updateJson(sMenu, lien);
                         sMenu.displaySSMenuByElement(sMenu, json, num);
                         break;
                 }
@@ -360,7 +364,7 @@ class SousMenu extends DivObject {
                         sMenu.reinitializeContent();
                         if (!divs[i].isOpen) {
                             for (let k = 0; k < json.length; k++) {
-                                if (k != i){
+                                if (k != i) {
                                     divs[k].isOpen = false;
                                     $('#' + k + 'icone_' + sMenu._id).html(iconEyeClosed);
                                 }
@@ -384,10 +388,11 @@ class SousMenu extends DivObject {
 
                 case 'perenne':
                     icone.html(iconPerenne);
+                    div.jsonPer = sMenu._jsonPerenne[jsonElt.lien];
                     div._balise.click(function () {
                         sMenu.reinitializeContent();
-                        var fp = new FichePerenne($('#Application'), 'fichePerenne', null, sMenu._couleur);
-                        fp.clickSignal.add(function(){
+                        var fp = new FichePerenne($('#Application'), 'fichePerenne', divs[i].jsonPer, sMenu._couleur);
+                        fp.clickSignal.add(function () {
                             sMenu.clickPerenne.dispatch();
                         });
                         fp.init();

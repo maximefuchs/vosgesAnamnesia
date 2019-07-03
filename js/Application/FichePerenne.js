@@ -7,6 +7,8 @@ class FichePerenne extends DivObject {
         super(parent, id);
         this.addClass('pagePerenne');
 
+        console.log(json);
+
         var s = $('\
         <style>\
         .pagePerenne h1, .pagePerenne h2, .pagePerenne h3 {\
@@ -44,7 +46,8 @@ class FichePerenne extends DivObject {
 
         var titre = new BaliseObject(divTop._balise, 'h1');
         titre.addClass('topTitre');
-        titre.html(loremTitre.toUpperCase());
+        // titre.html(loremTitre.toUpperCase());
+        titre.html(json.titre.toUpperCase());
 
         ////////////////////
 
@@ -58,13 +61,12 @@ class FichePerenne extends DivObject {
         divLeft.addClass('flex');
 
         var introLeft = new BaliseObject(divLeft._balise, 'b', 'introLeft_' + this._id);
-        introLeft.html(loremShort);
-
-        var titreLeft = new BaliseObject(divLeft._balise, 'h2', 'titreLeft_' + this._id);
-        titreLeft.html(loremTitre);
+        // introLeft.html(loremShort);
+        introLeft.html(json.soustitre);
 
         var paraLeft = new BaliseObject(divLeft._balise, 'p', 'paraLeft_' + this._id);
-        paraLeft.html(loremLong);
+        // paraLeft.html('<h2>'+loremTitre+'</h2>'+loremLong);
+        paraLeft.html(json.blocGauche1);
 
         // image
         var divImage = new DivObject(divLeft._balise, 'divImage_' + this._id);

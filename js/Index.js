@@ -9,6 +9,7 @@ var textesJSON;
 var paramsJSON;
 
 var poisJSON;
+var perennesJSON;
 var jeuxJSON;
 
 var body;
@@ -25,7 +26,8 @@ function initApplication() {
     $.when($.getJSON("datas/params.json", finChargementParams),
         $.getJSON("datas/texte.json", finChargementTexte),
         $.getJSON("datas/jeu.json", finChargementJeu),
-        $.getJSON("datas/poi.json", finChargementPoi)
+        $.getJSON("datas/poi.json", finChargementPoi),
+        $.getJSON("datas/perenne.json", finChargementPerenne)
     ).then(createApplication);
 };
 
@@ -67,6 +69,9 @@ function finChargementPoi(data) {
 }
 function finChargementJeu(data) {
     jeuxJSON = data;
+}
+function finChargementPerenne(data) {
+    perennesJSON = data;
 }
 
 function addInactivityTime() {
