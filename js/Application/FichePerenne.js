@@ -31,9 +31,9 @@ class FichePerenne extends DivObject {
             finFermer: new signals.Signal()
         }
         this.clickSignal = new signals.Signal();
-        
+
         var fp = this;
-        this._balise.click(function(){
+        this._balise.click(function () {
             fp.clickSignal.dispatch();
         });
 
@@ -41,7 +41,8 @@ class FichePerenne extends DivObject {
         // TOP
         var divTop = new DivObject(this._balise, 'divTop_' + this._id);
         divTop.addClass('divTop');
-        var imageTop = new Img(divTop._balise, 'imageTop_' + this._id, "datas/imgs/perenne/test/top.jpg");
+        var link = (json.imgTop == "") ? "datas/imgs/perenne/test/top.jpg" : json.imgTop;
+        var imageTop = new Img(divTop._balise, 'imageTop_' + this._id, link);
         imageTop.addClass('topImage');
 
         var titre = new BaliseObject(divTop._balise, 'h1');
@@ -71,16 +72,18 @@ class FichePerenne extends DivObject {
         // image
         var divImage = new DivObject(divLeft._balise, 'divImage_' + this._id);
         divImage.addClass('divImage');
-        var img = new Img(divImage._balise, 'imgLeft_' + this._id, "datas/imgs/perenne/test/imgLeft.jpg");
+        var img = new Img(divImage._balise, 'imgLeft_' + this._id, json.imgGauche);
         var divTextImage = new DivObject(divImage._balise, 'divTextImage_' + this._id);
         divTextImage.css('background', couleur);
-        divTextImage.html(titreH2 + loremShort);
+        // divTextImage.html(titreH2 + loremShort);
+        divTextImage.html(json.desImgGauche);
 
         //TEXTE
 
         var text = new DivObject(divLeft._balise, 'textLeft_' + this._id);
         text.css('margin-top', '100px');
-        text.html(titreH2 + loremLong + loremLong + loremLong + loremLong);
+        // text.html(titreH2 + loremLong + loremLong + loremLong + loremLong);
+        text.html(json.blocGauche2);
 
         ////////////////////////
         /////////////////////////
@@ -94,29 +97,36 @@ class FichePerenne extends DivObject {
         ////////// premier slider
         var divSliderComm = new DivObject(divRight._balise, 'divSliderComm_' + this._id);
         divSliderComm.addClass('sliderComm');
-        new SliderDiaporama(divSliderComm._balise, 'slider1_' + this._id, null, couleur, 400, 4, 0.5);
+        if (json.imgSlider1.length != 0) {
+            new SliderDiaporama(divSliderComm._balise, 'slider1_' + this._id, json.imgSlider1, couleur, 400, 4, 0.5);
+        }
         /////////////////////
 
         var squareRight = new DivObject(divSliderComm._balise, 'squareRight_' + this._id);
         squareRight.addClass('squareRight');
         squareRight.css('background', couleur);
-        squareRight.html(titreH2 + loremShort);
+        // squareRight.html(titreH2 + loremShort);
+        squareRight.html(json.blocSlider1);
 
         var textRight = new DivObject(divRight._balise, 'textRight_' + this._id);
         textRight.addClass('textRight');
-        textRight.html(titreH2 + loremLong);
+        // textRight.html(titreH2 + loremLong);
+        textRight.html(json.blocDroit1);
 
         ////////// deuxième slider
-        var divSliderComm2 = new DivObject(divRight._balise, 'divSliderComm2_' + this._id);
-        divSliderComm2.addClass('sliderComm');
-        new SliderDiaporama(divSliderComm2._balise, 'slider2_' + this._id, null, couleur, 700, 4, 0.5);
-        divSliderComm2.css('margin-top', '70px');
+        if (json.imgSlider2.length != 0) {
+            var divSliderComm2 = new DivObject(divRight._balise, 'divSliderComm2_' + this._id);
+            divSliderComm2.addClass('sliderComm');
+            new SliderDiaporama(divSliderComm2._balise, 'slider2_' + this._id, json.imgSlider2, couleur, 700, 4, 0.5);
+            divSliderComm2.css('margin-top', '70px');
+        }
         /////////////////////
 
         var divBottom = new DivObject(divRight._balise, 'divBottom_' + this._id);
         divBottom.addClass('divBottom');
         divBottom.css('background', couleur);
-        divBottom.html(titreH2 + lorem);
+        // divBottom.html(titreH2 + lorem);
+        divBottom.html(json.blocDroit2);
 
 
         ///////////////////////////

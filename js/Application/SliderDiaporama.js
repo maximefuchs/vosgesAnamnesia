@@ -14,7 +14,7 @@ class SliderDiaporama extends DivObject {
         carousselRight.addClass('top');
         var ul = new BaliseObject(carousselRight._balise, 'ul');
         ul.addClass('z-slide-content');
-        jsonImages = ['datas/imgs/menu/diaporama/diapo_1.jpg', 'datas/imgs/menu/diaporama/diapo_2.jpg', 'datas/imgs/menu/diaporama/diapo_3.jpg'];
+        // jsonImages = ['datas/imgs/menu/diaporama/diapo_1.jpg', 'datas/imgs/menu/diaporama/diapo_2.jpg', 'datas/imgs/menu/diaporama/diapo_3.jpg'];
         for (let i = 0; i < jsonImages.length; i++) {
             var li = new BaliseObject(ul._balise, 'li', 'li_' + i);
             li.css('background', 'url(' + jsonImages[i] + ')');
