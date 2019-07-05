@@ -98,549 +98,706 @@
             "blocDroit2": ""
         },
         "fourgerolles": {
-            "titre": "fougerolles",
-            "imgTop": "",
-            "soustitre": "",
+            "titre": "Vallée Fougerolles et Val d’Ajol",
+            "imgTop": "datas/imgs/perenne/paysage/fougerolles.jpg",
+            "soustitre": "De Fougerolles, terre de vergers et de cerisiers, à Plombières-les-Bains et son thermalisme, son donjon Galloromain, les sources ont permis la dispersion des hameaux. En descendant vers Fougerolles, ou à partir de Plombières-les-Bains, le relief perd de sa vigueur.",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/paysage/fougerolles.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
+            "blocGauche2": "Les collines gréseuses aux sols acides sont souvent abandonnées à la forêt et le riche réseau aquifère qui alimente les sources a permis la dispersion de l’habitat multipliant ainsi les hameaux.  Les chalots, coffre-fort de la ferme Ajolaise, étaient fabriqués jusqu’à la Seconde Guerre mondiale. Ils abritaient les céréales, les fruits, la charcuterie, l’alcool,… et les papiers importants. Désormais restaurés, ils sont devenus un des emblèmes touristiques de ce territoire. Une Route porte désormais leur nom : la Route des Chalots.",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                "datas/imgs/perenne/paysage/fougerolles1.jpg",
+                "datas/imgs/perenne/paysage/fougerolles2.jpg",
+                "datas/imgs/perenne/paysage/fougerolles3.jpg",
+                "datas/imgs/perenne/paysage/fougerolles4.jpg"
+            ],
             "blocDroit2": ""
         },
         "vallees vosgiennes": {
-            "titre": "vallees vosgiennes",
-            "imgTop": "",
-            "soustitre": "",
+            "titre": "Vallées vosgiennes",
+            "imgTop": "datas/imgs/perenne/paysage/valles_vosgiennes.jpg",
+            "soustitre": "Les vallées de la Vologne, de la Moselle, de la Moselotte, et de la Meurthe pénètrent le massif jusqu’à la haute crête et constituent un réseau propice à la circulation et au peuplement. Malgré des sols peu fertiles, les premiers colons ont d’abord défriché et peuplé les fonds de vallées, puis les pentes inférieures, et ont développé une activité pastorale.",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/paysage/valles_vosgiennes.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
+            "blocGauche2": "Pour des raisons historiques, l’exploitation individuelle des terres a été favorisée en Lorraine. Aussi trouve-t-on sur le versant Lorrain, qui offre par ailleurs des pentes plus douces et plus accessibles, des exploitations isolées. L’habitat se caractérise par d’imposantes fermes carrées. Chaque ferme des vallées était entièrement autonome et ses habitants pouvaient passer l’hiver sans aide extérieure. Dans le fond de vallée, les usines textiles et les scieries utilisaient largement l’eau de la rivière. Ces entreprises ont permis aux habitants de rester au village en leur offrant du travail et un logement dans les cités ouvrières. La filière bois, l’agriculture et le tourisme hivernal comme estival, représentent un des grands atouts des Vosges aujourd’hui. Ces exploitations modernisées accueillent pour certaines les touristes curieux de découvrir les productions locales parmi lesquelles le Géromé, ancêtre du Munster, produit à partir du lait cru. Il tient son nom de Gérardmer, siège d’un marché aux fromages également connu pour son Lac. D’origine glaciaire, le lac de Gérardmer constitue la plus grande pièce d’eau naturelle des Vosges, suivi de près par le lac de Longemer. Dix lacs entourent la crête médiane des Vosges.",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                "datas/imgs/perenne/paysage/vallees_vosgiennes1.jpg",
+                "datas/imgs/perenne/paysage/vallees_vosgiennes2.jpg",
+                "datas/imgs/perenne/paysage/vallees_vosgiennes3.jpg",
+                "datas/imgs/perenne/paysage/vallees_vosgiennes4.jpg"
+            ],
             "blocDroit2": ""
         },
         "vallees haut rhinoises": {
-            "titre": "vallees haut rhinoises",
-            "imgTop": "",
-            "soustitre": "",
+            "titre": "Vallées haut-rhinoises",
+            "imgTop": "datas/imgs/perenne/paysage/haut_rhinoises.jpg",
+            "soustitre": "En raison de l’effondrement du fossé rhénan, le versant alsacien des Vosges a très fortement subi l’érosion de la dernière période glaciaire. Ainsi, au-dessus de 900 mètres, c’est à un véritable mur de granit que s’est souvent heurtée la colonisation des vallées. Cet obstacle naturel conjugué à des conditions climatiques sommitales extrêmes ont cantonné les nombreuses habitations aux pentes ensoleillées de moyenne altitude.",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/paysage/haut_rhinoises.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
+            "blocGauche2": "La façade est de la crête est échancrée de cirques glaciaires abrupts et rocailleux. Les vents d’ouest dominants ont repoussé la neige à l’est en contrebas des crêtes où elle s’est accumulée pour former de profondes cuvettes de surcreusement. Les pratiques agricoles sont orientées vers la production laitière. Prairies de fauche et pâturages parsemés d’arbres fruitiers aux alentours immédiats des fermes et des villages dominent largement sur les pentes de faible et moyenne altitude. Plus haut, d’anciennes chaumes ont souvent laissé place à des plantations uniformes de résineux. La forêt ne retrouve un aspect naturel qu’à l’approche des sommets ou sur les pentes abruptes. Les hautes vallées alsaciennes au départ de Masevaux, Thann, Guebwiller, Munster, Kaysersberg, Ribeauvillé et Sainte-Marie-aux-Mines sont très contrastées. La langue, la culture, le paysage, l’économie et même l’art de vivre peuvent y différer. A tel point que dans le Val d’Orbey, Pays Welche, qui constitue, avec le col du Bonhomme, un des plus anciens points de passage entre l’Alsace et la Lorraine, on y parle un patois roman. Quelque soit leur culture ou leur situation, ces vallées sont de plus en plus habitées par celles et ceux qui, bien souvent, travaillent dans les grandes agglomérations situées à leurs portes. Ce contexte a généré depuis les années 70 une urbanisation de ces vallées. Le Parc accompagne désormais les communes et communautés de communes afin de repenser cette urbanisation rurale au fort impact paysager.",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                "datas/imgs/perenne/paysage/haut_rhinoises1.jpg",
+                "datas/imgs/perenne/paysage/haut_rhinoises2.jpg",
+                "datas/imgs/perenne/paysage/haut_rhinoises3.jpg",
+                "datas/imgs/perenne/paysage/haut_rhinoises4.jpg"
+            ],
             "blocDroit2": ""
         },
         "piemont viticole": {
-            "titre": "piemont viticole",
-            "imgTop": "",
-            "soustitre": "",
+            "titre": "Piémont viticole",
+            "imgTop": "datas/imgs/perenne/paysage/piemont.jpg",
+            "soustitre": "Longeant la plaine du Rhin, le piémont Est du massif est constitué de collines favorables à la vigne dont le développement est à l’origine de la richesse architecturale des villages le long de la « route du vin ».<br>La culture de la vigne, introduite en Alsace par les Romains, fut développée par les moines à partir du 9ème siècle. Dès le 13ème siècle, les villages vignerons sont fortifiés protégés par de puissantes familles nobles.",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/paysage/piemont.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
+            "blocGauche2": "Protégé par les Hautes-Vosges, le piémont alsacien bénéficie d’un microclimat exceptionnellement chaud et sec. Ici, sur des sols calcaires, landes et pelouses ont une allure de garrigues méditerranéennes ou de steppes orientales.  Ces pelouses arides doivent leurs origines à l’homme qui défricha la chênaie pubescente et valorisa dés le VIIème siècle les collines sous-vosgiennes. Ces milieux originaux ont perdu leur vocation pastorale et sont maintenant confrontés à l’expansion de la vigne alsacienne. Une gestion conservatoire permet aujourd’hui le maintien et la restauration de milieux de vies pour de nombreuses espèces comme le lézard vert, le bruant zizi et une très grande diversité d orchidées ou l’anémone pulsatille.",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                "datas/imgs/perenne/paysage/piemont1.jpg",
+                "datas/imgs/perenne/paysage/piemont2.jpg",
+                "datas/imgs/perenne/paysage/piemont3.jpg",
+                "datas/imgs/perenne/paysage/piemont4.jpg"
+            ],
             "blocDroit2": ""
         }
     },
     "nature": {
         "milieux": {
             "forets": {
-                "titre": "forets",
-                "imgTop": "",
-                "soustitre": "",
-                "blocGauche1": "",
+                "titre": "Forêts",
+                "imgTop": "datas/imgs/perenne/nature/forets.jpg",
+                "soustitre": "Le Parc naturel régional des Ballons des Vosges offre une vaste palette de milieux naturels. À lui seul, le massif forestier couvre les deux tiers du territoire. Pour autant, le Parc est riche d’une multitude d’autres milieux. Les hautes chaumes (prairies d’altitude), les tourbières, les cirques glaciaires, les falaises rocheuses, les éboulis, les lacs et autres rivières s’entremêlent dans une rare harmonie.",
+                "blocGauche1": "Les forêts du Parc s’organisent principalement selon un étagement d’origine climatique : les forêts feuillues en piémont, la forêt mélangée de sapin et de hêtre sur les versants et sur les parties sommitales au climat subalpin : une forêt feuillues dominées par le hêtre.",
                 "imgGauche": "",
                 "desImgGauche": "",
-                "blocGauche2": "",
+                "blocGauche2": "<h2>Les hêtraies-chênaies</h2>En piémont, des conditions climatiques plus clémentes et la présence de sols profonds permettent aux feuillus de former de vastes étendues boisées. Sur le versant ouest, grâce à des précipitations importantes et bien réparties, le hêtre règne en maître. Sur le versant alsacien, moins arrosé, le chêne sessile profite de l’effet d’abri du massif des Vosges avec une prédilection pour les versants sud. Il s’installe avec le pin sylvestre sur les sols les plus pauvres, en particulier sur les quelques rares secteurs gréseux comme dans le massif du Taennchel ou lorsque les forestiers l’ont favorisé par la plantation.<h2>Les hêtraies-sapinières</h2>Entre 500 et 1000 mètres, un climat humide et frais favorise une ceinture de forêts de hêtres et de sapins. Elle constitue le réservoir biologique du du Parc : domaine des mammifères montagnards ou des espèces prestigieuses comme le lynx, le grand tétras, le cerf élaphe, la martre et depuis peu le loup. De vieilles forêts, grâce au bois mort, abritent une grande biodiversité : mousses, champignons, lichens, insectes, oiseaux … Cet archipel de naturalité et de biodiversité accueille la rare chouette de Tengmalm ou le plus grand pic d’Europe : le pic noir. Au-dessus de 1100 mètres, la forêt s’éclaircit avec des hêtraies pures et parfois des hautes chaumes ou des tourbières et peut accueillir le grand tétras ou le chamois.<h2>Les hêtraies subalpines</h2>Au-dessus de 1100 mètres, le sapin couvert d’aiguilles, plus sensible au vent et au brouillard givrant, régresse au profit des feuillus comme le hêtre, le sorbier et l’érable. Les conditions climatiques des sommets permettent difficilement la régénération naturelle des arbres. Ces derniers présentent des troncs noueux, tordus. Si ils rejettent facilement, ils restent petits. La forêt reste ici clairsemée. Ainsi, de nombreux animaux comme le grand tétras ou le chamois viennent s’y nourrir mais n’y séjournent pas toute l’année. Ponctuellement, les conditions écologiques du sol (richesse minéralogique, acidité, humidité) fixent la nature des peuplements forestiers. On trouve des érablaies, des pessieres naturelles ou des forêts de bordures de cours d’eau.",
                 "imgSlider1": [],
                 "blocSlider1": "",
                 "blocDroit1": "",
-                "imgSlider2": [],
-                "blocDroit2": ""
+                "imgSlider2": [
+                    "datas/imgs/perenne/nature/forets1.jpg",
+                    "datas/imgs/perenne/nature/forets2.jpg",
+                    "datas/imgs/perenne/nature/forets3.jpg",
+                    "datas/imgs/perenne/nature/forets4.jpg"
+                ],
+                "blocDroit2": "<h2>Les érablaies sur éboulis</h2>Ici, plus qu’ailleurs, les sols sélectionnent et imposent une spécialisation des espèces. Les éboulis les mieux exposés sont le domaine de l’érable auquel s’associent l’orme des montagnes, le frêne ou parfois le tilleul. À l’ombre de leur houppier, une grande diversité d’arbustes et de fougères, telle la rare scolopendre, mettent à profit la richesse du sol et de l’humus. L’instabilité des blocs entrave le développement des hêtres et du sapin. Difficiles à exploiter, ces forêts sont restées très naturelles.<h2>Les pessières naturelles</h2>Si l’épicéa a largement été planté au sein de la hêtraie-sapinière, quelques rares fonds de vallées froides sur blocs rocheux ou sur sols tourbeux sont considérés aujourd’hui comme le berceau de l’épicéa dans le massif des Vosges. Ce sont également des milieux de vie pour quelques espèces très rares comme la chouette Chevêchette. L’épicéa est une espèce pionnière qui s’installe facilement sur les zones abandonnées par l’agriculture, les trouées de chablis et même dans la hêtraie subalpine. Les peuplements d’épicéas purs sont peu accueillants pour la biodiversité et notamment la grande faune, les surdensités de gibier favorisent aussi le renouvellement naturel des épicéas au détriment du sapin ou d’autres essences plus appétantes.<h2>Les aulnaies-frênaies</h2>Ces véritables forêts galeries étroites frangent les ruisseaux collinéens et remontent en altitude. Composées de frênes, parfois de saules à basse altitude ou d’aulnes, et situées à l’interface entre les milieux terrestres et aquatiques, ces forêts alluviales sont des habitats à forte diversité biologique et à intérêt écologique majeur : fixation des berges et épuration des eaux notamment, refuges d’espèces diverses comme l’écrevisse à patte blanche , la petite musaraigne aquatique ou le putois."
             },
             "hautes chaumes": {
-                "titre": "hautes chaumes",
-                "imgTop": "",
-                "soustitre": "",
+                "titre": "Hautes chaumes",
+                "imgTop": "datas/imgsz/perenne/nature/chaumes.jpg",
+                "soustitre": "Le Parc naturel régional des Ballons des Vosges offre une vaste palette de milieux naturels. À lui seul, le massif forestier couvre les deux tiers du territoire. Pour autant, le Parc est riche d’une multitude d’autres milieux. Les hautes chaumes (prairies d’altitude), les tourbières, les cirques glaciaires, les falaises rocheuses, les éboulis, les lacs et autres rivières s’entremêlent dans une rare harmonie.",
                 "blocGauche1": "",
                 "imgGauche": "",
                 "desImgGauche": "",
-                "blocGauche2": "",
+                "blocGauche2": "Près de 5000 hectares de landes et de pelouses, connues localement sous le nom de hautes chaumes, couvrent les principaux sommets des Hautes-Vosges. Au-dessus de 1000 mètres, le climat de la grande crête est exceptionnellement rude. Sur les sommets les arbres souffrent sous l’action du vent, de la neige et des brouillards givrants. Ces chaumes n’ont rien de naturelles : des forêts claires couvraient les sommets. Elles ont subi dès la fin du Néolithique (il y a 5000 à 6000 ans), les influences répétées de l’Homme – notamment des défrichements par le feu. De ces sommets déjà dénudés les habitants sédentaires des ont développé une première économie pastorale avec la pratique de la transhumance.  Ces derniers siècles ont été riches en défrichements successifs parfois même sur des versants escarpés. Ces hautes chaumes accueillent : Myrtille, Callune, Pulsatille blanche, Arnica, Pensée des Vosges ou encore Fenouil des Alpes. Ces conditions climatiques et cette relation homme et nature sur plusieurs millénaires offrent des milieux naturels uniques en Europe.",
                 "imgSlider1": [],
                 "blocSlider1": "",
                 "blocDroit1": "",
-                "imgSlider2": [],
+                "imgSlider2": [
+                    "datas/imgs/perenne/nature/chaumes1.jpg",
+                    "datas/imgs/perenne/nature/chaumes2.jpg",
+                    "datas/imgs/perenne/nature/chaumes3.jpg",
+                    "datas/imgs/perenne/nature/chaumes4.jpg"
+                ],
                 "blocDroit2": ""
             },
             "lacs": {
-                "titre": "lacs",
-                "imgTop": "",
-                "soustitre": "",
+                "titre": "Lacs, étangs, tourbières",
+                "imgTop": "datas/imgs/perenne/nature/lacs.jpg",
+                "soustitre": "Le Parc naturel régional des Ballons des Vosges offre une vaste palette de milieux naturels. À lui seul, le massif forestier couvre les deux tiers du territoire. Pour autant, le Parc est riche d’une multitude d’autres milieux. Les hautes chaumes (prairies d’altitude), les tourbières, les cirques glaciaires, les falaises rocheuses, les éboulis, les lacs et autres rivières s’entremêlent dans une rare harmonie.",
                 "blocGauche1": "",
-                "imgGauche": "",
+                "imgGauche": "datas/imgs/perenne/nature/lacs.jpg",
                 "desImgGauche": "",
-                "blocGauche2": "",
+                "blocGauche2": "L’abondance des ruisseaux et des rivières donne au territoire du Parc l’allure d’un véritable château d’eau. Ces cours d’eau prennent naissance sur un socle majoritairement granitique qui leur confère des caractéristiques particulières : des eaux acides et faiblement minéralisées. Ce sont des rivières « pauvres » mais qui abritent des espèces « sentinelles » du bon état écologique des rivières : chabot, truite fario, lamproie de planer ou rare écrevisse à pattes blanche. Près de 400 tourbières se sont développées dans des cuvettes laissées par les glaciers ou sur les versants à la faveur des fortes précipitations et des sources. Elles sont réparties principalement sur le versant lorrain en altitude et sur le plateau des mille étangs. Ce sont des milieux originaux et d’une grande richesse. Elles se constituent à la faveur d’une eau abondante, pauvre en éléments minéraux et de la fraîcheur des températures. Véritables enclaves d’un climat boréal qui régnait sur la montagne vosgienne il y a près de 12 000 ans, elles accueillent aujourd’hui sous un climat tempéré, de nombreuses espèces animales comme le nacré de la canneberge ou le nénuphar nain.  Ces tourbières sont de formidables réservoirs de vie mais également de véritables infrastructures naturelles qui jouent un rôle essentiel dans le cycle de l’eau. De nombreux lacs ponctuent le territoire. Ils sont majoritairement artificiels à l’exception de quelques grands lacs comme Gérardmer, Longemer et Retournemer ou quelques petits lacs relictuels d’origine « glaciaire » eux aussi comme Sewen par exemple. Les autres ont une origine humaine ancienne ou plus récente pour le flottage du bois, le développement industriel (minier et textile). Ils servent aujourd’hui de réservoirs d’eau potable, produisent de l’énergie ou offrent des bases de loisirs. Tous ces plans d’eau constituent le refuge de nombreuses espèces rares comme la loche d’étang ou l’écrevisse à patte rouge ou offrent des étapes aux espèces migratoires.<br><br>Le plateau des Mille étangs en Haute-Saône représente la 2ème grande richesse naturelle du Parc. Ses nombreux étangs créés par l’homme dans de petites cuvettes ou suite à l’exploitation de tourbières ont longtemps servi à l’activité piscicole. Si leurs eaux froides et acides ne permettent pas une productivité importante, celles-ci sont toutefois propices à l’élevage traditionnel de carpes.  Des activités de loisirs et de détente au bord de l’eau ont remplacé progressivement la pisciculture traditionnelle. Les étangs délaissés évoluent naturellement en s’envasant et évoluent vers des tourbières dont la biodiversité devient dès lors importante.",
                 "imgSlider1": [],
                 "blocSlider1": "",
                 "blocDroit1": "",
-                "imgSlider2": [],
+                "imgSlider2": [
+                    "datas/imgs/perenne/nature/lacs1.jpg",
+                    "datas/imgs/perenne/nature/lacs2.jpg",
+                    "datas/imgs/perenne/nature/lacs3.jpg"
+                ],
                 "blocDroit2": ""
             },
             "vergers": {
-                "titre": "vergers",
-                "imgTop": "",
-                "soustitre": "",
+                "titre": "Vergers",
+                "imgTop": "datas/imgs/perenne/nature/vergers.jpg",
+                "soustitre": "Le Parc naturel régional des Ballons des Vosges offre une vaste palette de milieux naturels. À lui seul, le massif forestier couvre les deux tiers du territoire. Pour autant, le Parc est riche d’une multitude d’autres milieux. Les hautes chaumes (prairies d’altitude), les tourbières, les cirques glaciaires, les falaises rocheuses, les éboulis, les lacs et autres rivières s’entremêlent dans une rare harmonie.",
                 "blocGauche1": "",
-                "imgGauche": "",
+                "imgGauche": "datas/imgs/perenne/nature/vergers.jpg",
                 "desImgGauche": "",
-                "blocGauche2": "",
+                "blocGauche2": "Les vergers traditionnels composés d’arbres à hautes tiges (tronc atteignant une hauteur minimum de 1m80) recèlent un nombre important de variétés locales de pommes, et de quetsches mais également de cerises. On les retrouve traditionnellement sur tous les piémonts où les conditions climatiques sont propices à leur fructification. En grand nombre autour de Fougerolles et au pied des Ballons Comtois, ils constituent des milieux naturels originaux en périphérie villageoises mais participent à l’économie locale lorsque les fruits peuvent être transformés. Plus haut en montagne, les arbres fruitiers peuvent être présents et plus isolés. Ils participaient à l’alimentation des familles d’éleveurs mais aussi de leur bétail. Sur le plan écologique, le verger traditionnel associé à une prairie de fauche sans engrais abrite une flore très diversifiée. Fort de leurs multiples variétés d’arbres fruitiers … les vergers à hautes tiges jouent le rôle de refuge pour un certain nombre d’espèces animales sauvages, qui y trouvent l’ultime espace vital préservé : arbres, racines écorces feuilles et fruits. De nombreux oiseaux y trouvent de la nourriture toute l’année : chauves-souris, lérot, huppe fasciée, le torcol ou la rarissime chouette chevêche y recherchent d’indispensables cavités pour leur nidification ou pour s’abriter. Ils participent avec les jardins également à la diversification du paysage comme par exemple sur les piémonts viticoles.",
                 "imgSlider1": [],
                 "blocSlider1": "",
                 "blocDroit1": "",
-                "imgSlider2": [],
+                "imgSlider2": [
+                    "datas/imgs/perenne/nature/vergers1.jpg",
+                    "datas/imgs/perenne/nature/vergers2.jpg"
+                ],
                 "blocDroit2": ""
             },
             "ravins": {
                 "titre": "ravins",
-                "imgTop": "",
-                "soustitre": "",
+                "imgTop": "datas/imgs/perenne/nature/ravins.jpg",
+                "soustitre": "Le Parc naturel régional des Ballons des Vosges offre une vaste palette de milieux naturels. À lui seul, le massif forestier couvre les deux tiers du territoire. Pour autant, le Parc est riche d’une multitude d’autres milieux. Les hautes chaumes (prairies d’altitude), les tourbières, les cirques glaciaires, les falaises rocheuses, les éboulis, les lacs et autres rivières s’entremêlent dans une rare harmonie.",
                 "blocGauche1": "",
                 "imgGauche": "",
                 "desImgGauche": "",
-                "blocGauche2": "",
+                "blocGauche2": "Les falaises et parois abruptes des versants alsaciens forment un contraste saisissant avec les sommets arrondis.  Elles doivent leur existence aux failles d’effondrement du fossé rhénan à l’ère tertiaire. Les glaciations de l’ère quaternaire ont ensuite imprimé leur marque en sculptant des cirques glaciaires et en renforçant parfois la verticalité des versants. De rudes conditions de vie et le maintien tardif de manteaux neigeux n’ont guère favorisé le développement des arbres. Avec les tourbières, les communautés végétales de ces ravins constituent les joyaux botaniques et de biodiversité d’altitude car de nombreuses espèces y trouvèrent refuge. Grand corbeau, faucon pèlerin mettent à profit ces falaises plus ou moins boisées pour leur tranquillité. Depuis peu, le hibou grand duc est de retour dans les Hautes-Vosges après plusieurs dizaines d’années d’absence. Le chamois introduit dans les années 1950, y apprécie également les prairies à hautes herbes des pentes les plus raides.",
                 "imgSlider1": [],
                 "blocSlider1": "",
                 "blocDroit1": "",
-                "imgSlider2": [],
+                "imgSlider2": [
+                    "datas/imgs/perenne/nature/ravins1.jpg",
+                    "datas/imgs/perenne/nature/ravins2.jpg",
+                    "datas/imgs/perenne/nature/ravins3.jpg",
+                    "datas/imgs/perenne/nature/ravins4.jpg"
+               ],
                 "blocDroit2": ""
             },
             "pelouses calcaires": {
-                "titre": "pelouses calcaires",
-                "imgTop": "",
-                "soustitre": "",
+                "titre": "Pelouses calcaires",
+                "imgTop": "datas/imgs/perenne/nature/calcaire.jpg",
+                "soustitre": "Le Parc naturel régional des Ballons des Vosges offre une vaste palette de milieux naturels. À lui seul, le massif forestier couvre les deux tiers du territoire. Pour autant, le Parc est riche d’une multitude d’autres milieux. Les hautes chaumes (prairies d’altitude), les tourbières, les cirques glaciaires, les falaises rocheuses, les éboulis, les lacs et autres rivières s’entremêlent dans une rare harmonie.",
                 "blocGauche1": "",
-                "imgGauche": "",
+                "imgGauche": "datas/imgs/perenne/nature/calcaire.jpg",
                 "desImgGauche": "",
-                "blocGauche2": "",
+                "blocGauche2": "Les températures assez élevées, les faibles précipitations et les calcaires durs offrent, sur quelques collines alsaciennes protégées par le massif vosgien et dominant le vignoble alsacien, des conditions idéales de développement aux landes et aux pelouses arides.  Leur expansion a été favorisée par la déforestation menée à des fins agropastorales (peut être dès la fin du néolithique comme les hautes chaumes). Mais c’est à l’époque gallo romaine que l’action des hommes s’amplifie avec la culture de la vigne et le développement de pâturage au détriment de forêts rabougries de chênes. Sur ces landes, où l’on observe de véritables fragments de steppes orientales, se côtoient de nombreuses espèces, souvent à la limite de leur aire de répartition, provenant du Bassin méditerranéen ou d’Europe centrale.  Ces pelouses sèches abritent 500 espèces végétales dont quinze espèces d’orchidées et constituent des lieux de prédilection pour de nombreux insectes (abeilles, papillons, criquets,…) ou encore le lézard vert, le bruant zizi ou la huppe fasciée. Elles constituent des stations refuges pour les espèces chassées de la plaine par l’intensification des pratiques agricoles mais accueillent aussi des espèces d’origine méditerranéenne ou d’Europe centrale",
                 "imgSlider1": [],
                 "blocSlider1": "",
                 "blocDroit1": "",
-                "imgSlider2": [],
+                "imgSlider2": [
+                    "datas/imgs/perenne/nature/calcaire1.jpg",
+                    "datas/imgs/perenne/nature/calcaire2.jpg",
+                    "datas/imgs/perenne/nature/calcaire3.jpg",
+                    "datas/imgs/perenne/nature/calcaire4.jpg"
+               ],
                 "blocDroit2": ""
             }
         },
         "geologie et climat": {
             "titre": "geologie et climat",
-            "imgTop": "",
-            "soustitre": "",
+            "imgTop": "datas/imgs/perenne/nature/geologie.jpg",
+            "soustitre": "Le sud du massif des Vosges accueille des patrimoines naturels et culturels remarquables et offre des paysages emblématiques qui font son attractivité et lui confère son statut de Parc naturel régional. Partir à la découverte du Parc naturel régional des Ballons des Vosges, c’est aller à la rencontre de ces patrimoines et des hommes qui les font vivre.",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/nature/geologie.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
+            "blocGauche2": "Des gneiss au nord, des granites au centre, des roches sédimentaires d’origine volcanique au sud constituent le soubassement des Hautes-Vosges. Il s’agit des restes du vaste et vieux massif hercynien formé entre 400 et 500 millions d’années. Les formes actuelles du massif sont en revanche beaucoup plus jeunes. Elles proviennent de la surélévation et la dislocation de l’ancien socle créée par la formation des Alpes. Le vieux massif va en effet s’élever une seconde fois. Mais il se disloque en son centre et s’effondre en gradins pour former le rift rhénan. En bordure ouest et est apparaissent respectivement les Vosges et la Forêt Noire. L’érosion et les glaciers façonneront les paysages qui nous sont parvenus. La dernière période glaciaire a pris fin y a 12000 ans.<br><br>Le massif des Hautes-Vosges offre une étonnante diversité de milieux naturels liée au relief, aux variations géologiques mais surtout aux conditions climatiques, elles-mêmes dépendantes de la topographie, de l’altitude ou de l’exposition. Les Hautes-Vosges font ainsi obstacles aux perturbations océaniques venant de l’ouest. Les hivers sont froids et les étés frais (11° en moyenne contre 20° en plaine d’Alsace). Les pluies sont importantes avec parfois plus de 2 mètres d’eau par an sur la crête contre un peu plus de 50 cm à Colmar, l’une des régions les plus sèches de la France.",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                    "datas/imgs/perenne/nature/geologie1.jpg",
+                    "datas/imgs/perenne/nature/geologie2.jpg",
+                    "datas/imgs/perenne/nature/geologie3.jpg",
+                    "datas/imgs/perenne/nature/geologie4.jpg"
+               ],
             "blocDroit2": ""
         },
         "espaces proteges": {
-            "titre": "espaces proteges",
-            "imgTop": "",
+            "titre": "Les aires protégées",
+            "imgTop": "datas/imgs/perenne/nature/protegees.jpg",
             "soustitre": "",
-            "blocGauche1": "",
-            "imgGauche": "",
+            "blocGauche1": "Le réseau écologique Natura 2000 vise à préserver les espèces et les milieux naturels rares ou menacés à l’échelle du territoire européen.<br>Il comprend des zones de protection spéciale (ZPS) protégeant les espèces de la directive “Oiseaux”. Il est également composé de zones spéciales de conservation (ZSC) ayant comme objectif la préservation d’habitats et d’espèces de la directive “Habitats”.<br>Le Parc compte 34 sites pour une superficie totale de 68 872 ha soit 24% de son territoire.",
+            "imgGauche": "datas/imgs/perenne/nature/protegees.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
+            "blocGauche2": "L’initiative du classement en Réserve Naturelle peut revenir :<br><br>à l’État : Réserves Naturelles Nationales,<br>ou aux Régions : Réserves Naturelles Régionales.<br>Au-delà de ces différences de statut administratif, les Réserves Naturelles partagent des objectifs et des éléments communs : un territoire, une réglementation et une instance de gestion.<br>Elles poursuivent trois missions indissociables : protéger les milieux naturels, les espèces et le patrimoine géologique, gérer les sites et sensibiliser les publics.<br>Le Parc compte 5 Réserves Naturelles Nationales et 5 Réserves Naturelles Régionales, pour une superficie totale de 5 500 ha, soit 1,8% de son territoire.",
             "imgSlider1": [],
             "blocSlider1": "",
-            "blocDroit1": "",
-            "imgSlider2": [],
-            "blocDroit2": ""
+            "blocDroit1": "Les zones de protection de biotope sont mises en place sous l’autorité du Préfet par arrêté préfectoral et ont pour objet de préserver les milieux de vie des espèces animales et végétales protégées par la loi. L’arrêté préfectoral de protection de biotope (APPB) liste les activités interdites et les activités réglementées nécessaires à la protection des habitats des espèces visées.<br>15 des 20 zones de protection de biotope mises en place sur le territoire du Parc permettent de renforcer la quiétude dans les zones les plus sensibles. Elles représentent 6 985 ha, soit 2,4% sur le territoire du Parc.",
+            "imgSlider2": [
+                    "datas/imgs/perenne/nature/protegees1.jpg",
+                    "datas/imgs/perenne/nature/protegees2.jpg",
+                    "datas/imgs/perenne/nature/protegees3.jpg",
+                    "datas/imgs/perenne/nature/protegees4.jpg"
+               ],
+            "blocDroit2": "Les réserves biologiques sont mises en place dans les forêts publiques sous l’autorité des ministres en charge de l’agriculture et de l’écologie par arrêté interministériel. Il existe deux types de réserves biologiques : les réserves dites « intégrales » (RBI) dans lesquelles l’exploitation forestière est proscrite pour préserver le caractère naturel d’une forêt et les réserves dites « dirigées » (RBD) où les interventions sylvicoles restent possibles mais principalement orientées dans un but de conservation de la biodiversité forestière.<br>15 réserves biologiques ont été mises en place à l’échelle du Parc. Deux d’entre elles réglementent les activités humaines pour préserver la quiétude de la faune. Elles représentent 4 354 ha, soit 1,5% du territoire du Parc."
         }
     },
     "culture": {
         "industriel": {
-            "titre": "industriel",
-            "imgTop": "",
-            "soustitre": "",
+            "titre": "Patrimoine industriel",
+            "imgTop": "datas/imgs/perenne/culture/industriel.jpg",
+            "soustitre": "Le Parc naturel régional des Ballons des Vosges est un territoire vivant, dont l’homme a su très tôt exploiter l’eau, le bois, la pierre et le sous-sol pour développer l’industrie et l’artisanat. Il est également l’héritier d’une histoire mouvementée liée aux conflits mondiaux.",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/culture/industriel.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
+            "blocGauche2": "<h3>L’eau, force motrice</h3>Dès le milieu du Moyen-Âge, l’utilisation de la force hydraulique se répand avec des emplois de plus en plus diversifiés : moulins pour la farine, « molin pour soier planches », l’exploitation des mines, la métallurgie du fer… Chaque cours d’eau alimente un moulin, un haut-fer, une forge. Les sagards consacrent leur savoir-faire au sciage du bois à l’aide d’une longue lame verticale dont les aller retours sont transmis par le mouvement d’une immense roue à eau ou une turbine. Parfois même l’eau est amenée jusqu’au “haut-fer” par une conduite forcée. Le haut-fer est une grande lame métallique dentée qui scie verticalement le bois, en descendant. Par extension, ce terme désigne l’ensemble d’une scierie hydraulique traditionnelle. Des propriétaires, associations et communes font revivre cette histoire qui a été délaissée au début du XX° siècle. Les sites ouvrent leurs portes et font tourner leurs roues…<h3>Le patrimoine minier</h3>La générosité du massif vosgien réside aussi dans son sous-sol. Argent, cuivre, fer, cobalt, charbon, ou encore arsenic ont engendré depuis le Moyen Âge une activité extractive considérable. L’exploitation minière atteint son apogée du XVIe au XVIIe siècle et s’est éteinte au XXe siècle. Ce fut une « véritable ruée vers l’argent » avec la venue de mineurs de Saxe, Bohême, Tyrol et Palatinat. Le travail de la mine a eu un impact économique, social et culturel important. Il a profondément marqué le vocabulaire, les coutumes, le paysage et la toponymie de l’ensemble du massif vosgien. Après l’abandon des exploitations, les anciennes mines peuvent servir aujourd’hui de refuge à une faune et une flore fragiles. L’esprit des mines est resté vivant. Sur tous les versants du massif subsistent des vestiges à découvrir : Val d’Argent, Le Thillot, La Croix-aux-Mines, Giromagny. Une dizaine de sites proposent d’explorer cet univers passionnant.<h3>Le patrimoine textile</h3>Le développement économique de nombreuses vallées vosgiennes a trouvé son origine dans l’exploitation minière. La présence d’une importante main d’œuvre et l’existence de sites « industrialisés » ont facilité la reconversion vers de nouvelles industries, notamment textiles, au moment de la fermeture des mines au XVIII° siècle. Au XIX° siècle, les usines s’installent au fil des cours d’eau et utilisent la force des rivières. Les premières usines ont l’allure de grosses fermes avec de nombreuses fenêtres. Les ouvriers-paysans vivent encore dans les fermes environnantes. A partir de 1872 les vallées vosgiennes se couvent d‘usines qui s’installent à l’aval des rivières. Elles imposent leur silhouette dans le paysage avec de longs bâtiments à un étage à la toiture en dents de scie : les sheds. Sédentariser les ouvriers fut un souci constant. Les industriels construisent des casernes puis des cités contigües à l’usine. Si les casernes abritent jusqu’à 10 familles, les cités sont des logements, implantées avec une rigueur toute militaire, entourés de jardins. C’est l’âge d’or de l’industrie textile. Les industriels construisent usines, canaux, cheminées, cités, écoles, crèches, économats, églises. Aux destructions des deux conflits mondiaux s’ajoutent les premières crises textiles. A partir des années 1950 le « textile » est confronté à une crise majeure qui nécessite une mutation profonde. La production vosgienne se maintient alors dans le haut de gamme ou l’ennoblissement.<h3>Vosges terre textile et Alsace terre textile</h3>Une trentaine d’entreprises sont agréées Vosges terre textile aisément reconnaissables au logo « Acteur de Vosges terre textile ». Ce label assure au consommateur que plus de 75% des étapes de fabrication sont réalisées dans le Massif des Vosges au sein de manufactures agréées. Authenticité, provenance, respect d’une charte de bonne pratique et des valeurs du concept « terre textile, équivalent d’une AOC pour des produits textiles sont donc garantis pour le consommateur.<br>Paul de MONTCLOS, Président du Syndicat Textile de l’Est, de ‘Terre textile®’ et de Vosges terre textile®",
             "imgSlider1": [],
             "blocSlider1": "",
-            "blocDroit1": "",
-            "imgSlider2": [],
+            "blocDroit1": "L’industrie ancienne fut rurale et étroitement liée aux conditions géographiques. Les nombreux cours d’eau, la richesse du sous-sol, la densité des forêts furent autant d’éléments favorables à la naissance de l’industrie dont le moteur fut la roue à eau, du Moyen-âge jusqu’au milieu du XIX° siècle puis la turbine et la vapeur. ",
+            "imgSlider2": [
+                    "datas/imgs/perenne/culture/industriel1.jpg",
+                    "datas/imgs/perenne/culture/industriel2.jpg",
+                    "datas/imgs/perenne/culture/industriel3.jpg",
+                    "datas/imgs/perenne/culture/industriel4.jpg"
+               ],
             "blocDroit2": ""
         },
         "thermal": {
-            "titre": "thermal",
-            "imgTop": "",
-            "soustitre": "",
+            "titre": "Patrimoine thermal",
+            "imgTop": "datas/imgs/perenne/culture/thermal1.jpg",
+            "soustitre": "Le Parc naturel régional des Ballons des Vosges est un territoire vivant, dont l’homme a su très tôt exploiter l’eau, le bois, la pierre et le sous-sol pour développer l’industrie et l’artisanat. Il est également l’héritier d’une histoire mouvementée liée aux conflits mondiaux.",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/culture/thermal1.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
+            "blocGauche2": "<h2>Luxeuil-les-Bains</h2>La visite à Luxeuil-les-Bains de Napoléon III avec l’impératrice Eugénie en 1856 contribue à relancer la station de Luxeuil, qui devient rapidement à la mode. Au début du XXe siècle, de nombreuses personnalités, comme Sacha Guitry ou Yvonne Printemps, s’y font remarquer. Le lieu est alors réputé pour son élégance et pour son parc. De nombreux grands hôtels (Hôtel des Thermes, Métropole, du Parc, des Sources, etc.) sont construits, ainsi que des villas. Ils viendront embellir une ville déjà pourvue de bâtiments d’architecture classique en grès rose des Vosges construits sous le règne de Louis XV.<br><br>Les eaux de Luxeuil sont de deux sortes : eaux chaudes (sources hyperthermales, jusqu’à 63 °C pour la source Boursaux) et froides (oligométalliques, très peu minéralisées et de radioactivité forte). Les cures à Luxeuil sont actuellement préconisées surtout pour les affections gynécologiques et rhumatismales.",
             "imgSlider1": [],
             "blocSlider1": "",
-            "blocDroit1": "",
-            "imgSlider2": [],
+            "blocDroit1": "<h2>Plombières-les-Bains</h2>Le paysage et la ville de Plombières-les-Bains témoignent des deux mille ans de thermalisme. Dès le XVIII° siècle, de nombreuses personnalités du monde politique et artistique font la renommée des lieux. Si Napoléon 1er nationalise au début du XIX° siècle une partie des sources, c’est Napoléon III qui créera la société d’exploitation des sources. Les travaux qu’il fit exécuter pour la création d’un 3ème établissement, les Bains Napoléon, ont permis la mise à jour des vestiges romains : canalisations, gradins de pierre de la piscine primitive visibles au Bain Romain.  Il sera également à l’origine du Casino et du Parc Tivoli à Plombières. La ville possède 27 sources chaudes faiblement minéralisées mais riches en oligo-éléments. Les eaux de Plombières jaillissent à des températures comprises entre 57 et 84 degrés : idéales pour se relaxer, elles sont aussi indiquées dans le traitement des affections digestives et rhumatismales.",
+            "imgSlider2": [
+                    "datas/imgs/perenne/culture/vergers2.jpg"
+               ],
             "blocDroit2": ""
         },
         "memoire": {
-            "titre": "memoire",
-            "imgTop": "",
-            "soustitre": "",
+            "titre": "Patrimoine de memoire",
+            "imgTop": "datas/imgs/perenne/culture/memoire.jpg",
+            "soustitre": "Le Parc naturel régional des Ballons des Vosges est un territoire vivant, dont l’homme a su très tôt exploiter l’eau, le bois, la pierre et le sous-sol pour développer l’industrie et l’artisanat. Il est également l’héritier d’une histoire mouvementée liée aux conflits mondiaux.",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/culture/memoire.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
+            "blocGauche2": "Les sites liés aux deux conflits mondiaux sont nombreux sur ce territoire. Mais ils ne sont pas les seuls à invoquer la mémoire du massif vosgien.<br>D’autres comme la maison de la négritude et des droits de l’homme à Champagney ou la maison des sorcières à Bergheim présentent des facettes plus insolites de la mémoire de notre territoire. Depuis de longues années de nombreuses associations, collectivités ou associations oeuvrent à améliorer la connaissance du patrimoine et des lieux de mémoire qui participent au patrimoine culturel.<br><br>Les champs de bataille<br>La Grande Guerre a profondément marqué l’histoire et les paysages du massif. Lors de ce conflit, l’Alsace, sous domination allemande depuis 1871, a connu des combats meurtriers. C’est à des fins militaires que fut construite la désormais touristique route des crêtes qui surplombe le massif. Au col du Linge, le face à face franco-allemand fera 10 000 morts en juillet-août 1915. C’est à la même époque que les principaux assauts eurent lieu au Hartmannswillerkopf ou Vieil Armand, classé monument historique dès 1921. Ce site recèle encore de nos jours des vestiges impressionnants de son passé guerrier, notamment un réseau de tranchées admirablement conservé.",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                    "datas/imgs/perenne/culture/memoire1.jpg",
+                    "datas/imgs/perenne/culture/memoire2.jpg",
+                    "datas/imgs/perenne/culture/memoire3.jpg",
+                    "datas/imgs/perenne/culture/memoire4.jpg"
+               ],
             "blocDroit2": ""
         },
         "religieux": {
             "titre": "religieux",
-            "imgTop": "",
-            "soustitre": "",
+            "imgTop": "datas/imgs/perenne/culture/religieux.jpg",
+            "soustitre": "Le Parc naturel régional des Ballons des Vosges est un territoire vivant, dont l’homme a su très tôt exploiter l’eau, le bois, la pierre et le sous-sol pour développer l’industrie et l’artisanat. Il est également l’héritier d’une histoire mouvementée liée aux conflits mondiaux.",
             "blocGauche1": "",
-            "imgGauche": "",
-            "desImgGauche": "",
+            "imgGauche": "datas/imgs/perenne/culture/religieux.jpg",
+            "desImgGauche": "Colomban est un acteur historique du massif. Ce moine irlandais bénédictin élevé dans la tradition irlandaise s’installe avec 12 moines au pied des Vosges en 590 d’abord dans la vallée du Breuchin puis ouvre deux cellules monastiques en Haute-Saône à Luxeuil et Fontaine-les-Luxeuil. Ses disciples essaimeront du sud vers le nord fondant à leur tour de nombreux monastères appuyés par les aristocraties locales : Munster, Remiremont et Saint-Dié des Vosges, Lure, Murbach… L’imprécision des textes fondateurs permettra progressivement à l’aristocratie d’en reprendre le contrôle. Les vallées vosgiennes offertes aux abbayes mais contrôlées par des protecteurs laïques et quadrillées par les villages et leurs fermes vont prospérer pendant plusieurs siècles. Ce découpage a marqué le territoire au point d’avoir servi à la mise en place des cantons au lendemain de la Révolution Française. La rupture se produira au XVI° siècle quand les nobles alsaciens adopteront la Réforme tandis que le duché de Lorraine prendra la tête de la Contre-Réforme catholique.<br><br>Si nombre de ces abbayes ont aujourd’hui disparu, de hauts lieux religieux à l’architecture romane, gothique, baroque ou moderne s’offrent encore à la visite parmi lesquels : Luxeuil-les-Bains, cloître et abbaye Saint-ColombanGrotte et chapelle Saint-Colomban à Sainte-Marie-en-Chanois, Ermitage de Saint-Valbert, Ruines de l’abbaye à Munster, Abbaye de Murbach, Couvent des Dominicains, église Saint Léger à Guebwiller, Collégiale Saint Michel et Saint Gangolfe à Lautenbach, Eglise romane Saint-Etienne à Osenbach, église de Gueberschwihr, Eglise et cimetière fortifié d’Hunawihr, Collégiale Saint-Thiébaut à Thann de style gothique, Basilique Notre-Dame de Thierenbach de style baroque à Jungholtz, Eglises de Bertrimoutier et de Provenchères-sur-Fave avec clocher à bulbes du XVIIIe siècle, Eglises à clocher comtois couvert de tuiles vernissées à Faucogney, notamment Chapelles de montagne : ermitage de Frère Joseph à Ventron, chapelle du Rudlin, chapelle Saint-Marc du Chipal à La Croix-aux-Mines…Chapelle Notre-Dame du Haut de Le Corbusier à Ronchamp. Mais également la chapelle de Saint-Pierre sur l’Hâte à Sainte-Maire-aux-Mines, le Temple réformé à Sainte-Marie-aux-Mines etc.",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                    "datas/imgs/perenne/culture/religieux1.jpg",
+                    "datas/imgs/perenne/culture/religieux2.jpg",
+                    "datas/imgs/perenne/culture/religieux3.jpg",
+                    "datas/imgs/perenne/culture/religieux4.jpg"
+               ],
             "blocDroit2": ""
         },
         "culturel immatériel": {
-            "titre": "immatériel",
-            "imgTop": "",
-            "soustitre": "",
+            "titre": "Patrimoine culturel immatériel",
+            "imgTop": "datas/imgs/perenne/culture/immateriel.jpg",
+            "soustitre": "Le Parc naturel régional des Ballons des Vosges est un territoire vivant, dont l’homme a su très tôt exploiter l’eau, le bois, la pierre et le sous-sol pour développer l’industrie et l’artisanat. Il est également l’héritier d’une histoire mouvementée liée aux conflits mondiaux.",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/culture/immateriel.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
+            "blocGauche2": "Le patrimoine culturel immatériel c’est ce que chacun d’entre vous détient, comme un trésor personnel ou familial transmis de générations en générations : une pratique ou un savoir-faire particulier. S’appuyant sur la convention UNESCO, le Parc des Ballons des Vosges initie, depuis 2008, avec de nombreux partenaires, une expérience autour de ce thème dans deux secteurs géographiques du territoire. L’UNESCO a lancé l’idée qu’il pourrait être intéressant que ce soit les communautés elles-mêmes et non plus des experts qui déterminent ce qui est significatif à leurs yeux et mériterait une attention particulière du Parc des Ballons des Vosges , voire une inscription au niveau patrimoine international. Au-delà des monuments et des objets conservés à travers les âges ; les pratiques, les représentations, les expressions mais aussi les connaissances et les savoir-faire constituent un patrimoine encore trop méconnu. Depuis la création en 2003 de la Convention Unesco pour la sauvegarde du Patrimoine Culturel Immatériel, les Etats signataires se doivent d’entreprendre des actions afin de valoriser et de sauvegarder ce patrimoine vivant. Au 19 mars 2008, 93 Etats, dont la France, ont ratifié la Convention de l’UNESCO sur la sauvegarde du patrimoine culturel immatériel. En effet, les communautés sont au cœur de la reconnaissance de ces patrimoines vivants. Et ce sont les détenteurs de ces patrimoines immatériels et les communautés dans leur ensemble qui sont à même d’identifier ce qui fait patrimoine et d’élaborer des projets de sensibilisation ou de sauvegarde.",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                    "datas/imgs/perenne/culture/immateriel1.jpg",
+                    "datas/imgs/perenne/culture/immateriel2.jpg",
+                    "datas/imgs/perenne/culture/immateriel3.jpg"
+               ],
             "blocDroit2": ""
         },
         "bati rural": {
-            "titre": "rural",
-            "imgTop": "",
-            "soustitre": "",
-            "blocGauche1": "",
-            "imgGauche": "",
+            "titre": "Fermes",
+            "imgTop": "datas/imgs/perenne/culture/rural.jpg",
+            "soustitre": "Le Parc naturel régional des Ballons des Vosges est un territoire vivant, dont l’homme a su très tôt exploiter l’eau, le bois, la pierre et le sous-sol pour développer l’industrie et l’artisanat. Il est également l’héritier d’une histoire mouvementée liée aux conflits mondiaux.",
+            "blocGauche1": "Adaptées aux particularités de chaque vallées, les fermes qui ponctuent les paysages contribuent a nous en raconter l’histoire. Elles nous rappellent la place prépondérante que l’agriculture de montagne a occupée et occupe encore aujourd’hui. Elles représentent également un rôle important dans l’attractivité touristique de notre territoire dont elles sont une véritable signature.",
+            "imgGauche": "datas/imgs/perenne/culture/rural.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
+            "blocGauche2": "<h2>La ferme du Pays de Saint-Dié et ses impostes de grès</h2>Au-dessus des portes d’entrée des fermes construites ou réaménagées au début du XIX° siècle se dressent encore de véritables monuments : des tables de grès rose agrémentées de citations religieuses en latin ou en français « Que dieu bénisse cette maison ». Ils sont illustrés de symboles religieux ou décoratifs. Des niches y sont également creusées. Les linteaux droits ou cintrés pour les plus anciens présentent les initiales des époux habitant la ferme et leur métier, sa date de construction, le nom du tailleur de pierre et quelquefois des motifs géométriques. L’espace d’habitation qui occupe deux niveaux est très ample et nettement séparé de la grange et de l’étable par un couloir traversant la maison de part en part. La grande porte cochère permettait au cultivateur-éleveur d’entreposer le matériel volumineux.<h2>La ferme welche</h2>L’habitat dispersé et l’architecture des fermes  sont des éléments caractéristiques du paysage welche. Champs, verger, potager et exploitation sont situés autour de la ferme où chacun est « seigneur et maître en son domaine ». La ferme welche est caractérisée par son architecture rectangulaire d’un seul tenant. Hommes et bêtes y habitaient sous le même toit afin de mieux lutter contre les rigueurs hivernales et les intempéries. Proche de la route qui la dessert, elle s’adapte au terrain et suit souvent les courbes de niveau, d’où des orientations très variées. À l’arrière, un pont typique facilite l’accès au grenier. Une source, vitale pour les hommes comme pour les bêtes, est toujours à proximité. Les couvertures de chaume ont été remplacées au début du XXe siècle par de la tuile. De belles toitures en ardoises sont apparues lors de la reconstruction des bâtiments anéantis par la Première Guerre mondiale. <h2>La ferme carrée des Hautes-Vosges</h2>La ferme à plan (presque) carré abrite hommes, matériels et animaux sous un grand toit protecteur. Les fermes des hauts isolées sur les terres défrichées ponctuent les versants. La toiture impressionnante de la ferme carrée est faiblement inclinée pour retenir la neige qui sert d’isolant. Le four à pain est bien visible de l’extérieur. L’habitation comprend trois travées : l’habitation (au sud-est), la grange et l’étable. Les façades sont généralement couvertes d’un enduit à la chaux teinté avec le sable local. Elles sont bardées de bois sur les pignons ou « d’essis », des planchettes de bois qui peuvent également être présentes sur la façade la plus exposée et sous les toitures actuellement recouvertes de tuiles.",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
-            "blocDroit2": ""
+            "imgSlider2": [
+                    "datas/imgs/perenne/culture/rural1.jpg",
+                    "datas/imgs/perenne/culture/rural2.jpg",
+                    "datas/imgs/perenne/culture/rural3.jpg",
+                    "datas/imgs/perenne/culture/rural4.jpg"
+               ],
+            "blocDroit2": "<h2>De la marcairie à la ferme auberge</h2>Petites fermes d’estive implantées dans les pâturages à mi-pente ou sur les hautes chaumes, les marcairies abritaient le marcaire et ses bêtes à la belle saison de mai à septembre. Il y fabriquait le fromage de munster ou géromé. Longue construction, la marcairie est sans étage, basse, trapue. Elle se blottit dans un repli de terrain afin de se protéger du vent. Les murs de pierre grossièrement taillés sont épais pour lutter contre la rudesse du climat. De petites ouvertures empêchent la chaleur de s’échapper. Les façades les plus exposées sont recouvertes de bardages ou d’ardoises. A l’origine le logis du marcaire était très rudimentaire. L’espace étant réservé à la fabrication du fromage. Les marcairies détruites après la première guerre ont laissé place aux fermes-auberges plus spacieuses. La salle s’ouvre sur le paysage tandis que l’étable s’agrandit. Aujourd’hui la partie « auberge » prend une place prépondérante soulignant ainsi la tradition d’accueil, complémentaire à leur vocation pastorale qui caractérise les Hautes-Vosges. <h2>La ferme ajolaise ou des Vosges méridionales et son chalot</h2>Elle comprend plusieurs bâtiments aux fonctions bien définies qui s’ordonnent autour de la cour. La ferme, le four à pain, la fontaine, le bûcher et le chalot côtoient l’alambic, l’atelier de forge et le « rang à cochons ». Le toit est recouvert de laves en grès et les encadrements de porte sont aussi taillés dans cette pierre. Les meubles étaient traditionnellement réalisés en cerisier, bois provenant du verger familial. Le chalot, véritable « coffre-fort » de la ferme ajolaise a été fabriqué jusqu’à la Seconde Guerre mondiale. Cette annexe de la ferme des Vosges méridionales et des Vosges saônoises permettait de conserver, les céréales, les fruits, la charcuterie, l’alcool et autres trésors de la famille. Cette construction entièrement démontable est réalisée en assemblage de bois par imbrication et autosserage : tenons/mortaises sans clou ni vis ni colle. Elle est recouverte de laves de grès.<h2>La ferme saônoise et son charri</h2>Dans les Vosges saônoises, les fermes dispersées ont été construites au plus près des prairies pâturées. Elles sont de dimensions réduites et valorisent les matériaux locaux. Les encadrements des portes et des fenêtres sont en grès. Charpente et bardage sont en bois. De dimensions souvent modeste, elle est caractérisée par le porche, placé en avant de la grange centrale qui peut abriter un chariot. Les logements des hommes et des bêtes sont distribués de part et d’autres de ce charri."
         },
         "art et histoire": {
-            "titre": "art et histoire",
-            "imgTop": "",
-            "soustitre": "",
+            "titre": "Pays d’art et d’histoire",
+            "imgTop": "datas/imgs/perenne/culture/arts.jpg",
+            "soustitre": "Le Parc naturel régional des Ballons des Vosges est un territoire vivant, dont l’homme a su très tôt exploiter l’eau, le bois, la pierre et le sous-sol pour développer l’industrie et l’artisanat. Il est également l’héritier d’une histoire mouvementée liée aux conflits mondiaux.",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/culture/arts.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
-            "imgSlider1": [],
+            "blocGauche2": "<h3>Pays de Guebwiller </h3>Labellisé « Villes et Pays d’art et d’histoire » en 2004, la région de Guebwiller offre un patrimoine riche et exceptionnel. Ce territoire est renommé pour ses joyaux architecturaux du Moyen Âge au XVIIIe siècle, puis pour son industrie textile à partir du XIXe siècle. Il est constitué de paysages divers, plaines, vignobles, montagnes, vallées qui contribuent à faire connaître sa richesse naturelle.<h3>Pays du Val d’Argent</h3>Labellisé en 2005, peuplé dès le VIIIe siècle, le Val d’Argent se développa autour de deux activités majeures : les mines d’argent et l’industrie textile. Le paysage du Val d’Argent est marqué par sa position géographique particulière, une situation centrale, une vallée divisée, Un sous-sol fracturé, Une forêt omniprésente, la rivière de la Lièpvrette est un élément essentiel dans le Val d’Argent. Elle crée un lien physique entre les communes. Elle joua le rôle de frontière dès l’époque médiévale. Matière première nécessaire au fonctionnement de l’industrie minière et textile, l’eau a servi de moteur au développement économique du Val d’Argent dès le 16ème siècle.<h3>Ville de Mulhouse</h3>Première ville alsacienne à s’être vue décerner cette distinction, Mulhouse intègre le réseau des 181 villes ou pays labellisés en France.  Ce label distingue Mulhouse, dont les charmes se dévoilent au fil de ses quartiers à travers un patrimoine bâti et naturel diversifié. Mulhouse compte 17 bâtiments inscrits ou classés au titre des monuments historiques. Parmi eux, l’ancien Hôtel de ville dont Montaigne louait la beauté à la fin du XVIe siècle et de beaux hôtels particuliers du XVIIIe, à l’image de la maison Loewenfels. Mulhouse est également dotée d’un riche patrimoine naturel, en grande partie hérité du XIXe siècle, à l’instar du Parc zoologique et botanique, du square Steinbach ou du parc Salvator aux multiples essences d’arbres. La ville propose dans ce cadre des visites guidées permettant de découvrir et mieux connaître l’histoire de la ville et son patrimoine.",
+            "imgSlider1": [
+                "datas/imgs/perenne/culture/arts11.jpg"
+            ],
             "blocSlider1": "",
-            "blocDroit1": "",
-            "imgSlider2": [],
+            "blocDroit1": "Le label “ Ville ou Pays d’art et d’histoire ” attribué par le ministère de la Culture et de la Communication qualifie des territoires, communes ou regroupements de communes qui, conscients des enjeux que représente l’appropriation de leur architecture et de leur patrimoine par les habitants, s’engagent dans une démarche active de connaissance, de conservation, de médiation et de soutien à la qualité architecturale et du cadre de vie. Le terme de patrimoine concerne aussi bien l’ensemble du patrimoine bâti de la ville que les patrimoines naturel, industriel, maritime, ainsi que la mémoire des habitants. Il s’agit donc d’intégrer dans la démarche tous les éléments qui contribuent à l’identité d’une ville ou d’un pays riche de son passé et fort de son dynamisme.",
+            "imgSlider2": [
+                    "datas/imgs/perenne/culture/arts1.jpg",
+                    "datas/imgs/perenne/culture/arts2.jpg",
+                    "datas/imgs/perenne/culture/arts3.jpg"
+               ],
             "blocDroit2": ""
         },
         "chateaux": {
-            "titre": "chateaux",
-            "imgTop": "",
-            "soustitre": "",
+            "titre": "Châteaux",
+            "imgTop": "datas/imgs/perenne/culture/chateaux.jpg",
+            "soustitre": "Le Parc naturel régional des Ballons des Vosges est un territoire vivant, dont l’homme a su très tôt exploiter l’eau, le bois, la pierre et le sous-sol pour développer l’industrie et l’artisanat. Il est également l’héritier d’une histoire mouvementée liée aux conflits mondiaux.",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/culture/chateaux.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
+            "blocGauche2": "L’Alsace est une des régions d’Europe qui compte le plus de châteaux forts. Aujourd’hui en ruine pour la plupart, leurs silhouettes font partie du paysage alsacien le long des Vosges.  Alors qu’au Moyen Âge, les châteaux forts de plaine représentaient près des deux tiers des cinq cents châteaux recensés en Alsace, les châteaux de montagne forment aujourd’hui la quasi-totalité des édifices qui présentent des traces significatives et visibles pour le promeneur. Ouvrage fortifié, le château est un lieu de défense, de pouvoir, un lieu de résidence et parfois un centre administratif. Les châteaux forts se développent en Alsace à la faveur de l’affaiblissement du Saint-Empire Romain Germanique. Ils matérialisent la protection d’un territoire et de ses habitants et concrétisent l’autorité du seigneur. Lieux importants de l’histoire médiévale de la région, ils dominent la plaine, surveillent les vallées, les voies de communication et parfois les abbayes. Construits en pierre dès le XIIe, voire le XIe s. pour certains, mais abandonnés progressivement en raison des guerres et combats locaux, de leur coût d’entretien et de leur inconfort, ils sont encore nombreux à défier le temps sur le versant alsacien des Vosges.<br><br>Sur le territoire du Parc, une douzaine de sites sont à découvrir autour de Ribeauvillé, Aubure, Kaysersberg, Katzenthal, Wintzenheim, Husseren-les-Châteaux, Eguisheim, Guebwiller, Thann et Wildenstein Saint Ulrich, Girsberg, Haut Ribeaupierre, Bilstein-Aubure, Kaysersberg, Wineck, Pflixbourg, Hohlandsbourg, Haut-Eguisheim, Hugstein, Freundstein, Engelbourg, Wildenstein.",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                    "datas/imgs/perenne/culture/chateaux1.jpg",
+                    "datas/imgs/perenne/culture/chateaux2.jpg",
+                    "datas/imgs/perenne/culture/chateaux3.jpg",
+                    "datas/imgs/perenne/culture/chateaux4.jpg"
+               ],
             "blocDroit2": ""
         }
     },
     "aDeguster": {
         "tresor des ballons": {
-            "titre": "tresor",
-            "imgTop": "",
-            "soustitre": "",
+            "titre": "Trésor des Ballons des Vosges",
+            "imgTop": "datas/imgs/perenne/aDeguster/tresor.jpg",
+            "soustitre": "En 2015, le Parc a commandé une recette de gâteau de voyage aux élèves de terminale du lycée JBS Chardin de Gérardmer et la recherche packaging et communication aux élèves de licence pro de l’IUT de St-Dié-des-Vosges. Le territoire du Parc est connu pour sa ligne bleue, ses ballons et ses vallées industrielles et pour ses différentes particularités gastronomiques. Jusqu’à ce jour, il n’y avait pas un gâteau commun emblématique du sud du Massif Vosgien que l’on puisse partager lors d’une randonnée ou ramener de ses vacances pour l’offrir à ses voisins.",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/aDeguster/tresor.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
-            "imgSlider1": [],
+            "blocGauche2": "Le Trésor des Ballons, gâteau ambassadeur créé par le Parc, est un projet collectif dont la création a été confiée aux jeunes, symbole d’avenir et de renouveau. Le parc les a accompagnés dans la découverte des odeurs, couleurs, formes et produits de son territoire.<br>La recette de ce gâteau dit de voyage a été créée par les élèves du lycée professionnel JBS Chardin de Gérardmer, la recherche packaging par une stagiaire de l’IUT de Colmar, la communication par les élèves de licence pro de l’IUT de Saint-Dié-des-Vosges.<br>La conteuse Françoise PECCHIURA a été invitée à en écrire la légende. Les moules ont été conçus par l’entreprise de Buyer du Val d’Ajol.<br>Le trésor des Ballons est commercialisé depuis juillet 2016  dans 39 pâtisseries du Haut-Rhin, de Haute-Saône, du Territoire de Belfort et des Vosges. La marque appartient au Parc et une convention précise les détails de ce partenariat avec les syndicats professionnels et les artisans pâtissiers. Elle confirme l’engagement de chacun pour fabriquer une pâtisserie de qualité et favoriser l’utilisation de produits en circuits courts. Sa forme rectangulaire et le design de la communication en font un produit moderne et authentique à la fois.<br>Ce financier à la myrtille sauvage, la brimbelle, fond de pâte au pain d’épices et confiture de myrtilles. La pâtisserie moelleuse se conserve 15 jours sans besoin de fraîcheur particulière. De quoi alimenter facilement une randonnée ou constituer un présent idéal au retour d’un séjour sur les hauteurs vosgiennes.",
+            "imgSlider1": [
+                "datas/imgs/perenne/aDeguster/tresor11.jpg",
+                "datas/imgs/perenne/aDeguster/tresor22.jpg",
+                "datas/imgs/perenne/aDeguster/tresor33.jpg",
+                "datas/imgs/perenne/aDeguster/tresor44.jpg"
+            ],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
-            "blocDroit2": ""
+            "imgSlider2": [
+                    "datas/imgs/perenne/aDeguster/tresor1.jpg",
+                    "datas/imgs/perenne/aDeguster/tresor2.jpg",
+                    "datas/imgs/perenne/aDeguster/tresor3.jpg",
+                    "datas/imgs/perenne/aDeguster/tresor4.jpg"
+               ],
+            "blocDroit2": "<h2>Partenaires</h2>Le Parc a accompagné la naissance du gâteau avec le lycée JBS Chardin et l’IUT de Saint-Dié-des-Vosges. Il a animé la recherche de pâtissiers partenaires et la rédaction de la convention en concertation avec les fédérations de patissiers.  Un comité de suivi assurera le respect de la convention et accompagnera la mise en marché du gâteau. "
         }
     },
     "actiNature": {
         "quietude attitude": {
-            "titre": "quietide attitude",
-            "imgTop": "",
-            "soustitre": "",
+            "titre": "Programme quiétude attitude",
+            "imgTop": "datas/imgs/perenne/actiNature/attitude.jpg",
+            "soustitre": "Le programme Quiétude Attitude a pour objet de faire connaître au public l’existence de zones de quiétude pour la faune sauvage et de présenter les bons réflexes à adopter dans le milieu naturel pour préserver la tranquillité des espèces les plus fragiles.",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/actiNature/attitude.jpg",
             "desImgGauche": "",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
-            "blocDroit1": "",
-            "imgSlider2": [],
+            "blocDroit1": "Certaines espèces animales sont particulièrement sensibles aux dérangements, notamment durant la période hivernale où la nourriture se fait plus rare, mais également au printemps et au début de l’été, pendant la saison de reproduction et d’élevage des jeunes.<br>En 2010, le Parc naturel régional des Ballons des Vosges a organisé une concertation avec les élus, les gestionnaires et les acteurs du territoire pour identifier des zones de quiétude visant à préserver la tranquillité des espèces les plus vulnérables.<br>Le programme Quiétude Attitude a vu le jour en 2015, à l’initiative du Parc. Il consiste à communiquer à un large public la localisation de ces zones de quiétude et à promouvoir quelques bons réflexes à adopter dans la nature pour préserver le calme dont a besoin la faune pour survivre. Des outils de communication sont développés à l’attention des professionnels du tourisme et des loisirs (stations de ski, loueurs de matériel, hébergeurs, restaurateurs, accompagnateurs en montagne, associations sportives, etc.) dans le but que les messages de sensibilisation soient relayés auprès du grand public.",
+            "imgSlider2": [
+                "datas/imgs/perenne/actiNature/attitude1.jpg",
+                "datas/imgs/perenne/actiNature/attitude2.jpg",
+                "datas/imgs/perenne/actiNature/attitude3.jpg",
+                "datas/imgs/perenne/actiNature/attitude4.jpg"
+            ],
             "blocDroit2": ""
         },
         "balades": {
             "randonnees pedestres": {
                 "titre": "randonnees pedestres",
-                "imgTop": "",
-                "soustitre": "",
+                "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
+                "soustitre": "La diversité des paysages du Parc permet la pratique de nombreuses activités de pleine nature. Il accompagne plus particulièrement la pratique de ces activités respectueuses du territoire.",
                 "blocGauche1": "",
-                "imgGauche": "",
+                "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
                 "desImgGauche": "",
                 "blocGauche2": "",
                 "imgSlider1": [],
                 "blocSlider1": "",
                 "blocDroit1": "",
-                "imgSlider2": [],
+                "imgSlider2": [
+                    "datas/imgs/perenne/actiNature/vergers1.jpg",
+                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+               ],
                 "blocDroit2": ""
             },
             "route des cretes": {
                 "titre": "route des cretes",
-                "imgTop": "",
+                "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
                 "soustitre": "",
                 "blocGauche1": "",
-                "imgGauche": "",
+                "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
                 "desImgGauche": "",
                 "blocGauche2": "",
                 "imgSlider1": [],
                 "blocSlider1": "",
                 "blocDroit1": "",
-                "imgSlider2": [],
+                "imgSlider2": [
+                    "datas/imgs/perenne/actiNature/vergers1.jpg",
+                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+               ],
                 "blocDroit2": ""
             }
         },
         "activites hivernales": {
             "titre": "activites hivernales",
-            "imgTop": "",
+            "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
             "soustitre": "",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
             "desImgGauche": "",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                    "datas/imgs/perenne/actiNature/vergers1.jpg",
+                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+               ],
             "blocDroit2": ""
         },
         "aeromodelisme": {
             "titre": "aeromodelisme",
-            "imgTop": "",
+            "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
             "soustitre": "",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
             "desImgGauche": "",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                    "datas/imgs/perenne/actiNature/vergers1.jpg",
+                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+               ],
             "blocDroit2": ""
         },
         "loisirs nautiques": {
             "titre": "loisirs nautiques",
-            "imgTop": "",
+            "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
             "soustitre": "",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
             "desImgGauche": "",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                    "datas/imgs/perenne/actiNature/vergers1.jpg",
+                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+               ],
             "blocDroit2": ""
         },
         "peche": {
             "titre": "peche",
-            "imgTop": "",
+            "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
             "soustitre": "",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
             "desImgGauche": "",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                    "datas/imgs/perenne/actiNature/vergers1.jpg",
+                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+               ],
             "blocDroit2": ""
         },
         "activites equestres": {
             "titre": "equiestre",
-            "imgTop": "",
+            "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
             "soustitre": "",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
             "desImgGauche": "",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                    "datas/imgs/perenne/actiNature/vergers1.jpg",
+                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+               ],
             "blocDroit2": ""
         },
         "vtt et cyclotourisme": {
             "titre": "vtt et cyclotourisme",
-            "imgTop": "",
+            "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
             "soustitre": "",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
             "desImgGauche": "",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                    "datas/imgs/perenne/actiNature/vergers1.jpg",
+                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+               ],
             "blocDroit2": ""
         },
         "escalade": {
             "titre": "escalade",
-            "imgTop": "",
+            "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
             "soustitre": "",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
             "desImgGauche": "",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                    "datas/imgs/perenne/actiNature/vergers1.jpg",
+                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+               ],
             "blocDroit2": ""
         },
         "trail": {
             "titre": "travail",
-            "imgTop": "",
+            "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
             "soustitre": "",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
             "desImgGauche": "",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                    "datas/imgs/perenne/actiNature/vergers1.jpg",
+                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+               ],
             "blocDroit2": ""
         },
         "vol libre": {
             "titre": "vol libre",
-            "imgTop": "",
+            "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
             "soustitre": "",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
             "desImgGauche": "",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                    "datas/imgs/perenne/actiNature/vergers1.jpg",
+                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+               ],
             "blocDroit2": ""
         }
     },
     "seDeplacer": {
         "train ou bus": {
             "titre": "train ou bus",
-            "imgTop": "",
+            "imgTop": "datas/imgs/perenne/nature/vergers.jpg",
             "soustitre": "",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/nature/vergers.jpg",
             "desImgGauche": "",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                    "datas/imgs/perenne/nature/vergers1.jpg",
+                    "datas/imgs/perenne/nature/vergers2.jpg"
+               ],
             "blocDroit2": ""
         },
         "bus": {
             "titre": "bus",
-            "imgTop": "",
+            "imgTop": "datas/imgs/perenne/nature/vergers.jpg",
             "soustitre": "",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/nature/vergers.jpg",
             "desImgGauche": "",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                    "datas/imgs/perenne/nature/vergers1.jpg",
+                    "datas/imgs/perenne/nature/vergers2.jpg"
+               ],
             "blocDroit2": ""
         },
         "pied": {
             "titre": "pied",
-            "imgTop": "",
+            "imgTop": "datas/imgs/perenne/nature/vergers.jpg",
             "soustitre": "",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/nature/vergers.jpg",
             "desImgGauche": "",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                    "datas/imgs/perenne/nature/vergers1.jpg",
+                    "datas/imgs/perenne/nature/vergers2.jpg"
+               ],
             "blocDroit2": ""
         },
         "velo": {
             "titre": "velo",
-            "imgTop": "",
+            "imgTop": "datas/imgs/perenne/nature/vergers.jpg",
             "soustitre": "",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/nature/vergers.jpg",
             "desImgGauche": "",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                    "datas/imgs/perenne/nature/vergers1.jpg",
+                    "datas/imgs/perenne/nature/vergers2.jpg"
+               ],
             "blocDroit2": ""
         },
         "voiture": {
             "titre": "voiture",
-            "imgTop": "",
+            "imgTop": "datas/imgs/perenne/nature/vergers.jpg",
             "soustitre": "",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/nature/vergers.jpg",
             "desImgGauche": "",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                    "datas/imgs/perenne/nature/vergers1.jpg",
+                    "datas/imgs/perenne/nature/vergers2.jpg"
+               ],
             "blocDroit2": ""
         }
     }
