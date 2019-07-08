@@ -527,276 +527,275 @@
         "balades": {
             "randonnees pedestres": {
                 "titre": "randonnees pedestres",
-                "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
+                "imgTop": "datas/imgs/perenne/actiNature/pedestre.jpg",
                 "soustitre": "La diversité des paysages du Parc permet la pratique de nombreuses activités de pleine nature. Il accompagne plus particulièrement la pratique de ces activités respectueuses du territoire.",
-                "blocGauche1": "",
-                "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
+                "blocGauche1": "Parcours en balcon depuis les sommets, vallées verdoyantes ou terrasses dorées du vignoble à l’automne, le territoire compte, à travers une multiplicité de terroirs, de milieux et de paysages, plus de 7000 km de sentiers balisés par le Club Vosgien qui éditent également différentes cartes sur le massif et six sentiers de Grande Randonnée qui vous feront découvrir paysages, forêts, châteaux et villages pittoresques au rythme de vos pas…<br><br>Les sections des Clubs Alpin Français proposent et accompagnent également de nombreuses activités de sport en milieu montagnard.<br>De nombreux circuits de randonnées sont également proposés par les Offices de tourisme locaux qui disposent de la documentation nécessaire: topo-guides, descriptifs de sentiers, cartes…",
+                "imgGauche": "datas/imgs/perenne/actiNature/pedestre.jpg",
                 "desImgGauche": "",
-                "blocGauche2": "",
+                "blocGauche2": "<h2>Les itinéraires Club Vosgien</h2>Sillonant l’ensemble du massif vosgien, les itinéraires balisés par le Club Vosgien sont reconnus internationalement et constituent un véritable réseau permettant aux randonneurs des balades de quelques heures jusqu’à l’itinérance sur plusieurs jours. Le balisage, réalisé par des bénévoles des associations locales, figure sur les cartes IGN TOP25. Avec plus de 7000 km de sentiers sur le territoire du Parc, les randonneurs pourront accéder aux nombreux points d’intérêts et à une grande diversité de paysages tout en restant sur les itinéraires balisés !<h2>Les chemins de Grande Randonnée</h2>Praticables de mars à novembre, sauf en cas d’enneigement tardif sur les parties sommitales, les GR des Ballons des Vosges ne présentent pas de difficulté particulière. Il est nécessaire de prévoir de bonnes chaussures de marche et un équipement pour la pluie et le vent, surtout en zone de crête. Des topoguides, édités par la Fédération Française de randonnée pédestre, guideront les randonneurs sur les itinéraires de grande randonnée (GR). Les randonneurs les plus aguerris pourront organiser eux-mêmes leurs parcours, sur un ou plusieurs jours, à l’aide des cartes TOP 25, qui signalent les hébergements possibles. ",
                 "imgSlider1": [],
                 "blocSlider1": "",
                 "blocDroit1": "",
                 "imgSlider2": [
-                    "datas/imgs/perenne/actiNature/vergers1.jpg",
-                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+                    "datas/imgs/perenne/actiNature/pedestre1.jpg",
+                    "datas/imgs/perenne/actiNature/pedestre2.jpg",
+                    "datas/imgs/perenne/actiNature/pedestre3.jpg",
+                    "datas/imgs/perenne/actiNature/pedestre4.jpg"
                ],
-                "blocDroit2": ""
+                "blocDroit2": "<h2>La randonnée d’étape en étape</h2>En famille, en couple ou entre amis, pratiquez la randonnée sur plusieurs jours en toute liberté et partagez des moments inoubliables à la découverte des sentiers des Hautes Vosges et faites une halte dans l’un des 9 hébergements le temps d’une nuit ou d’un repas lors de votre randonnée itinérante.<h2>La randonnée accompagnée</h2>De nombreux professionnels proposent aux randonneurs des sorties à la demi-journée, la journée ou sur plusieurs jours. Formés aux milieux montagnards, ils permettent une découverte du territoire en toute sécurité et peuvent apporter un contenu thématique aux randonnées.<br><br>Plusieurs d’entre eux se sont engagés dans une pratique respectueuse de la nature et sont ainsi marqués « Valeurs Parc naturel régional » "
             },
             "route des cretes": {
-                "titre": "route des cretes",
-                "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
-                "soustitre": "",
-                "blocGauche1": "",
-                "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
+                "titre": "Balades paysagères le long de la route des crêtes",
+                "imgTop": "datas/imgs/perenne/actiNature/crete.jpg",
+                "soustitre": "Partez à la découverte des paysages et des patrimoines de la Grande Crête des Vosges au départ des murets installés sur 17 sites. Des balades accompagnées et gratuites sont à nouveau proposées durant l’été 2019. D'une durée de 2 heures, pour tout public mais avec de bonnes chaussures de marche et des vêtements de pluie !",
+                "blocGauche1": "<h2>Bienvenue sur la route des crêtes</h2>À vélo, à pied, en voiture, en ski, en raquettes… la grande crête est l’affaire de chacun. Mais la façon de la découvrir doit être la même pour tous : avec respect. Une démarche indispensable pour ces milieux, aussi recherchés qu’accessibles. Pour que la fréquentation d’un public, parfois nombreux, ne dégrade pas ce patrimoine commun, pour que cette nature exceptionnelle continue de nous faire rêver encore longtemps, quelques règles de bon sens sont recommandées. Bonne découverte !",
+                "imgGauche": "datas/imgs/perenne/actiNature/crete.jpg",
                 "desImgGauche": "",
-                "blocGauche2": "",
+                "blocGauche2": "Attention, vous entrez sur un espace naturel qui peut présenter des dangers divers : proximité de falaises, chute de branches, etc… Veuillez prendre vos précautions en veillant à être équipés de manière adaptée et à avoir de l’eau avec vous, assurez-vous de la météo avant de partir en randonnée et restez sur les sentiers balisés pour éviter l’érosion et ne pas déranger la faune.<br><br>Tenez votre chien en laisse afin de ne pas déranger la faune<br>Respectez la réglementation spécifique des espaces protégés<br>Refermez les clôtures après votre passage pour que le bétail ne se sauve pas<br>Remportez vos déchets, un sac plastique met 400 ans à disparaître !<br>Evitez la cueillette des fleurs sauvages qui peuvent être rares et protégées",
                 "imgSlider1": [],
                 "blocSlider1": "",
-                "blocDroit1": "",
-                "imgSlider2": [
-                    "datas/imgs/perenne/actiNature/vergers1.jpg",
-                    "datas/imgs/perenne/actiNature/vergers2.jpg"
-               ],
+                "blocDroit1": "??????????????????",
+                "imgSlider2": [],
                 "blocDroit2": ""
             }
         },
         "activites hivernales": {
-            "titre": "activites hivernales",
-            "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
-            "soustitre": "",
-            "blocGauche1": "",
-            "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
+            "titre": "Activités hivernales",
+            "imgTop": "datas/imgs/perenne/actiNature/hiver.jpg",
+            "soustitre": "La diversité des paysages du Parc permet la pratique de nombreuses activités de pleine nature. Il accompagne plus particulièrement la pratique de ces activités respectueuses du territoire.",
+            "blocGauche1": "Le Parc naturel régional des Ballons des Vosges compte une vingtaine de stations de sports d’hiver équipées de remontées mécaniques et plus de 500 pistes balisées pour le ski de fond. Tous les plaisirs de la neige ont trouvé leur place dans la montagne vosgienne : ski alpin, ski nordique, surf, luge, raquettes, ou encore ski de randonnée… ",
+            "imgGauche": "datas/imgs/perenne/actiNature/hiverr.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
-            "imgSlider1": [],
+            "blocGauche2": "<h3>Une sortie en hiver, ça se prépare</h3>La montagne n’est pas sans danger. Rappelez vous qu’à l’exception des itinéraires nordiques balisés (raquettes et ski de fond), , les autres balisages prévus pour les activités estivales ne sont pas gages de sécurités pour vos balades.<br>Faites appel aux professionnels de la nature, ils vous accompagneront sur des itinéraires classiques et loin des sanctuaires de la grande faune sauvage des forêts vosgiennes. Ils vous apprendront à lire la trace des animaux en toute sécurité et à condition d’être silencieux. Le respect des balisages par les utilisateurs évite le stress, la fuite et l’abandon des territoires favorables pour la faune. Surtout gardez bien votre chien en laisse.<br>Il est souvent difficile de suivre un balisage en hiver en raison du brouillard. Attention aux surprises de la neige (trous, rochers) et aux risques de verglas en secteurs pentus . Restez sur les chemins, les sentiers sont difficiles à repérer.<br>Discipline en fort essor, le ski de randonnée peut être pratiqué sur un site dédié : l’Espace ski de rando du massif du Gaschney. Suivez le balisage ! <br>Afin de faciliter les accès aux stations, plusieurs navettes au départ de certaines vallées ont été mises en place. <br>N’hésitez pas à les emprunter ! ",
+            "imgSlider1": [
+                "datas/imgs/perenne/actiNature/hiver11.jpg",
+                "datas/imgs/perenne/actiNature/hiver22.jpg",
+                "datas/imgs/perenne/actiNature/hiver33.jpg",
+                "datas/imgs/perenne/actiNature/hiver44.jpg"
+            ],
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/actiNature/vergers1.jpg",
-                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+                    "datas/imgs/perenne/actiNature/hiver1.jpg",
+                    "datas/imgs/perenne/actiNature/hiver2.jpg",
+                    "datas/imgs/perenne/actiNature/hiver3.jpg",
+                    "datas/imgs/perenne/actiNature/hiver4.jpg"
                ],
-            "blocDroit2": ""
+            "blocDroit2": "<h3>Horloge des neiges</h3>En période hivernale, l’enneigement est signalé dans les quotidiens régionaux : L’Alsace, Le Pays de Franche-Comté, l’Est Républicain, La Liberté de l’Est et les Dernières Nouvelles d’Alsace. Vous pouvez également contacter l’horloge des neiges au 03 89 41 34 76 ou directement les stations et les Offices de tourisme."
         },
         "aeromodelisme": {
-            "titre": "aeromodelisme",
-            "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
-            "soustitre": "",
+            "titre": "Aéromodélisme",
+            "imgTop": "datas/imgs/perenne/actiNature/aero.jpg",
+            "soustitre": "La diversité des paysages du Parc permet la pratique de nombreuses activités de pleine nature. Il accompagne plus particulièrement la pratique de ces activités respectueuses du territoire.",
             "blocGauche1": "",
-            "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
+            "imgGauche": "datas/imgs/perenne/actiNature/aero.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
+            "blocGauche2": "L’aéromodélisme regroupe toutes les disciplines qui ont pour but de faire voler un aéromodèle, véritable machine volante en réduction. <br><br>Cet aéromodèle pourra prendre la forme d’un avion, d’un planeur, d’un hélicoptère, d’une montgolfière, pour les types de machines les plus courantes… Mais il pourra aussi être le fruit de l’imagination… ou être la réplique d’un engin volant existant ou ayant existé. On parle dans ce cas de maquette volante.<br><br>Aéromodélisme sur le Petit Ballon<br>Le Petit Ballon est un site majeur pour la pratique de l’aéromodélisme. De manière à organiser et sécuriser la pratique, une convention a été signée en 2007 entre le comité régional d’aéromodélisme, les communes du Petit Ballon, les propriétaires privés et le Parc. Cette démarche constitue une des actions identifiées par les acteurs locaux dans le cadre de Natura 2000. Les aéromodélistes s’engagent ainsi à limiter le nombre d’engins en vol, à proscrire l’utilisation de moteurs thermiques, respecter les prés de fauche à proximité etc.",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/actiNature/vergers1.jpg",
-                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+                    "datas/imgs/perenne/actiNature/aero1.jpg",
+                    "datas/imgs/perenne/actiNature/aero2.jpg",
+                    "datas/imgs/perenne/actiNature/aero3.jpg",
+                    "datas/imgs/perenne/actiNature/aero4.jpg"
                ],
             "blocDroit2": ""
         },
         "loisirs nautiques": {
-            "titre": "loisirs nautiques",
-            "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
-            "soustitre": "",
-            "blocGauche1": "",
-            "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
+            "titre": "Loisirs nautiques",
+            "imgTop": "datas/imgs/perenne/actiNature/nautique.jpg",
+            "soustitre": "La diversité des paysages du Parc permet la pratique de nombreuses activités de pleine nature. Il accompagne plus particulièrement la pratique de ces activités respectueuses du territoire.",
+            "blocGauche1": "Le massif vosgien recèle une diversité de cirques glaciaires renfermant de nombreux lacs et plans d’eau. Lacs, étangs, rivières, cascades… l’eau est omni présente sur le territoire du Parc et offre une large palette d’activités : baignade, voile, aviron, plongée, planche à voile, canoë cayak… qui réjouiront petits et grands.",
+            "imgGauche": "datas/imgs/perenne/actiNature/nautique.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
+            "blocGauche2": "<h3>Les plans d'eau</h3>Les lacs sont majoritairement artificiels à l’exception de ceux de Gérardmer, Longemer et Retournemer. Alors que certains lacs ont conservé leur vocation millénaire de production piscicole, d’autres ont été convertis pour les loisirs et ont été aménagés afin de permettre la pratique de la baignade et autres loisirs nautiques.<br>Attention : la pratique de la baignade ou du canotage sont très régulièrement interdits sur les lacs ou les plans d’eau<br>Renseignez-vous au préalable auprès de la commune ou de la préfecture concernée, et respectez la réglementation affichée sur place.<h3>Les activités nautiques</h3>De nombreux plans d’eau sont utilisables pour les initiations et les loisirs en canoë kayak, planche à voile, aviron, kayak…. Certains clubs offrent la possibilité de location de matériel et proposent de nombreuses animations et stages d’été.<br><br>Base nautique de Gérardmer<br>25 Faubourg de Ramberchamp – 88400 Gérardmer<br>03 29 60 95 45 <br>asg.ck@wanadoo.fr<br>www.gerardmer-canoekayak.com<br><br><br>Base de loisirs du lac de Moselotte<br>Route des Amias – 88290 Saulxures-sur-Moselotte<br>03 29 24 56 56 <br>contact@lac-moselotte.fr<br>www.lac-moselotte.com<br><br>Base nautique du Malsaucy – Vosges du Sud à Évette-Salbert – La Base nautique vous propose de multiples formules pour venir prendre l’air au Malsaucy.<br>03 84 29 21 84<br>contact@malsaucy.org",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/actiNature/vergers1.jpg",
-                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+                    "datas/imgs/perenne/actiNature/nautique1.jpg",
+                    "datas/imgs/perenne/actiNature/nautique2.jpg",
+                    "datas/imgs/perenne/actiNature/nautique3.jpg",
+                    "datas/imgs/perenne/actiNature/nautique4.jpg"
                ],
             "blocDroit2": ""
         },
         "peche": {
-            "titre": "peche",
-            "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
-            "soustitre": "",
-            "blocGauche1": "",
-            "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
+            "titre": "Pêche",
+            "imgTop": "datas/imgs/perenne/actiNature/peche.jpg",
+            "soustitre": "La diversité des paysages du Parc permet la pratique de nombreuses activités de pleine nature. Il accompagne plus particulièrement la pratique de ces activités respectueuses du territoire.",
+            "blocGauche1": "Le massif des Vosges dispose de plus de 670 ruisseaux et rivières et plus d’une trentaines de lacs et plans d’eau. La truite fario, perche, brochet des lacs, vairons, loches, barbeau, carpe, l’ablette, la gardon, le goujon, la tanche, satisfont la passion des plus de 30 000 pêcheurs assidus que compte le massif.<br><br>Pour connaître les possibilités et conditions de pêche (pêche privée, générale, vente de cartes de pêche, etc…), il y a lieu de s’adresser aux Fédérations Départementales des Associations de Pêche et de Pisciculture.",
+            "imgGauche": "datas/imgs/perenne/actiNature/peche.jpg",
             "desImgGauche": "",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/actiNature/vergers1.jpg",
-                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+                    "datas/imgs/perenne/actiNature/peche1.jpg",
+                    "datas/imgs/perenne/actiNature/peche2.jpg",
+                    "datas/imgs/perenne/actiNature/peche3.jpg",
+                    "datas/imgs/perenne/actiNature/peche4.jpg"
                ],
-            "blocDroit2": ""
+            "blocDroit2": "<h3>Et pour vos séjours pêche</h3>L’Office des Centres de Vacances et de Loisirs (ODCVL) organise également pour les enfants des séjours vacances et des classes d’environnement sur les thèmes respectifs de la pêche et de l’eau dans les Vosges.<h3>Les moniteurs guide de pêche des Vosges</h3>Professionnels diplômés, les guides de la Compagnie Vosges Nature & Pêche vous font partager leur passion de la pêche en proposant des séjours en demi-journées, journées en individuels ou en petit groupe de 2 à 3 pêcheurs."
         },
         "activites equestres": {
-            "titre": "equiestre",
-            "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
-            "soustitre": "",
+            "titre": "Activités équestres",
+            "imgTop": "datas/imgs/perenne/actiNature/equestre.jpg",
+            "soustitre": "La diversité des paysages du Parc permet la pratique de nombreuses activités de pleine nature. Il accompagne plus particulièrement la pratique de ces activités respectueuses du territoire.",
             "blocGauche1": "",
-            "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
+            "imgGauche": "datas/imgs/perenne/actiNature/equestre.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
+            "blocGauche2": "Cavaliers débutants ou pratiquants chevronnés trouveront une large palette de services sur les différents versants du Parc : centres et gîtes équestres, itinéraires balisés, séjours, forfaits complets…<br><br>Le cheval dans les Vosges permet de découvrir dans un cadre idyllique une montagne aux multiples paysages, tout en profitant des prestations d’accompagnement, de restauration et d’hébergement offertes par les différents centres d’équitation des Vosges. Plusieurs centaines de kilomètres d’itinéraires balisés sillonnent la montagne vosgienne, notamment en suivant la partie orientale de la Transvosgienne, sur le territoire du Parc naturel régional des Ballons des Vosges. Locations de chevaux ou de poneys, randonnée avec ânes sont autant de possibilités qui s’offrent aux débutants comme aux confirmés.",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/actiNature/vergers1.jpg",
-                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+                    "datas/imgs/perenne/actiNature/equestre1.jpg",
+                    "datas/imgs/perenne/actiNature/equestre2.jpg",
+                    "datas/imgs/perenne/actiNature/equestre3.jpg"
                ],
             "blocDroit2": ""
         },
         "vtt et cyclotourisme": {
-            "titre": "vtt et cyclotourisme",
-            "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
-            "soustitre": "",
+            "titre": "VTT et cyclotourisme",
+            "imgTop": "datas/imgs/perenne/actiNature/vtt.jpg",
+            "soustitre": "La diversité des paysages du Parc permet la pratique de nombreuses activités de pleine nature. Il accompagne plus particulièrement la pratique de ces activités respectueuses du territoire.",
             "blocGauche1": "",
-            "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
+            "imgGauche": "datas/imgs/perenne/actiNature/vtt.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
-            "imgSlider1": [],
+            "blocGauche2": "<h3>Le Cyclotourisme à l’honneur</h3>Mais on pourra préférer s’adonner en toute liberté au cyclotourisme sur les routes du Parc. De nombreux itinéraires empruntant des pistes cyclables garantissent votre sécurité et facilitent le cyclotourisme et la randonnée en VTC-Cyclo. <br>De nombreuses montées de col emblématiques, empruntées lors des classiques évènements cyclosportifs, bénéficient d’un balisage spécifique.<br><br>Pour tracer vos itinéraires, outre les comités départementaux de cyclotourisme (Haut-Rhin,Vosges, Haute-Saône) renseignez-vous auprès des comités départementaux du tourisme et des offices de tourisme.",
+            "imgSlider1": [
+                "datas/imgs/perenne/actiNature/vtt11.jpg"
+            ],
             "blocSlider1": "",
-            "blocDroit1": "",
+            "blocDroit1": "<h3>Le VTT en toute liberté !</h3>Le vélo tout terrain, a pris un essor considérable avec la création de près de 100 circuits balisés et propose tous les niveaux de difficulté, adaptée à la randonnée en VTT, en famille.<br>Le balisage VTT effectué avec le symbole préconisé par la Fédération Française de cyclisme est imprimé en brun, et indique qu’il s’agit d’un Parc naturel régional.<br>Ces parcours sont accessibles en VTT à assistance électrique.Les adeptes du VTT de descente peuvent également s’exercer sur les pistes dédiées des 2 bike-parks sur le Parc, sur les domaines skiables du Lac Blanc (68) et de la Bresse-Hohneck (88).",
             "imgSlider2": [
-                    "datas/imgs/perenne/actiNature/vergers1.jpg",
-                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+                    "datas/imgs/perenne/actiNature/vtt1.jpg",
+                    "datas/imgs/perenne/actiNature/vtt2.jpg",
+                    "datas/imgs/perenne/actiNature/vtt3.jpg",
+                    "datas/imgs/perenne/actiNature/vtt4.jpg"
                ],
-            "blocDroit2": ""
+            "blocDroit2": "<h2>Ecole de VTT des Hautes Vosges</h2>VTT à assistance électrique<br>Profitez du sport en famille !  L’activité comprend l’encadrement, le VTT et le casque. Balade découverte de 1h, 1h30, 2h, 2h30 ou journée.<br><br>Contact : <br>Ecole VTT des Hautes Vosges – station de ski de la Mauselaine<br>239, chemin de la Rayée – 88400 Gérardmer<br>06 33 84 01 90<br>www.ecolevtthautesvosges.com"
         },
         "escalade": {
-            "titre": "escalade",
-            "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
-            "soustitre": "",
+            "titre": "Escalade",
+            "imgTop": "datas/imgs/perenne/actiNature/escalade.jpg",
+            "soustitre": "La diversité des paysages du Parc permet la pratique de nombreuses activités de pleine nature. Il accompagne plus particulièrement la pratique de ces activités respectueuses du territoire.",
             "blocGauche1": "",
-            "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
-            "desImgGauche": "",
-            "blocGauche2": "",
+            "imgGauche": "datas/imgs/perenne/actiNature/escaladee.jpg",
+            "desImgGauche": "La carte des sites naturels d'escalade",
+            "blocGauche2": "<h2>Code de bonne conduite</h2>Merci de respecter la charte de bonne conduite du Parc, élaborée avec nos partenaires de l’escalade sur le massif (le CAF, la FFME, l’ONF et la LPO) :<br><br>CODE DE BONNE CONDUITE POUR LA PRATIQUE DE L’ESCALADE SUR LE TERRITOIRE DU PARC NATUREL REGIONAL DES BALLONS DES VOSGES<br><br>S’informer au préalable sur la réglementation en vigueur sur les parois rocheuses et la respecter le cas échéant (voir la liste des parois concernées par une réglementation),<br>S’informer sur les conditions d’accès aux sites (voies ouvertes / fermées à la circulation motorisée, etc.),<br>Respecter la faune et la flore,<br>Ramasser ses déchets, les mégots de cigarettes,<br>Limiter au mieux les nuisances, en particulier les nuisances sonores,<br>Respecter les autres pratiquants ainsi que les autres usagers de la montagne (randonneurs, éleveurs, forestiers, chasseurs, etc.),<br>Les propriétaires de chiens doivent garder leurs animaux sous contrôle pour ne pas gêner les autres usagers ou la faune sauvage, notamment chamois,<br>Ne pas faire de feu, se conformer aux réglementations en vigueur (pas de feu à moins de 200 mètres des lisières forestières : code forestier + arrêté préfectoral, feux interdits dans certains sites protégés),<br>Stationner son véhicule aux emplacements prévus à cet effet, privilégier l’accès par les transports en commun ou par covoiturage.<br>Avertir les organismes intervenant dans la protection de la nature lorsque des espèces remarquables sont observées<br>LPO Alsace : 03 88 22 07 35 – BUFO : 03 88 22 11 76 – Maison du Parc : 03 89 77 90 20",
             "imgSlider1": [],
             "blocSlider1": "",
-            "blocDroit1": "",
+            "blocDroit1": "Dans le massif vosgien de nombreuses falaises, roches et blocs s’offrent à la pratique de l’escalade. Grés ou granite, la plupart des sites sont spécialement équipés pour accueillir tous les amateurs, du débutant fasciné au grimpeur chevronné. <br><br>Le Parc des Ballons des Vosges et les sites natura 2000 qu’il anime dans les secteurs de Rambervillers ou des vallées de la Plaine et du Rabodeau (88) hébergent plus de 250 parois rocheuses (inventaire réalisé par le Parc dans le cadre de deux stages en 2012 et 2013). Sur ces 250 parois, une trentaine de sites naturels sont conventionnés et équipés pour la pratique de l’escalade. A ces sites se rajoutent également 4 terrains d’aventure, une Via Ferrata à Bussang dans les Vosges ainsi que plusieurs murs d’escalade en salle (Munster, Bistchwiller, Cernay, La Bresse, Gérardmer etc).<br><br>Afin de permettre la nidification de certaines espèces rupestres, il est possible que des sites ou voies soient temporairement fermés. Afin de vous assurer de la possibilité de grimper sur un site, n’hésitez pas à contacter l’antenne LPO locale ou le Parc des Ballons.",
             "imgSlider2": [
-                    "datas/imgs/perenne/actiNature/vergers1.jpg",
-                    "datas/imgs/perenne/actiNature/vergers2.jpg"
-               ],
-            "blocDroit2": ""
+                "datas/imgs/perenne/actiNature/escalade1.jpg",
+                "datas/imgs/perenne/actiNature/escalade2.jpg"
+            ],
+            "blocDroit2": "<h2>Recommandations lors de vos escapades…</h2>Sécurité : l’escalade est un sport à risque et nécessite une bonne connaissance des matériels. Informez-vous auprès des structures compétentes (voir ci-dessous). Des professionnels du CAF, de la FFME, des Accompagnateurs en montagne diplômés et guides de haute montagne peuvent vous proposer des prestations adaptées à vos attentes : renseignez vous auprès d’eux. Attention, certains rochers dangereux sont interdits ou fermés pour des raisons de sécurité (notamment carrière du Galgenwag & rocher du Schimberg à Buhl (68), Roche Busenière au Val d’Ajol (88).<br>Environnement : les parois rocheuses constituent des milieux de vies spécifiques pour de nombreuses espèces végétales et animales : chamois, rapaces, Grand Corbeau, mais également des plantes spécialisées comme certains lycopodes et orpins. Ainsi sur les 250 parois inventoriées en 2012 – 2013, 50 sont actuellement occupées par des oiseaux rupestres (20 à 30 couples de Faucon pèlerin et une dizaine de Grand-duc d’Europe) et 50 autres sont réputés favorables pour leur nidification, ce sans compter les parois abritant également des Faucons crecerelles, des Grands Corbeaux etc. Aussi afin de limiter leur dérangement, il est préconisé de privilégier l’escalade de janvier à fin juillet uniquement sur les sites conventionnés officiels.<br><br>Durant leur période de nidification, noter que quelques sites d’escalade conventionnés, fréquentés par ces espèces, sont temporairement fermés  : rochers à Rimbach près Masevaux, Voetlingshoeffen, etc.<br>Noter également qu’en dehors des sites conventionnés existants, la pratique est interdite dans les espaces protégés (réserves naturelles etc), sous peine de contravention.<br><br>En cas de nidification sur de nouveaux sites, les pratiquants peuvent être informés via la FFME et le CAF afin de respecter les périodes de quiétude indispensables à la réussite des couvées. Localement, les partenaires sportifs et associatifs trouvent les arrangements nécessaires pour une bonne et intelligente cohabitation ! Les partenaires vont d’ailleurs signer en 2016, dans le cadre de natura 2000, une convention de gestion durable des parois rocheuses dans le Parc naturel régional des Ballons des Vosges (charte « escalade »)."
         },
         "trail": {
             "titre": "travail",
-            "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
-            "soustitre": "",
-            "blocGauche1": "",
-            "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
+            "imgTop": "datas/imgs/perenne/actiNature/trail.jpg",
+            "soustitre": "La diversité des paysages du Parc permet la pratique de nombreuses activités de pleine nature. Il accompagne plus particulièrement la pratique de ces activités respectueuses du territoire.",
+            "blocGauche1": "Le trail ou la course nature est un sport de course à pied, sur longue distance, en milieu naturel, généralement sur des chemins de terre et des sentiers de randonnée en plaine, en forêt ou en montagne. De nombreuses manifestations organisées sur le territoire permettent aux pratiquants locaux ou de passage de découvrir des parcours adaptés à la pratique",
+            "imgGauche": "datas/imgs/perenne/actiNature/trail.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
+            "blocGauche2": "<h3>Le trail de montagne</h3>La montagne, et surtout la moyenne montagne, sont les terrains de prédilection des pratiquants. Le terrain de montagne implique d’importants dénivelés cumulés pour l’ensemble d’une course. Mais le relief montagnard implique aussi des montées et descentes continues, particulièrement exigeantes physiquement. Les sentiers pédestres sont généralement éloignés des routes et zones urbaine.<br>Des accompagnateurs en montagne proposent par ailleurs des sorties d’initiation au trail. <h3>La station de trail de Gérardmer & Vallée de Munster</h3>Pour tous les passionnés de trail, débutants ou confirmés, à la recherche des meilleurs parcours, la station de trail de Gérardmer & vallée de Munster vous accueille pour une journée, un week-end, ou une semaine. La station se compose d’une douzaine de parcours rando-trail de tous niveaux, des ateliers au « stade de trail », avec un kilomètre vertical, un balisage homogène selon la charte « station de trail » et un espace d’accueil et de présentation.",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/actiNature/vergers1.jpg",
-                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+                    "datas/imgs/perenne/actiNature/trail1.jpg",
+                    "datas/imgs/perenne/actiNature/trail2.jpg",
+                    "datas/imgs/perenne/actiNature/trail3.jpg",
+                    "datas/imgs/perenne/actiNature/trail4.jpg"
                ],
-            "blocDroit2": ""
+            "blocDroit2": "<h3>Pratiquez en toute quiétude !</h3><br>Afin de participer à la préservation de la faune sauvage et à sa quiétude, le Parc a développé un programme à destination des pratiquants de sports de nature afin de communiquer sur les bonnes pratiques à adopter, notamment lors d’une sortie trail :<br><br>Je prends connaissance des zones de quiétude et de la réglementation,<br>Je reste sur les itinéraires balisés dans les zones de quiétude,<br>Je respecte le silence de la nature,<br>Je tiens mon chien en laisse,<br>Je privilégie les activités en journée,"
         },
         "vol libre": {
-            "titre": "vol libre",
-            "imgTop": "datas/imgs/perenne/actiNature/vergers.jpg",
-            "soustitre": "",
+            "titre": "Vol libre",
+            "imgTop": "datas/imgs/perenne/actiNature/vol.jpg",
+            "soustitre": "La diversité des paysages du Parc permet la pratique de nombreuses activités de pleine nature. Il accompagne plus particulièrement la pratique de ces activités respectueuses du territoire.",
             "blocGauche1": "",
-            "imgGauche": "datas/imgs/perenne/actiNature/vergers.jpg",
+            "imgGauche": "datas/imgs/perenne/actiNature/vol.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
+            "blocGauche2": "Vol calme ou vol de distance, entre copains ou en compétition, en parapente ou aile delta, en libre ou en tracté, la palette des vols est inépuisable. <br><br>Depuis les airs, il y a plusieurs manières d’admirer les Ballons des Vosges. Les plus sportifs apprécieront la maîtrise du deltaplane ou du parapente. D’autres préféreront peut-être le charme tranquille d’une montgolfière qui les mènera au gré des vents.<br><br>Afin de préparer son vol, connaître les réglementations aériennes, les sites de pratique, les stages d’initiation, les journées découverte ou qualifications contactez les ligues régionales du Grand Est ou  de Bourgogne-Franche-Comté ou consultez le site web du programme Quiétude attitude",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/actiNature/vergers1.jpg",
-                    "datas/imgs/perenne/actiNature/vergers2.jpg"
+                    "datas/imgs/perenne/actiNature/vol1.jpg",
+                    "datas/imgs/perenne/actiNature/vol2.jpg",
+                    "datas/imgs/perenne/actiNature/vol3.jpg",
+                    "datas/imgs/perenne/actiNature/vol4.jpg"
                ],
             "blocDroit2": ""
         }
     },
     "seDeplacer": {
         "train ou bus": {
-            "titre": "train ou bus",
-            "imgTop": "datas/imgs/perenne/nature/vergers.jpg",
-            "soustitre": "",
-            "blocGauche1": "",
-            "imgGauche": "datas/imgs/perenne/nature/vergers.jpg",
+            "titre": "En train ou en bus",
+            "imgTop": "datas/imgs/perenne/seDeplacer/train.jpg",
+            "soustitre": "Train, bus, navettes, pistes cyclables et voies vertes pour oublier la voiture….<br>\"Poumon vert\" de l'est de la France, le Parc naturel régional des Ballons des Vosges est un vaste territoire de 2700 km2 qui compte à ses portes plusieurs grandes villes. Elles sont autant de points de départ pour une découverte vraiment…verte.",
+            "blocGauche1": "<h3>La navette des crêtes</h3>Le Parc a créé la navette des crêtes pour vous permettre de découvrir facilement les sites remarquables le long de la route des crêtes. Choisir ce mode de déplacement, c’est préserver l’environnement. La navette des crêtes associe le transport en commun et la découverte des patrimoines des Vosges. Les offices de tourisme proposent des balades pédestres, des circuits VTT et des animations aux départs des arrêts de la navette sur la route des crêtes recensés dans « Un passeport pour la Grande crête » qui donne également les horaires.<br><br>Oubliez la voiture et détendez-vous !… depuis les vallées, nos conducteurs vous transporteront en toute sécurité. Si vous venez de Strasbourg, de Nancy ou d’ailleurs, le TER vous acheminera jusqu’au pied des montagnes pour une journée sereine en pleine nature. <h3>Les navettes estivales</h3>Vosges du Sud<br>Ronchamp – Champagney<br><br>Pour découvrir la région des Vosges du Sud, profitez de la navette estivale !<br>Le Pass’partout, c’est une formule qui regroupe les trois sites touristiques majeurs du secteur Rahin et Chérimont en Haute-Saône. Vous pouvez ainsi découvrir la Colline Notre-Dame du Haut et sa célèbre chapelle construite par Le Corbusier, le Musée de la Mine Marcel Maulini à Ronchamp, ainsi que la Maison de la Négritude et des Droits de l’Homme à Champagney pour 11€ seulement !<h3>Les navettes des neiges</h3>Les navettes des neiges sont les solutions idéales pour vous rendre sur les pistes de ski. Reliant la Vallée de la Thur au Markstein ou de la vallée de Munster au Schnepfenried, elles sont non seulement pratique mais aussi économique et vous permet de bénéficier de nombreuses réductions sur les forfaits, les leçons de ski, la location de matériel ou encore la restauration sur place !<br><br>Station du Markstein<br>Les pistes du Markstein accessibles sans voiture et à prix réduit ! Vous n’avez pas de chaines, de pneus neige ? Vous ne souhaitez tout simplement pas conduire en montagne ? <br><br>Station du Schnepfenried<br>La navette du Schnepf‘ : de la vallée de munster au pied des pistes !",
+            "imgGauche": "datas/imgs/perenne/seDeplacer/train.jpg",
             "desImgGauche": "",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/nature/vergers1.jpg",
-                    "datas/imgs/perenne/nature/vergers2.jpg"
+                    "datas/imgs/perenne/seDeplacer/train1.jpg",
+                    "datas/imgs/perenne/seDeplacer/train2.jpg",
+                    "datas/imgs/perenne/seDeplacer/train3.jpg"
                ],
-            "blocDroit2": ""
-        },
-        "bus": {
-            "titre": "bus",
-            "imgTop": "datas/imgs/perenne/nature/vergers.jpg",
-            "soustitre": "",
-            "blocGauche1": "",
-            "imgGauche": "datas/imgs/perenne/nature/vergers.jpg",
-            "desImgGauche": "",
-            "blocGauche2": "",
-            "imgSlider1": [],
-            "blocSlider1": "",
-            "blocDroit1": "",
-            "imgSlider2": [
-                    "datas/imgs/perenne/nature/vergers1.jpg",
-                    "datas/imgs/perenne/nature/vergers2.jpg"
-               ],
-            "blocDroit2": ""
+            "blocDroit2": "<h3>Les Transports Express Régionaux (TER)</h3>Les transports régionaux de voyageurs, désignés par le terme « TER » (Transport Express Régional) sont constitués par les services ferroviaires régionaux mais aussi par les services routiers effectués en substitution des services ferroviaires.<h2>Les bus TER</h2>ligne Cernay/Masevaux/Sewen<br>ligne Sélestat/Ste Marie-aux-Mines/Saint-Dié<br>ligne Remiremont/Bussang<br>ligne Remiremont/La Bresse<br>Il existe par ailleurs de nombreuses liaisons départementales en autocar proposées par des compagnies de transport.<br>Se renseigner auprès de l’Office de tourisme du secteur visité."
         },
         "pied": {
-            "titre": "pied",
-            "imgTop": "datas/imgs/perenne/nature/vergers.jpg",
-            "soustitre": "",
+            "titre": "A pied",
+            "imgTop": "datas/imgs/perenne/seDeplacer/pied.jpg",
+            "soustitre": "Train, bus, navettes, pistes cyclables et voies vertes pour oublier la voiture….\"Poumon vert\" de l'est de la France, le Parc naturel régional des Ballons des Vosges est un vaste territoire de 2700 km2 qui compte à ses portes plusieurs grandes villes. Elles sont autant de points de départ pour une découverte vraiment…verte.",
             "blocGauche1": "",
-            "imgGauche": "datas/imgs/perenne/nature/vergers.jpg",
+            "imgGauche": "datas/imgs/perenne/seDeplacer/pied.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
+            "blocGauche2": "Idéalement, c’est à pied qu’il faut découvrir le Parc des Ballons des Vosges.<br><br>Ainsi, il existe plusieurs sentiers de grande (notamment le sentier des crêtes GR5) et de petite randonnée, et une multitude d’itinéraires thématiques et de découverte offrant un regard curieux et insolite sur le territoire. <br><br>Parcours en balcon depuis les sommets, vallées verdoyantes ou terrasses dorées du vignoble à l’automne, le territoire compte, à travers une multiplicité de terroirs, de milieux et de paysages, plus de 9000 km de sentiers balisés par le Club Vosgien qui éditent également différentes cartes sur le massif et six sentiers de Grande Randonnée qui vous feront découvrir paysages, forêts, châteaux et villages pittoresques au rythme de vos pas… <br><br>De nombreux guides sont disponibles dans les Maisons du Parc et dans les Offices de tourisme. Un guide des bonnes pratiques est également à disposition pour des escapades respectueuses de l’environnement.",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [
-                    "datas/imgs/perenne/nature/vergers1.jpg",
-                    "datas/imgs/perenne/nature/vergers2.jpg"
-               ],
+            "imgSlider2": [],
             "blocDroit2": ""
         },
         "velo": {
-            "titre": "velo",
-            "imgTop": "datas/imgs/perenne/nature/vergers.jpg",
-            "soustitre": "",
-            "blocGauche1": "",
-            "imgGauche": "datas/imgs/perenne/nature/vergers.jpg",
+            "titre": "A vélo",
+            "imgTop": "datas/imgs/perenne/seDeplacer/velo.jpg",
+            "soustitre": "Train, bus, navettes, pistes cyclables et voies vertes pour oublier la voiture….<br>\"Poumon vert\" de l'est de la France, le Parc naturel régional des Ballons des Vosges est un vaste territoire de 2700 km2 qui compte à ses portes plusieurs grandes villes. Elles sont autant de points de départ pour une découverte vraiment…verte.",
+            "blocGauche1": "Les itinéraires cyclables sont nombreux sur le territoire du Parc et sont accessibles aux familles comme aux sportifs.  En sites propres ou sur routes à faible trafic, ils permettent de parcourir les vallées, la route des vins et le plateau des mille étangs. Trois voies vertes ont été créées. Situées en Lorraine et en Alsace, elles sont consacrées aux aux cyclistes, promeneurs et pratiquants du roller.<br>À vos vélos!",
+            "imgGauche": "datas/imgs/perenne/seDeplacer/velo.jpg",
             "desImgGauche": "",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [
-                    "datas/imgs/perenne/nature/vergers1.jpg",
-                    "datas/imgs/perenne/nature/vergers2.jpg"
-               ],
-            "blocDroit2": ""
+            "imgSlider2": [],
+            "blocDroit2": "<h2>En Alsace</h2>Sainte-Marie Aux Mines –  Lièpvre (12 km)<br>Colmar – Mittlach par Munster (32 km)<br>Guebwiller – Lautenbachzell (10 km)<br>Thann – Lac de Kruth (27 km)<br>Pont d’Aspach – Oberbruck  par Masevaux (voie verte) (20 km)<br>Le long de la route de Bergheim à Thann (88 km)<h2>En Lorraine</h2>Vallée de la Moselotte : Remiremont – Cornimont (voie verte) (23 km)<br>Vallée de la Moselle : Remiremont – Bussang (voie verte) (33 km)<h2>En Franche-Comté</h2>Boucle de la petite Finlande (33km) : Faucogney, Esmoulières, Beulotte-Saint-Laurent, Servance<br>Boucle des Eaux (46km) : entre Luxeuil-les-Bains et Fougerolles<br>Boucle de la Mer (24 km) : de Faucogney à melisey<br>Boucle des Belles filles (62km) : entre Servance, Château-Lambert et Plancher-les-Mines (avec option vers La Planche des Belles Filles)."
         },
         "voiture": {
             "titre": "voiture",
-            "imgTop": "datas/imgs/perenne/nature/vergers.jpg",
+            "imgTop": "datas/imgs/perenne/seDeplacer/vergers.jpg",
             "soustitre": "",
             "blocGauche1": "",
-            "imgGauche": "datas/imgs/perenne/nature/vergers.jpg",
+            "imgGauche": "datas/imgs/perenne/seDeplacer/vergers.jpg",
             "desImgGauche": "",
             "blocGauche2": "",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/nature/vergers1.jpg",
-                    "datas/imgs/perenne/nature/vergers2.jpg"
+                    "datas/imgs/perenne/seDeplacer/vergers1.jpg",
+                    "datas/imgs/perenne/seDeplacer/vergers2.jpg"
                ],
             "blocDroit2": ""
         }
