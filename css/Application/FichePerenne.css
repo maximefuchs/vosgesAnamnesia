@@ -24,7 +24,8 @@
 
 .pagePerenne .divTop {
     position: absolute;
-    height: 600px;
+    /* height: 600px; */
+    width: 100%;
 }
 
 .pagePerenne .topImage {
@@ -93,7 +94,7 @@
 
 .pagePerenne .divBottom {
     margin-top: 150px;
-    padding: 20px;
+    padding: 40px;
 }
 
 .pagePerenne .divBottom h1, .pagePerenne .divBottom h2, .pagePerenne .divBottom h3 {

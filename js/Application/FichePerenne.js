@@ -68,6 +68,7 @@ class FichePerenne extends DivObject {
         var paraLeft = new BaliseObject(divLeft._balise, 'p', 'paraLeft_' + this._id);
         // paraLeft.html('<h2>'+loremTitre+'</h2>'+loremLong);
         paraLeft.html(json.blocGauche1);
+        paraLeft.css('margin-top', '30px');
 
         // image
         var divImage = new DivObject(divLeft._balise, 'divImage_' + this._id);
@@ -98,7 +99,7 @@ class FichePerenne extends DivObject {
         var divSliderComm = new DivObject(divRight._balise, 'divSliderComm_' + this._id);
         divSliderComm.addClass('sliderComm');
         if (json.imgSlider1.length != 0) {
-            new SliderDiaporama(divSliderComm._balise, 'slider1_' + this._id, json.imgSlider1, couleur, 400, 4, 0.5);
+            new SliderDiaporama(divSliderComm._balise, 'slider1_' + this._id, json.imgSlider1, couleur, 400, 3, 0.5);
         }
         /////////////////////
 

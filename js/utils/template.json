@@ -37,24 +37,39 @@
         "Menu": {
             "diaporama": [
                 {
-                    "id": "diapo0",
-                    "src": "datas/imgs/menu/diaporama/diapo_0.jpg",
+                    "id": "0",
+                    "src": "datas/imgs/menu/diaporama/0.jpg",
                     "color": "#90cef0"
                 },
                 {
-                    "id": "diapo1",
-                    "src": "datas/imgs/menu/diaporama/diapo_1.jpg",
+                    "id": "1",
+                    "src": "datas/imgs/menu/diaporama/1.jpg",
                     "color": "#90ceb0"
                 },
                 {
-                    "id": "diapo2",
-                    "src": "datas/imgs/menu/diaporama/diapo_2.jpg",
+                    "id": "2",
+                    "src": "datas/imgs/menu/diaporama/2.jpg",
                     "color": "#ad8548"
                 },
                 {
-                    "id": "diapo3",
-                    "src": "datas/imgs/menu/diaporama/diapo_3.jpg",
+                    "id": "3",
+                    "src": "datas/imgs/menu/diaporama/3.jpg",
                     "color": "#479944"
+                },
+                {
+                    "id": "4",
+                    "src": "datas/imgs/menu/diaporama/4.jpg",
+                    "color": "#481236"
+                },
+                {
+                    "id": "5",
+                    "src": "datas/imgs/menu/diaporama/5.jpg",
+                    "color": "#846973"
+                },
+                {
+                    "id": "6",
+                    "src": "datas/imgs/menu/diaporama/6.jpg",
+                    "color": "#235689"
                 }
             ],
             "deco": {
@@ -822,7 +837,7 @@
                                 },
                                 {
                                     "id": 3,
-                                    "titre": "Verges",
+                                    "titre": "Vergers",
                                     "lien": "vergers",
                                     "type": "perenne"
                                 },
@@ -1243,12 +1258,6 @@
                             "id": 0,
                             "titre": "En train ou en bus",
                             "lien": "train ou bus",
-                            "type": "perenne"
-                        },
-                        {
-                            "id": 1,
-                            "titre": "en bus",
-                            "lien": "bus",
                             "type": "perenne"
                         },
                         {

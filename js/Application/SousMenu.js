@@ -20,6 +20,7 @@ class SousMenu extends DivObject {
         console.log(poisJSON);
         console.log(lien);
         console.log(this._jsonPoi);
+        console.log(this._jsonPerenne);
 
         this._carte = new Carte(
             $('#Application'),
@@ -200,6 +201,7 @@ class SousMenu extends DivObject {
         }
 
         var jsonElements = json[num].sousmenu;
+        console.log(jsonElements);
 
         if (type == 'carte') {
             sMenu.updateCarteSousElements(jsonElements);
@@ -226,24 +228,36 @@ class SousMenu extends DivObject {
         }
         if (type == 'carte') {
             sMenu.oldPoiJson(sMenu);
-            sMenu.updateJson(sMenu, json[num].lien);
+            sMenu._lien.push(json[num].lien);
             sMenu.updateCarteSousElements(jsonElements);
         } else {
             sMenu.updateDivSousElements(jsonElements);
         }
     }
 
-    updateJson(sMenu, lien) {
-        var jsonPoi = sMenu._jsonPoi;
-        if (jsonPoi !== undefined)
-            sMenu._jsonPoi = jsonPoi[lien];
-        var jsonPer = sMenu._jsonPerenne;
-        if (jsonPer !== undefined)
-            sMenu._jsonPerenne = jsonPer[lien];
-        sMenu._lien.push(lien);
+    getJsonPoi(sMenu, lien) {
+        console.log(sMenu._lien);
+        console.log(lien);
+        var json = poisJSON;
+        sMenu._lien.forEach(element => {
+            if (json !== undefined)
+                json = json[element];
+        });
+        return json[lien];
+    }
+    getJsonPerenne(sMenu, lien) {
+        console.log(sMenu._lien);
+        console.log(lien);
+        var json = perennesJSON;
+        sMenu._lien.forEach(element => {
+            if (json !== undefined)
+                json = json[element];
+        });
+        return json[lien];
     }
 
     oldPoiJson(sMenu) {
+        console.log(sMenu._lien);
         sMenu._lien.pop();
         var newJsonPoi = poisJSON;
         sMenu._lien.forEach(key => {
@@ -296,7 +310,9 @@ class SousMenu extends DivObject {
                 switch (type) {
                     case 'perenne':
                         sMenu.reinitializeContent();
-                        var fp = new FichePerenne($('#Application'), 'fichePerenne', sMenu._jsonPerenne[lien], element._params.couleur);
+                        // sMenu.updateJson(sMenu, lien);
+                        // sMenu._lien.push(lien);
+                        var fp = new FichePerenne($('#Application'), 'fichePerenne', sMenu.getJsonPerenne(sMenu, lien), element._params.couleur);
                         fp.clickSignal.add(function () {
                             sMenu.clickPerenne.dispatch();
                         });
@@ -305,21 +321,24 @@ class SousMenu extends DivObject {
 
                     case 'carte':
                         sMenu.reinitializeContent();
-                        sMenu.updateJson(sMenu, lien);
+                        // sMenu.updateJson(sMenu, lien);
+                        sMenu._lien.push(lien);
                         sMenu.displaySSMenuByElement(sMenu, json, num, 'carte');
                         break;
 
                     case 'poi':
                         sMenu.reinitializeContent();
-                        sMenu.updateJson(sMenu, lien);
+                        // sMenu.updateJson(sMenu, lien);
+                        // sMenu._lien.push(lien);
 
-                        sMenu.displayPoiOnMap(sMenu._jsonPoi);
-                        sMenu.oldPoiJson(sMenu); // get back to previous state for next click
+                        sMenu.displayPoiOnMap(sMenu.getJsonPoi(sMenu, lien));
+                        // sMenu.oldPoiJson(sMenu); // get back to previous state for next click
                         break;
 
                     default:
                         if (lien !== undefined)
-                            sMenu.updateJson(sMenu, lien);
+                            // sMenu.updateJson(sMenu, lien);
+                            sMenu._lien.push(lien);
                         sMenu.displaySSMenuByElement(sMenu, json, num);
                         break;
                 }
@@ -358,7 +377,7 @@ class SousMenu extends DivObject {
                 case 'poi':
                     icone.html(iconEyeOpen);
                     div.isOpen = false;
-                    div.jsonPOIs = sMenu._jsonPoi[jsonElt.lien];
+                    div.jsonPOIs = sMenu.getJsonPoi(sMenu, jsonElt.lien);
                     allPOIs = allPOIs.concat(div.jsonPOIs);
                     div._balise.click(function () {
                         sMenu.reinitializeContent();

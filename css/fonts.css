@@ -1,29 +1,35 @@
 @font-face {
-    font-family: "DIN";
-    src: url('fonts/DINR__.TTF');
+    font-family: "OpenSans";
+    src: url('fonts/OpenSans-Regular.ttf');
 }
 
 @font-face {
-    font-family: "DIN";
-    src: url('fonts/DINBD_.TTF');
-    font-weight:bold;
+    font-family: "OpenSans";
+    src: url('fonts/OpenSans-Bold.ttf');
+    font-weight: bold;
+}
+/* 
+@font-face {
+    font-family: "OpenSans";
+    src: url('fonts/OpenSans-ExtraBold.ttf');
+    font-weight: bolder;
 }
 
 @font-face {
-    font-family: "DIN";
-    src: url('fonts/DIN-RegularItalic.ttf');
+    font-family: "OpenSans";
+    src: url('fonts/OpenSans-Italic.ttf');
     font-style: italic;
 }
 
 @font-face {
-    font-family: "TTMoons";
-    src: url('fonts/TypeType - TTMoons-Bold.otf');
-    font-weight: bold;
+    font-family: "OpenSans";
+    src: url('fonts/OpenSans-SemiBold.ttf');
+    font-weight: 900;
 }
 
 @font-face {
-    font-family: "TTMoons";
-    src: url('fonts/TypeType - TTMoons-BoldItalic.otf');
+    font-family: "OpenSans";
+    src: url('fonts/OpenSans-SemiBoldItalic.ttf');
     font-weight: bold;
     font-style: italic;
-}
+} */

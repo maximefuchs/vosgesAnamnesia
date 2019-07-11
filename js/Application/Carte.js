@@ -79,6 +79,7 @@ class Carte extends DivObject {
             constrainDuringPan: true,
             showNavigator: true,
             navigatorAutoFade: false,
+            showNavigationControl: false,
             tileSources: {
                 Image: {
                     xmlns: "http://schemas.microsoft.com/deepzoom/2009",
