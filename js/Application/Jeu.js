@@ -1,5 +1,6 @@
 class Jeu extends DivObject {
     constructor(parent, lien, couleur) {
+        $('#jeu').remove();
         super(parent, "jeu");
 
         this._lien = lien;
@@ -9,6 +10,7 @@ class Jeu extends DivObject {
                 height: '100%',
                 margin: 'auto',
                 padding: '50px',
+                'z-index': 20,
                 background: couleur
             });
 
@@ -16,7 +18,9 @@ class Jeu extends DivObject {
     }
 
     init() {
-        $('#menu').toggle();
+        $('#menu').css('display', 'none');
+        $('#elementsDeco').css('display', 'none');
+        $('#elementsMenu').css('display', 'none');
         switch (this._lien) {
             case "memory":
                 this.memory();
@@ -165,7 +169,9 @@ class Jeu extends DivObject {
 
             return: function () {
                 this.hideModal();
-                $('#menu').toggle();
+                $('#menu').css('display', 'block');
+                $('#elementsDeco').css('display', 'block');
+                $('#elementsMenu').css('display', 'block');
                 $('#jeu').remove();
             },
 
@@ -225,9 +231,11 @@ class Jeu extends DivObject {
         var correctCards = 0;
         $(init);
 
-        function retour(){
+        function retour() {
             $("#jeu").remove();
-            $('#menu').toggle();
+            $('#menu').css('display', 'none');
+            $('#elementsDeco').css('display', 'none');
+            $('#elementsMenu').css('display', 'none');
         }
 
         function init() {
@@ -308,7 +316,7 @@ class Jeu extends DivObject {
 
             if (correctCards == numberOfCards) {
                 $('#successMessage').toggle();
-                TweenLite.to($('#successMessage'), 1, {top: '50%', opacity: 1});
+                TweenLite.to($('#successMessage'), 1, { top: '50%', opacity: 1 });
             }
         }
     }

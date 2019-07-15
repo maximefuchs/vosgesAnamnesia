@@ -9,14 +9,6 @@ class FichePerenne extends DivObject {
 
         console.log(json);
 
-        var s = $('\
-        <style>\
-        .pagePerenne h1, .pagePerenne h2, .pagePerenne h3 {\
-            color : ' + couleur + ';\
-        }\
-        </style>');
-        this._balise.after(s);
-
         this._id = id;
         this._json = json;
         this._couleur = couleur;
@@ -42,8 +34,21 @@ class FichePerenne extends DivObject {
         var divTop = new DivObject(this._balise, 'divTop_' + this._id);
         divTop.addClass('divTop');
         var link = (json.imgTop == "") ? "datas/imgs/perenne/test/top.jpg" : json.imgTop;
-        var imageTop = new Img(divTop._balise, 'imageTop_' + this._id, link);
+        // var imageTop = new Img(divTop._balise, 'imageTop_' + this._id, link);
+        var imageTop = new DivObject(divTop._balise, 'imageTop_' + this._id);
         imageTop.addClass('topImage');
+        imageTop._balise.css({
+            background: 'url('+link+')',
+            'background-size': 'cover',
+            'background-position': 'center'
+        });
+
+        var s = $('<style>\
+        .pagePerenne h1, .pagePerenne h2, .pagePerenne h3 {\
+            color : ' + couleur + ';\
+        }\
+        </style>');
+        divTop._balise.after(s);
 
         var titre = new BaliseObject(divTop._balise, 'h1');
         titre.addClass('topTitre');

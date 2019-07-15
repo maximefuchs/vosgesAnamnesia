@@ -600,21 +600,25 @@
                         {
                             "id": 0,
                             "titre": "Faune du parc",
+                            "type": "jeu",
                             "lien": "faune"
                         },
                         {
                             "id": 1,
                             "titre": "Flore du parc",
+                            "type": "jeu",
                             "lien": "flore"
                         },
                         {
                             "id": 2,
                             "titre": "Les différents paysages",
+                            "type": "jeu",
                             "lien": "paysages"
                         },
                         {
                             "id": 3,
                             "titre": "Mémory du parc",
+                            "type": "jeu",
                             "lien": "memory"
                         }
                     ]

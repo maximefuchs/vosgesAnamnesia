@@ -335,6 +335,12 @@ class SousMenu extends DivObject {
                         // sMenu.oldPoiJson(sMenu); // get back to previous state for next click
                         break;
 
+                    case 'jeu':
+                        console.log("Let's play a game");
+                        var jeu = new Jeu($('#Application'), lien, element._params.couleur);
+                        jeu.init();
+                        break;
+
                     default:
                         if (lien !== undefined)
                             // sMenu.updateJson(sMenu, lien);
