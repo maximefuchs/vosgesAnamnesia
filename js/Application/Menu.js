@@ -239,6 +239,7 @@ class Menu extends DivObject {
                     top: '',
                     bottom: 0,
                     left: left * menu._scale,
+                    'line-height': '',
                     'font-size': '25px'
                 });
                 left += tailleSelect;
@@ -250,6 +251,7 @@ class Menu extends DivObject {
                     top: '',
                     bottom: 0,
                     left: left * menu._scale,
+                    'line-height': '20px', 
                     'font-size': '10px'
                 });
                 left++;

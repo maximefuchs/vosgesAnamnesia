@@ -2,7 +2,8 @@
     position: absolute;
     background-size: cover;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 20px;
+    line-height: 43px;
 }
 
 .elementDecoMenu{

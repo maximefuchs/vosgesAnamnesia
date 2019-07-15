@@ -83,6 +83,10 @@
     height: fit-content;
 }
 
+h2, h3{
+    margin: 15px 0;
+}
+
 .pagePerenne .squareRight h1, .pagePerenne .squareRight h2, .pagePerenne .squareRight h3 {
     color: white!important;
     margin: 15px 0;

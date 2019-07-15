@@ -1,5 +1,5 @@
 class Jeu extends DivObject {
-    constructor(parent, lien, couleur) {
+    constructor(parent, lien, couleur, menu) {
         $('#jeu').remove();
         super(parent, "jeu");
 
@@ -15,12 +15,10 @@ class Jeu extends DivObject {
             });
 
         this._json = jeuxJSON;
+        this._menu = menu;
     }
 
     init() {
-        $('#menu').css('display', 'none');
-        $('#elementsDeco').css('display', 'none');
-        $('#elementsMenu').css('display', 'none');
         switch (this._lien) {
             case "memory":
                 this.memory();
@@ -31,7 +29,7 @@ class Jeu extends DivObject {
                 break;
 
             case "flore":
-                this.faune();
+                this.flore();
                 break;
 
             default:
@@ -41,6 +39,11 @@ class Jeu extends DivObject {
     }
 
     memory() {
+        $('#menu').css('display', 'none');
+        $('#elementsDeco').css('display', 'none');
+        $('#elementsMenu').css('display', 'none');
+
+
         Global.includeCSS('dev/css/Application/Jeux/Memory.css');
 
         console.log(this._json);
@@ -133,7 +136,7 @@ class Jeu extends DivObject {
                 setTimeout(function () {
                     Memory.showModal();
                     Memory.$game.fadeOut();
-                }, 5000);
+                }, 2000);
             },
 
             pause: function () {
@@ -321,6 +324,12 @@ class Jeu extends DivObject {
         }
     }
 
+    flore(){
+        Global.includeCSS('dev/css/Application/Jeux/Flore.css');
 
+        var floreJson = this._json.flore;
+        this._menu.backgroundDiaporama = floreJson.diaporama;
+
+    }
 
 }
