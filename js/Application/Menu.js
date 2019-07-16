@@ -40,7 +40,7 @@ class Menu extends DivObject {
             menu._tempsInactivite++;
         }, 1000);
 
-        this._balise.click(function(){
+        this._balise.click(function () {
             menu._tempsInactivite = 0;
         });
 
@@ -153,6 +153,9 @@ class Menu extends DivObject {
     supprimerPerenne() {
         $('.pagePerenne').remove();
     }
+    supprimerJeu() {
+        $('#jeu').remove();
+    }
     supprimerSousMenu() {
         $('.sousmenu').remove();
         $('.sousMenuListePoi').remove();
@@ -184,7 +187,7 @@ class Menu extends DivObject {
         var menu = this;
         var duree = paramsJSON.dureeFadeFond;
         clearInterval(this._setIntervalFonction);
-        if (nbImgs == 0){
+        if (nbImgs == 0) {
             this._setIntervalFonction = 0;
         }
         else {
@@ -200,7 +203,6 @@ class Menu extends DivObject {
                     menu._decoMenuElements.forEach(e => {
                         e.changeColor(newColor);
                     });
-                    console.log('change');
 
                     i++;
                 }
@@ -208,11 +210,11 @@ class Menu extends DivObject {
         }
     }
 
-    pauseBackground(){
+    pauseBackground() {
         this.backPause = true;
     }
 
-    playBackground(){
+    playBackground() {
         this.backPause = false;
     }
 
@@ -246,7 +248,7 @@ class Menu extends DivObject {
                     top: '',
                     bottom: 0,
                     left: left * menu._scale,
-                    'line-height': '20px', 
+                    'line-height': '20px',
                     'font-size': '10px'
                 });
                 element._front.tweenAnimate({
@@ -293,11 +295,15 @@ class Menu extends DivObject {
         var titre = menuElt.find('.elementMenu_titre').html();
         var menu = this;
         var sm = new SousMenu(this._balise, json, titre, couleur, this._scale, lien);
-        sm._carte.carteOpenSignal.add(function(){
+        sm._carte.carteOpenSignal.add(function () {
             menu.pauseBackground();
         });
-        sm.closeCarteSignal.add(function(){
+        sm.closeCarteSignal.add(function () {
             menu.playBackground();
+        });
+        sm.stopBackSignal.add(function () {
+            menu.pauseBackground();
+            $('.backgroundImage').css('display', 'none');
         });
         this.backgroundDiaporama = json.type == 'carte' ? [] : json.diaporama;
         var menu = this;
@@ -308,18 +314,20 @@ class Menu extends DivObject {
 
         this.displayBackground();
 
-        sm._carte.clickSignal.add(function (){
+        sm._carte.clickSignal.add(function () {
             menu._tempsInactivite = 0;
         });
-        sm.clickPerenne.add(function (){
+        sm.clickPerenne.add(function () {
             menu._tempsInactivite = 0;
         });
         this._sousMenu = sm;
     }
 
     fermerSousMenu(menu) {
+        $('.backgroundImage').css('display', 'block');
         menu.supprimerCarte();
         menu.supprimerPerenne();
+        menu.supprimerJeu();
         menu._divEltsDeco.tweenAnimate({ bottom: 0, onComplete: function () { menu.supprimerSousMenu(); } });
         menu._menuElements.forEach(menuElement => {
             menuElement.init();
@@ -346,6 +354,7 @@ class Menu extends DivObject {
                 var img = imagesJson[i];
                 var image = new Img(this._balise, "fond_img_" + img.id, img.src);
                 image.addClass('page');
+                image.addClass('backgroundImage');
                 image.css('opacity', 0);
                 this._fondImgs.push(image);
                 this._couleursAssociees.push(img.color);

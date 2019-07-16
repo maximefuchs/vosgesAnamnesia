@@ -29,6 +29,7 @@ class SousMenu extends DivObject {
 
         this.signalFermer = new signals.Signal();
         this.closeCarteSignal = new signals.Signal();
+        this.stopBackSignal = new signals.Signal();
         this.clickPerenne = new signals.Signal();
 
         this.css('bottom', 1 * scale);
@@ -210,6 +211,48 @@ class SousMenu extends DivObject {
         }
     }
 
+    displayMenuJeu(sMenu, json, num, couleur) {
+        console.log(json);
+        sMenu._btnFermer.html('<span class="noRotation">⤺</span>');
+        sMenu.btnShouldClose = false;
+        var s = json[num].titre.toUpperCase();
+        var size = 840 / s.length;
+        if (size > 65) { size = 65; }
+        if (size < 37) { size = 37; }
+        sMenu._titre.html(s);
+        sMenu._titre.css('font-size', size + 'px');
+
+        if (json[num].texte !== undefined) {
+            sMenu._texte.html(json[num].texte);
+        }
+
+        $('#divLeft').remove();
+        var divLeft = new DivObject(sMenu._divssSousMenu._balise, 'divLeft');
+        var ssTitre = new BaliseObject(divLeft._balise, 'h1');
+        ssTitre.html(sMenu._titreElement.toUpperCase());
+
+        $('.elementSousMenu').remove();
+
+        divLeft.append('<hr>');
+        for (let i = 0; i < json.length; i++) {
+            var span = new BaliseObject(divLeft._balise, 'span', 'spanSSMenu_' + i);
+            span.html(json[i].titre.toUpperCase());
+            if (i == num) { span.addClass('selected'); }
+            span._balise.click(function () {
+                sMenu.displayMenuJeu(sMenu, json, i);
+                var jeu = new Jeu($('#Application'), json[i].lien, couleur, sMenu._scale);
+                jeu.stopBackSignal.add(function () {
+                    sMenu.stopBackSignal.dispatch();
+                });
+                jeu.clickSignal.add(function () {
+                    sMenu.clickPerenne.dispatch(); // remet le compteur pour la veille à 0
+                });
+                jeu.init();
+            });
+            divLeft.append('<hr>');
+        }
+    }
+
 
     displaySSMenuByTitle(sMenu, num, json) {
         var type = json[num].type;
@@ -336,8 +379,15 @@ class SousMenu extends DivObject {
                         break;
 
                     case 'jeu':
+                        sMenu.displayMenuJeu(sMenu, json, num, element._params.couleur)
                         console.log("Let's play a game");
-                        var jeu = new Jeu($('#Application'), lien, element._params.couleur);
+                        var jeu = new Jeu($('#Application'), lien, element._params.couleur, sMenu._scale);
+                        jeu.stopBackSignal.add(function () {
+                            sMenu.stopBackSignal.dispatch();
+                        });
+                        jeu.clickSignal.add(function () {
+                            sMenu.clickPerenne.dispatch(); // remet le compteur pour la veille à 0
+                        });
                         jeu.init();
                         break;
 

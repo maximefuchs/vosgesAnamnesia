@@ -1,21 +1,25 @@
 class Jeu extends DivObject {
-    constructor(parent, lien, couleur, menu) {
+    constructor(parent, lien, couleur, scale) {
         $('#jeu').remove();
         super(parent, "jeu");
+        this.addClass('page');
 
         this._lien = lien;
+        this._scale = scale;
         this._balise.css(
             {
-                width: '100%',
-                height: '100%',
-                margin: 'auto',
-                padding: '50px',
-                'z-index': 20,
                 background: couleur
             });
 
         this._json = jeuxJSON;
-        this._menu = menu;
+
+        this.clickSignal = new signals.Signal();
+        this.stopBackSignal = new signals.Signal();
+
+        var jeu = this;
+        this._balise.click(function () {
+            jeu.clickSignal.dispatch();
+        });
     }
 
     init() {
@@ -29,6 +33,7 @@ class Jeu extends DivObject {
                 break;
 
             case "flore":
+                this.stopBackSignal.dispatch();
                 this.flore();
                 break;
 
@@ -42,11 +47,10 @@ class Jeu extends DivObject {
         $('#menu').css('display', 'none');
         $('#elementsDeco').css('display', 'none');
         $('#elementsMenu').css('display', 'none');
+        this.css('padding', '50px');
 
 
         Global.includeCSS('dev/css/Application/Jeux/Memory.css');
-
-        console.log(this._json);
 
         var memoryJson = this._json.memory;
 
@@ -324,11 +328,140 @@ class Jeu extends DivObject {
         }
     }
 
-    flore(){
+    flore() {
         Global.includeCSS('dev/css/Application/Jeux/Flore.css');
+        // $('#menu').css('display', 'none');
 
         var floreJson = this._json.flore;
-        this._menu.backgroundDiaporama = floreJson.diaporama;
+
+        this.css('background', 'url(datas/imgs/jeu/flore/background.png)');
+        var color = '#608733';
+
+
+        var divJeu = new DivObject(this._balise, 'divJeu');
+        divJeu.addClass('jeu');
+        divJeu.css('background', 'url(datas/imgs/jeu/flore/divBack.png');
+        divJeu.css('bottom', 2.5 * this._scale + 'px');
+
+        var divQuestion = new DivObject(divJeu._balise, 'divQuestion');
+        var titre = new BaliseObject(divQuestion._balise, 'h1', 'titre');
+        titre.css('color', color);
+        var consigne = new DivObject(divQuestion._balise, 'consigne');
+
+        var indice = new Img(divQuestion._balise, 'indice', '#');
+
+        var divReponses = new DivObject(divQuestion._balise, 'divReponses');
+        var divr1 = new DivObject(divReponses._balise, 'divr1');
+        var divr2 = new DivObject(divReponses._balise, 'divr2');
+        var divr3 = new DivObject(divReponses._balise, 'divr3');
+        var r1 = new Img(divr1._balise, 'r1', '#'); r1.addClass('reponse');
+        var r2 = new Img(divr2._balise, 'r2', '#'); r2.addClass('reponse');
+        var r3 = new Img(divr3._balise, 'r3', '#'); r3.addClass('reponse');
+        var r1Icone = new Img(divr1._balise, 'r1Icone', '#'); r1Icone.addClass('reponseIcone'); r1Icone.css('left', '400px');
+        var r2Icone = new Img(divr2._balise, 'r2Icone', '#'); r2Icone.addClass('reponseIcone'); r2Icone.css('left', '975px');
+        var r3Icone = new Img(divr3._balise, 'r3Icone', '#'); r3Icone.addClass('reponseIcone'); r3Icone.css('left', '1550px');
+        $('.reponseIcone').toggle();
+        var t1 = new BaliseObject(divReponses._balise, 'span', 'txtRep1');
+        var t2 = new BaliseObject(divReponses._balise, 'span', 'txtRep2');
+        var t3 = new BaliseObject(divReponses._balise, 'span', 'txtRep3');
+
+        var divReponse = new DivObject(divJeu._balise, 'divReponse');
+        var resultat = new BaliseObject(divReponse._balise, 'h1', 'resultat');
+        resultat.css('color', color);
+        var titreRep = new BaliseObject(divReponse._balise, 'h2', 'titreRep');
+        var texteRep = new DivObject(divReponse._balise, 'texteRep');
+
+        var imgRep = new Img(divReponse._balise, 'imgRep', '#');
+
+        var divButtonNext = new DivObject(divReponse._balise, 'buttonNext');
+        var imgBtn = new Img(divButtonNext._balise, 'btnNext', 'datas/imgs/jeu/flore/next.png');
+        imgBtn._balise.after('<br><span>Question suivante</span>')
+
+        divReponse._balise.toggle();
+
+
+        var divEvolution = new DivObject(divJeu._balise, 'divEvolution');
+        var eltsRep = [];
+        for (var i = 0; i < 10; i++) {
+            var elt = new DivObject(divEvolution._balise, 'eltRep_' + i);
+            elt.css('background', 'url(datas/imgs/jeu/graphisme/nonRepondu.png)');
+            elt.addClass('eltsEvol');
+            eltsRep.push(elt);
+        }
+
+        var flore = {
+            init: function () {
+                this.numQuestion = 0;
+                this.score = 0;
+
+                var t = floreJson[0].titre;
+                titre.html(t.toUpperCase());
+                consigne.html(floreJson[0].consigne);
+                indice.attr('src', floreJson[0].indice);
+                var reponses = this.shuffle(floreJson[0].reponses);
+                r1.attr('src', reponses[0].src);
+                r2.attr('src', reponses[1].src);
+                r3.attr('src', reponses[2].src);
+                r1Icone.attr('src', reponses[0].estVrai == 1 ? 'datas/imgs/jeu/graphisme/juste.png' : 'datas/imgs/jeu/graphisme/faux.png');
+                r2Icone.attr('src', reponses[1].estVrai == 1 ? 'datas/imgs/jeu/graphisme/juste.png' : 'datas/imgs/jeu/graphisme/faux.png');
+                r3Icone.attr('src', reponses[2].estVrai == 1 ? 'datas/imgs/jeu/graphisme/juste.png' : 'datas/imgs/jeu/graphisme/faux.png');
+                t1.html(reponses[0].texte);
+                t2.html(reponses[1].texte);
+                t3.html(reponses[2].texte);
+
+                this.clickBindings(reponses);
+            },
+
+
+            clickBindings: function (reponses) {
+                var _ = this;
+                r1._balise.click(function () { _.traitementReponse(reponses[0].estVrai) });
+                r2._balise.click(function () { _.traitementReponse(reponses[1].estVrai) });
+                r3._balise.click(function () { _.traitementReponse(reponses[2].estVrai) });
+            },
+
+            traitementReponse: function (estVrai) {
+                var _ = this;
+                eltsRep[_.numQuestion]._balise.css('background', 'url(datas/imgs/jeu/flore/repondu.png)');
+                var img = new Img(eltsRep[_.numQuestion]._balise, 'icone_' + _.numQuestion, floreJson[_.numQuestion].indice);
+                img.css('left', 35 + 128 * _.numQuestion + 'px');
+                $('.reponseIcone').toggle();
+                if (estVrai == 1) {
+                    _.score++;
+                    resultat.html('BONNE RÉPONSE !');
+                } else {
+                    eltsRep[_.numQuestion].css('opacity', 0.6);
+                    resultat.html('MAUVAISE RÉPONSE');
+                }
+                setTimeout(function () {
+                    titreRep.html(floreJson[_.numQuestion].titreRep);
+                    texteRep.html(floreJson[_.numQuestion].texteRep);
+                    imgRep.attr('src', floreJson[_.numQuestion].indice);
+                    divReponse._balise.toggle();
+                    divJeu.css('background', 'url(datas/imgs/jeu/flore/backRep.png');
+                    divQuestion._balise.toggle();
+                }, 2000);
+            },
+
+            shuffle: function (array) {
+                var counter = array.length, temp, index;
+                // While there are elements in the array
+                while (counter > 0) {
+                    // Pick a random index
+                    index = Math.floor(Math.random() * counter);
+                    // Decrease counter by 1
+                    counter--;
+                    // And swap the last element with it
+                    temp = array[counter];
+                    array[counter] = array[index];
+                    array[index] = temp;
+                }
+                return array;
+            }
+        }
+
+        flore.init();
+
 
     }
 
