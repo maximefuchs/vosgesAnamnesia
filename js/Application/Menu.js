@@ -183,8 +183,10 @@ class Menu extends DivObject {
         var i = 0;
         var menu = this;
         var duree = paramsJSON.dureeFadeFond;
-        if (nbImgs == 0)
+        clearInterval(this._setIntervalFonction);
+        if (nbImgs == 0){
             this._setIntervalFonction = 0;
+        }
         else {
             TweenLite.to(images[i]._balise, duree, { opacity: 1 });
             this._setIntervalFonction = setInterval(function () {
@@ -198,6 +200,7 @@ class Menu extends DivObject {
                     menu._decoMenuElements.forEach(e => {
                         e.changeColor(newColor);
                     });
+                    console.log('change');
 
                     i++;
                 }
@@ -211,17 +214,6 @@ class Menu extends DivObject {
 
     playBackground(){
         this.backPause = false;
-    }
-
-    ouvrirMenu() {
-        this._balise.toggle();
-        TweenLite.to(this._balise, 1, { opacity: 1 });
-        // this.toggleMenu();
-    }
-
-    fermerMenu(ouvrirType, lien) {
-        TweenLite.to(this._balise, 1, { opacity: 0, onComplete: this.toggleMenu, onCompleteParams: [this] });
-        this.finFermerSignal.dispatch(ouvrirType, lien);
     }
 
     toggleMenu(menu) {
@@ -242,6 +234,9 @@ class Menu extends DivObject {
                     'line-height': '',
                     'font-size': '25px'
                 });
+                element._front.tweenAnimate({
+                    background: element._src_fond != '#' ? element._couleur + 'A5' : element._couleur
+                });
                 left += tailleSelect;
             }
             else {
@@ -254,6 +249,9 @@ class Menu extends DivObject {
                     'line-height': '20px', 
                     'font-size': '10px'
                 });
+                element._front.tweenAnimate({
+                    background: element._couleur
+                })
                 left++;
             }
         });
@@ -308,7 +306,6 @@ class Menu extends DivObject {
         });
         sm.init();
 
-        clearInterval(this._setIntervalFonction);
         this.displayBackground();
 
         sm._carte.clickSignal.add(function (){

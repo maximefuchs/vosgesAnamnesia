@@ -37,11 +37,7 @@ class ElementMenu extends BlocMenu {
             "bottom": Math.random() * 2500,
             "opacity": 0
         })
-            .attr('lien', this._lien)
-        this._front._balise.css({
-            "width": "100%",
-            "height": "100%"
-        });
+            .attr('lien', this._lien);
     }
 
     init() {
@@ -49,9 +45,13 @@ class ElementMenu extends BlocMenu {
             width: this._taille * this._scale,
             height: this._taille * this._scale,
             'font-size': "",
+            'line-height': "",
             left: this._x * this._scale,
             bottom: this._y * this._scale,
             opacity: 1
         }, 0, 2);
+        this._front.tweenAnimate({
+            background: this._src_fond != '#' ? this._couleur + 'A5' : this._couleur
+        });
     }
 }

@@ -14,6 +14,9 @@
 .elementMenu_front{
     color: white;
     text-align: center;
+    padding: 5%;
+    width: 90%;
+    height: 90%;
 }
 
 .elementMenu_picto{
@@ -25,6 +28,6 @@
 }
 .elementMenu_titre{
     position: absolute;
-    width: 100%;
+    width: 90%;
     bottom: 8%;
 }
