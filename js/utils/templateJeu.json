@@ -1,0 +1,328 @@
+{
+    "memory": [
+        {
+            "name": 1,
+            "img": "datas/imgs/jeu/memory/1.jpg",
+            "id": 1
+        },
+        {
+            "name": 2,
+            "img": "datas/imgs/jeu/memory/2.jpg",
+            "id": 2
+        },
+        {
+            "name": 3,
+            "img": "datas/imgs/jeu/memory/3.jpg",
+            "id": 3
+        },
+        {
+            "name": 4,
+            "img": "datas/imgs/jeu/memory/4.jpg",
+            "id": 4
+        },
+        {
+            "name": 5,
+            "img": "datas/imgs/jeu/memory/5.jpg",
+            "id": 5
+        },
+        {
+            "name": 6,
+            "img": "datas/imgs/jeu/memory/6.jpg",
+            "id": 6
+        },
+        {
+            "name": 7,
+            "img": "datas/imgs/jeu/memory/7.jpg",
+            "id": 7
+        },
+        {
+            "name": 8,
+            "img": "datas/imgs/jeu/memory/8.jpg",
+            "id": 8
+        },
+        {
+            "name": 9,
+            "img": "datas/imgs/jeu/memory/9.jpg",
+            "id": 9
+        },
+        {
+            "name": 10,
+            "img": "datas/imgs/jeu/memory/10.jpg",
+            "id": 10
+        },
+        {
+            "name": 11,
+            "img": "datas/imgs/jeu/memory/11.jpg",
+            "id": 11
+        },
+        {
+            "name": 12,
+            "img": "datas/imgs/jeu/memory/12.jpg",
+            "id": 12
+        }
+    ],
+    "faune": [
+        {
+            "name": "chien",
+            "img": "datas/imgs/jeu/faune/chien.jpg",
+            "id": 1
+        },
+        {
+            "name": "canard",
+            "img": "datas/imgs/jeu/faune/canard.jpg",
+            "id": 2
+        },
+        {
+            "name": "cerf",
+            "img": "datas/imgs/jeu/faune/cerf.jpg",
+            "id": 3
+        },
+        {
+            "name": "ours",
+            "img": "datas/imgs/jeu/faune/ours.jpg",
+            "id": 4
+        }
+    ],
+    "flore": [
+        {
+            "titre": "Reconnais-tu ceci ?",
+            "consigne": "obeserve bien et retrouve l'élément associé",
+            "indice": "datas/imgs/jeu/flore/indice1.png",
+            "reponses": [
+                {
+                    "estVrai": 1,
+                    "src": "datas/imgs/jeu/flore/croco.jpeg",
+                    "texte": "crocodile"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 1"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 2"
+                }
+            ],
+            "titreRep": "Le crocodil de l'étang",
+            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+        },
+        {
+            "titre": "Reconnais-tu ceci ?",
+            "consigne": "obeserve bien et retrouve l'élément associé",
+            "indice": "datas/imgs/jeu/flore/indice2.png",
+            "reponses": [
+                {
+                    "estVrai": 1,
+                    "src": "datas/imgs/jeu/flore/croco.jpeg",
+                    "texte": "crocodile"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 1"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 2"
+                }
+            ],
+            "titreRep": "Le crocodil de l'étang",
+            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+        },
+        {
+            "titre": "Reconnais-tu ceci ?",
+            "consigne": "obeserve bien et retrouve l'élément associé",
+            "indice": "datas/imgs/jeu/flore/indice3.png",
+            "reponses": [
+                {
+                    "estVrai": 1,
+                    "src": "datas/imgs/jeu/flore/croco.jpeg",
+                    "texte": "crocodile"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 1"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 2"
+                }
+            ],
+            "titreRep": "Le crocodil de l'étang",
+            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+        },
+        {
+            "titre": "Reconnais-tu ceci ?",
+            "consigne": "obeserve bien et retrouve l'élément associé",
+            "indice": "datas/imgs/jeu/flore/indice4.png",
+            "reponses": [
+                {
+                    "estVrai": 1,
+                    "src": "datas/imgs/jeu/flore/croco.jpeg",
+                    "texte": "crocodile"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 1"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 2"
+                }
+            ],
+            "titreRep": "Le crocodil de l'étang",
+            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+        },
+        {
+            "titre": "Reconnais-tu ceci ?",
+            "consigne": "obeserve bien et retrouve l'élément associé",
+            "indice": "datas/imgs/jeu/flore/indice5.png",
+            "reponses": [
+                {
+                    "estVrai": 1,
+                    "src": "datas/imgs/jeu/flore/croco.jpeg",
+                    "texte": "crocodile"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 1"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 2"
+                }
+            ],
+            "titreRep": "Le crocodil de l'étang",
+            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+        },
+        {
+            "titre": "Reconnais-tu ceci ?",
+            "consigne": "obeserve bien et retrouve l'élément associé",
+            "indice": "datas/imgs/jeu/flore/indice1.png",
+            "reponses": [
+                {
+                    "estVrai": 1,
+                    "src": "datas/imgs/jeu/flore/croco.jpeg",
+                    "texte": "crocodile"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 1"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 2"
+                }
+            ],
+            "titreRep": "Le crocodil de l'étang",
+            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+        },
+        {
+            "titre": "Reconnais-tu ceci ?",
+            "consigne": "obeserve bien et retrouve l'élément associé",
+            "indice": "datas/imgs/jeu/flore/indice2.png",
+            "reponses": [
+                {
+                    "estVrai": 1,
+                    "src": "datas/imgs/jeu/flore/croco.jpeg",
+                    "texte": "crocodile"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 1"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 2"
+                }
+            ],
+            "titreRep": "Le crocodil de l'étang",
+            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+        },
+        {
+            "titre": "Reconnais-tu ceci ?",
+            "consigne": "obeserve bien et retrouve l'élément associé",
+            "indice": "datas/imgs/jeu/flore/indice3.png",
+            "reponses": [
+                {
+                    "estVrai": 1,
+                    "src": "datas/imgs/jeu/flore/croco.jpeg",
+                    "texte": "crocodile"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 1"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 2"
+                }
+            ],
+            "titreRep": "Le crocodil de l'étang",
+            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+        },
+        {
+            "titre": "Reconnais-tu ceci ?",
+            "consigne": "obeserve bien et retrouve l'élément associé",
+            "indice": "datas/imgs/jeu/flore/indice4.png",
+            "reponses": [
+                {
+                    "estVrai": 1,
+                    "src": "datas/imgs/jeu/flore/croco.jpeg",
+                    "texte": "crocodile"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 1"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 2"
+                }
+            ],
+            "titreRep": "Le crocodil de l'étang",
+            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+        },
+        {
+            "titre": "Reconnais-tu ceci ?",
+            "consigne": "obeserve bien et retrouve l'élément associé",
+            "indice": "datas/imgs/jeu/flore/indice5.png",
+            "reponses": [
+                {
+                    "estVrai": 1,
+                    "src": "datas/imgs/jeu/flore/croco.jpeg",
+                    "texte": "crocodile"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 1"
+                },
+                {
+                    "estVrai": 0,
+                    "src": "datas/imgs/jeu/flore/elephant.jpeg",
+                    "texte": "elephant 2"
+                }
+            ],
+            "titreRep": "Le crocodil de l'étang",
+            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+        }
+    ]
+}
