@@ -21,16 +21,19 @@ var t;
 
 var application;
 
+
+// var fetch = require("electron-fetch").default;
+
 function initApplication() {
     //Chargement du fichier de params
     $.when($.getJSON("datas/params.json", finChargementParams),
-        $.getJSON("datas/texte.json", finChargementTexte),
+    $.getJSON("datas/texte.json", finChargementTexte),
         $.getJSON("datas/jeu.json", finChargementJeu),
         $.getJSON("datas/poi.json", finChargementPoi),
         $.getJSON("datas/perenne.json", finChargementPerenne)
-    ).then(createApplication);
-};
-
+        ).then(createApplication);
+    };
+    
 function createApplication() {
     console.log("createApplication");
 

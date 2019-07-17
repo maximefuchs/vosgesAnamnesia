@@ -1,8 +1,6 @@
 Global.include('dev/js/Application/ElementMenu.js');
 Global.include('dev/js/Application/ElementDecoMenu.js');
-
 Global.include('dev/js/Application/SousMenu.js');
-
 Global.include('dev/js/Application/Jeu.js');
 
 Global.includeCSS('dev/css/Application/Menu.css');
@@ -13,6 +11,30 @@ class Menu extends DivObject {
         this.addClass('page');
 
         console.log('menu');
+
+
+
+        var token = '}MkT9oJw4oH?ogv';
+        var url = 'http://parc-ballons-vosges.validation.php56.sbg.advisa.fr/wp-json/wp/v2/exportjson/fr';
+        fetch(url, {
+            method: 'GET',
+            headers: new Headers({
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json'
+            }),
+        })
+            .then(response => {
+                console.log(response);
+                console.log(response.text());
+                // console.log(response.json());
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+
+
+
+
 
         this._json = json;
 
