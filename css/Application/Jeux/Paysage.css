@@ -1,3 +1,23 @@
+.jeu {
+    width: 2231px;
+    height: 1370px;
+    left: 40%;
+    position: absolute;
+    z-index: 20;
+}
+
+#titre {
+    font-size: 80px;
+    margin: 100px 0 25px 100px;
+}
+
+#consigne {
+    width: 50%;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 100px 0 0 100px;
+}
+
 /* Main content area */
 
 #content {

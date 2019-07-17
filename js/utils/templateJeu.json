@@ -63,24 +63,39 @@
     ],
     "paysage": [
         {
-            "name": "chien",
-            "img": "datas/imgs/jeu/paysage/chien.jpg",
+            "nom": "Hautes Vosges",
+            "img": "datas/imgs/jeu/paysage/1.jpg",
             "id": 1
         },
         {
-            "name": "canard",
-            "img": "datas/imgs/jeu/paysage/canard.jpg",
+            "nom": "Vallées Vosgiennes",
+            "img": "datas/imgs/jeu/paysage/2.jpg",
             "id": 2
         },
         {
-            "name": "cerf",
-            "img": "datas/imgs/jeu/paysage/cerf.jpg",
+            "nom": "Vallées alsaciennes",
+            "img": "datas/imgs/jeu/paysage/3.jpg",
             "id": 3
         },
         {
-            "name": "ours",
-            "img": "datas/imgs/jeu/paysage/ours.jpg",
+            "nom": "Piémont vignoble",
+            "img": "datas/imgs/jeu/paysage/4.jpg",
             "id": 4
+        },
+        {
+            "nom": "Plateau des 1000 étangs",
+            "img": "datas/imgs/jeu/paysage/5.jpg",
+            "id": 5
+        },
+        {
+            "nom": "Vallées de Fougerolles et Val d'Ajol",
+            "img": "datas/imgs/jeu/paysage/6.jpg",
+            "id": 6
+        },
+        {
+            "nom": "Autour des Ballons comptois",
+            "img": "datas/imgs/jeu/paysage/7.jpg",
+            "id": 7
         }
     ],
     "flore": [
@@ -92,7 +107,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/flore/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Arnica "
                 },
                 {
                     "estVrai": 0,
@@ -105,8 +120,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Arnica ",
+            "texteRep": "Arnica été, jaune, chaumes, prairies, pâturages, landes"
         },
         {
             "titre": "Reconnais-tu ceci ?",
@@ -116,7 +131,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/flore/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Pulsatille blanche "
                 },
                 {
                     "estVrai": 0,
@@ -129,8 +144,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Pulsatille blanche ",
+            "texteRep": "anémone velue, caractéristique des Hautes Chaumes au-dessus de 1100 mètre, floraison au printemps"
         },
         {
             "titre": "Reconnais-tu ceci ?",
@@ -140,7 +155,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/flore/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Pensée des Vosges "
                 },
                 {
                     "estVrai": 0,
@@ -153,8 +168,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Pensée des Vosges",
+            "texteRep": "plante herbacée des prairies d’altitude, La floraison de juin à août colore les prés de fleurs violettes, jaunes, parfois bleues ou bicolores."
         },
         {
             "titre": "Reconnais-tu ceci ?",
@@ -164,7 +179,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/flore/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Myrtille "
                 },
                 {
                     "estVrai": 0,
@@ -177,8 +192,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Myrtille ",
+            "texteRep": "Ces petites baies de teinte bleu-noir poussent sur des myrtilliers, petits arbustes préférant les sols acides, comme la terre de bruyère, et bien drainés. Elles prennent parfois le nom de brimbelles dans les Vosges. Le Bluet des Vosges étant celui réservé à l’espèce cultivé."
         },
         {
             "titre": "Reconnais-tu ceci ?",
@@ -188,7 +203,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/flore/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Sapin pectiné "
                 },
                 {
                     "estVrai": 0,
@@ -201,8 +216,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Sapin pectiné ",
+            "texteRep": "Abies pectinata ou Abies alba en latin ; Sapin blanc, pectiné ou argenté, Sapin commun, Sapin des Vosges en français. Le mot Abies qui définit le genre auquel j'appartiens vient d'un verbe latin signifiant \"disparaître de la vue\", car les nuages cachent parfois ma haute cime.Pourquoi deux noms latins pour un seul arbre ? Parce qu'ils illustrent chacun une de mes caractéristiques."
         },
         {
             "titre": "Reconnais-tu ceci ?",
@@ -212,7 +227,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/flore/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Hêtre "
                 },
                 {
                     "estVrai": 0,
@@ -225,8 +240,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Hêtre ",
+            "texteRep": "Je pousse droit, et je peux atteindre les 40 m de hauteur ! A plus haute altitude et exposé au vent je peux prends la forme d’un drapeau et bien sûr j’atteints une taille plus modeste. Je peux vivre exceptionnellement jusqu'à 400 ans, mais la moyenne se situe autour de 150 ans. Tous les ans, je fructifie en masse, à partir de 40 ans. "
         },
         {
             "titre": "Reconnais-tu ceci ?",
@@ -236,7 +251,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/flore/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Droséra "
                 },
                 {
                     "estVrai": 0,
@@ -249,8 +264,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Droséra ",
+            "texteRep": "petite plante insectivore qui pousse dans les milieux humides des tourbières dans les Vosges, fleurit de juillet à septembre. Elle attire les insectes grâce à une substance sucrée fixée au bout de ses tentacules."
         },
         {
             "titre": "Reconnais-tu ceci ?",
@@ -260,7 +275,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/flore/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Jonquille  "
                 },
                 {
                     "estVrai": 0,
@@ -273,8 +288,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Jonquille  ",
+            "texteRep": "La Jonquille  est en fait  un narcisse jaune, plante sauvage à fleurs jaunes appelée  la jonquille dans les Vosges foisonnent dans les pairies grasses ou sur les chaumes, la floraison  a lieu de mars à mai. Elle est l’emblème de la ville de Gérardmer."
         },
         {
             "titre": "Reconnais-tu ceci ?",
@@ -284,7 +299,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/flore/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Tulipe des vignes "
                 },
                 {
                     "estVrai": 0,
@@ -297,8 +312,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Tulipe des vignes ",
+            "texteRep": "La Tulipe des vignes aussi appelée la tulipe sauvage, ou de forêts (tulipa sylvestris), est une plante à bulbe. Contrairement à ses cousines cultivées, elle a un doux parfum, et ses trois sépales, plus étroits que les pétales, se recourbent vers l'extérieur, lui conférant une silhouette raffinée. Elle affectionne les lieux ensoleillés et les sols argilo-calcaires"
         },
         {
             "titre": "Reconnais-tu ceci ?",
@@ -308,7 +323,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/flore/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Ophrys bourdon "
                 },
                 {
                     "estVrai": 0,
@@ -321,8 +336,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Ophrys bourdon ",
+            "texteRep": "Orchidées sauvages des pelouses clavaires. La plante passe facilement inaperçue car verte sur fond vert. Seules les tâches marron qui s’accrochent à la tige la trahissent : on dirait de loin des bourdons posés sur une herbes ; la fleur mime l’aspect, la taille et la texture poilue du bourdon. De plus elle exalte des parfums proches des phéromones sexuelles trompant l’hyménoptère qui croit reconnaitre en elle sa petite amie…."
         }
     ],
     "faune": [
@@ -334,7 +349,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/faune/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Lynx boréal"
                 },
                 {
                     "estVrai": 0,
@@ -347,8 +362,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Le Lynx boréal",
+            "texteRep": "Le lynx est un félin de la sous-famille des félinés. Il possède certaines caractéristiques qui le distinguent facilement des autres félins, notamment ses oreilles triangulaires terminées par une touffe de poils noirs appelée pinceau, ses joues ornées de longs poils appelés favoris"
         },
         {
             "titre": "Reconnais-tu ceci ?",
@@ -358,7 +373,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/faune/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Loup gris"
                 },
                 {
                     "estVrai": 0,
@@ -371,8 +386,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Le Loup gris",
+            "texteRep": "possède 42 dents : ses crocs mesurent 5 à 7 centimètres. C'est un redoutable chasseur qui court très vite : sa vitesse peut atteindre 50 kilomètres par heure"
         },
         {
             "titre": "Reconnais-tu ceci ?",
@@ -382,7 +397,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/faune/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Grand tétras"
                 },
                 {
                     "estVrai": 0,
@@ -395,8 +410,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Le Grand tétras ",
+            "texteRep": "Le grand tétras, appelé aussi coq de bruyère, est le plus gros oiseau forestier de France. Le mâle ou coq ne peut être confondu avec sa taille imposante, se caractérise par un bec fort et par une caroncule rouge vif (excroissance charnue), très visible au-dessus de l’œil. Sa queue, qui s’arrondit comme celle d’un dindon lors de la parade. La femelle ou poule par contre, se confond avec le milieu environnant grâce à son plumage dominé par le roux, chamarré de brun et de blanc. "
         },
         {
             "titre": "Reconnais-tu ceci ?",
@@ -406,7 +421,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/faune/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Chamois "
                 },
                 {
                     "estVrai": 0,
@@ -419,8 +434,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Chamois ",
+            "texteRep": "Les empreintes : elles mesurent environ 6 cm x  3.5 cm. Les sabots sont bien séparés mais généralement parallèles. Le Chamois ne vit qu'en montagnes au-dessus de 1000 m dans les Vosges. Petite tête, fourrure dense, sabots solides, pattes musclées, cœur très volumineux.  Cornes 15 à 30 cm, recourbées vers l’arrière"
         },
         {
             "titre": "Reconnais-tu ceci ?",
@@ -430,7 +445,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/faune/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Castor "
                 },
                 {
                     "estVrai": 0,
@@ -443,8 +458,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Castor ",
+            "texteRep": "Le castor commun est le plus gros rongeur aquatique d’Europe. Il a une queue plate épaisse et musclée qui lui sert de gouvernail de 30 cm"
         },
         {
             "titre": "Reconnais-tu ceci ?",
@@ -454,7 +469,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/faune/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Pic noir "
                 },
                 {
                     "estVrai": 0,
@@ -467,8 +482,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Pic noir ",
+            "texteRep": "Aisément reconnaissable par sa couleur entièrement noire, avec une calotte rouge vif s'étendant du front jusqu'à l'arrière de la nuque (chez le mâle). Il émet des cris puissants et son tambourinage peut être audible à près d'un kilomètre. Il  se  nourrit  essentiellement  de fourmis  et  de  larves  d’insectes  qu’il  se  procure  en  creusant  dans  le  bois  d’arbres  morts. Il raffole de leurs grosses  nymphes  riches  en  protéines  que  sa  très  longue  langue  collante  va  chercher  au plus  profond  des  galeries."
         },
         {
             "titre": "Reconnais-tu ceci ?",
@@ -478,7 +493,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/faune/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Faucon pèlerin "
                 },
                 {
                     "estVrai": 0,
@@ -491,8 +506,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Le Faucon pèlerin ",
+            "texteRep": "il se nourrit d’oiseaux capturés en volet de sa technique de chasse particulière : l’attaque en piqué. La vitesse atteinte par le faucon au cours de ces attaques sur de faibles pentes, est couramment comprise entre 200 et 250 km/h "
         },
         {
             "titre": "Reconnais-tu ceci ?",
@@ -502,7 +517,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/faune/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Pie grièche "
                 },
                 {
                     "estVrai": 0,
@@ -515,8 +530,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Pie grièche ",
+            "texteRep": "Elle tient son nom de sa technique de chasse. Elle accroche ses proies sur les épines des buissons, sur des brindilles ou des objets fins et pointus pour se faire des réserves de nourriture. Elle est facilement repérable par son plumage blanc rosé et brun, et surtout sa tête grise et son bandeau noir sur l'œil."
         },
         {
             "titre": "Reconnais-tu ceci ?",
@@ -526,7 +541,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/faune/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Cincle plongeur "
                 },
                 {
                     "estVrai": 0,
@@ -539,8 +554,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Cincle plongeur",
+            "texteRep": "Le cincle plongeur est le seul oiseau chanteur capable de nager et de plonger. Son plumage épais et imprégné par la sécrétion de la glande uropygienne est imperméable.  Le cincle plongeur trouve sa nourriture essentiellement dans l'eau. Quand il repère une proie, il glisse sous la surface de l'eau, et marche littéralement dans l'eau, ou même vole sous l'eau avec les ailes entrouvertes. "
         },
         {
             "titre": "Reconnais-tu ceci ?",
@@ -550,7 +565,7 @@
                 {
                     "estVrai": 1,
                     "src": "datas/imgs/jeu/faune/croco.jpeg",
-                    "texte": "crocodile"
+                    "texte": "Chabot "
                 },
                 {
                     "estVrai": 0,
@@ -563,8 +578,8 @@
                     "texte": "elephant 2"
                 }
             ],
-            "titreRep": "Le crocodil de l'étang",
-            "texteRep": "Texte de réponse : le crocodile est dangereux parce qu'il a de grandes dents"
+            "titreRep": "Chabot ",
+            "texteRep": "Le chabot est capable d’homochromie, c’est à-dire qu’il lui est possible de prendre la couleur du substrat sur lequel il se trouve."
         }
     ]
 }

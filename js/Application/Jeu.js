@@ -38,6 +38,11 @@ class Jeu extends DivObject {
                 this.flore();
                 break;
 
+            case "paysages":
+                this.stopBackSignal.dispatch();
+                this.paysage();
+                break;
+
             default:
                 console.log('nothing : ' + this._lien);
                 break;
@@ -219,9 +224,26 @@ class Jeu extends DivObject {
     }
 
     paysage() {
-        Global.includeCSS('dev/css/Application/Jeux/Faune.css');
+        Global.includeCSS('dev/css/Application/Jeux/Paysage.css');
+        // $('#menu').css('display', 'none');
 
-        var fauneJson = this._json.faune;
+        var paysageJson = this._json.paysage;
+
+        this.css('background', 'url(datas/imgs/jeu/paysage/background.png)');
+        var color = '#608733';
+
+
+        var divJeu = new DivObject(this._balise, 'divJeu');
+        divJeu.addClass('jeu');
+        divJeu.css('background', 'url(datas/imgs/jeu/paysage/divBack.png');
+        divJeu.css('bottom', 2.5 * this._scale + 'px');
+
+        var divQuestion = new DivObject(divJeu._balise, 'divQuestion');
+        var titre = new BaliseObject(divQuestion._balise, 'h1', 'titre');
+        titre.css('color', color);
+        titre.html('LES PAYSAGES VOSGIENS');
+        var consigne = new DivObject(divQuestion._balise, 'consigne');
+        consigne.html('Associe les pausages avec la bonne zone géographique sur la carte');
 
         var content = new DivObject(this._balise, 'content');
         var cardPile = new DivObject(content._balise, 'cardPile');
@@ -256,15 +278,15 @@ class Jeu extends DivObject {
             $('#cardPile').html('');
             $('#cardSlots').html('');
 
-            var numberOfCards = fauneJson.length;
+            var numberOfCards = paysageJson.length;
             var taille = 1800 / numberOfCards;
 
             // Create the card slots
             // var words = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
             for (var i = 0; i < numberOfCards; i++) {
-                $('<div><h1>' + fauneJson[i].name + '</h1></div>')
+                $('<div><h1>' + paysageJson[i].name + '</h1></div>')
                     .css({ height: taille, width: taille })
-                    .data('number', fauneJson[i].id)
+                    .data('number', paysageJson[i].id)
                     .data('nbCards', numberOfCards)
                     .appendTo('#cardSlots')
                     .droppable({
@@ -277,18 +299,18 @@ class Jeu extends DivObject {
 
             // Create the pile of shuffled cards
             // var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-            shuffle(fauneJson);
+            shuffle(paysageJson);
 
             for (var i = 0; i < numberOfCards; i++) {
                 $('<div></div>')
                     .css({
                         height: taille,
                         width: taille,
-                        background: 'url(' + fauneJson[i].img + ')',
+                        background: 'url(' + paysageJson[i].img + ')',
                         'background-size': 'cover'
                     })
-                    .data('number', fauneJson[i].id)
-                    .attr('id', 'card' + fauneJson[i].id)
+                    .data('number', paysageJson[i].id)
+                    .attr('id', 'card' + paysageJson[i].id)
                     .appendTo('#cardPile')
                     .draggable({
                         stack: '#cardPile div',
