@@ -89,6 +89,7 @@ class SousMenu extends DivObject {
                 ssMenu.close();
                 ssMenu.signalFermer.dispatch();
             } else {
+                $('#jeu').remove();
                 $('.sousMenuListePoi').remove();
                 $('.divBtnCarteElement').remove();
                 ssMenu._btnFermer.html('<span>+</span>');
@@ -241,9 +242,6 @@ class SousMenu extends DivObject {
             span._balise.click(function () {
                 sMenu.displayMenuJeu(sMenu, json, i);
                 var jeu = new Jeu($('#Application'), json[i].lien, couleur, sMenu._scale);
-                jeu.stopBackSignal.add(function () {
-                    sMenu.stopBackSignal.dispatch();
-                });
                 jeu.clickSignal.add(function () {
                     sMenu.clickPerenne.dispatch(); // remet le compteur pour la veille à 0
                 });
@@ -382,9 +380,9 @@ class SousMenu extends DivObject {
                         sMenu.displayMenuJeu(sMenu, json, num, element._params.couleur)
                         console.log("Let's play a game");
                         var jeu = new Jeu($('#Application'), lien, element._params.couleur, sMenu._scale);
-                        jeu.stopBackSignal.add(function () {
-                            sMenu.stopBackSignal.dispatch();
-                        });
+                        // jeu.stopBackSignal.add(function () {
+                        //     sMenu.stopBackSignal.dispatch();
+                        // });
                         jeu.clickSignal.add(function () {
                             sMenu.clickPerenne.dispatch(); // remet le compteur pour la veille à 0
                         });

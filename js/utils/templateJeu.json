@@ -65,37 +65,51 @@
         {
             "nom": "Hautes Vosges",
             "img": "datas/imgs/jeu/paysage/1.jpg",
-            "id": 1
+            "id": 1,
+            "top": 350,
+            "right": 350
         },
         {
             "nom": "Vallées Vosgiennes",
             "img": "datas/imgs/jeu/paysage/2.jpg",
-            "id": 2
+            "id": 2,
+            "top": 50,
+            "right": 550
         },
         {
             "nom": "Vallées alsaciennes",
             "img": "datas/imgs/jeu/paysage/3.jpg",
-            "id": 3
+            "id": 3,
+            "top": 760,
+            "right": 670
         },
         {
             "nom": "Piémont vignoble",
             "img": "datas/imgs/jeu/paysage/4.jpg",
-            "id": 4
+            "id": 4,
+            "top": 110,
+            "right": 220
         },
         {
             "nom": "Plateau des 1000 étangs",
             "img": "datas/imgs/jeu/paysage/5.jpg",
-            "id": 5
+            "id": 5,
+            "top": 590,
+            "right": 930
         },
         {
             "nom": "Vallées de Fougerolles et Val d'Ajol",
             "img": "datas/imgs/jeu/paysage/6.jpg",
-            "id": 6
+            "id": 6,
+            "top": 310,
+            "right": 1080
         },
         {
             "nom": "Autour des Ballons comptois",
             "img": "datas/imgs/jeu/paysage/7.jpg",
-            "id": 7
+            "id": 7,
+            "top": 410,
+            "right": 630
         }
     ],
     "flore": [

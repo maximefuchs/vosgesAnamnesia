@@ -1,3 +1,5 @@
+Global.include('dev/js/utils/jqueryTouchDrag.js');
+
 class Jeu extends DivObject {
     constructor(parent, lien, couleur, scale) {
         $('#jeu').remove();
@@ -14,7 +16,6 @@ class Jeu extends DivObject {
         this._json = jeuxJSON;
 
         this.clickSignal = new signals.Signal();
-        this.stopBackSignal = new signals.Signal();
 
         var jeu = this;
         this._balise.click(function () {
@@ -29,17 +30,14 @@ class Jeu extends DivObject {
                 break;
 
             case "faune":
-                this.stopBackSignal.dispatch();
                 this.faune();
                 break;
 
             case "flore":
-                this.stopBackSignal.dispatch();
                 this.flore();
                 break;
 
             case "paysages":
-                this.stopBackSignal.dispatch();
                 this.paysage();
                 break;
 
@@ -57,6 +55,7 @@ class Jeu extends DivObject {
 
 
         Global.includeCSS('dev/css/Application/Jeux/Memory.css');
+        this.css('background', 'url(datas/imgs/jeu/paysage/background.png)');
 
         var memoryJson = this._json.memory;
 
@@ -185,7 +184,8 @@ class Jeu extends DivObject {
                 $('#menu').css('display', 'block');
                 $('#elementsDeco').css('display', 'block');
                 $('#elementsMenu').css('display', 'block');
-                $('#jeu').remove();
+                // $('#jeu').remove();
+                $('.btnFermerSousMenu').click();
             },
 
             // Fisher--Yates Algorithm -- https://bost.ocks.org/mike/shuffle/
@@ -227,7 +227,7 @@ class Jeu extends DivObject {
         Global.includeCSS('dev/css/Application/Jeux/Paysage.css');
         // $('#menu').css('display', 'none');
 
-        var paysageJson = this._json.paysage;
+        var paysageJson = shuffle(this._json.paysage);
 
         this.css('background', 'url(datas/imgs/jeu/paysage/background.png)');
         var color = '#608733';
@@ -243,49 +243,37 @@ class Jeu extends DivObject {
         titre.css('color', color);
         titre.html('LES PAYSAGES VOSGIENS');
         var consigne = new DivObject(divQuestion._balise, 'consigne');
-        consigne.html('Associe les pausages avec la bonne zone géographique sur la carte');
 
-        var content = new DivObject(this._balise, 'content');
-        var cardPile = new DivObject(content._balise, 'cardPile');
-        var cardSlots = new DivObject(content._balise, 'cardSlots');
+        var cardPile = new DivObject(divQuestion._balise, 'cardPile');
+        var cardSlots = new DivObject(divQuestion._balise, 'cardSlots');
 
-        var successMessage = new DivObject(content._balise, 'successMessage');
-        successMessage.html('<h2>Congratulations</h2>');
-        var btnRestart = new BtObject(successMessage._balise, 'btnRestart');
-        btnRestart.html('Rejouer');
-        btnRestart._balise.click(init);
-        var btnReturn = new BtObject(successMessage._balise, 'btnReturn');
-        btnReturn.html('Retour au menu');
-        btnReturn._balise.click(retour);
+        var divBtnRecommencer = new DivObject(divQuestion._balise, 'divBtnRecommencer');
+        var img = new Img(divBtnRecommencer._balise, 'imgBtnRecommencer', 'datas/imgs/jeu/paysage/recommencer.png');
+        img._balise.after('<br><span>Recommencer</span>');
+        divBtnRecommencer._balise.click(init);
 
         var correctCards = 0;
         $(init);
 
-        function retour() {
-            $("#jeu").remove();
-            $('#menu').css('display', 'none');
-            $('#elementsDeco').css('display', 'none');
-            $('#elementsMenu').css('display', 'none');
-        }
-
         function init() {
-
-            // Hide the success message
-            $('#successMessage').toggle();
 
             // Reset the game
             correctCards = 0;
-            $('#cardPile').html('');
-            $('#cardSlots').html('');
+            cardPile.html('');
+            cardSlots.html('');
+            divBtnRecommencer.css('display', 'none');
+            consigne.html('Associe les paysages avec la bonne zone géographique sur la carte');
 
             var numberOfCards = paysageJson.length;
-            var taille = 1800 / numberOfCards;
 
             // Create the card slots
-            // var words = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
             for (var i = 0; i < numberOfCards; i++) {
-                $('<div><h1>' + paysageJson[i].name + '</h1></div>')
-                    .css({ height: taille, width: taille })
+                $('<div></div>')
+                    .css({
+                        background: 'url(datas/imgs/jeu/paysage/vide.png)',
+                        right: paysageJson[i].right,
+                        top: paysageJson[i].top
+                    })
                     .data('number', paysageJson[i].id)
                     .data('nbCards', numberOfCards)
                     .appendTo('#cardSlots')
@@ -298,14 +286,13 @@ class Jeu extends DivObject {
 
 
             // Create the pile of shuffled cards
-            // var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
             shuffle(paysageJson);
 
             for (var i = 0; i < numberOfCards; i++) {
-                $('<div></div>')
+                $('<div><h1>' + paysageJson[i].nom + '</h1></div>')
                     .css({
-                        height: taille,
-                        width: taille,
+                        left: 120 + Math.trunc(i / 3) * 250 + 'px',
+                        top: 80 + (i % 3) * 280 + 'px',
                         background: 'url(' + paysageJson[i].img + ')',
                         'background-size': 'cover'
                     })
@@ -345,9 +332,25 @@ class Jeu extends DivObject {
             // and reset the cards for another go
 
             if (correctCards == numberOfCards) {
-                $('#successMessage').toggle();
-                TweenLite.to($('#successMessage'), 1, { top: '50%', opacity: 1 });
+                consigne.html('BRAVO !');
+                divBtnRecommencer.css('display', 'block');
             }
+        }
+
+        function shuffle(array) {
+            var counter = array.length, temp, index;
+            // While there are elements in the array
+            while (counter > 0) {
+                // Pick a random index
+                index = Math.floor(Math.random() * counter);
+                // Decrease counter by 1
+                counter--;
+                // And swap the last element with it
+                temp = array[counter];
+                array[counter] = array[index];
+                array[index] = temp;
+            }
+            return array;
         }
     }
 

@@ -587,13 +587,8 @@
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
+                            "src": "datas/imgs/menu/diaporama/jeu/diapo_0.png",
                             "color": "#FF0000"
-                        },
-                        {
-                            "id": "diapo2",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
-                            "color": "#FFFF00"
                         }
                     ],
                     "sousmenu": [

@@ -15,19 +15,24 @@ class Menu extends DivObject {
 
 
         var token = '}MkT9oJw4oH?ogv';
-        var url = 'http://parc-ballons-vosges.validation.php56.sbg.advisa.fr/wp-json/wp/v2/exportjson/fr';
-        fetch(url, {
+        var urlFR = 'http://parc-ballons-vosges.validation.php56.sbg.advisa.fr/wp-json/wp/v2/exportjson/fr';
+        var urlDE = 'http://parc-ballons-vosges.validation.php56.sbg.advisa.fr/wp-json/wp/v2/exportjson/de';
+        var urlEN = 'http://parc-ballons-vosges.validation.php56.sbg.advisa.fr/wp-json/wp/v2/exportjson/en';
+        fetch(urlFR, {
             method: 'GET',
             headers: new Headers({
-                'Authorization': 'Bearer ' + token,
+                'password': token,
                 'Content-Type': 'application/json'
             }),
         })
             .then(response => {
-                console.log(response);
-                console.log(response.text());
-                // console.log(response.json());
+                return response.json();
+                // console.log(response.text());
+                // var json = response.json();
+                // console.log(json);
+                // console.log(json['A voir à visiter']);
             })
+            .then(data => console.log(data))
             .catch((error) => {
                 console.error(error);
             });
