@@ -10,34 +10,16 @@ class Menu extends DivObject {
         super(parent, "menu");
         this.addClass('page');
 
-        console.log('menu');
 
-
-
-        var token = '}MkT9oJw4oH?ogv';
-        var urlFR = 'http://parc-ballons-vosges.validation.php56.sbg.advisa.fr/wp-json/wp/v2/exportjson/fr';
-        var urlDE = 'http://parc-ballons-vosges.validation.php56.sbg.advisa.fr/wp-json/wp/v2/exportjson/de';
-        var urlEN = 'http://parc-ballons-vosges.validation.php56.sbg.advisa.fr/wp-json/wp/v2/exportjson/en';
-        fetch(urlFR, {
-            method: 'GET',
-            headers: new Headers({
-                'password': token,
-                'Content-Type': 'application/json'
-            }),
-        })
-            .then(response => {
-                return response.json();
-                // console.log(response.text());
-                // var json = response.json();
-                // console.log(json);
-                // console.log(json['A voir à visiter']);
-            })
-            .then(data => console.log(data))
-            .catch((error) => {
-                console.error(error);
-            });
-
-
+        // require("electron").remote.require("electron-download-manager").download({
+        //     url: "http://parc-ballons-vosges.validation.php56.sbg.advisa.fr/wp-content/uploads/2015/01/Luxeuil-les-Bains2.jpg"
+        // }, function (error, info) {
+        //     if (error) {
+        //         console.log(error);
+        //         return;
+        //     }
+        //     console.log("DONE: " + info.url);
+        // });
 
 
 

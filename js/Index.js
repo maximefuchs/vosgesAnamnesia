@@ -9,11 +9,13 @@ var textesJSON;
 var paramsJSON;
 
 var poisJSON;
+var poisJsonFR;
+var poisJsonDE;
+var poisJsonEN;
 var perennesJSON;
 var jeuxJSON;
 
 var body;
-var head;
 var StageWidth;
 var StageHeight;
 
@@ -21,21 +23,24 @@ var t;
 
 var application;
 
-
-// var fetch = require("electron-fetch").default;
-
 function initApplication() {
+    var img = document.createElement('IMG');
+    img.setAttribute("src", "datas/buffer.gif");
+    img.setAttribute("id", "bufferContent");
+    document.body.appendChild(img);
+    $('<img src="datas/buffer.gif">');
     //Chargement du fichier de params
     $.when($.getJSON("datas/params.json", finChargementParams),
-    $.getJSON("datas/texte.json", finChargementTexte),
+        $.getJSON("datas/texte.json", finChargementTexte),
         $.getJSON("datas/jeu.json", finChargementJeu),
-        $.getJSON("datas/poi.json", finChargementPoi),
+        // $.getJSON("datas/poi.json", finChargementPoi),
         $.getJSON("datas/perenne.json", finChargementPerenne)
-        ).then(createApplication);
-    };
-    
+    ).then(chargementJsonPoiFR);
+};
+
 function createApplication() {
     console.log("createApplication");
+    $('#bufferContent').remove();
 
     body = $("body");
 
@@ -44,16 +49,12 @@ function createApplication() {
 
     console.log(StageWidth + " - " + StageHeight);
 
+    poisJSON = poisJsonFR;
     application = new Application();
 };
 
 
-function gestionLangue() {
-    application.texte();
-}
-
 function finChargementParams(data) {
-    console.log("finChargementParams");
     //Récupération des données de params
     paramsJSON = data;
     langue = paramsJSON.langueParDefault;
@@ -67,9 +68,7 @@ function finChargementParams(data) {
 function finChargementTexte(data) {
     textesJSON = data;
 }
-function finChargementPoi(data) {
-    poisJSON = data;
-}
+
 function finChargementJeu(data) {
     jeuxJSON = data;
 }
@@ -77,26 +76,62 @@ function finChargementPerenne(data) {
     perennesJSON = data;
 }
 
-function addInactivityTime() {
-    console.log("addInactivityTime : " + document);
-    $(document).on("mousedown mouseup mousemove touchstart touchend touchmove", resetTimer);
-}
+function chargementJsonPoiFR() {
 
-function removeInactivityTime() {
-    console.log("removeInactivityTime : " + document);
-    $(document).off("mousedown mouseup mousemove touchstart touchend touchmove", resetTimer);
+    var token = '}MkT9oJw4oH?ogv';
+    var url = 'http://parc-ballons-vosges.validation.php56.sbg.advisa.fr/wp-json/wp/v2/exportjson/fr';
+    fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' }), })
+        .then(response => { return response.json(); })
+        .then(data => {
+            require('fs').writeFile('datas/poiFR.json', JSON.stringify(data), (err) => {
+                if (err) {
+                    console.error(err.message);
+                    $.when($.getJSON("datas/poiFR.json", function (data) { poisJsonFR = data; })).then(chargementJsonPoiEN);
+                } else {
+                    poisJsonFR = data;
+                    chargementJsonPoiEN();
+                }
+            });
+        })
+        .catch((error) => console.error(error));
 }
+function chargementJsonPoiEN() {
 
-function logout() {
-    removeInactivityTime();
-    veille.ouvrir();
+    var token = '}MkT9oJw4oH?ogv';
+    var url = 'http://parc-ballons-vosges.validation.php56.sbg.advisa.fr/wp-json/wp/v2/exportjson/en';
+    fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' }), })
+        .then(response => { return response.json(); })
+        .then(data => {
+            require('fs').writeFile('datas/poiEN.json', JSON.stringify(data), (err) => {
+                if (err) {
+                    console.error(err.message);
+                    $.when($.getJSON("datas/poiEN.json", function (data) { poisJsonEN = data; })).then(chargementJsonPoiDE);
+                } else {
+                    poisJsonEN = data;
+                    chargementJsonPoiDE();
+                }
+            });
+        })
+        .catch((error) => console.error(error));
 }
+function chargementJsonPoiDE() {
 
-function resetTimer() {
-    if (t) {
-        clearTimeout(t);
-    }
-    t = setTimeout(logout, paramsJSON.tempsInactivity);
+    var token = '}MkT9oJw4oH?ogv';
+    var url = 'http://parc-ballons-vosges.validation.php56.sbg.advisa.fr/wp-json/wp/v2/exportjson/de';
+    fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' }), })
+        .then(response => { return response.json(); })
+        .then(data => {
+            require('fs').writeFile('datas/poiDE.json', JSON.stringify(data), (err) => {
+                if (err) {
+                    console.error(err.message);
+                    $.when($.getJSON("datas/poiDE.json", function (data) { poisJsonDE = data; })).then(createApplication);
+                } else {
+                    poisJsonDE = data;
+                    createApplication();
+                }
+            });
+        })
+        .catch((error) => console.error(error));
 }
 
 
@@ -125,23 +160,6 @@ function somme(int) {
         somme += i;
     }
     return somme;
-}
-
-function dragMoveListener(event) {
-    console.log(event.target);
-    var target = event.target,
-        // keep the dragged position in the data-x/data-y attributes
-        x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-        y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
-
-    // translate the element
-    target.style.webkitTransform =
-        target.style.transform =
-        'translate(' + x + 'px, ' + y + 'px)';
-
-    // update the posiion attributes
-    target.setAttribute('data-x', x);
-    target.setAttribute('data-y', y);
 }
 
 // this is used later in the resizing and gesture demos
