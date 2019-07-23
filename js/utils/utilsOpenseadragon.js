@@ -26,19 +26,22 @@ function poiToOverlay(p) {
     height = 8000;
     width = 8000;
 
+    var lat = p._address.lat;
+    var long = p._address.long;
+
     var dPixel = Math.sqrt(pow(height, 2) + pow(width, 2));
     var dDistance =
         distanceBtw2Coord(finCarte.lat, finCarte.long, origineCarte.lat, origineCarte.long);
     var echelle = dDistance / dPixel; // en km/Pixel
 
-    var coefXLat = pow(Math.cos((p._lat - origineCarte.lat) * 0.25), 2);
+    var coefXLat = pow(Math.cos((lat - origineCarte.lat) * 0.25), 2);
     var coefXLatPixel = (1 - coefXLat) * width * echelle;
 
-    var coefYLong = pow(Math.cos((p._long - origineCarte.long) * 0.22), 2);
+    var coefYLong = pow(Math.cos((long - origineCarte.long) * 0.22), 2);
     var coefYLongPixel = (1 - coefYLong) * height * echelle;
 
-    var x = distanceBtw2Coord(p._lat, p._long, p._lat, origineCarte.long);
-    var y = distanceBtw2Coord(p._lat, p._long, origineCarte.lat, p._long);
+    var x = distanceBtw2Coord(lat, long, lat, origineCarte.long);
+    var y = distanceBtw2Coord(lat, long, origineCarte.lat, long);
 
     var x = x + coefXLatPixel;
     var y = y - coefYLongPixel;

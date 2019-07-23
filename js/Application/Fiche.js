@@ -27,28 +27,37 @@ class Fiche extends DivObject {
         this._divTexte.addClass('divTexte');
         this._titre = new BaliseObject(this._divTexte._balise, "h1");
         this._titre.css('color', couleur)
-        this._titre.html(poi._titre);
+        this._titre.html(poi._title);
         this._sousTitre = new BaliseObject(this._divTexte._balise, "h3");
-        this._sousTitre.html(poi._soustitre);
+        this._sousTitre.html(poi._subtitle);
         this._texte = new BaliseObject(this._divTexte._balise, "p");
-        this._texte.html(poi._texte);
-        var s = $('<style></style>')
-            .html(".fiche p::-webkit-scrollbar-thumb {\
-            background: "+ couleur + "; \
-          }");
-        this._texte._balise.after(s);
+
 
         var bottom = new DivObject(this._divTexte._balise, "divBottom_" + this._id);
         bottom.addClass('divBottom');
-        var ti = new BaliseObject(bottom._balise, 'h4');
-        ti.html(poi._titre);
-        if (poi._adresse != "") { bottom.append(poi._adresse + '<br>') };
-        if (poi._tel != "") { bottom.append(poi._tel + '<br>') };
-        if (poi._mail != "") { bottom.append(poi._mail + '<br>') };
-        if (poi._site != "") { bottom.append(poi._site + '<br>') };
+        bottom.html(JSON.stringify(poi._address));
 
+        var galerie = [];
+        poi._galerie.forEach(element => {
+            galerie.push(element.src);
+        });
 
+        var subContent = poi._subcontent;
+        var txtContent = "";
+        subContent.forEach(element => {
+            txtContent += "<h3>" + element.title + "</h3>";
+            txtContent += element.text;
+            element.galerie.forEach(pic => {
+                galerie.push(pic.src);
+            });
+        });
 
+        this._texte.html(poi._text + txtContent);
+        var s = $('<style></style>')
+            .html(".fiche p::-webkit-scrollbar-thumb {\
+        background: "+ couleur + "; \
+      }");
+        this._texte._balise.after(s);
 
 
 
@@ -63,7 +72,7 @@ class Fiche extends DivObject {
 
         var divSlider = new DivObject(divFiche._balise, 'divSlider_' + this._id);
         divSlider.addClass('divSlider');
-        new SliderDiaporama(divSlider._balise, 'slider_' + this._id, poi._images, couleur, 500, 3, 0.5);
+        new SliderDiaporama(divSlider._balise, 'slider_' + this._id, galerie, couleur, 500, 3, 0.5);
 
         this._overlay = ficheToOverlay(this);
         this._balise.toggle();

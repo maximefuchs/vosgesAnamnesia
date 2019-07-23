@@ -146,7 +146,7 @@ class Menu extends DivObject {
         if (element._type == 'carte') {
             menu.hideDecoElements(menu);
             menu._divEltsDeco.css('display', 'none');
-            menu.showSousMenu($(this), element._lien);
+            menu.showSousMenu($(this));
         } else {
             menu._divEltsDeco.css('display', 'block');
             menu.moveDecoElements(menu);

@@ -49,7 +49,7 @@ function createApplication() {
 
     console.log(StageWidth + " - " + StageHeight);
 
-    // poisJSON = poisJsonFR;
+    poisJSON = poisJsonFR;
     application = new Application();
 };
 
@@ -81,8 +81,8 @@ function chargeOldPoi(data) {
 
 function chargementJsonPoiFR() {
 
-    var token = '}MkT9oJw4oH?ogv';
-    var url = 'http://parc-ballons-vosges.validation.php56.sbg.advisa.fr/wp-json/wp/v2/exportjson/fr';
+    var token = 'ev79X7MuE';
+    var url = 'https://parc-ballons-vosges.fr/wp-json/wp/v2/exportjson/fr';
     fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' }), })
         .then(response => { return response.json(); })
         .then(data => {
@@ -100,8 +100,8 @@ function chargementJsonPoiFR() {
 }
 function chargementJsonPoiEN() {
 
-    var token = '}MkT9oJw4oH?ogv';
-    var url = 'http://parc-ballons-vosges.validation.php56.sbg.advisa.fr/wp-json/wp/v2/exportjson/en';
+    var token = 'ev79X7MuE';
+    var url = 'https://parc-ballons-vosges.fr/wp-json/wp/v2/exportjson/en';
     fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' }), })
         .then(response => { return response.json(); })
         .then(data => {
@@ -119,8 +119,8 @@ function chargementJsonPoiEN() {
 }
 function chargementJsonPoiDE() {
 
-    var token = '}MkT9oJw4oH?ogv';
-    var url = 'http://parc-ballons-vosges.validation.php56.sbg.advisa.fr/wp-json/wp/v2/exportjson/de';
+    var token = 'ev79X7MuE';
+    var url = 'https://parc-ballons-vosges.fr/wp-json/wp/v2/exportjson/de';
     fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' }), })
         .then(response => { return response.json(); })
         .then(data => {

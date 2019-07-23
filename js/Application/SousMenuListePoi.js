@@ -31,7 +31,7 @@ class SousMenuListePoi extends DivObject {
         });
         var menu = this;
         for (let i = 0; i < json.length; i++) {
-            var e = new ElementListePoi(divListePoi._balise, i + 'elementListePoi', json[i].titre, json[i].adresse, json[i].images[0], scale);
+            var e = new ElementListePoi(divListePoi._balise, i + 'elementListePoi', json[i], scale);
             if (i % 2 == 0) { e.css('background', '#EEE'); }
             e._balise.click(function () {
                 menu.clickSignal.dispatch(i);

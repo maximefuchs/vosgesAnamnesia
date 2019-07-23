@@ -1,21 +1,33 @@
 class ElementListePoi extends DivObject {
-    constructor(parent, id, titre, adresse, imgSource, scale) {
-        super(parent, id);
+    constructor(parent, id, json, scale) {
+        super(parent, id + json.id);
         this.addClass('elementListePoi');
         var divImg = new DivObject(this._balise, 'image_' + this._id);
         divImg.addClass('divImgEltLiPoi');
         var divTexte = new DivObject(this._balise, 'texte_' + this._id);
         var txt = new DivObject(divTexte._balise, 'txtLiPoiElt_' + this._id);
         txt.addClass('poiLiEltTexte');
-        txt.html('<b>' + titre.toUpperCase() + '</b><br>' + adresse);
+        var ad = json.mainAddress;
+        var contact = ad.address;
+        if (ad.mail != null && ad.mail != "") { contact += "<br>" + ad.mail; }
+        if (ad.tel != null && ad.tel != "") { contact += "<br>" + ad.tel; }
+
+        if (ad.name !== undefined)
+            txt.html('<b>' + ad.name.toUpperCase() + '</b><br><p style="font-size:16px">' + contact + '</p>');
+        else
+            txt.html('<b>' + json.title.toUpperCase() + '</b><br><p style="font-size:16px">Unknown</p>')
 
         this._balise.css({
             height: scale + 'px'
         });
+        var thumbnail = json.thumbnail;
+        if (!thumbnail) {
+            thumbnail = 'datas/imgs/menu/diaporama/diapo_1.jpg';
+        }
         divImg._balise.css({
             width: 2 * scale + 'px',
             height: scale + 'px',
-            background: 'url(' + imgSource + ')',
+            background: 'url(' + thumbnail + ')',
             'background-size': 'cover',
             'background-position': 'center'
         });
