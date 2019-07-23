@@ -29,6 +29,9 @@ class Menu extends DivObject {
         this._couleursAssociees = [];
 
         this.backgroundDiaporama = json.diaporama;
+        var overlay = new Img(this._balise, 'filterBackground', 'datas/imgs/menu/diaporama/overlay_img.png');
+        overlay.addClass('page');
+        overlay.css('z-index', 1);
         this.backPause = false;
         this._setIntervalFonction = 0; // id of the setInterval founction used to switch between background images
 
