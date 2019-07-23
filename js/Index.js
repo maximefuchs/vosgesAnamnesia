@@ -33,7 +33,7 @@ function initApplication() {
     $.when($.getJSON("datas/params.json", finChargementParams),
         $.getJSON("datas/texte.json", finChargementTexte),
         $.getJSON("datas/jeu.json", finChargementJeu),
-        // $.getJSON("datas/poi.json", finChargementPoi),
+        $.getJSON("datas/poi.json", chargeOldPoi),
         $.getJSON("datas/perenne.json", finChargementPerenne)
     ).then(chargementJsonPoiFR);
 };
@@ -49,7 +49,7 @@ function createApplication() {
 
     console.log(StageWidth + " - " + StageHeight);
 
-    poisJSON = poisJsonFR;
+    // poisJSON = poisJsonFR;
     application = new Application();
 };
 
@@ -65,15 +65,18 @@ function finChargementParams(data) {
     }
 }
 
+
 function finChargementTexte(data) {
     textesJSON = data;
 }
-
 function finChargementJeu(data) {
     jeuxJSON = data;
 }
 function finChargementPerenne(data) {
     perennesJSON = data;
+}
+function chargeOldPoi(data) {
+    poisJSON = data;
 }
 
 function chargementJsonPoiFR() {
@@ -161,6 +164,3 @@ function somme(int) {
     }
     return somme;
 }
-
-// this is used later in the resizing and gesture demos
-window.dragMoveListener = dragMoveListener;

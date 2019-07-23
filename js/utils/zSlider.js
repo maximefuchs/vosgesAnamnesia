@@ -293,6 +293,7 @@
             }
             if (swipe) {
                 ev.preventDefault(); // Kill page scroll
+                ev.stopPropagation();
                 moveHandler(ev, slider, diffX); // Handle swipe
                 customEvent = createEvent('swipe', true, true);
                 customEvent.movement = {

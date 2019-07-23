@@ -30,7 +30,7 @@ class ElementSousMenu extends BlocMenu {
             "background": this._couleur,
             "opacity": 0
         });
-        this.tweenAnimate({ opacity: this._params.opacity }, 0, 0.5);
+        this.tweenAnimate({ opacity: this._params.opacity }, 0.6 + this._params.num * 0.1, 0.5);
     }
 
     close() {

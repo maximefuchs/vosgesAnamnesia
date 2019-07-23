@@ -269,21 +269,15 @@ class Menu extends DivObject {
     }
     moveDecoElements(menu) {
         menu._divEltsDeco.tweenAnimate({ bottom: menu._scale + 'px' });
-        var height = menu._divEltsDeco._balise.height();
         for (let i = 0; i < menu._decoMenuElements.length; i++) {
             var element = menu._decoMenuElements[i];
             var jsonElt = menu._json.deco.sousmenu[i];
-            var bottom = jsonElt.y * menu._scale;
-            var newParams = {
+            element.tweenAnimate({
                 left: jsonElt.x * menu._scale,
-                bottom: bottom,
-                opacity: jsonElt.a
-            };
-            if (bottom + menu._scale > height) {
-                height = top + menu._scale;
-                menu._divEltsDeco.tweenAnimate({ height: height });
-            }
-            element.tweenAnimate(newParams);
+                bottom: jsonElt.y * menu._scale,
+                opacity: 0
+            }, 0, 0);
+            element.tweenAnimate({ opacity: jsonElt.a });
         }
     }
     hideDecoElements(menu) {

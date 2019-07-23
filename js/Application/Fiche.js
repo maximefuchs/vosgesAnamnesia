@@ -23,21 +23,14 @@ class Fiche extends DivObject {
         var divFiche = new DivObject(this._balise, 'divFiche_' + this._id);
         divFiche.addClass("fiche");
 
-        var lorem = "Ut aute enim tempor veniam anim excepteur enim magna. Minim occaecat dolore Lorem quis. Do et sunt duis veniam nisi sit. Pariatur officia labore mollit sit duis excepteur cillum voluptate magna quis sit. Laborum nisi exercitation amet reprehenderit pariatur officia exercitation.";
-        var t = 'titre titre titre';
-        var st = 'soustitre soustitre'
-
         this._divTexte = new DivObject(divFiche._balise, "divtxt_" + this._id);
         this._divTexte.addClass('divTexte');
         this._titre = new BaliseObject(this._divTexte._balise, "h1");
         this._titre.css('color', couleur)
-        // this._titre.html(t);
         this._titre.html(poi._titre);
         this._sousTitre = new BaliseObject(this._divTexte._balise, "h3");
-        // this._sousTitre.html(st);
         this._sousTitre.html(poi._soustitre);
         this._texte = new BaliseObject(this._divTexte._balise, "p");
-        // this._texte.html(lorem);
         this._texte.html(poi._texte);
         var s = $('<style></style>')
             .html(".fiche p::-webkit-scrollbar-thumb {\
@@ -83,19 +76,6 @@ class Fiche extends DivObject {
         this._sousTitre.html(Global.getTexteLangue(this._poi._soustitre, this._langue));
         this._texte.html(Global.getTexteLangue(this._poi._texte, this._langue));
     }
-
-    // positionement() {
-    //     TweenLite.to(this._balise, 0, { x: this.testX(), y: this.testY() });
-    //     if (this._y < StageHeight / 2) {
-    //         this.attr("rotate", 180);
-    //         TweenLite.to(this._balise, 0, { rotation: 180 });
-    //     } else {
-    //         this.attr("rotate", 0);
-    //         TweenLite.to(this._balise, 0, { rotation: 0 });
-    //     }
-    //     this.attr("data-x", this.testX());
-    //     this.attr("data-y", this.testY());
-    // }
 
     get fermerSignal() {
         return this.signaux.fermer;

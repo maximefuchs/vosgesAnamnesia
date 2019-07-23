@@ -21,15 +21,6 @@ class Carte extends DivObject {
 
         this._fiches = [];
 
-        // this._layers = [];
-        // this._layersDiv = new DivObject(this._balise, "CarteLayers");
-        // var layers = jsonCarte.layer;
-        // for (let i = 0; i < layers.length; i++) {
-        //     console.log("new Layer : " + i);
-        //     var layer = new Img(this._layersDiv._balise, layers[i].id, layers[i].src);
-        //     this._layers.push(layer);
-        // }
-
         this.clickSignal = new signals.Signal();
         var carte = this;
         this._balise.click(function () {
@@ -65,6 +56,10 @@ class Carte extends DivObject {
     getOSDviewer() {
         var div = new DivObject(this._balise, "OSDandButtons");
         div.addClass('page');
+        div._balise.css({
+            width: '2790px',
+            right: 0
+        })
 
         var seadragonView = new DivObject(div._balise, 'seadragon-viewer');
 
@@ -72,7 +67,7 @@ class Carte extends DivObject {
         var viewer = OpenSeadragon({
             id: "seadragon-viewer",
             prefixUrl: this._jsonCarte.boutonsCarte,
-            maxZoomLevel: 3,
+            maxZoomLevel: 4,
             visibilityRatio: 1,
             defaultZoomLevel: 1.2, // no white borders
             // defaultZoomLevel: 1,
@@ -127,8 +122,12 @@ class Carte extends DivObject {
         var zMax = viewer.viewport.getMaxZoom();
         zoomInBtn._balise.click(function () {
             var z = viewer.viewport.getZoom();
-            if (z < zMax)
+            if (z < zMax) {
+                var zoomTo = z * 1.3;
+                if (zoomTo > zMax)
+                    zoomTo = zMax;
                 viewer.viewport.zoomTo(z * 1.3);
+            }
         });
 
         var zoomOutBtn = new BtObject(div, "zoomOutBtn");
@@ -138,8 +137,12 @@ class Carte extends DivObject {
         var zMin = viewer.viewport.getMinZoom();
         zoomOutBtn._balise.click(function () {
             var z = viewer.viewport.getZoom();
-            if (z > zMin)
-                viewer.viewport.zoomTo(z / 1.3);
+            if (z > zMin) {
+                var zoomTo = z / 1.3;
+                if (zoomTo < zMin)
+                    zoomTo = zMin;
+                viewer.viewport.zoomTo(zoomTo);
+            }
         });
     }
 
@@ -180,6 +183,11 @@ class Carte extends DivObject {
             f._ouvert = true;
             carte._viewer.addOverlay(f._overlay);
             carte.removeOverlay(f, p);
+
+            var viewport = carte._viewer.viewport;
+            var pt = new OpenSeadragon.Point(overlay.x, overlay.y);
+            viewport.panTo(pt);
+            viewport.zoomTo(2);
         }
     }
 

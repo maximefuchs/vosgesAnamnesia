@@ -11,22 +11,19 @@ class ElementDecoMenu extends BlocMenu {
         this._scale = scale;
 
         this.addClass('elementDecoMenu');
-        this._balise.css({
-            "width": this._taille,
-            "height": this._taille,
-            "left": Math.random() * 2500,
-            "bottom": Math.random() * 2500,
-            "background": this._couleur,
-            "opacity": 0
-        });
     }
 
     init() {
-        this.tweenAnimate(
-            {
-                left: this._x * this._scale,
-                bottom: this._y * this._scale,
-                opacity: this._alpha,
-            }, 1, 1);
+        this.tweenAnimate({ 
+            "width": this._taille,
+            "height": this._taille,
+            "left": this._x * this._scale,
+            "bottom": this._y * this._scale,
+            "background": this._couleur,
+            "opacity": 0 
+        }, 0, 0);
+        this.tweenAnimate({ 
+            opacity: this._alpha 
+        }, 1, 1);
     }
 }

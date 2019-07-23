@@ -62,7 +62,7 @@ class SousMenu extends DivObject {
         var texte = new BaliseObject(this._divText._balise, 'p', 'txt_' + this._id);
         texte.html(json.texte);
         texte._balise.css({
-            'max-height': 1.8 * scale,
+            'max-height': 1.6 * scale,
             'margin-top': 0.5 * scale
         });
         var st = $('<style></style>')
@@ -146,8 +146,8 @@ class SousMenu extends DivObject {
     }
 
     init() {
-        this._divText.tweenAnimate({ left: 2 * this._scale });
-        this._btnFermer.tweenAnimate({ bottom: 5.5 * this._scale }, 1, 0.3);
+        this._divText.tweenAnimate({ left: 2 * this._scale }, 0, 0.6);
+        this._btnFermer.tweenAnimate({ bottom: 5.5 * this._scale }, 0.6, 0.3);
         this.initSousMenuElement();
         this._divssSousMenu.tweenAnimate({ left: 0 });
         if (this._json.type == 'carte') {
@@ -507,6 +507,7 @@ class SousMenu extends DivObject {
                 y: emplacements[i].y,
                 taille: taille,
                 couleur: this._couleur,
+                num: i,
                 opacity: (Math.floor(Math.random() * 2) == 0) ? 1 : 0.9
             }
             var eltSsMenu = new ElementSousMenu(this._balise, jsonElt, params, this._scale);
