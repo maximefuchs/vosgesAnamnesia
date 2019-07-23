@@ -14,19 +14,19 @@
 
 .fiche .divTexte {
     flex: 1;
-    height: 380;
-    width: 380;
+    height: 380px;
+    width: 380px;
     padding: 70px 70px 50px 50px;
     text-align: justify;
 }
 
 .fiche h2, .fiche h3, .fiche p {
-    margin-top: 20px;
+    margin-top: 0;
 }
 
-.fiche p {
-    height: 170px;
-    overflow-y: scroll;
+.fiche .paraScroll {
+    max-height: 170px;
+    overflow-y: auto;
 }
 
 .fiche p::-webkit-scrollbar {

@@ -29,7 +29,7 @@
             "blocDroit2": ""
         }
     },
-    "marqueParc": {
+    "La marque Parc": {
         "valeurs": {
             "titre": "Marque « Valeurs Parc naturel régional »",
             "imgTop": "datas/imgs/perenne/marqueParc/valeurs.jpg",
@@ -478,7 +478,7 @@
             "blocDroit2": ""
         }
     },
-    "aDeguster": {
+    "A déguster": {
         "tresor des ballons": {
             "titre": "Trésor des Ballons des Vosges",
             "imgTop": "datas/imgs/perenne/aDeguster/tresor.jpg",

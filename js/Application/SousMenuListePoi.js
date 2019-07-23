@@ -31,11 +31,13 @@ class SousMenuListePoi extends DivObject {
         });
         var menu = this;
         for (let i = 0; i < json.length; i++) {
-            var e = new ElementListePoi(divListePoi._balise, i + 'elementListePoi', json[i], scale);
-            if (i % 2 == 0) { e.css('background', '#EEE'); }
-            e._balise.click(function () {
-                menu.clickSignal.dispatch(i);
-            });
+            if (json[i] !== undefined) { // certains POIs donnent undefined ???
+                var e = new ElementListePoi(divListePoi._balise, i + 'elementListePoi', json[i], scale);
+                if (i % 2 == 0) { e.css('background', '#EEE'); }
+                e._balise.click(function () {
+                    menu.clickSignal.dispatch(i);
+                });
+            }
         }
         var s = $('<style></style>')
             .html(".divListePoi::-webkit-scrollbar-thumb {\

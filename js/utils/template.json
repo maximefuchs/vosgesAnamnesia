@@ -211,13 +211,13 @@
                     {
                         "id": 0,
                         "x": 0,
-                        "y": 1,
+                        "y": 1.5,
                         "a": 0.3
                     },
                     {
                         "id": 1,
                         "x": 1,
-                        "y": 1,
+                        "y": 1.5,
                         "a": 0.9
                     },
                     {
@@ -229,7 +229,7 @@
                     {
                         "id": 3,
                         "x": 2,
-                        "y": 2,
+                        "y": 2.5,
                         "a": 0.3
                     },
                     {
@@ -272,7 +272,7 @@
                         "id": 10,
                         "x": 10,
                         "y": 0,
-                        "a": 0.9
+                        "a": 0
                     },
                     {
                         "id": 11,
@@ -353,7 +353,7 @@
                         "de": "Zu essen",
                         "en": "To eat"
                     },
-                    "lien": "aDeguster",
+                    "lien": "A déguster",
                     "x": 0,
                     "y": 2,
                     "taille": 3
@@ -368,7 +368,7 @@
                         "de": "Zu sehen, Zu besichtigen",
                         "en": "To see, To visit"
                     },
-                    "lien": "a voir a visiter",
+                    "lien": "A voir à visiter",
                     "x": 3,
                     "y": 0,
                     "taille": 4
@@ -488,7 +488,7 @@
                         "de": "Die parc Marke",
                         "en": "The brand parc"
                     },
-                    "lien": "marqueParc",
+                    "lien": "La marque Parc",
                     "x": 18,
                     "y": 0,
                     "taille": 2
@@ -518,7 +518,7 @@
                         "de": "Sich informieren",
                         "en": "Get information"
                     },
-                    "lien": "info",
+                    "lien": "S'informer",
                     "x": 20,
                     "y": 0,
                     "taille": 2
@@ -540,7 +540,7 @@
                 }
             ],
             "SousMenu": {
-                "aDeguster": {
+                "A déguster": {
                     "texte": "Encourager les circuits courts et faire connaître les produits et les savoir faire de son territoire sont deux actions essentielles pour le Parc des Ballons des Vosges.",
                     "type": "carte",
                     "diaporama": [
@@ -559,7 +559,7 @@
                         {
                             "id": 0,
                             "titre": "Fermes auberges",
-                            "lien": "fermes",
+                            "lien": "Fermes auberges",
                             "type": "poi"
                         },
                         {
@@ -618,19 +618,13 @@
                         }
                     ]
                 },
-                "a voir a visiter": {
+                "A voir à visiter": {
                     "texte": "Dialoguer, sensibiliser et être compris par les habitants et les visiteurs. Pour atteindre ces objectifs, le Parc naturel régional des Ballons des Vosges dispose de différents points d’accueil. Ces lieux vivants et ouverts sont de formidables points de départ pour partir à la découverte du sud du massif des Vosges. Ils proposent une documentation spécifique et différentes expositions temporaires",
-                    "lien": "a voir a visiter",
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/paysage/diapo_1.jpg",
-                            "color": "#FF0000"
-                        },
-                        {
-                            "id": "diapo2",
-                            "src": "datas/imgs/menu/diaporama/paysage/diapo_2.jpg",
-                            "color": "#FFFF00"
+                            "src": "datas/imgs/menu/diaporama/aVoir/diapo_0.jpg",
+                            "color": "#FF0450"
                         }
                     ],
                     "sousmenu": [
@@ -643,7 +637,7 @@
                         {
                             "id": 1,
                             "titre": "Parcs et jardins",
-                            "lien": "parcs",
+                            "lien": "Parcs et jardins",
                             "type": "poi"
                         },
                         {
@@ -654,39 +648,39 @@
                         },
                         {
                             "id": 3,
-                            "titre": "Lieux de spactables et d'expositions",
+                            "titre": "Lieux de spactacles et d'expositions",
                             "type": "carte",
-                            "lien": "lieux spectacles et expos",
+                            "lien": "Lieux de spectacles et d'expositions",
                             "texte": "La diversité des paysages du Parc permet la pratique de nombreuses activités de pleine nature. Il accompagne plus particulièrement la pratique des activités respectueuses du territoire.",
                             "sousmenu": [
                                 {
                                     "id": 0,
                                     "titre": "Expositions",
-                                    "lien": "expos",
+                                    "lien": "Lieux d'expositions",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 1,
                                     "titre": "Spectacles et concerts",
-                                    "lien": "spectacles",
+                                    "lien": "Lieux de spectacles et de concerts",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 2,
                                     "titre": "Créations artistiques",
-                                    "lien": "creation",
+                                    "lien": "Lieux de créations artistiques",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 3,
                                     "titre": "Convivialité",
-                                    "lien": "convivialite",
+                                    "lien": "Lieux de convivialité",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 4,
                                     "titre": "Cinémas",
-                                    "lien": "cinema",
+                                    "lien": "Cinémas",
                                     "type": "poi"
                                 }
                             ]
@@ -694,43 +688,43 @@
                         {
                             "id": 4,
                             "titre": "Musées et sites patrimoines",
-                            "lien": "musees",
+                            "lien": "Musées et sites patrimoine",
                             "type": "carte",
                             "sousmenu": [
                                 {
                                     "id": 0,
                                     "titre": "Arts et histoire",
-                                    "lien": "arts",
+                                    "lien": "Arts et histoire",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 1,
                                     "titre": "Châteaux",
-                                    "lien": "chateaux",
+                                    "lien": "Châteaux",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 2,
                                     "titre": "Patrimoine de mémoire",
-                                    "lien": "memoire",
+                                    "lien": "Patrimoine de mémoire ",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 3,
                                     "titre": "Patrimoine industriel et savoir faire",
-                                    "lien": "industriel",
+                                    "lien": "Patrimoine industriel et savoir faire",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 4,
                                     "titre": "Patrimoine religieux",
-                                    "lien": "religieux",
+                                    "lien": "Patrimoine religieux",
                                     "type": "poi"
                                 },
                                 {
                                     "id": 5,
                                     "titre": "Traditions populaires",
-                                    "lien": "traditions",
+                                    "lien": "Traditions populaire",
                                     "type": "poi"
                                 }
                             ]
@@ -801,13 +795,8 @@
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
-                            "color": "#FF0000"
-                        },
-                        {
-                            "id": "diapo2",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
-                            "color": "#FFFF00"
+                            "src": "datas/imgs/menu/diaporama/nature/diapo_1.jpg",
+                            "color": "#FF9000"
                         }
                     ],
                     "sousmenu": [
@@ -873,13 +862,8 @@
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
+                            "src": "datas/imgs/menu/diaporama/actiNature/diapo_2.jpg",
                             "color": "#FF0000"
-                        },
-                        {
-                            "id": "diapo2",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
-                            "color": "#FFFF00"
                         }
                     ],
                     "sousmenu": [
@@ -982,13 +966,8 @@
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
+                            "src": "datas/imgs/menu/diaporama/culture/diapo_3.jpg",
                             "color": "#FF0000"
-                        },
-                        {
-                            "id": "diapo2",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
-                            "color": "#FFFF00"
                         }
                     ],
                     "sousmenu": [
@@ -1047,13 +1026,8 @@
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
+                            "src": "datas/imgs/menu/diaporama/parc/diapo_0.jpg",
                             "color": "#FF0000"
-                        },
-                        {
-                            "id": "diapo2",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
-                            "color": "#FFFF00"
                         }
                     ],
                     "sousmenu": [
@@ -1130,18 +1104,13 @@
                         }
                     ]
                 },
-                "marqueParc": {
+                "La marque Parc": {
                     "texte": "La marque nationale \"Valeurs Parc naturel régional\" distingue des entreprises engagées dans un développement économique durable dans leurs territoires. Elle s’articule autour de 3 valeurs fortes : l’humain, la préservation de l’environnement et l’attachement au territoire.",
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
+                            "src": "datas/imgs/menu/diaporama/marqueParc/diapo_2.jpg",
                             "color": "#FF0000"
-                        },
-                        {
-                            "id": "diapo2",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
-                            "color": "#FFFF00"
                         }
                     ],
                     "sousmenu": [
@@ -1154,7 +1123,7 @@
                         {
                             "id": 1,
                             "titre": "Secteurs d'activités",
-                            "lien": "secteurs",
+                            "lien": "Par secteur d'activités",
                             "sousmenu": [
                                 {
                                     "id": 0,
@@ -1211,25 +1180,25 @@
                                 {
                                     "id": 2,
                                     "titre": "tourisme, hébergements et loisirs",
-                                    "lien": "tourisme",
+                                    "lien": "Tourisme, hébergement et loisirs",
                                     "type": "carte",
                                     "sousmenu": [
                                         {
                                             "id": 0,
                                             "titre": "Hôtels restaurants",
-                                            "lien": "hotels",
+                                            "lien": "Hôtels restaurants",
                                             "type": "poi"
                                         },
                                         {
                                             "id": 1,
                                             "titre": "Meublés de tourisme et chambres d'hôtes",
-                                            "lien": "chambres",
+                                            "lien": "Meublés de tourisme et chambres hôtes",
                                             "type": "poi"
                                         },
                                         {
                                             "id": 2,
                                             "titre": "Accompagnateurs en montagne",
-                                            "lien": "accompagnateurs",
+                                            "lien": "Accompagnateurs en montagne",
                                             "type": "poi"
                                         }
                                     ]
@@ -1243,13 +1212,8 @@
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
+                            "src": "datas/imgs/menu/diaporama/seDeplacer/diapo_3.jpg",
                             "color": "#FF0000"
-                        },
-                        {
-                            "id": "diapo2",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
-                            "color": "#FFFF00"
                         }
                     ],
                     "sousmenu": [
@@ -1279,26 +1243,21 @@
                         }
                     ]
                 },
-                "info": {
+                "S'informer": {
                     "texte": "Les Offices du tourisme sont là pour donner une information complète : manger, dormir, marcher, visiter … Il suffit de contacter le plus proche de son lieu de vacances… 4 comités départementaux et 3 comités régionaux du tourisme diffusent également de la documentation.",
                     "type": "carte",
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
+                            "src": "datas/imgs/menu/diaporama/info/diapo_0.jpg",
                             "color": "#FF0000"
-                        },
-                        {
-                            "id": "diapo2",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
-                            "color": "#FFFF00"
                         }
                     ],
                     "sousmenu": [
                         {
                             "id": 0,
                             "titre": "Offices du tourisme",
-                            "lien": "offices",
+                            "lien": "Offices du tourisme",
                             "type": "poi"
                         },
                         {

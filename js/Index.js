@@ -96,7 +96,10 @@ function chargementJsonPoiFR() {
                 }
             });
         })
-        .catch((error) => console.error(error));
+        .catch((error) => {
+            console.error(error);
+            $.when($.getJSON("datas/poiFR.json", function (data) { poisJsonFR = data; })).then(chargementJsonPoiEN);
+        });
 }
 function chargementJsonPoiEN() {
 
@@ -115,7 +118,10 @@ function chargementJsonPoiEN() {
                 }
             });
         })
-        .catch((error) => console.error(error));
+        .catch((error) => {
+            console.error(error);
+            $.when($.getJSON("datas/poiEN.json", function (data) { poisJsonEN = data; })).then(chargementJsonPoiDE);
+        });
 }
 function chargementJsonPoiDE() {
 
@@ -134,7 +140,10 @@ function chargementJsonPoiDE() {
                 }
             });
         })
-        .catch((error) => console.error(error));
+        .catch((error) => {
+            console.error(error);
+            $.when($.getJSON("datas/poiDE.json", function (data) { poisJsonDE = data; })).then(createApplication);
+        });
 }
 
 

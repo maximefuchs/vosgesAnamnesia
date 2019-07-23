@@ -37,10 +37,15 @@ class Carte extends DivObject {
         this._fiches = [];
         for (let i = 0; i < jsonPOIs.length; i++) {
             console.log("new point + fiche : " + i);
-            var poi = new Poi(this._poiDiv._balise, i + 'poi_' + this._id, jsonPOIs[i]);
-            this._pois.push(poi);
-            var f = new Fiche(poi, i + 'fiche_' + poi._id, this._couleur);
-            this._fiches.push(f);
+            if (jsonPOIs[i] !== undefined) {
+                var poi = new Poi(this._poiDiv._balise, i + 'poi_' + this._id, jsonPOIs[i]);
+                this._pois.push(poi);
+                var f = new Fiche(poi, i + 'fiche_' + poi._id, this._couleur);
+                this._fiches.push(f);
+            }
+            else {
+                console.log("undefined");
+            }
         }
         this.setOverlays();
     }
@@ -175,7 +180,8 @@ class Carte extends DivObject {
         var p = f._poi;
         if (!f._ouvert) {
             p.addClass('large');
-            p._balise.css({ 'background': 'url(' + p._images[0] + ')', 'background-size': 'cover', 'background-position': 'center' });
+            var b = p._thumbnail != false ? p._thumbnail : 'datas/imgs/menu/diaporama/3.jpg';
+            p._balise.css({ 'background': 'url(' + b + ')', 'background-size': 'cover', 'background-position': 'center' });
             var overlay = poiToOverlay(p);
             console.log(overlay);
 
@@ -187,7 +193,7 @@ class Carte extends DivObject {
             var viewport = carte._viewer.viewport;
             var pt = new OpenSeadragon.Point(overlay.x, overlay.y);
             viewport.panTo(pt);
-            viewport.zoomTo(2);
+            viewport.zoomTo(1.5);
         }
     }
 

@@ -9,8 +9,6 @@ class ElementListePoi extends DivObject {
         txt.addClass('poiLiEltTexte');
         var ad = json.mainAddress;
         var contact = ad.address;
-        if (ad.mail != null && ad.mail != "") { contact += "<br>" + ad.mail; }
-        if (ad.tel != null && ad.tel != "") { contact += "<br>" + ad.tel; }
 
         if (ad.name !== undefined)
             txt.html('<b>' + ad.name.toUpperCase() + '</b><br><p style="font-size:16px">' + contact + '</p>');
@@ -22,7 +20,7 @@ class ElementListePoi extends DivObject {
         });
         var thumbnail = json.thumbnail;
         if (!thumbnail) {
-            thumbnail = 'datas/imgs/menu/diaporama/diapo_1.jpg';
+            thumbnail = 'datas/imgs/menu/diaporama/logo.png';
         }
         divImg._balise.css({
             width: 2 * scale + 'px',

@@ -26,16 +26,28 @@ class Fiche extends DivObject {
         this._divTexte = new DivObject(divFiche._balise, "divtxt_" + this._id);
         this._divTexte.addClass('divTexte');
         this._titre = new BaliseObject(this._divTexte._balise, "h1");
-        this._titre.css('color', couleur)
+        this._titre.css('color', couleur);
         this._titre.html(poi._title);
         this._sousTitre = new BaliseObject(this._divTexte._balise, "h3");
         this._sousTitre.html(poi._subtitle);
         this._texte = new BaliseObject(this._divTexte._balise, "p");
+        this._texte.addClass('paraScroll');
 
 
-        var bottom = new DivObject(this._divTexte._balise, "divBottom_" + this._id);
+        var bottom = new DivObject(this._divTexte._balise, "divBottom_" + id);
         bottom.addClass('divBottom');
-        bottom.html(JSON.stringify(poi._address));
+
+        var ad = poi._address;
+        if (ad.name === undefined)
+            bottom.html('Unknown Adress');
+        else {
+            var adressContent = "";
+            if (ad.name != null && ad.name != "") { adressContent += '<b>' + ad.name + '</b>'; }
+            if (ad.address != null && ad.address != "") { adressContent += '<br>' + ad.address; }
+            if (ad.mail != null && ad.mail != "") { adressContent += "<br>" + ad.mail; }
+            if (ad.tel != null && ad.tel != "") { adressContent += "<br>" + ad.tel; }
+            bottom.html('<div style="font-size: 16px">' + adressContent + '</div>');
+        }
 
         var galerie = [];
         poi._galerie.forEach(element => {
@@ -54,11 +66,16 @@ class Fiche extends DivObject {
 
         this._texte.html(poi._text + txtContent);
         var s = $('<style></style>')
-            .html(".fiche p::-webkit-scrollbar-thumb {\
+            .html(".fiche .paraScroll::-webkit-scrollbar-thumb {\
         background: "+ couleur + "; \
       }");
         this._texte._balise.after(s);
 
+        if (poi._thumbnail != false) {
+            galerie.push(poi._thumbnail);
+        }
+        if (galerie.length == 0)
+            galerie.push('datas/imgs/menu/diaporama/logo.png');
 
 
         this._btFermer = new DivObject(this._divTexte._balise, this._id + "_BtFermer");
