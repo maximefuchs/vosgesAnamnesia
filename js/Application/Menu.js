@@ -311,7 +311,13 @@ class Menu extends DivObject {
             menu.pauseBackground();
             $('.backgroundImage').css('display', 'none');
         });
-        this.backgroundDiaporama = json.type == 'carte' ? [] : json.diaporama;
+        if(json.type == 'carte'){
+            this.backgroundDiaporama = [];
+            $('#filterBackground').css('display', 'none');
+        } else {
+            $('#filterBackground').css('display', 'block');
+            this.backgroundDiaporama = json.diaporama;
+        }
         var menu = this;
         sm.signalFermer.add(function () {
             menu.fermerSousMenu(menu);

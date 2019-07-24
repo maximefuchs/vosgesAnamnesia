@@ -9,6 +9,7 @@ class Carte extends DivObject {
     constructor(div, jsonCarte, couleur) {
         super(div, "Carte");
         this.addClass("page");
+        this.css('background', couleur);
 
         this._jsonCarte = jsonCarte;
         this._couleur = couleur;
@@ -18,6 +19,10 @@ class Carte extends DivObject {
 
         this._pois = [];
         this._poiDiv = new DivObject(this._balise, "CartePoints");
+
+        var backFilter = new DivObject(this._balise, "filterBackCarte");
+        backFilter.addClass('page');
+        backFilter.css('background', 'url(datas/imgs/perenne/texture_fiche.png)');
 
         this._fiches = [];
 
@@ -61,12 +66,8 @@ class Carte extends DivObject {
     getOSDviewer() {
         var div = new DivObject(this._balise, "OSDandButtons");
         div.addClass('page');
-        div._balise.css({
-            width: '2790px',
-            right: 0
-        })
 
-        var seadragonView = new DivObject(div._balise, 'seadragon-viewer');
+        new DivObject(div._balise, 'seadragon-viewer');
 
         $("#seadragon-viewer").width("100%").height("100%");
         var viewer = OpenSeadragon({

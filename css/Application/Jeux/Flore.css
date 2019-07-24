@@ -51,13 +51,15 @@
 }
 
 #consigne, #texteRep {
-    font-weight: bold;
     font-size: 40px;
     margin: 100px;
 }
 
 #texteRep {
     width: 45%;
+    height: 400px;
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 #divEvolution {
