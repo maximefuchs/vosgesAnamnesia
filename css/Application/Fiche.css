@@ -1,6 +1,7 @@
 .elementFiche {
     margin-top: 400px;
     z-index: 11;
+    overflow: hidden;
 }
 
 .fiche {
@@ -83,14 +84,19 @@
     width: 35%;
     margin-left: 5%;
     display: inline-block;
+    cursor: pointer;
+    font-size: 10px;
 }
-.divPartage .svg{
-    width: 45px;
+.divPartage svg{
+    height: 60px;
     display: inline-block;
     font-size: 8px;
-    margin: 10px;
-    cursor: pointer;
+    text-align: center;
 }
- .svg svg{
-     height: 50px;
+
+ .divQR{
+    padding: 30px;
+    background: white;
+    position: absolute;
+    top: -340px;
  }

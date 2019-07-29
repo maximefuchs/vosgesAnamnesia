@@ -49,7 +49,7 @@ function createApplication() {
 
     console.log(StageWidth + " - " + StageHeight);
 
-    // poisJSON = poisJsonFR;
+    poisJSON = poisJsonFR;
     application = new Application();
 };
 

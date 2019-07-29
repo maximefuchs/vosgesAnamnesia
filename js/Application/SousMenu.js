@@ -162,7 +162,8 @@ class SousMenu extends DivObject {
     }
 
     close() {
-        $('#filterBackground').css('display', 'block');
+        $('#filterBackground').css('display', '');
+        $('#elementsDeco').css('display', '');
         this._btnFermer.tweenAnimate({ bottom: 5.5 * this._scale }, 0, 0.3);
         this._divText.tweenAnimate({ left: -2 * this._scale, opacity: 0 });
         this._divSousElements.forEach(element => {
@@ -330,13 +331,15 @@ class SousMenu extends DivObject {
         this._divssSousMenu.tweenAnimate({ bottom: b * this._scale + 'px' });
         $('#sousMenuListePOI').remove();
         var sMenu = this;
-        var smlp = new SousMenuListePoi(this._parent, 'sousMenuListePOI', json, this._scale, this._couleur);
+        var smlp = new SousMenuListePoi(sMenu._parent, 'sousMenuListePOI', json, sMenu._scale, sMenu._couleur);
         smlp.clickSignal.add(function (num) {
             console.log(num);
             sMenu._carte.clickOnPoi(sMenu._carte._fiches[num], sMenu._carte);
         });
-        this._carte.initPOIsandFiches(json);
-        this._carte.init();
+        setTimeout(function () {
+            sMenu._carte.initPOIsandFiches(json);
+            sMenu._carte.init();
+        }, 1500);
     }
 
     // AFFICHAGE DE SOUS ELEMENTS DE MENU NORMAUX

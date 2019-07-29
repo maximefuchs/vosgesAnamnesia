@@ -11,6 +11,8 @@ class Carte extends DivObject {
         this.addClass("page");
         this.css('background', couleur);
 
+        $('#elementsDeco').css('display', 'none');
+
         this._jsonCarte = jsonCarte;
         this._couleur = couleur;
 
@@ -47,9 +49,9 @@ class Carte extends DivObject {
                 var pointer = '<svg id="Calque_' + jsonPOIs[i].id + '" class="pointer" data-name="Calque ' + jsonPOIs[i].id + '" \
                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118.3 58">\
                 <title>'+ t + '</title>\
-                <rect x="40.72" y="9.68" width="'+ t.length * 7 + '" height="30.42" fill="#131313" opacity="0.45"/>\
-                <text transform="translate(53.51 22.62)" font-size="11" fill="#fff" font-family="OpenSans-Bold, OpenSans Bold" font-weight="700">\
-                    <tspan y="4">'+ t + '</tspan>\
+                <rect x="40.72" y="9.68" width="'+ t.length * 6.5 + '" height="30.42" fill="#131313" opacity="0.45"/>\
+                <text transform="translate(53.51 22.62)" font-size="10" fill="#fff" font-family="OpenSans-Bold, OpenSans Bold" font-weight="700">\
+                    <tspan y="4">'+ t.split('/')[0] + '</tspan>\
                 </text>\
                 <path d="M188.77,370.09a23.7,23.7,0,1,1,9.33,0l-4.66,8.09Zm4.67-30.68a7.19,7.19,0,1,0,7.18,7.18A7.19,7.19,0,0,0,193.44,339.41Z" transform="translate(-168.75 -322.18)" fill="' + this._couleur + '"/>\
                 <path d="M193.44,324.18a22.69,22.69,0,0,1,4,45l-4,7-4-7a22.69,22.69,0,0,1,4-45m0,30.6a8.19,8.19,0,1,0-8.19-8.19,8.18,8.18,0,0,0,8.19,8.19m0-32.6a24.69,24.69,0,0,0-5.31,48.8l3.57,6.2,1.74,3,1.73-3,3.58-6.2a24.69,24.69,0,0,0-5.31-48.8Zm0,30.6a6.19,6.19,0,1,1,6.18-6.19,6.19,6.19,0,0,1-6.18,6.19Z" transform="translate(-168.75 -322.18)" fill="#fff"/>\
@@ -90,6 +92,11 @@ class Carte extends DivObject {
             // defaultZoomLevel: 1,
             constrainDuringPan: true,
             showNavigator: true,
+            navigatorPosition: "ABSOLUTE",
+            navigatorTop: "1510px",
+            navigatorLeft: "2280px",
+            navigatorHeight: "500px",
+            navigatorWidth: "500px",
             navigatorAutoFade: false,
             showNavigationControl: false,
             tileSources: {
@@ -111,7 +118,7 @@ class Carte extends DivObject {
                 dblClickToZoom: false
             },
             gestureSettingsTouch: {
-                pinchToZoom: false,
+                pinchToZoom: true,
                 clickToZoom: false,
                 dblClickToZoom: false
             }
@@ -135,6 +142,7 @@ class Carte extends DivObject {
         var zoomInBtn = new BtObject(div, "zoomInBtn");
         zoomInBtn.html("+");
         zoomInBtn.addClass('zoomButtons');
+        zoomInBtn.css('right', '7px');
         zoomInBtn._balise.css({ right: 0, opacity: 0.92 });
         var zMax = viewer.viewport.getMaxZoom();
         zoomInBtn._balise.click(function () {
@@ -150,7 +158,7 @@ class Carte extends DivObject {
         var zoomOutBtn = new BtObject(div, "zoomOutBtn");
         zoomOutBtn.html("-");
         zoomOutBtn.addClass('zoomButtons');
-        zoomOutBtn.css('right', '70px');
+        zoomOutBtn.css('right', '77px');
         var zMin = viewer.viewport.getMinZoom();
         zoomOutBtn._balise.click(function () {
             var z = viewer.viewport.getZoom();
@@ -191,7 +199,7 @@ class Carte extends DivObject {
     clickOnPoi(f, carte) {
         var p = f._poi;
         if (!f._ouvert) {
-            $('#' + p._id + ' .pointer').toggle();
+            $('#' + p._id + ' .pointer').css('display', 'none');
             p.addClass('large');
             p.css('border', '5px solid ' + this._couleur);
             var b = p._thumbnail != false ? p._thumbnail : 'datas/imgs/menu/diaporama/3.jpg';
@@ -199,7 +207,7 @@ class Carte extends DivObject {
             var overlay = poiToOverlay(p);
             console.log(overlay);
 
-            f._balise.toggle();
+            f._balise.css('display', 'block');
             f._ouvert = true;
             carte._viewer.addOverlay(f._overlay);
             carte.removeOverlay(f, p);
@@ -217,7 +225,7 @@ class Carte extends DivObject {
             carte._viewer.removeOverlay(fiche._id);
             fiche._ouvert = false;
             poi.removeClass('large');
-            $('#' + poi._id + ' .pointer').toggle();
+            $('#' + poi._id + ' .pointer').css('display', 'block');
             poi._balise.css({ border: '', background: '' });
         });
         // OTHER METHOD

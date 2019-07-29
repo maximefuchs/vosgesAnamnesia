@@ -145,6 +145,7 @@ class Menu extends DivObject {
         menu.tidyElements(menu, $(this).attr('id'));
         menu.supprimerCarte();
         menu.supprimerPerenne();
+        menu.supprimerJeu();
         $('.sousMenuListePoi').remove();
         if (element._type == 'carte') {
             menu.hideDecoElements(menu);

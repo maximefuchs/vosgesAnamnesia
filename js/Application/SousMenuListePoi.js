@@ -37,6 +37,7 @@ class SousMenuListePoi extends DivObject {
                 e._balise.click(function () {
                     menu.clickSignal.dispatch(i);
                 });
+                e.tweenAnimate({ opacity: 1, 'margin-left': 0 }, 0.4 + 0.1 * i, 0.2);
             }
         }
         var s = $('<style></style>')
