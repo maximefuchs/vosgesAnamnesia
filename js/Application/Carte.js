@@ -43,7 +43,19 @@ class Carte extends DivObject {
         for (let i = 0; i < jsonPOIs.length; i++) {
             console.log("new point + fiche : " + i);
             if (jsonPOIs[i] !== undefined) {
+                var t = jsonPOIs[i].title;
+                var pointer = '<svg id="Calque_' + jsonPOIs[i].id + '" class="pointer" data-name="Calque ' + jsonPOIs[i].id + '" \
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118.3 58">\
+                <title>'+ t + '</title>\
+                <rect x="40.72" y="9.68" width="'+ t.length * 7 + '" height="30.42" fill="#131313" opacity="0.45"/>\
+                <text transform="translate(53.51 22.62)" font-size="11" fill="#fff" font-family="OpenSans-Bold, OpenSans Bold" font-weight="700">\
+                    <tspan y="4">'+ t + '</tspan>\
+                </text>\
+                <path d="M188.77,370.09a23.7,23.7,0,1,1,9.33,0l-4.66,8.09Zm4.67-30.68a7.19,7.19,0,1,0,7.18,7.18A7.19,7.19,0,0,0,193.44,339.41Z" transform="translate(-168.75 -322.18)" fill="' + this._couleur + '"/>\
+                <path d="M193.44,324.18a22.69,22.69,0,0,1,4,45l-4,7-4-7a22.69,22.69,0,0,1,4-45m0,30.6a8.19,8.19,0,1,0-8.19-8.19,8.18,8.18,0,0,0,8.19,8.19m0-32.6a24.69,24.69,0,0,0-5.31,48.8l3.57,6.2,1.74,3,1.73-3,3.58-6.2a24.69,24.69,0,0,0-5.31-48.8Zm0,30.6a6.19,6.19,0,1,1,6.18-6.19,6.19,6.19,0,0,1-6.18,6.19Z" transform="translate(-168.75 -322.18)" fill="#fff"/>\
+            </svg>';
                 var poi = new Poi(this._poiDiv._balise, i + 'poi_' + this._id, jsonPOIs[i]);
+                poi._balise.append(pointer);
                 this._pois.push(poi);
                 var f = new Fiche(poi, i + 'fiche_' + poi._id, this._couleur);
                 this._fiches.push(f);
@@ -56,7 +68,6 @@ class Carte extends DivObject {
     }
 
     init() {
-        $('.poi').css('border', '5px solid ' + this._couleur);
         this.setPoiClickListeners();
         this.setOSDtools();
         this._balise.css('display', 'block');
@@ -124,7 +135,7 @@ class Carte extends DivObject {
         var zoomInBtn = new BtObject(div, "zoomInBtn");
         zoomInBtn.html("+");
         zoomInBtn.addClass('zoomButtons');
-        zoomInBtn.css('right', '400px');
+        zoomInBtn._balise.css({ right: 0, opacity: 0.92 });
         var zMax = viewer.viewport.getMaxZoom();
         zoomInBtn._balise.click(function () {
             var z = viewer.viewport.getZoom();
@@ -139,7 +150,7 @@ class Carte extends DivObject {
         var zoomOutBtn = new BtObject(div, "zoomOutBtn");
         zoomOutBtn.html("-");
         zoomOutBtn.addClass('zoomButtons');
-        zoomOutBtn.css('right', '250px');
+        zoomOutBtn.css('right', '70px');
         var zMin = viewer.viewport.getMinZoom();
         zoomOutBtn._balise.click(function () {
             var z = viewer.viewport.getZoom();
@@ -180,7 +191,9 @@ class Carte extends DivObject {
     clickOnPoi(f, carte) {
         var p = f._poi;
         if (!f._ouvert) {
+            $('#' + p._id + ' .pointer').toggle();
             p.addClass('large');
+            p.css('border', '5px solid ' + this._couleur);
             var b = p._thumbnail != false ? p._thumbnail : 'datas/imgs/menu/diaporama/3.jpg';
             p._balise.css({ 'background': 'url(' + b + ')', 'background-size': 'cover', 'background-position': 'center' });
             var overlay = poiToOverlay(p);
@@ -204,7 +217,8 @@ class Carte extends DivObject {
             carte._viewer.removeOverlay(fiche._id);
             fiche._ouvert = false;
             poi.removeClass('large');
-            poi.css('background', 'white');
+            $('#' + poi._id + ' .pointer').toggle();
+            poi._balise.css({ border: '', background: '' });
         });
         // OTHER METHOD
         // return new OpenSeadragon.MouseTracker({

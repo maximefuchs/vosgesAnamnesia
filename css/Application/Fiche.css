@@ -6,7 +6,7 @@
 .fiche {
     width: 1000px;
     height: 500px;
-    font-size: 20px;
+    font-size: 15px;
     color: black;
     background: white;
     display: flex;
@@ -27,6 +27,7 @@
 .fiche .paraScroll {
     max-height: 170px;
     overflow-y: auto;
+    padding-right: 25px;
 }
 
 .fiche p::-webkit-scrollbar {
@@ -72,3 +73,24 @@
     font-weight: bold;
     transform: translate(-50%, -50%) rotate(45deg);
 }
+
+.divAdress{
+    font-size: 14px;
+    width: 60%;
+    display: inline-block;
+}
+.divPartage{
+    width: 35%;
+    margin-left: 5%;
+    display: inline-block;
+}
+.divPartage .svg{
+    width: 45px;
+    display: inline-block;
+    font-size: 8px;
+    margin: 10px;
+    cursor: pointer;
+}
+ .svg svg{
+     height: 50px;
+ }
