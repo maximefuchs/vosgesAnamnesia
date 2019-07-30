@@ -24,6 +24,8 @@ class Jeu extends DivObject {
     }
 
     init() {
+        $('#elementsDeco').css('display', 'none');
+        $('.elementSousMenu').css('display', 'none');
         switch (this._lien) {
             case "memory":
                 this.memory();
@@ -49,7 +51,6 @@ class Jeu extends DivObject {
 
     memory() {
         $('#menu').css('display', 'none');
-        $('#elementsDeco').css('display', 'none');
         $('#elementsMenu').css('display', 'none');
         this.css('padding', '50px');
 
@@ -182,7 +183,6 @@ class Jeu extends DivObject {
             return: function () {
                 this.hideModal();
                 $('#menu').css('display', 'block');
-                $('#elementsDeco').css('display', 'block');
                 $('#elementsMenu').css('display', 'block');
                 // $('#jeu').remove();
                 $('.btnFermerSousMenu').click();

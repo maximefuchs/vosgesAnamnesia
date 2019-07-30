@@ -79,7 +79,7 @@ class Menu extends DivObject {
                 + '</div>');
             this._btnLangues.push(bt);
 
-            bt._balise.on("click touchstart", null, { instance: this }, this.clickBtnLang);
+            bt._balise.on("click touchstart", null, { instance: this }, this.clickElementMenuLang);
         }
 
         this._menuElements = [];
@@ -114,7 +114,7 @@ class Menu extends DivObject {
 
         var i = 0;
         this._menuElements.forEach(element => {
-            element._balise.click({ menu: this, element: this._menuElements[i] }, this.clickBtn);
+            element._balise.click({ menu: this }, this.clickElementMenu);
             i++;
         });
 
@@ -122,40 +122,27 @@ class Menu extends DivObject {
 
     init() {
         this.displayBackground();
-        this._menuElements.forEach(menuElement => {
-            menuElement.init();
-        });
-        this._decoMenuElements.forEach(decoElement => {
-            decoElement.init();
-        });
+        var menu = this;
+        setTimeout(function () {
+            menu._menuElements.forEach(menuElement => {
+                menuElement.init();
+            });
+            menu._decoMenuElements.forEach(decoElement => {
+                decoElement.init();
+            });
+        }, 2000);
     }
 
-    clickBtn(e) {
+    clickElementMenu(e) {
         console.log('click Element in menu');
-        // e.stopPropagation();e.preventDefault();
-        var touch;
-        if (e.originalEvent.touches || e.originalEvent.changedTouches) {
-            touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-        } else {
-            touch = e;
-        }
         var menu = e.data.menu;
         menu._tempsInactivite = 0;
-        var element = e.data.element;
         menu.tidyElements(menu, $(this).attr('id'));
         menu.supprimerCarte();
         menu.supprimerPerenne();
         menu.supprimerJeu();
         $('.sousMenuListePoi').remove();
-        if (element._type == 'carte') {
-            menu.hideDecoElements(menu);
-            menu._divEltsDeco.css('display', 'none');
-            menu.showSousMenu($(this));
-        } else {
-            menu._divEltsDeco.css('display', 'block');
-            menu.moveDecoElements(menu);
-            menu.showSousMenu($(this));
-        }
+        menu.showSousMenu($(this));
     }
 
     supprimerCarte() {
@@ -175,21 +162,13 @@ class Menu extends DivObject {
         this._sousMenu = null;
     }
 
-    clickBtnLang(e) {
+    clickElementMenuLang(e) {
         console.log('click langue');
-        // e.stopPropagation(); e.preventDefault();
-        var touch;
-        if (e.originalEvent.touches || e.originalEvent.changedTouches) {
-            touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-        } else {
-            touch = e;
-        }
         var instance = e.data.instance;
         var s = String($(this).attr('id'));
 
         instance._langue = s.replace(instance._id + "_BtLang_", '');
         console.log(instance._langue);
-        // instance.maj_texte();
     }
 
     // fond d'écran changeant
@@ -284,56 +263,38 @@ class Menu extends DivObject {
             element.tweenAnimate({ opacity: jsonElt.a });
         }
     }
-    hideDecoElements(menu) {
-        menu._decoMenuElements.forEach(element => {
-            element.tweenAnimate({ opacity: 0 });
-        });
-    }
 
     showSousMenu(menuElt) {
+        var menu = this;
         var lien = menuElt.attr('lien');
         console.log('lien : ' + lien);
         var couleur = menuElt.children().css('background-color');
         couleur = couleur.split(/[()]/);
         couleur = couleur[1].split(',');
         couleur = 'rgb(' + couleur[0] + ',' + couleur[1] + ',' + couleur[2] + ')';
-        var json = this._json.SousMenu[lien];
+        var json = menu._json.SousMenu[lien];
         $('.sousmenu').remove();
         var titre = menuElt.find('.elementMenu_titre').html();
-        var menu = this;
-        var sm = new SousMenu(this._balise, json, titre, couleur, this._scale, lien);
-        sm._carte.carteOpenSignal.add(function () {
-            menu.pauseBackground();
-        });
-        sm.closeCarteSignal.add(function () {
-            menu.playBackground();
-        });
+
+        var sm = new SousMenu(menu._balise, json, titre, couleur, menu._scale, lien);
+        sm._carte.carteOpenSignal.add(function () { menu.pauseBackground() });
+        sm._carte.clickSignal.add(function () { menu._tempsInactivite = 0; });
+        sm.closeCarteSignal.add(menu.playBackground);
+        sm.clickPerenne.add(function () { menu._tempsInactivite = 0; });
+        sm.signalFermer.add(function () { menu.fermerSousMenu(menu); });
         sm.stopBackSignal.add(function () {
             menu.pauseBackground();
             $('.backgroundImage').css('display', 'none');
         });
-        if(json.type == 'carte'){
-            this.backgroundDiaporama = [];
-            $('#filterBackground').css('display', 'none');
-        } else {
-            $('#filterBackground').css('display', 'block');
-            this.backgroundDiaporama = json.diaporama;
-        }
-        var menu = this;
-        sm.signalFermer.add(function () {
-            menu.fermerSousMenu(menu);
-        });
+        menu._sousMenu = sm;
+        
         sm.init();
+        menu.moveDecoElements(menu);
 
-        this.displayBackground();
-
-        sm._carte.clickSignal.add(function () {
-            menu._tempsInactivite = 0;
-        });
-        sm.clickPerenne.add(function () {
-            menu._tempsInactivite = 0;
-        });
-        this._sousMenu = sm;
+        setTimeout(function () {
+            menu.backgroundDiaporama = json.diaporama;
+            menu.displayBackground();
+        }, 2050);
     }
 
     fermerSousMenu(menu) {
@@ -348,8 +309,10 @@ class Menu extends DivObject {
         menu._decoMenuElements.forEach(decoElement => {
             decoElement.init();
         });
-        menu.backgroundDiaporama = menu._json.diaporama;
-        menu.displayBackground();
+        setTimeout(function () {
+            menu.backgroundDiaporama = menu._json.diaporama;
+            menu.displayBackground();
+        }, 3050);
     }
 
 
