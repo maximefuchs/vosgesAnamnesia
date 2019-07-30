@@ -12,7 +12,7 @@ class ElementMenu extends BlocMenu {
 
         this._src_fond = this._json.src_fond;
         this._picto = this._json.picto;
-        this._titre = Global.getTexteLangue(this._json.titre);
+        this._titre = this._json.titre;
         this._lien = this._json.lien;
 
         this._front = new DivObject(this._balise, this._id + "_front");

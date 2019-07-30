@@ -11,8 +11,6 @@ class Carte extends DivObject {
         this.addClass("page");
         this.css('background', couleur);
 
-        $('#elementsDeco').css('display', 'none');
-
         this._jsonCarte = jsonCarte;
         this._couleur = couleur;
 
@@ -73,6 +71,7 @@ class Carte extends DivObject {
         this.setPoiClickListeners();
         this.setOSDtools();
         this._balise.css('display', 'block');
+        $('#elementsDeco').css('display', 'none');
         this.carteOpenSignal.dispatch();
     }
 

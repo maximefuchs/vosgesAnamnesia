@@ -49,7 +49,10 @@
 }
 
 .fiche .divBottom {
-    margin: 20px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 45%;
 }
 
 .ficheBt {
@@ -75,28 +78,92 @@
     transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.divAdress{
+.divAdress {
     font-size: 14px;
-    width: 60%;
+    width: 50%;
     display: inline-block;
+    margin: 5%;
+    color: white;
 }
-.divPartage{
-    width: 35%;
+
+.divPartage {
+    width: 25%;
     margin-left: 5%;
     display: inline-block;
     cursor: pointer;
     font-size: 10px;
-}
-.divPartage svg{
-    height: 60px;
-    display: inline-block;
-    font-size: 8px;
+    padding: 5%;
     text-align: center;
+    color: white;
 }
 
- .divQR{
-    padding: 30px;
+.divPartage img {
+    height: 60px;
+}
+
+.slidePartage {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -50%;
+    color: white;
+}
+
+.slidePartage h3 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.slidePartage .champTel {
+    font-size: 50px;
+    padding: 15px;
+    margin: 15px 30px;
+    height: 70px;
+    background: #fff4;
+}
+
+.divQR {
+    padding: 20px;
     background: white;
     position: absolute;
-    top: -340px;
- }
+    bottom: 100px;
+    height: 130px;
+    width: 130px;
+    left: 40px;
+}
+
+.divQR img {
+    width: 100%;
+}
+
+.captionQR, .captionTEL {
+    position: absolute;
+    bottom: 290px;
+    font-size: 11px;
+}
+
+.captionQR {
+    left: 50px;
+}
+
+.captionTEL {
+    right: 40px;
+}
+
+.paveNum {
+    position: absolute;
+    width: 150px;
+    height: 255px;
+    background: white;
+    right: 80px;
+    bottom: 15px;
+}
+
+.paveNum .chiffre {
+    position: absolute;
+    padding: 15px;
+    font-size: 19px;
+    background: #ddd;
+    margin: 10px;
+}

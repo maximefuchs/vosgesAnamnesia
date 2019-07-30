@@ -99,10 +99,11 @@ class SousMenu extends DivObject {
                 texte.html(json.texte);
                 ssMenu.btnShouldClose = true;
                 ssMenu.reinitializeContent();
-                ssMenu.oldPoiJson(ssMenu);
-                ssMenu._divSousElements = [];
-                ssMenu.updateDivSousElements(json.sousmenu);
+                ssMenu.oldLienJson(ssMenu);
+                ssMenu._sousMenuElements = [];
+                ssMenu.affichageMenuElements(json.sousmenu);
                 ssMenu.initSousMenuElement();
+                ssMenu._lien = [lien];
                 ssMenu._jsonPoi = poisJSON[lien];
                 ssMenu._jsonPerenne = perennesJSON[lien];
                 ssMenu._divText.tweenAnimate({ bottom: 4 * scale + 'px' });
@@ -115,8 +116,8 @@ class SousMenu extends DivObject {
         ////////////////////////////////
         // sous elements
 
-        this._divSousElements = [];
-        this.updateDivSousElements(json.sousmenu);
+        this._sousMenuElements = [];
+        this.affichageMenuElements(json.sousmenu);
 
 
 
@@ -135,6 +136,9 @@ class SousMenu extends DivObject {
             padding: 0.25 * scale,
             background: couleur
         });
+
+
+        this._inCarte = false; // pour savoir s'il faudra retirer ou non un étage dans _lien lorsque que l'on clique sur un élément 'carte' dans le menu de gauche
 
     }
 
@@ -156,7 +160,7 @@ class SousMenu extends DivObject {
     }
 
     initSousMenuElement() {
-        this._divSousElements.forEach(element => {
+        this._sousMenuElements.forEach(element => {
             element.init();
         });
     }
@@ -166,13 +170,13 @@ class SousMenu extends DivObject {
         $('#elementsDeco').css('display', '');
         this._btnFermer.tweenAnimate({ bottom: 5.5 * this._scale }, 0, 0.3);
         this._divText.tweenAnimate({ left: -2 * this._scale, opacity: 0 });
-        this._divSousElements.forEach(element => {
+        this._sousMenuElements.forEach(element => {
             element.tweenAnimate({ opacity: 0 });
         });
         this._divssSousMenu.tweenAnimate({ left: - 2 * this._scale });
     }
 
-    displaySSMenuByElement(sMenu, json, num, type) {
+    affichageMenuGauche(sMenu, json, num, type, couleur) {
         sMenu._btnFermer.html('<span class="noRotation">⤺</span>');
         sMenu.btnShouldClose = false;
         var s = json[num].titre.toUpperCase();
@@ -192,100 +196,104 @@ class SousMenu extends DivObject {
         ssTitre.html(sMenu._titreElement.toUpperCase());
 
         divLeft.append('<hr>');
-        for (let i = 0; i < json.length; i++) {
-            if (json[i].sousmenu !== undefined) {
-                var span = new BaliseObject(divLeft._balise, 'span', 'spanSSMenu_' + i);
-                span.html(json[i].titre.toUpperCase());
-                if (i == num) { span.addClass('selected'); }
-                span._balise.click(function () {
-                    sMenu.displaySSMenuByTitle(sMenu, i, json);
-                });
-                divLeft.append('<hr>');
-            }
+        for (var i = 0; i < json.length; i++) {
+            var span = new BaliseObject(divLeft._balise, 'span', 'spanSSMenu_' + i);
+            span.html(json[i].titre.toUpperCase());
+            span.attr('num', i);
+            if (i == num) { span.addClass('selected'); }
+            span._balise.click(function () {
+                sMenu.clickMenuGauche(sMenu, $(this).attr('num'), json, couleur);
+            });
+            divLeft.append('<hr>');
         }
 
-        var jsonElements = json[num].sousmenu;
-        console.log(jsonElements);
+        if (type != 'jeu' && type != 'poi') {
+            var jsonElements = json[num].sousmenu;
+            console.log(jsonElements);
 
-        if (type == 'carte') {
-            $('#filterBackground').css('display', 'none');
-            sMenu.updateCarteSousElements(jsonElements);
-        } else {
-            sMenu.updateDivSousElements(jsonElements);
+            if (type == 'carte') {
+                $('#filterBackground').css('display', 'none');
+                sMenu.sousElementsPOI(jsonElements);
+            } else {
+                sMenu.affichageMenuElements(jsonElements);
+            }
         }
     }
 
-    displayMenuJeu(sMenu, json, num, couleur) {
-        console.log(json);
-        sMenu._btnFermer.html('<span class="noRotation">⤺</span>');
-        sMenu.btnShouldClose = false;
+    clickMenuGauche(sMenu, num, json, couleur) {
+        var type = json[num].type;
+        var lien = json[num].lien;
+        sMenu._carte.removeAllOverlays();
+        $('.selected').removeClass('selected');
+        $('#spanSSMenu_' + num).addClass('selected');
         var s = json[num].titre.toUpperCase();
         var size = 840 / s.length;
         if (size > 65) { size = 65; }
         if (size < 37) { size = 37; }
         sMenu._titre.html(s);
         sMenu._titre.css('font-size', size + 'px');
-
         if (json[num].texte !== undefined) {
             sMenu._texte.html(json[num].texte);
         }
 
-        $('#divLeft').remove();
-        var divLeft = new DivObject(sMenu._divssSousMenu._balise, 'divLeft');
-        var ssTitre = new BaliseObject(divLeft._balise, 'h1');
-        ssTitre.html(sMenu._titreElement.toUpperCase());
+        switch (type) {
+            case 'perenne':
+                sMenu.reinitializeContent();
+                var fp = new FichePerenne($('#Application'), 'fichePerenne', sMenu.getJsonPerenne(sMenu, lien), couleur);
+                fp.clickSignal.add(function () {
+                    sMenu.clickPerenne.dispatch();
+                });
+                fp.init();
+                break;
 
-        $('.elementSousMenu').remove();
+            case 'poi':
+                sMenu.reinitializeContent();
+                $('.elementSousMenu').remove();
+                $('.divBtnCarteElement').remove();
 
-        divLeft.append('<hr>');
-        for (let i = 0; i < json.length; i++) {
-            var span = new BaliseObject(divLeft._balise, 'span', 'spanSSMenu_' + i);
-            span.html(json[i].titre.toUpperCase());
-            if (i == num) { span.addClass('selected'); }
-            span._balise.click(function () {
-                sMenu.displayMenuJeu(sMenu, json, i);
-                var jeu = new Jeu($('#Application'), json[i].lien, couleur, sMenu._scale);
+                if (sMenu._inCarte){
+                    sMenu.oldLienJson(sMenu);
+                    sMenu._inCarte = false;
+                }
+
+                sMenu.displayPoiOnMap(sMenu.getJsonPoi(sMenu, lien));
+                sMenu.affichageMenuGauche(sMenu, json, num, type, couleur);
+                break;
+
+            case 'carte':
+                $('#filterBackground').css('display', 'none');
+                $('.elementSousMenu').remove();
+                var jsonElements = json[num].sousmenu;
+                if (sMenu._inCarte)
+                    sMenu.oldLienJson(sMenu);
+                else
+                    sMenu._inCarte = true;
+                sMenu._lien.push(lien);
+                sMenu.sousElementsPOI(jsonElements);
+                break;
+
+            case 'jeu':
+                var jeu = new Jeu($('#Application'), lien, couleur, sMenu._scale);
                 jeu.clickSignal.add(function () {
                     sMenu.clickPerenne.dispatch(); // remet le compteur pour la veille à 0
                 });
                 jeu.init();
-            });
-            divLeft.append('<hr>');
+                sMenu.affichageMenuGauche(sMenu, json, num, type, couleur);
+                break;
+
+            default:
+                sMenu.affichageMenuElements(jsonElements);
+                break;
         }
     }
 
-
-    displaySSMenuByTitle(sMenu, num, json) {
-        var type = json[num].type;
-        sMenu._carte.removeAllOverlays();
-        $('.selected').removeClass('selected');
-        $('#spanSSMenu_' + num).addClass('selected');
-        var jsonElements = json[num].sousmenu;
-        var s = json[num].titre.toUpperCase();
-        var size = 840 / s.length;
-        if (size > 65) { size = 65; }
-        if (size < 37) { size = 37; }
-        sMenu._titre.html(s);
-        sMenu._titre.css('font-size', size + 'px');
-        if (json[num].texte !== undefined) {
-            sMenu._texte.html(json[num].texte);
-        }
-        if (type == 'carte') {
-            $('#filterBackground').css('display', 'none');
-            sMenu.oldPoiJson(sMenu);
-            sMenu._lien.push(json[num].lien);
-            sMenu.updateCarteSousElements(jsonElements);
-        } else {
-            sMenu.updateDivSousElements(jsonElements);
-        }
-    }
 
     getJsonPoi(sMenu, lien) {
         console.log(sMenu._lien);
         console.log(lien);
         var json = poisJSON;
         sMenu._lien.forEach(element => {
-            if (json !== undefined)
+            if (json !== undefined && json[element] !== undefined)
                 json = json[element];
         });
         return json[lien];
@@ -295,21 +303,22 @@ class SousMenu extends DivObject {
         console.log(lien);
         var json = perennesJSON;
         sMenu._lien.forEach(element => {
-            if (json !== undefined)
+            if (json !== undefined && json[element] !== undefined)
                 json = json[element];
         });
         return json[lien];
     }
 
-    oldPoiJson(sMenu) {
-        console.log(sMenu._lien);
+    oldLienJson(sMenu) {
         sMenu._lien.pop();
         var newJsonPoi = poisJSON;
+        var newJsonPerenne = perennesJSON;
         sMenu._lien.forEach(key => {
             newJsonPoi = newJsonPoi[key];
+            newJsonPerenne = newJsonPerenne[key];
         });
         sMenu._jsonPoi = newJsonPoi;
-        console.log(sMenu._jsonPoi);
+        sMenu._jsonPerenne = newJsonPerenne;
     }
 
     displayPoiOnMap(json) {
@@ -339,16 +348,16 @@ class SousMenu extends DivObject {
         setTimeout(function () {
             sMenu._carte.initPOIsandFiches(json);
             sMenu._carte.init();
-        }, 1500);
+        }, 1000);
     }
 
     // AFFICHAGE DE SOUS ELEMENTS DE MENU NORMAUX
     // LIENS VERS UNE FICHE PERENNE, UNE CARTE, OU UN AUTRE SOUS MENU
-    updateDivSousElements(json) {
-        this.divSousElements = json;
+    affichageMenuElements(json) {
+        this.sousMenuElements = json;
         var i = 0;
         var sMenu = this;
-        this._divSousElements.forEach(element => {
+        this._sousMenuElements.forEach(element => {
             var num = i;
             var lien = element._lien;
             var type = element._type;
@@ -358,8 +367,6 @@ class SousMenu extends DivObject {
                 switch (type) {
                     case 'perenne':
                         sMenu.reinitializeContent();
-                        // sMenu.updateJson(sMenu, lien);
-                        // sMenu._lien.push(lien);
                         var fp = new FichePerenne($('#Application'), 'fichePerenne', sMenu.getJsonPerenne(sMenu, lien), element._params.couleur);
                         fp.clickSignal.add(function () {
                             sMenu.clickPerenne.dispatch();
@@ -369,38 +376,35 @@ class SousMenu extends DivObject {
 
                     case 'carte':
                         sMenu.reinitializeContent();
-                        // sMenu.updateJson(sMenu, lien);
+                        $('.elementSousMenu').remove();
+
+                        sMenu._inCarte = true;
                         sMenu._lien.push(lien);
-                        sMenu.displaySSMenuByElement(sMenu, json, num, 'carte');
+                        sMenu.affichageMenuGauche(sMenu, json, num, type, element._params.couleur);
                         break;
 
                     case 'poi':
                         sMenu.reinitializeContent();
-                        // sMenu.updateJson(sMenu, lien);
-                        // sMenu._lien.push(lien);
+                        $('.elementSousMenu').remove();
 
                         sMenu.displayPoiOnMap(sMenu.getJsonPoi(sMenu, lien));
-                        // sMenu.oldPoiJson(sMenu); // get back to previous state for next click
+                        sMenu.affichageMenuGauche(sMenu, json, num, type, element._params.couleur);
                         break;
 
                     case 'jeu':
-                        sMenu.displayMenuJeu(sMenu, json, num, element._params.couleur)
-                        console.log("Let's play a game");
                         var jeu = new Jeu($('#Application'), lien, element._params.couleur, sMenu._scale);
-                        // jeu.stopBackSignal.add(function () {
-                        //     sMenu.stopBackSignal.dispatch();
-                        // });
                         jeu.clickSignal.add(function () {
                             sMenu.clickPerenne.dispatch(); // remet le compteur pour la veille à 0
                         });
                         jeu.init();
+                        sMenu.affichageMenuGauche(sMenu, json, num, type, element._params.couleur);
                         break;
 
                     default:
                         if (lien !== undefined)
                             // sMenu.updateJson(sMenu, lien);
                             sMenu._lien.push(lien);
-                        sMenu.displaySSMenuByElement(sMenu, json, num);
+                        sMenu.affichageMenuElements(json[num].sousmenu);
                         break;
                 }
             });
@@ -411,12 +415,11 @@ class SousMenu extends DivObject {
 
     // remove old elements and display the new ones
     // buttons are filters for poi overlays
-    updateCarteSousElements(json) {
+    sousElementsPOI(json) {
         var sMenu = this;
-        sMenu.divSousElements = [];
+        sMenu.sousMenuElements = [];
         var iconEyeClosed = "<svg id='Calque_1' data-name='Calque 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><defs><style>.cls-1{fill:none;stroke: " + sMenu._couleur + ";stroke-linecap:round;stroke-linejoin:round;stroke-width:6.24px;}</style></defs><path class='cls-1' d='M26.54,69.69s20.17,39.6,74,39.6,74-39.6,74-39.6'/><line class='cls-1' x1='100.5' y1='109.29' x2='100.5' y2='129.38'/><line class='cls-1' x1='129.64' y1='106.15' x2='138.62' y2='124.12'/><line class='cls-1' x1='154.02' y1='92.86' x2='166.46' y2='108.63'/><line class='cls-1' x1='45.61' y1='91.91' x2='33.16' y2='107.69'/><line class='cls-1' x1='68.73' y1='106.15' x2='62.37' y2='125.21'/></svg>";
         var iconEyeOpen = "<svg id='Calque_2' data-name='Calque 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><defs><style>.cls-1{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:9.18px;}.cls-1,.cls-2{stroke:" + sMenu._couleur + ";}.cls-2{fill:" + sMenu._couleur + ";stroke-miterlimit:10;stroke-width:3.19px;}</style></defs><title>Plan de travail 1</title><path class='cls-1' d='M100.66,56.49c-59,0-81.08,43.41-81.08,43.41s22.11,43.4,81.08,43.4,81.08-43.4,81.08-43.4S159.62,56.49,100.66,56.49Z'/><circle class='cls-1' cx='100.66' cy='99.9' r='26.89'/><path class='cls-2' d='M90.72,76.14s-7.41,36.48,33,34.44C123.71,110.58,130.75,64.2,90.72,76.14Z'/></svg>";
-        var iconPerenne = "<svg viewBox='-66 0 569 569.286' style='fill: " + sMenu._couleur + "' xmlns='http://www.w3.org/2000/svg'><path d='m.109375 66.382812v493.132813c0 5.238281 4.246094 9.484375 9.484375 9.484375h360.367188c5.234374 0 9.480468-4.246094 9.480468-9.484375v-398.296875c0-.210938-.101562-.390625-.121094-.597656-.046874-.832032-.210937-1.652344-.484374-2.4375-.105469-.304688-.179688-.597656-.3125-.894532-.460938-1.03125-1.101563-1.972656-1.898438-2.777343l-94.832031-94.832031c-.804688-.800782-1.75-1.441407-2.789063-1.898438-.285156-.121094-.574218-.222656-.871094-.3125-.792968-.273438-1.617187-.4375-2.457031-.492188-.160156.027344-.347656-.074218-.546875-.074218h-265.535156c-5.238281 0-9.484375 4.242187-9.484375 9.480468zm346.957031 85.351563h-62.457031v-62.457031zm-327.992187-75.867187h246.570312v85.351562c0 5.234375 4.246094 9.480469 9.480469 9.480469h85.351562v379.335937h-341.402343zm0 0' /><path d='m398.410156 493.132812v18.964844h28.449219c5.238281 0 9.484375-4.242187 9.484375-9.480468v-493.132813c0-5.238281-4.246094-9.484375-9.484375-9.484375h-360.367187c-5.238282 0-9.484376 4.246094-9.484376 9.484375v28.449219h18.96875v-18.96875h341.398438v474.167968zm0 0' /><path d='m75.976562 189.667969h227.597657v18.964843h-227.597657zm0 0' /><path d='m75.976562 132.765625h75.867188v18.96875h-75.867188zm0 0' /><path d='m75.976562 246.566406h151.734376v18.96875h-151.734376zm0 0' /><path d='m246.675781 246.566406h56.898438v18.96875h-56.898438zm0 0' /><path d='m75.976562 303.464844h227.597657v18.96875h-227.597657zm0 0' /><path d='m75.976562 417.265625h227.597657v18.96875h-227.597657zm0 0' /><path d='m161.324219 360.367188h142.25v18.964843h-142.25zm0 0' /><path d='m75.976562 360.367188h66.382813v18.964843h-66.382813zm0 0' /><path d='m75.976562 474.167969h37.933594v18.964843h-37.933594zm0 0' /><path d='m132.875 474.167969h170.699219v18.964843h-170.699219zm0 0' /></svg>";
         $('.divBtnCarteElement').remove();
         var divBtn = new DivObject(sMenu._divText._balise, 'divBtnFiltre_' + sMenu._id);
         divBtn.addClass('divBtnCarteElement');
@@ -434,61 +437,35 @@ class SousMenu extends DivObject {
             span.html(text.toUpperCase());
             var icone = new DivObject(div._balise, i + 'icone_' + sMenu._id);
             icone.addClass('iconCarteElement');
-            div.isPOI = false;
-            switch (jsonElt.type) {
-                case 'poi':
-                    icone.html(iconEyeOpen);
-                    div.isPOI = true;
-                    div.isOpen = false;
-                    div.jsonPOIs = sMenu.getJsonPoi(sMenu, jsonElt.lien);
-                    allPOIs = allPOIs.concat(div.jsonPOIs);
-                    div._balise.click(function () {
-                        sMenu.reinitializeContent();
-                        if (!divs[i].isOpen) {
-                            for (let k = 0; k < json.length; k++) {
-                                if (k != i) {
-                                    if (divs[k].isPOI) {
-                                        divs[k].isOpen = false;
-                                        $('#' + k + 'icone_' + sMenu._id).html(iconEyeClosed);
-                                    }
-                                }
-                                else
-                                    $('#' + k + 'icone_' + sMenu._id).html(iconEyeOpen);
+            icone.html(iconEyeOpen);
+            div.isOpen = false;
+            div.jsonPOIs = sMenu.getJsonPoi(sMenu, jsonElt.lien);
+            allPOIs = allPOIs.concat(div.jsonPOIs);
+            div._balise.click(function () {
+                sMenu.reinitializeContent();
+                if (!divs[i].isOpen) {
+                    for (let k = 0; k < json.length; k++) {
+                        if (k != i) {
+                            divs[k].isOpen = false;
+                            $('#' + k + 'icone_' + sMenu._id).html(iconEyeClosed);
 
-                            }
-                            divs[i].isOpen = true;
-                            sMenu._carte.removeAllOverlays();
-                            sMenu.displayPoiOnMap(divs[i].jsonPOIs);
-                        } else {
-                            for (let k = 0; k < json.length; k++) {
-                                if (divs[k].isPOI) {
-                                    $('#' + k + 'icone_' + sMenu._id).html(iconEyeOpen);
-                                    divs[k].isOpen = false;
-                                }
-                            }
-                            sMenu._carte.removeAllOverlays();
-                            sMenu.displayPoiOnMap(allPOIs);
                         }
-                    });
-                    break;
+                        else
+                            $('#' + k + 'icone_' + sMenu._id).html(iconEyeOpen);
 
-                case 'perenne':
-                    icone.html(iconPerenne);
-                    div.jsonPer = sMenu.getJsonPerenne(sMenu, jsonElt.lien);
-                    div._balise.click(function () {
-                        sMenu.reinitializeContent();
-                        var fp = new FichePerenne($('#Application'), 'fichePerenne', divs[i].jsonPer, sMenu._couleur);
-                        fp.clickSignal.add(function () {
-                            sMenu.clickPerenne.dispatch();
-                        });
-                        fp.init();
-                    });
-                    break;
-
-                default:
-                    console.log('Non existant : ' + jsonElt.type);
-                    break;
-            }
+                    }
+                    divs[i].isOpen = true;
+                    sMenu._carte.removeAllOverlays();
+                    sMenu.displayPoiOnMap(divs[i].jsonPOIs);
+                } else {
+                    for (let k = 0; k < json.length; k++) {
+                        $('#' + k + 'icone_' + sMenu._id).html(iconEyeOpen);
+                        divs[k].isOpen = false;
+                    }
+                    sMenu._carte.removeAllOverlays();
+                    sMenu.displayPoiOnMap(allPOIs);
+                }
+            });
             div.css('color', sMenu._couleur);
             divs.push(div);
         }
@@ -496,9 +473,9 @@ class SousMenu extends DivObject {
         sMenu.displayPoiOnMap(allPOIs);
     }
 
-    set divSousElements(jsonElements) {
+    set sousMenuElements(jsonElements) {
         $('.elementSousMenu').remove();
-        this._divSousElements = [];
+        this._sousMenuElements = [];
         var emplacements = [
             { x: 9.5, y: 1.5 },
             { x: 7.5, y: 3.5 },
@@ -524,7 +501,7 @@ class SousMenu extends DivObject {
                 opacity: (Math.floor(Math.random() * 2) == 0) ? 1 : 0.9
             }
             var eltSsMenu = new ElementSousMenu(this._balise, jsonElt, params, this._scale);
-            this._divSousElements.push(eltSsMenu);
+            this._sousMenuElements.push(eltSsMenu);
         }
     }
 }

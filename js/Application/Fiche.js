@@ -37,13 +37,14 @@ class Fiche extends DivObject {
 
         var bottom = new DivObject(this._divTexte._balise, "divBottom_" + id);
         bottom.addClass('divBottom');
+        bottom.css('background', couleur.split(')')[0] + ', 0.85)');
 
         var ad = poi._address;
         var adressContent = "";
         if (ad.name === undefined)
             adressContent = 'Unknown Adress';
         else {
-            if (ad.name != null && ad.name != "") { adressContent += '<b>' + ad.name + '</b>'; }
+            if (ad.name != null && ad.name != "") { adressContent += ad.name.toUpperCase(); }
             if (ad.address != null && ad.address != "") { adressContent += '<br>' + ad.address; }
             if (ad.mail != null && ad.mail != "") { adressContent += "<br>" + ad.mail; }
             if (ad.tel != null && ad.tel != "") { adressContent += "<br>" + ad.tel; }
@@ -54,9 +55,11 @@ class Fiche extends DivObject {
 
         var divPartage = new DivObject(bottom._balise, 'partage_' + this._id);
         divPartage.addClass('divPartage');
+        divPartage.css('background', couleur);
 
-        var tel = '<svg id="CalqueTEL_' + this._id + '" data-name="Calque tel ' + this._id + '" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.97 48.57"><defs><style>.ccls-1{fill:' + couleur + ';}.ccls-2,.ccls-3{fill:#fff;}.ccls-3{stroke:' + couleur + ';stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title>sms</title><rect class="ccls-1" width="26" height="48.57" rx="2.86" ry="2.86"/><rect class="ccls-2" x="2.02" y="5.02" width="21.95" height="37.69" rx="1.69" ry="1.69"/><circle class="ccls-2" cx="13" cy="45.93" r="1.4"/><rect class="ccls-2" x="10.62" y="1.67" width="4.76" height="0.97" rx="0.49" ry="0.49"/><path class="ccls-3" d="M234.52,339.74a10.45,10.45,0,0,0-9.91,13.85l-4.16,4.09h6.72a10.47,10.47,0,1,0,7.35-17.94Z" transform="translate(-209.02 -327.79)"/><path class="ccls-1" d="M230.17,350.21a1,1,0,0,1,.26-.72,1,1,0,0,1,.75-.25,1,1,0,0,1,.73.25.94.94,0,0,1,.27.72,1,1,0,0,1-.27.72,1.17,1.17,0,0,1-1.47,0A.94.94,0,0,1,230.17,350.21Z" transform="translate(209.02 -327.79)"/><path class="ccls-1" d="M233.51,350.21a1,1,0,0,1,.26-.72,1.24,1.24,0,0,1,1.49,0,1,1,0,0,1,.26.72,1,1,0,0,1-.27.72,1.17,1.17,0,0,1-1.47,0A.94.94,0,0,1,233.51,350.21Z" transform="translate(-209.02 -327.79)"/><path class="ccls-1" d="M236.86,350.21a.94.94,0,0,1,.25-.72,1,1,0,0,1,.75-.25,1,1,0,0,1,.74.25,1,1,0,0,1,.26.72,1,1,0,0,1-.26.72,1.18,1.18,0,0,1-1.48,0A.94.94,0,0,1,236.86,350.21Z" transform="translate(209.02 -327.79)"/></svg>';
-        divPartage.html(tel + '<div>Partager</div>');
+        // var tel = '<svg id="CalqueTEL_' + this._id + '" data-name="Calque tel ' + this._id + '" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.97 48.57"><defs><style>.ccls-1{fill:' + couleur + ';}.ccls-2,.ccls-3{fill:#fff;}.ccls-3{stroke:' + couleur + ';stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title>sms</title><rect class="ccls-1" width="26" height="48.57" rx="2.86" ry="2.86"/><rect class="ccls-2" x="2.02" y="5.02" width="21.95" height="37.69" rx="1.69" ry="1.69"/><circle class="ccls-2" cx="13" cy="45.93" r="1.4"/><rect class="ccls-2" x="10.62" y="1.67" width="4.76" height="0.97" rx="0.49" ry="0.49"/><path class="ccls-3" d="M234.52,339.74a10.45,10.45,0,0,0-9.91,13.85l-4.16,4.09h6.72a10.47,10.47,0,1,0,7.35-17.94Z" transform="translate(-209.02 -327.79)"/><path class="ccls-1" d="M230.17,350.21a1,1,0,0,1,.26-.72,1,1,0,0,1,.75-.25,1,1,0,0,1,.73.25.94.94,0,0,1,.27.72,1,1,0,0,1-.27.72,1.17,1.17,0,0,1-1.47,0A.94.94,0,0,1,230.17,350.21Z" transform="translate(209.02 -327.79)"/><path class="ccls-1" d="M233.51,350.21a1,1,0,0,1,.26-.72,1.24,1.24,0,0,1,1.49,0,1,1,0,0,1,.26.72,1,1,0,0,1-.27.72,1.17,1.17,0,0,1-1.47,0A.94.94,0,0,1,233.51,350.21Z" transform="translate(-209.02 -327.79)"/><path class="ccls-1" d="M236.86,350.21a.94.94,0,0,1,.25-.72,1,1,0,0,1,.75-.25,1,1,0,0,1,.74.25,1,1,0,0,1,.26.72,1,1,0,0,1-.26.72,1.18,1.18,0,0,1-1.48,0A.94.94,0,0,1,236.86,350.21Z" transform="translate(209.02 -327.79)"/></svg>';
+        var partage = '<img src="datas/imgs/carte/partage.svg">';
+        divPartage.html(partage + '<div>PARTAGER LA FICHE</div>');
         divPartage._balise.click({ fiche: this }, this.clickPartage);
 
         var galerie = [];
@@ -111,13 +114,71 @@ class Fiche extends DivObject {
     clickPartage(e) {
         var f = e.data.fiche;
         var site = f._poi._site
-        console.log('partage : ' + site);
 
-        var divQR = new DivObject(f._divSlider._balise, 'img_qrCode_' + f._id);
+        var slidePartage = new DivObject(f._divSlider._balise, 'slidePartage_' + f._id);
+        slidePartage.addClass('slidePartage');
+        slidePartage.css('background', f._couleur);
+        var enTete = new BaliseObject(slidePartage._balise, 'h3');
+        enTete.html('RECEVOIR LA FICHE');
+
+        var champTel = new DivObject(slidePartage._balise, 'champTel_' + f._id);
+        champTel.addClass('champTel');
+
+        var captionQR = new BaliseObject(slidePartage._balise, 'span', 'captionQR_' + f._id);
+        captionQR.addClass('captionQR');
+        captionQR.html('EN FLASHANT LE CODE');
+        var divQR = new DivObject(slidePartage._balise, 'img_qrCode_' + f._id);
         divQR.addClass('divQR');
         var qr = new QRCode('img_qrCode_' + f._id);
         qr.makeCode(site);
-        divQR.tweenAnimate({ top: 0 });
+
+        var captionTEL = new BaliseObject(slidePartage._balise, 'span', 'captionTEL_' + f._id);
+        captionTEL.addClass('captionTEL');
+        captionTEL.html('EN ENTRANT VOTRE NUMÉRO DE PORTABLE');
+        var divPave = new DivObject(slidePartage._balise, 'divPave_' + f._id);
+        divPave.addClass('paveNum');
+        divPave.css('color', f._couleur);
+
+        for (var i = 1; i < 13; i++) {
+            var chiffre = new DivObject(divPave._balise, i + 'chiffre_' + f._id);
+            chiffre.addClass('chiffre');
+            chiffre.attr('num', i);
+            chiffre._balise.css({
+                left: ((i - 1) % 3) * 45 + 'px',
+                top: Math.trunc((i - 1) / 3) * 60 + 'px'
+            });
+            if (i == 10) {
+                chiffre.html('<');
+                chiffre.css('color', 'red');
+            } else if (i == 11)
+                chiffre.html(0);
+            else if (i == 12) {
+                chiffre.html('✓');
+                chiffre.css('color', 'white');
+                chiffre.css('background', 'green');
+            }
+            else
+                chiffre.html(i);
+
+            chiffre._balise.click(function (e) {
+                e.stopPropagation();
+                var num = $(this).attr('num');
+                var tel = champTel._balise.html();
+                if (num == 10) {
+                    tel = tel.slice(0, -1);
+                } else if (num == 11)
+                    tel += '0';
+                else if (num == 12) {
+                    // TODO : send SMS
+                }
+                else
+                    tel += num;
+                champTel.html(tel);
+            });
+        }
+
+        slidePartage.tweenAnimate({ right: 0 });
+
     }
 
 

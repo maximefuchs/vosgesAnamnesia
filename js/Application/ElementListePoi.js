@@ -16,15 +16,15 @@ class ElementListePoi extends DivObject {
             txt.html('<b>' + json.title.toUpperCase() + '</b><br><p style="font-size:16px">Unknown</p>')
 
         this._balise.css({
-            height: scale + 'px'
-        });
+            height: scale - 5 + 'px'
+        }); // margin bottom : 5px
         var thumbnail = json.thumbnail;
         if (!thumbnail) {
             thumbnail = 'datas/imgs/carte/poi/img_manquant.jpg';
         }
         divImg._balise.css({
             width: 2 * scale + 'px',
-            height: scale + 'px',
+            height: scale - 5 + 'px',
             background: 'url(' + thumbnail + ')',
             'background-size': 'cover',
             'background-position': 'center'
