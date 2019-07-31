@@ -39,37 +39,37 @@
                 {
                     "id": "0",
                     "src": "datas/imgs/menu/diaporama/0.jpg",
-                    "color": "#90cef0"
+                    "color": "#b4b10e"
                 },
                 {
                     "id": "1",
                     "src": "datas/imgs/menu/diaporama/1.jpg",
-                    "color": "#90ceb0"
+                    "color": "#ba5d17"
                 },
                 {
                     "id": "2",
                     "src": "datas/imgs/menu/diaporama/2.jpg",
-                    "color": "#ad8548"
+                    "color": "#758da7"
                 },
                 {
                     "id": "3",
                     "src": "datas/imgs/menu/diaporama/3.jpg",
-                    "color": "#479944"
+                    "color": "#7e8a42"
                 },
                 {
                     "id": "4",
                     "src": "datas/imgs/menu/diaporama/4.jpg",
-                    "color": "#481236"
+                    "color": "#e09965"
                 },
                 {
                     "id": "5",
                     "src": "datas/imgs/menu/diaporama/5.jpg",
-                    "color": "#846973"
+                    "color": "#d5c02f"
                 },
                 {
                     "id": "6",
                     "src": "datas/imgs/menu/diaporama/6.jpg",
-                    "color": "#235689"
+                    "color": "#7d8e32"
                 }
             ],
             "deco": {
@@ -348,11 +348,7 @@
                     "couleur": "#55A7C0",
                     "src_fond": "#",
                     "picto": "datas/imgs/menu/picto/aDeguster.png",
-                    "titre": {
-                        "fr": "A déguster",
-                        "de": "Zu essen",
-                        "en": "To eat"
-                    },
+                    "titre": "A déguster",
                     "lien": "A déguster",
                     "x": 0,
                     "y": 2,
@@ -363,11 +359,7 @@
                     "couleur": "#2B75BB",
                     "src_fond": "datas/imgs/menu/element/aVoir.jpg",
                     "picto": "datas/imgs/menu/picto/aVoir.png",
-                    "titre": {
-                        "fr": "A voir, A visiter",
-                        "de": "Zu sehen, Zu besichtigen",
-                        "en": "To see, To visit"
-                    },
+                    "titre": "A voir, A visiter",
                     "lien": "A voir à visiter",
                     "x": 3,
                     "y": 0,
@@ -378,11 +370,7 @@
                     "couleur": "#1092A0",
                     "src_fond": "datas/imgs/menu/element/jeu.jpg",
                     "picto": "datas/imgs/menu/picto/jeu.png",
-                    "titre": {
-                        "fr": "A toi de jouer",
-                        "de": "Spiel selbst",
-                        "en": "Your turn to play"
-                    },
+                    "titre": "A toi de jouer",
                     "lien": "jeu",
                     "x": 3,
                     "y": 4,
@@ -393,11 +381,7 @@
                     "couleur": "#FF173A",
                     "src_fond": "#",
                     "picto": "datas/imgs/menu/picto/coeur.png",
-                    "titre": {
-                        "fr": "Coups de coeur",
-                        "de": "Was wir lieben",
-                        "en": "What we love"
-                    },
+                    "titre": "Coups de coeur",
                     "lien": "coeur",
                     "x": 5,
                     "y": 4,
@@ -408,11 +392,7 @@
                     "couleur": "#AEC905",
                     "src_fond": "#",
                     "picto": "datas/imgs/menu/picto/paysage.png",
-                    "titre": {
-                        "fr": "Paysages",
-                        "de": "Landschaften",
-                        "en": "Views"
-                    },
+                    "titre": "Paysages",
                     "lien": "paysage",
                     "x": 7,
                     "y": 0,
@@ -423,11 +403,7 @@
                     "couleur": "#7AB955",
                     "src_fond": "datas/imgs/menu/element/nature.jpg",
                     "picto": "datas/imgs/menu/picto/nature.png",
-                    "titre": {
-                        "fr": "Nature",
-                        "de": "Natur",
-                        "en": "Nature"
-                    },
+                    "titre": "Nature",
                     "lien": "nature",
                     "x": 9,
                     "y": 3,
@@ -438,11 +414,7 @@
                     "couleur": "#5B9D2E",
                     "src_fond": "datas/imgs/menu/element/actiNature.png",
                     "picto": "datas/imgs/menu/picto/actiNature.png",
-                    "titre": {
-                        "fr": "Activités nature",
-                        "de": "Naturen Aktivitäten",
-                        "en": "Nature activities"
-                    },
+                    "titre": "Activités nature",
                     "lien": "actiNature",
                     "x": 10,
                     "y": 0,
@@ -453,11 +425,7 @@
                     "couleur": "#427A15",
                     "src_fond": "#",
                     "picto": "datas/imgs/menu/picto/culture.png",
-                    "titre": {
-                        "fr": "Culture",
-                        "de": "Kultur",
-                        "en": "Culture"
-                    },
+                    "titre": "Culture",
                     "lien": "culture",
                     "x": 13,
                     "y": 1,
@@ -468,11 +436,7 @@
                     "couleur": "#2B83BF",
                     "src_fond": "datas/imgs/menu/element/parc.jpg",
                     "picto": "datas/imgs/menu/picto/parc.png",
-                    "titre": {
-                        "fr": "Le parc",
-                        "de": "Der Park",
-                        "en": "The park"
-                    },
+                    "titre": "Le parc",
                     "lien": "parc",
                     "x": 15,
                     "y": 0,
@@ -483,11 +447,7 @@
                     "couleur": "#55A7C0",
                     "src_fond": "#",
                     "picto": "datas/imgs/menu/picto/marqueParc.png",
-                    "titre": {
-                        "fr": "La marque parc",
-                        "de": "Die parc Marke",
-                        "en": "The brand parc"
-                    },
+                    "titre": "La marque parc",
                     "lien": "La marque Parc",
                     "x": 18,
                     "y": 0,
@@ -498,11 +458,7 @@
                     "couleur": "#5B9D2E",
                     "src_fond": "#",
                     "picto": "datas/imgs/menu/picto/seDeplacer.png",
-                    "titre": {
-                        "fr": "Se déplacer",
-                        "de": "Zu bewegen",
-                        "en": "Move around"
-                    },
+                    "titre": "Se déplacer",
                     "lien": "seDeplacer",
                     "x": 18,
                     "y": 2,
@@ -513,11 +469,7 @@
                     "couleur": "#2B75BB",
                     "src_fond": "#",
                     "picto": "datas/imgs/menu/picto/info.png",
-                    "titre": {
-                        "fr": "S'informer",
-                        "de": "Sich informieren",
-                        "en": "Get information"
-                    },
+                    "titre": "S'informer",
                     "lien": "S'informer",
                     "x": 20,
                     "y": 0,
@@ -528,11 +480,7 @@
                     "couleur": "#9E0E24",
                     "src_fond": "#",
                     "picto": "datas/imgs/menu/picto/local.png",
-                    "titre": {
-                        "fr": "Autour de moi",
-                        "de": "Um mich herum",
-                        "en": "Around me"
-                    },
+                    "titre": "Autour de moi",
                     "lien": "local",
                     "x": 21,
                     "y": 3,
@@ -542,17 +490,12 @@
             "SousMenu": {
                 "A déguster": {
                     "texte": "Encourager les circuits courts et faire connaître les produits et les savoir faire de son territoire sont deux actions essentielles pour le Parc des Ballons des Vosges.",
-                    "type": "carte",
+                    "type": "",
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_1.jpg",
-                            "color": "#FF0000"
-                        },
-                        {
-                            "id": "diapo2",
-                            "src": "datas/imgs/menu/diaporama/aDeguster/diapo_2.jpg",
-                            "color": "#FFFF00"
+                            "src": "datas/imgs/menu/diaporama/4.jpg",
+                            "color": "#e09965"
                         }
                     ],
                     "sousmenu": [
@@ -609,12 +552,6 @@
                             "titre": "Les différents paysages",
                             "type": "jeu",
                             "lien": "paysages"
-                        },
-                        {
-                            "id": 3,
-                            "titre": "Mémory du parc",
-                            "type": "jeu",
-                            "lien": "memory"
                         }
                     ]
                 },
@@ -623,8 +560,8 @@
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/aVoir/diapo_0.jpg",
-                            "color": "#FF0450"
+                            "src": "datas/imgs/menu/diaporama/2.jpg",
+                            "color": "#758da7"
                         }
                     ],
                     "sousmenu": [
@@ -706,7 +643,7 @@
                                 {
                                     "id": 2,
                                     "titre": "Patrimoine de mémoire",
-                                    "lien": "Patrimoine de mémoire ",
+                                    "lien": "Patrimoine de mémoire",
                                     "type": "poi"
                                 },
                                 {
@@ -724,7 +661,7 @@
                                 {
                                     "id": 5,
                                     "titre": "Traditions populaires",
-                                    "lien": "Traditions populaire",
+                                    "lien": "Traditions populaires",
                                     "type": "poi"
                                 }
                             ]
@@ -736,13 +673,8 @@
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/paysage/diapo_1.jpg",
-                            "color": "#FF0000"
-                        },
-                        {
-                            "id": "diapo2",
-                            "src": "datas/imgs/menu/diaporama/paysage/diapo_2.jpg",
-                            "color": "#FFFF00"
+                            "src": "datas/imgs/menu/diaporama/1.jpg",
+                            "color": "#ba5d17"
                         }
                     ],
                     "sousmenu": [
@@ -795,8 +727,8 @@
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/nature/diapo_1.jpg",
-                            "color": "#FF9000"
+                            "src": "datas/imgs/menu/diaporama/0.jpg",
+                            "color": "#b4b10e"
                         }
                     ],
                     "sousmenu": [
@@ -862,8 +794,8 @@
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/actiNature/diapo_2.jpg",
-                            "color": "#FF0000"
+                            "src": "datas/imgs/menu/diaporama/5.jpg",
+                            "color": "#d5c02f"
                         }
                     ],
                     "sousmenu": [
@@ -966,8 +898,8 @@
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/culture/diapo_3.jpg",
-                            "color": "#FF0000"
+                            "src": "datas/imgs/menu/diaporama/6.jpg",
+                            "color": "#7d8e32"
                         }
                     ],
                     "sousmenu": [
@@ -1026,8 +958,8 @@
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/parc/diapo_0.jpg",
-                            "color": "#FF0000"
+                            "src": "datas/imgs/menu/diaporama/4.jpg",
+                            "color": "#e09965"
                         }
                     ],
                     "sousmenu": [
@@ -1109,8 +1041,8 @@
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/marqueParc/diapo_2.jpg",
-                            "color": "#FF0000"
+                            "src": "datas/imgs/menu/diaporama/3.jpg",
+                            "color": "#7e8a42"
                         }
                     ],
                     "sousmenu": [
@@ -1212,8 +1144,8 @@
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/seDeplacer/diapo_3.jpg",
-                            "color": "#FF0000"
+                            "src": "datas/imgs/menu/diaporama/1.jpg",
+                            "color": "#ba5d17"
                         }
                     ],
                     "sousmenu": [
@@ -1249,8 +1181,8 @@
                     "diaporama": [
                         {
                             "id": "diapo1",
-                            "src": "datas/imgs/menu/diaporama/info/diapo_0.jpg",
-                            "color": "#FF0000"
+                            "src": "datas/imgs/menu/diaporama/0.jpg",
+                            "color": "#b4b10e"
                         }
                     ],
                     "sousmenu": [
@@ -1274,7 +1206,7 @@
                         },
                         {
                             "id": 3,
-                            "titre": "Structures d'éducation à l'environnement",
+                            "titre": "Structures d'éducation à <span style='font-size:15px'>l'environnement</span>",
                             "lien": "education",
                             "type": "poi"
                         }

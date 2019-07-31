@@ -64,7 +64,10 @@ class Fiche extends DivObject {
 
         var galerie = [];
         poi._galerie.forEach(element => {
-            galerie.push(element.src);
+            var t = 'datas/imgs/carte/poi/download/';
+            var split = element.src.split('/');
+            t += split[split.length - 1];
+            galerie.push(t);
         });
 
         var subContent = poi._subcontent;
@@ -73,7 +76,10 @@ class Fiche extends DivObject {
             txtContent += "<h3>" + element.title + "</h3>";
             txtContent += element.text;
             element.galerie.forEach(pic => {
-                galerie.push(pic.src);
+                var t = 'datas/imgs/carte/poi/download/';
+                var split = pic.src.split('/');
+                t += split[split.length - 1];
+                galerie.push(t);
             });
         });
 
@@ -85,7 +91,10 @@ class Fiche extends DivObject {
         this._texte._balise.after(s);
 
         if (poi._thumbnail != false) {
-            galerie.push(poi._thumbnail);
+            var t = 'datas/imgs/carte/poi/download/';
+            var split = poi._thumbnail.split('/');
+            t += split[split.length - 1];            
+            galerie.push(t);
         }
         if (galerie.length == 0)
             galerie.push('datas/imgs/menu/diaporama/logo.png');

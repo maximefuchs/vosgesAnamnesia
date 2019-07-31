@@ -10,19 +10,6 @@ class Menu extends DivObject {
         super(parent, "menu");
         this.addClass('page');
 
-
-        // require("electron").remote.require("electron-download-manager").download({
-        //     url: "http://parc-ballons-vosges.validation.php56.sbg.advisa.fr/wp-content/uploads/2015/01/Luxeuil-les-Bains2.jpg"
-        // }, function (error, info) {
-        //     if (error) {
-        //         console.log(error);
-        //         return;
-        //     }
-        //     console.log("DONE: " + info.url);
-        // });
-
-
-
         this._json = json;
 
         this._fondImgs = [];
@@ -142,7 +129,11 @@ class Menu extends DivObject {
         menu.supprimerPerenne();
         menu.supprimerJeu();
         $('.sousMenuListePoi').remove();
-        menu.showSousMenu($(this));
+        if ($(this).attr('lien') == 'local') {
+            console.log('perenne autour de moi');
+        } else {
+            menu.showSousMenu($(this));
+        }
     }
 
     supprimerCarte() {
@@ -287,7 +278,7 @@ class Menu extends DivObject {
             $('.backgroundImage').css('display', 'none');
         });
         menu._sousMenu = sm;
-        
+
         sm.init();
         menu.moveDecoElements(menu);
 

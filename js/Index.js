@@ -23,6 +23,9 @@ var t;
 
 var application;
 
+// si l'on veut télécharger les jsons et images au démarrage
+var download = false;
+
 function initApplication() {
     var img = document.createElement('IMG');
     img.setAttribute("src", "datas/buffer.gif");
@@ -49,7 +52,8 @@ function createApplication() {
 
     console.log(StageWidth + " - " + StageHeight);
 
-    // poisJSON = poisJsonFR;
+    if (download)
+        poisJSON = poisJsonFR;
     application = new Application();
 };
 
@@ -80,26 +84,28 @@ function chargeOldPoi(data) {
 }
 
 function chargementJsonPoiFR() {
-
-    var token = 'ev79X7MuE';
-    var url = 'https://parc-ballons-vosges.fr/wp-json/wp/v2/exportjson/fr';
-    fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' }), })
-        .then(response => { return response.json(); })
-        .then(data => {
-            require('fs').writeFile('datas/poiFR.json', JSON.stringify(data), (err) => {
-                if (err) {
-                    console.error(err.message);
-                    $.when($.getJSON("datas/poiFR.json", function (data) { poisJsonFR = data; })).then(chargementJsonPoiEN);
-                } else {
-                    poisJsonFR = data;
-                    chargementJsonPoiEN();
-                }
+    if (download) {
+        var token = 'ev79X7MuE';
+        var url = 'https://parc-ballons-vosges.fr/wp-json/wp/v2/exportjson/fr';
+        fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' }), })
+            .then(response => { return response.json(); })
+            .then(data => {
+                require('fs').writeFile('datas/poiFR.json', JSON.stringify(data), (err) => {
+                    if (err) {
+                        console.error(err.message);
+                        $.when($.getJSON("datas/poiFR.json", function (data) { poisJsonFR = data; })).then(chargementJsonPoiEN);
+                    } else {
+                        poisJsonFR = data;
+                        chargementJsonPoiEN();
+                    }
+                });
+            })
+            .catch((error) => {
+                console.error(error);
+                $.when($.getJSON("datas/poiFR.json", function (data) { poisJsonFR = data; })).then(chargementJsonPoiEN);
             });
-        })
-        .catch((error) => {
-            console.error(error);
-            $.when($.getJSON("datas/poiFR.json", function (data) { poisJsonFR = data; })).then(chargementJsonPoiEN);
-        });
+    } else
+        createApplication();
 }
 function chargementJsonPoiEN() {
 
@@ -133,17 +139,36 @@ function chargementJsonPoiDE() {
             require('fs').writeFile('datas/poiDE.json', JSON.stringify(data), (err) => {
                 if (err) {
                     console.error(err.message);
-                    $.when($.getJSON("datas/poiDE.json", function (data) { poisJsonDE = data; })).then(createApplication);
+                    $.when($.getJSON("datas/poiDE.json", function (data) { poisJsonDE = data; })).then(downloadImages);
                 } else {
                     poisJsonDE = data;
-                    createApplication();
+                    downloadImages();
                 }
             });
         })
         .catch((error) => {
             console.error(error);
-            $.when($.getJSON("datas/poiDE.json", function (data) { poisJsonDE = data; })).then(createApplication);
+            $.when($.getJSON("datas/poiDE.json", function (data) { poisJsonDE = data; })).then(downloadImages);
         });
+}
+
+function downloadImages() {
+
+    var imgs = extractJSON(poisJsonFR);
+    require("electron").remote.require("electron-download-manager").bulkDownload({
+        urls: imgs
+    }, function (error, finished, errors) {
+        if (error) {
+            console.log("finished: " + finished);
+            console.log("errors: " + errors);
+            createApplication();
+            return;
+        }
+
+        console.log("all finished");
+        createApplication();
+    });
+
 }
 
 
@@ -172,4 +197,22 @@ function somme(int) {
         somme += i;
     }
     return somme;
+}
+
+function extractJSON(obj, imgs) {
+    if (imgs === undefined)
+        imgs = []
+    for (const i in obj) {
+        if (Array.isArray(obj[i]) || typeof obj[i] === 'object') {
+            imgs.concat(extractJSON(obj[i], imgs));
+        } else {
+            if (i == 'thumbnail' || i == 'src') {
+                if (obj[i] != false) {
+                    // console.log(obj[i]);
+                    imgs.push(obj[i]);
+                }
+            }
+        }
+    }
+    return imgs;
 }

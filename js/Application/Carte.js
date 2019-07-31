@@ -201,7 +201,14 @@ class Carte extends DivObject {
             $('#' + p._id + ' .pointer').css('display', 'none');
             p.addClass('large');
             p.css('border', '5px solid ' + this._couleur);
-            var b = p._thumbnail != false ? p._thumbnail : 'datas/imgs/menu/diaporama/3.jpg';
+            if (p._thumbnail != false) {
+                var t = 'datas/imgs/carte/poi/download/';
+                var split = p._thumbnail.split('/');
+                t += split[split.length - 1];
+                var b = t;
+            } else {
+                var b = 'datas/imgs/menu/diaporama/3.jpg';
+            }
             p._balise.css({ 'background': 'url(' + b + ')', 'background-size': 'cover', 'background-position': 'center' });
             var overlay = poiToOverlay(p);
             console.log(overlay);

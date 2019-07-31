@@ -239,6 +239,14 @@ class SousMenu extends DivObject {
         switch (type) {
             case 'perenne':
                 sMenu.reinitializeContent();
+                $('.divBtnCarteElement').remove();
+                $('.sousMenuListePoi').remove();
+                
+                if (sMenu._inCarte){
+                    sMenu.oldLienJson(sMenu);
+                    sMenu._inCarte = false;
+                }
+
                 var fp = new FichePerenne($('#Application'), 'fichePerenne', sMenu.getJsonPerenne(sMenu, lien), couleur);
                 fp.clickSignal.add(function () {
                     sMenu.clickPerenne.dispatch();
@@ -261,6 +269,7 @@ class SousMenu extends DivObject {
                 break;
 
             case 'carte':
+                sMenu.reinitializeContent();
                 $('#filterBackground').css('display', 'none');
                 $('.elementSousMenu').remove();
                 var jsonElements = json[num].sousmenu;

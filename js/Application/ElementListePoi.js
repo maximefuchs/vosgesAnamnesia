@@ -21,6 +21,11 @@ class ElementListePoi extends DivObject {
         var thumbnail = json.thumbnail;
         if (!thumbnail) {
             thumbnail = 'datas/imgs/carte/poi/img_manquant.jpg';
+        } else {
+            var t = 'datas/imgs/carte/poi/download/';
+            var split = thumbnail.split('/');
+            t += split[split.length - 1];
+            thumbnail = t;
         }
         divImg._balise.css({
             width: 2 * scale + 'px',
