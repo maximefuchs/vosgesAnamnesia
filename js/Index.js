@@ -87,7 +87,7 @@ function chargementJsonPoiFR() {
     if (download) {
         var token = 'ev79X7MuE';
         var url = 'https://parc-ballons-vosges.fr/wp-json/wp/v2/exportjson/fr';
-        fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' }), })
+        fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' })})
             .then(response => { return response.json(); })
             .then(data => {
                 require('fs').writeFile('datas/poiFR.json', JSON.stringify(data), (err) => {
@@ -111,7 +111,7 @@ function chargementJsonPoiEN() {
 
     var token = 'ev79X7MuE';
     var url = 'https://parc-ballons-vosges.fr/wp-json/wp/v2/exportjson/en';
-    fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' }), })
+    fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' })})
         .then(response => { return response.json(); })
         .then(data => {
             require('fs').writeFile('datas/poiEN.json', JSON.stringify(data), (err) => {
@@ -133,7 +133,7 @@ function chargementJsonPoiDE() {
 
     var token = 'ev79X7MuE';
     var url = 'https://parc-ballons-vosges.fr/wp-json/wp/v2/exportjson/de';
-    fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' }), })
+    fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' })})
         .then(response => { return response.json(); })
         .then(data => {
             require('fs').writeFile('datas/poiDE.json', JSON.stringify(data), (err) => {

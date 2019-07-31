@@ -93,7 +93,7 @@ class Fiche extends DivObject {
         if (poi._thumbnail != false) {
             var t = 'datas/imgs/carte/poi/download/';
             var split = poi._thumbnail.split('/');
-            t += split[split.length - 1];            
+            t += split[split.length - 1];
             galerie.push(t);
         }
         if (galerie.length == 0)
@@ -179,6 +179,15 @@ class Fiche extends DivObject {
                     tel += '0';
                 else if (num == 12) {
                     // TODO : send SMS
+                    var content = 'Bonjour,%20veuillez%20trouver%20la%20fiche%20sur%20le%20lien%20suivant%20:%20' + site;
+                    var num = tel;
+                    var url = 'https://www.ovh.com/cgi-bin/sms/http2sms.cgi?&account=sms-ss271992-1&contentType=text/json&login=pnrbv&password=anamnesi&from=Anamnesia&to=' + tel + '&message=' + content;
+                    console.log(url);
+                    fetch(url, { method: 'GET' })
+                        .then(response => {
+                            console.log(response.json());
+                        })
+                        .catch((error) => { console.error(error); });
                 }
                 else
                     tel += num;
@@ -186,6 +195,12 @@ class Fiche extends DivObject {
             });
         }
 
+        var btnFermer = new DivObject(slidePartage._balise, f._id + "_btnFermer");
+        btnFermer.html('<div>+</div>');
+        btnFermer.addClass('btnFermerPartage');
+        btnFermer._balise.click(function(){
+            slidePartage._balise.remove();
+        });
         slidePartage.tweenAnimate({ right: 0 });
 
     }

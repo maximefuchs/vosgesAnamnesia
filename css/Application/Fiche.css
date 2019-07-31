@@ -169,3 +169,21 @@
     background: #ddd;
     margin: 10px;
 }
+
+.btnFermerPartage {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    width: 60px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.btnFermerPartage div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-weight: bold;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
