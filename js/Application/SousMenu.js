@@ -241,8 +241,8 @@ class SousMenu extends DivObject {
                 sMenu.reinitializeContent();
                 $('.divBtnCarteElement').remove();
                 $('.sousMenuListePoi').remove();
-                
-                if (sMenu._inCarte){
+
+                if (sMenu._inCarte) {
                     sMenu.oldLienJson(sMenu);
                     sMenu._inCarte = false;
                 }
@@ -259,7 +259,7 @@ class SousMenu extends DivObject {
                 $('.elementSousMenu').remove();
                 $('.divBtnCarteElement').remove();
 
-                if (sMenu._inCarte){
+                if (sMenu._inCarte) {
                     sMenu.oldLienJson(sMenu);
                     sMenu._inCarte = false;
                 }
@@ -427,8 +427,6 @@ class SousMenu extends DivObject {
     sousElementsPOI(json) {
         var sMenu = this;
         sMenu.sousMenuElements = [];
-        var iconEyeClosed = "<svg id='Calque_1' data-name='Calque 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><defs><style>.cls-1{fill:none;stroke: " + sMenu._couleur + ";stroke-linecap:round;stroke-linejoin:round;stroke-width:6.24px;}</style></defs><path class='cls-1' d='M26.54,69.69s20.17,39.6,74,39.6,74-39.6,74-39.6'/><line class='cls-1' x1='100.5' y1='109.29' x2='100.5' y2='129.38'/><line class='cls-1' x1='129.64' y1='106.15' x2='138.62' y2='124.12'/><line class='cls-1' x1='154.02' y1='92.86' x2='166.46' y2='108.63'/><line class='cls-1' x1='45.61' y1='91.91' x2='33.16' y2='107.69'/><line class='cls-1' x1='68.73' y1='106.15' x2='62.37' y2='125.21'/></svg>";
-        var iconEyeOpen = "<svg id='Calque_2' data-name='Calque 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><defs><style>.cls-1{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:9.18px;}.cls-1,.cls-2{stroke:" + sMenu._couleur + ";}.cls-2{fill:" + sMenu._couleur + ";stroke-miterlimit:10;stroke-width:3.19px;}</style></defs><title>Plan de travail 1</title><path class='cls-1' d='M100.66,56.49c-59,0-81.08,43.41-81.08,43.41s22.11,43.4,81.08,43.4,81.08-43.4,81.08-43.4S159.62,56.49,100.66,56.49Z'/><circle class='cls-1' cx='100.66' cy='99.9' r='26.89'/><path class='cls-2' d='M90.72,76.14s-7.41,36.48,33,34.44C123.71,110.58,130.75,64.2,90.72,76.14Z'/></svg>";
         $('.divBtnCarteElement').remove();
         var divBtn = new DivObject(sMenu._divText._balise, 'divBtnFiltre_' + sMenu._id);
         divBtn.addClass('divBtnCarteElement');
@@ -444,41 +442,36 @@ class SousMenu extends DivObject {
             var text = jsonElt.titre;
             var span = new BaliseObject(div._balise, 'span');
             span.html(text.toUpperCase());
-            var icone = new DivObject(div._balise, i + 'icone_' + sMenu._id);
-            icone.addClass('iconCarteElement');
-            icone.html(iconEyeOpen);
-            div.isOpen = false;
+            var sw = new DivObject(div._balise, i + 'sw_' + sMenu._id);
+            sw.addClass('iconCarteElement');
+            var label = new BaliseObject(sw._balise, 'label', i + 'labelSwitch' + sMenu._id);
+            label.addClass('switch');
+            label.attr('for', i + 'cbSwitch_' + sMenu._id);
+            label._balise.after('<input type="checkbox" id="' + i + 'cbSwitch_' + sMenu._id + '" checked><span class="sliderSwitch"></span>');
+            div.isOpen = true;
             div.jsonPOIs = sMenu.getJsonPoi(sMenu, jsonElt.lien);
             allPOIs = allPOIs.concat(div.jsonPOIs);
-            div._balise.click(function () {
+            $('#' + i + 'labelSwitch' + sMenu._id).click(function () {
                 sMenu.reinitializeContent();
-                if (!divs[i].isOpen) {
-                    for (let k = 0; k < json.length; k++) {
-                        if (k != i) {
-                            divs[k].isOpen = false;
-                            $('#' + k + 'icone_' + sMenu._id).html(iconEyeClosed);
-
-                        }
-                        else
-                            $('#' + k + 'icone_' + sMenu._id).html(iconEyeOpen);
-
+                sMenu._carte.removeAllOverlays();
+                divs[i].isOpen = !divs[i].isOpen;
+                var toDisp = [];
+                divs.forEach(d => {
+                    if (d.isOpen) {
+                        toDisp = toDisp.concat(d.jsonPOIs);
+                        console.log(d.jsonPOIs);
                     }
-                    divs[i].isOpen = true;
-                    sMenu._carte.removeAllOverlays();
-                    sMenu.displayPoiOnMap(divs[i].jsonPOIs);
-                } else {
-                    for (let k = 0; k < json.length; k++) {
-                        $('#' + k + 'icone_' + sMenu._id).html(iconEyeOpen);
-                        divs[k].isOpen = false;
-                    }
-                    sMenu._carte.removeAllOverlays();
-                    sMenu.displayPoiOnMap(allPOIs);
-                }
+                });
+                sMenu.displayPoiOnMap(toDisp);
             });
             div.css('color', sMenu._couleur);
             divs.push(div);
+
         }
-        console.log(allPOIs);
+        var style = new BaliseObject(divBtn._balise, 'style');
+        style.html('input:checked + .sliderSwitch:before {\
+            background-color: '+ sMenu._couleur + ';\
+          }');
         sMenu.displayPoiOnMap(allPOIs);
     }
 
