@@ -15,7 +15,6 @@ class Fiche extends DivObject {
         this._id = id;
         this._poi = poi;
         this._couleur = couleur;
-        this._ouvert = false;
         // this._langue = paramsJSON.langueParDefault;
 
         this.addClass('elementFiche');
