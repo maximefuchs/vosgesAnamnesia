@@ -19,6 +19,10 @@ class Menu extends DivObject {
         var overlay = new Img(this._balise, 'filterBackground', 'datas/imgs/menu/diaporama/overlay_img.png');
         overlay.addClass('page');
         overlay.css('z-index', 1);
+        var overlayPerenne = new Img(this._balise, 'overlayPerenne', 'datas/imgs/perenne/texture_fiche.png');
+        overlayPerenne.addClass('page');
+        overlayPerenne.css('z-index', 1);
+        overlayPerenne.css('display', 'none');
         this.backPause = false;
         this._setIntervalFonction = 0; // id of the setInterval founction used to switch between background images
 
@@ -130,8 +134,12 @@ class Menu extends DivObject {
         menu.supprimerJeu();
         $('.sousMenuListePoi').remove();
         if ($(this).attr('lien') == 'local') {
+            $('#overlayPerenne').css('display', '');
+            $('#filterBackground').css('display', 'none');
             console.log('perenne autour de moi');
         } else {
+            $('#overlayPerenne').css('display', 'none');
+            $('#filterBackground').css('display', '');
             menu.showSousMenu($(this));
         }
     }

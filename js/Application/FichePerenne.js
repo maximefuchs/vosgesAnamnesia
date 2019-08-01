@@ -7,11 +7,8 @@ class FichePerenne extends DivObject {
         super(parent, id);
         this.addClass('pagePerenne');
         this.addClass('page');
-        this._balise.css({
-            background: 'url(datas/imgs/perenne/texture_fiche.png)'
-        })
 
-        var page = new DivObject(this._balise, 'elementPage');
+        $('#elementsDeco').css('display', 'none');
 
         console.log(json);
 
@@ -37,7 +34,7 @@ class FichePerenne extends DivObject {
 
         ////////////////
         // TOP
-        var divTop = new DivObject(page._balise, 'divTop_' + this._id);
+        var divTop = new DivObject(this._balise, 'divTop_' + this._id);
         divTop.addClass('divTop');
         var link = (json.imgTop == "") ? "datas/imgs/perenne/test/top.jpg" : json.imgTop;
         // var imageTop = new Img(divTop._balise, 'imageTop_' + this._id, link);
@@ -63,7 +60,7 @@ class FichePerenne extends DivObject {
 
         ////////////////////
 
-        var divContain = new DivObject(page._balise, 'divContain_' + this._id);
+        var divContain = new DivObject(this._balise, 'divContain_' + this._id);
         divContain.addClass('divContain');
 
         //////////////////
