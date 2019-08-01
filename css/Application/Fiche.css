@@ -1,12 +1,11 @@
 .elementFiche {
     margin-top: 400px;
     z-index: 11;
-    overflow: hidden;
 }
 
 .fiche {
     width: 1000px;
-    height: 500px;
+    height: 540px;
     font-size: 15px;
     color: black;
     background: white;
@@ -53,6 +52,7 @@
     bottom: 0;
     left: 0;
     width: 45%;
+    min-height: 122px;
 }
 
 .ficheBt {
@@ -88,7 +88,6 @@
 
 .divPartage {
     width: 25%;
-    height: 100%;
     margin-left: 5%;
     display: inline-block;
     cursor: pointer;
@@ -108,7 +107,8 @@
     height: 100%;
     position: absolute;
     top: 0;
-    right: -50%;
+    right: 0;
+    opacity: 0;
     color: white;
 }
 

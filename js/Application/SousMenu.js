@@ -87,6 +87,7 @@ class SousMenu extends DivObject {
         // if false -> come back to previous menu
         this._btnFermer._balise.click(function () {
             $('#filterBackground').css('display', '');
+            $('#overlayPerenne').css('display', 'none');
             if (ssMenu.btnShouldClose) {
                 ssMenu.close();
                 ssMenu.signalFermer.dispatch();

@@ -111,7 +111,7 @@ class Fiche extends DivObject {
 
         var divSlider = new DivObject(divFiche._balise, 'divSlider_' + this._id);
         divSlider.addClass('divSlider');
-        new SliderDiaporama(divSlider._balise, 'slider_' + this._id, galerie, couleur, 500, 3, 0.5);
+        new SliderDiaporama(divSlider._balise, 'slider_' + this._id, galerie, couleur, {height: 540, width: 500} , 3, 0.5);
 
         this._overlay = ficheToOverlay(this);
         this._balise.toggle();
@@ -201,7 +201,7 @@ class Fiche extends DivObject {
         btnFermer._balise.click(function () {
             slidePartage._balise.remove();
         });
-        slidePartage.tweenAnimate({ right: 0 });
+        slidePartage.tweenAnimate({ opacity: 1 });
 
     }
 

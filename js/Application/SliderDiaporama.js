@@ -34,7 +34,7 @@ class SliderDiaporama extends DivObject {
             li.css('background-position', 'center');
             li.addClass('z-slide-item');
         }
-        $('#divSlider_' + this._id + ' .z-slide-wrap').css({ height: size + 'px', width: size + 'px' });
+        $('#divSlider_' + this._id + ' .z-slide-wrap').css({ height: size.height ? size.height : size + 'px', width: size.width ? size.width : size + 'px' });
 
         new Slider('#caroussel_' + this._id, '.z-slide-item', {
             interval: interval,
