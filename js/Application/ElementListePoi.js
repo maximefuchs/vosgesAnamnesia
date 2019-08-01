@@ -22,7 +22,7 @@ class ElementListePoi extends DivObject {
         if (!thumbnail) {
             thumbnail = 'datas/imgs/carte/poi/img_manquant.jpg';
         } else {
-            var t = 'datas/imgs/carte/poi/download/';
+            var t = folderImgs;
             var split = thumbnail.split('/');
             t += split[split.length - 1];
             thumbnail = t;

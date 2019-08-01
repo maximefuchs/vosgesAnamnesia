@@ -19,6 +19,11 @@ var body;
 var StageWidth;
 var StageHeight;
 
+var loc = window.location.pathname;
+var mainFolder = loc.substring(1, loc.lastIndexOf('/')) + '/';
+var s = loc.split('/');
+var folderImgs = s[1] + '/' + s[2] + '/' + s[3] + '/Documents/MediaBallonDesVosges/';
+
 var t;
 
 var application;
@@ -87,13 +92,13 @@ function chargementJsonPoiFR() {
     if (download) {
         var token = 'ev79X7MuE';
         var url = 'https://parc-ballons-vosges.fr/wp-json/wp/v2/exportjson/fr';
-        fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' })})
+        fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' }) })
             .then(response => { return response.json(); })
             .then(data => {
-                require('fs').writeFile('datas/poiFR.json', JSON.stringify(data), (err) => {
+                require('fs').writeFile(mainFolder + 'datas/poiFR.json', JSON.stringify(data), (err) => {
                     if (err) {
                         console.error(err.message);
-                        $.when($.getJSON("datas/poiFR.json", function (data) { poisJsonFR = data; })).then(chargementJsonPoiEN);
+                        $.when($.getJSON(mainFolder + "datas/poiFR.json", function (data) { poisJsonFR = data; })).then(chargementJsonPoiEN);
                     } else {
                         poisJsonFR = data;
                         chargementJsonPoiEN();
@@ -102,7 +107,7 @@ function chargementJsonPoiFR() {
             })
             .catch((error) => {
                 console.error(error);
-                $.when($.getJSON("datas/poiFR.json", function (data) { poisJsonFR = data; })).then(chargementJsonPoiEN);
+                $.when($.getJSON(mainFolder + "datas/poiFR.json", function (data) { poisJsonFR = data; })).then(chargementJsonPoiEN);
             });
     } else
         createApplication();
@@ -111,13 +116,13 @@ function chargementJsonPoiEN() {
 
     var token = 'ev79X7MuE';
     var url = 'https://parc-ballons-vosges.fr/wp-json/wp/v2/exportjson/en';
-    fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' })})
+    fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' }) })
         .then(response => { return response.json(); })
         .then(data => {
-            require('fs').writeFile('datas/poiEN.json', JSON.stringify(data), (err) => {
+            require('fs').writeFile(mainFolder + 'datas/poiEN.json', JSON.stringify(data), (err) => {
                 if (err) {
                     console.error(err.message);
-                    $.when($.getJSON("datas/poiEN.json", function (data) { poisJsonEN = data; })).then(chargementJsonPoiDE);
+                    $.when($.getJSON(mainFolder + "datas/poiEN.json", function (data) { poisJsonEN = data; })).then(chargementJsonPoiDE);
                 } else {
                     poisJsonEN = data;
                     chargementJsonPoiDE();
@@ -126,20 +131,20 @@ function chargementJsonPoiEN() {
         })
         .catch((error) => {
             console.error(error);
-            $.when($.getJSON("datas/poiEN.json", function (data) { poisJsonEN = data; })).then(chargementJsonPoiDE);
+            $.when($.getJSON(mainFolder + "datas/poiEN.json", function (data) { poisJsonEN = data; })).then(chargementJsonPoiDE);
         });
 }
 function chargementJsonPoiDE() {
 
     var token = 'ev79X7MuE';
     var url = 'https://parc-ballons-vosges.fr/wp-json/wp/v2/exportjson/de';
-    fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' })})
+    fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' }) })
         .then(response => { return response.json(); })
         .then(data => {
-            require('fs').writeFile('datas/poiDE.json', JSON.stringify(data), (err) => {
+            require('fs').writeFile(mainFolder + 'datas/poiDE.json', JSON.stringify(data), (err) => {
                 if (err) {
                     console.error(err.message);
-                    $.when($.getJSON("datas/poiDE.json", function (data) { poisJsonDE = data; })).then(downloadImages);
+                    $.when($.getJSON(mainFolder + "datas/poiDE.json", function (data) { poisJsonDE = data; })).then(downloadImages);
                 } else {
                     poisJsonDE = data;
                     downloadImages();
@@ -148,11 +153,15 @@ function chargementJsonPoiDE() {
         })
         .catch((error) => {
             console.error(error);
-            $.when($.getJSON("datas/poiDE.json", function (data) { poisJsonDE = data; })).then(downloadImages);
+            $.when($.getJSON(mainFolder + "datas/poiDE.json", function (data) { poisJsonDE = data; })).then(downloadImages);
         });
 }
 
 function downloadImages() {
+
+    // require("electron").remote.require("electron-download-manager").register({
+    //     downloadFolder: mainFolder + "datas/imgs/carte/poi/download"
+    // });
 
     var imgs = extractJSON(poisJsonFR);
     require("electron").remote.require("electron-download-manager").bulkDownload({

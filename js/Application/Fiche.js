@@ -64,7 +64,7 @@ class Fiche extends DivObject {
 
         var galerie = [];
         poi._galerie.forEach(element => {
-            var t = 'datas/imgs/carte/poi/download/';
+            var t = folderImgs;
             var split = element.src.split('/');
             t += split[split.length - 1];
             galerie.push(t);
@@ -76,7 +76,7 @@ class Fiche extends DivObject {
             txtContent += "<h3>" + element.title + "</h3>";
             txtContent += element.text;
             element.galerie.forEach(pic => {
-                var t = 'datas/imgs/carte/poi/download/';
+                var t = folderImgs;;
                 var split = pic.src.split('/');
                 t += split[split.length - 1];
                 galerie.push(t);
@@ -91,7 +91,7 @@ class Fiche extends DivObject {
         this._texte._balise.after(s);
 
         if (poi._thumbnail != false) {
-            var t = 'datas/imgs/carte/poi/download/';
+            var t = folderImgs;
             var split = poi._thumbnail.split('/');
             t += split[split.length - 1];
             galerie.push(t);
@@ -198,7 +198,7 @@ class Fiche extends DivObject {
         var btnFermer = new DivObject(slidePartage._balise, f._id + "_btnFermer");
         btnFermer.html('<div>+</div>');
         btnFermer.addClass('btnFermerPartage');
-        btnFermer._balise.click(function(){
+        btnFermer._balise.click(function () {
             slidePartage._balise.remove();
         });
         slidePartage.tweenAnimate({ right: 0 });

@@ -141,8 +141,7 @@ class Carte extends DivObject {
         var zoomInBtn = new BtObject(div, "zoomInBtn");
         zoomInBtn.html("+");
         zoomInBtn.addClass('zoomButtons');
-        zoomInBtn.css('right', '7px');
-        zoomInBtn._balise.css({ right: 0, opacity: 0.92 });
+        zoomInBtn._balise.css({ right: '7px', opacity: 0.92 });
         var zMax = viewer.viewport.getMaxZoom();
         zoomInBtn._balise.click(function () {
             var z = viewer.viewport.getZoom();
@@ -202,7 +201,7 @@ class Carte extends DivObject {
             p.addClass('large');
             p.css('border', '5px solid ' + this._couleur);
             if (p._thumbnail != false) {
-                var t = 'datas/imgs/carte/poi/download/';
+                var t = folderImgs;
                 var split = p._thumbnail.split('/');
                 t += split[split.length - 1];
                 var b = t;
