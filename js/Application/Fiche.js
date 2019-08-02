@@ -110,7 +110,7 @@ class Fiche extends DivObject {
 
         var divSlider = new DivObject(divFiche._balise, 'divSlider_' + this._id);
         divSlider.addClass('divSlider');
-        new SliderDiaporama(divSlider._balise, 'slider_' + this._id, galerie, couleur, {height: 540, width: 500} , 3, 0.5);
+        new SliderDiaporama(divSlider._balise, 'slider_' + this._id, galerie, couleur, { height: 540, width: 500 }, 3, 0.5);
 
         this._overlay = ficheToOverlay(this);
         this._balise.toggle();
@@ -131,6 +131,11 @@ class Fiche extends DivObject {
 
         var champTel = new DivObject(slidePartage._balise, 'champTel_' + f._id);
         champTel.addClass('champTel');
+        champTel.html('+');
+
+        var ind = new DivObject(slidePartage._balise, 'indication_' + f._id);
+        ind.addClass('indicationTel');
+        ind.html(paramsJSON.indicationTel);
 
         var captionQR = new BaliseObject(slidePartage._balise, 'span', 'captionQR_' + f._id);
         captionQR.addClass('captionQR');
@@ -146,6 +151,14 @@ class Fiche extends DivObject {
         var divPave = new DivObject(slidePartage._balise, 'divPave_' + f._id);
         divPave.addClass('paveNum');
         divPave.css('color', f._couleur);
+
+        var captionFeedBack = new BaliseObject(slidePartage._balise, 'span', 'captionFeedBack' + f._id);
+        captionFeedBack.addClass('captionFeedBack');
+        $('.captionFeedBack').css('display', 'none');
+        var feedBack = new Img(slidePartage._balise, 'feedBack' + f._id, '');
+        feedBack.addClass('feedBack');
+        $('.feedBack').css('display', 'none');
+
 
         for (var i = 1; i < 13; i++) {
             var chiffre = new DivObject(divPave._balise, i + 'chiffre_' + f._id);
@@ -173,20 +186,44 @@ class Fiche extends DivObject {
                 var num = $(this).attr('num');
                 var tel = champTel._balise.html();
                 if (num == 10) {
-                    tel = tel.slice(0, -1);
+                    if (tel.length > 1)
+                        tel = tel.slice(0, -1);
                 } else if (num == 11)
                     tel += '0';
                 else if (num == 12) {
-                    // TODO : send SMS
+                    $('.captionQR').remove();
+                    $('.captionTEL').remove();
+                    $('.indicationTel').remove();
+                    $('.divQR').remove();
+                    $('.paveNum').remove();
+                    $('.captionFeedBack').css('display', '');
+                    $('.feedBack').css('display', '');
                     var content = 'Bonjour,%20veuillez%20trouver%20la%20fiche%20sur%20le%20lien%20suivant%20:%20' + site;
-                    var num = tel;
-                    var url = 'https://www.ovh.com/cgi-bin/sms/http2sms.cgi?&account=sms-ss271992-1&contentType=text/json&login=pnrbv&password=anamnesi&from=Anamnesia&to=' + tel + '&message=' + content;
+                    var num = '00' + tel.slice(1);
+                    var url = 'https://www.ovh.com/cgi-bin/sms/http2sms.cgi?&account=sms-ss271992-1&contentType=text/json&login=pnrbv&password=anamnesi&from=Anamnesia&to=' + num + '&message=' + content;
                     console.log(url);
                     fetch(url, { method: 'GET' })
                         .then(response => {
-                            console.log(response.json());
+                            return response.json();
                         })
-                        .catch((error) => { console.error(error); });
+                        .then(data => {
+                            console.log(data);
+                            if (data.status == 100) {
+                                // succès envoi
+                                captionFeedBack.html('MESSAGE ENVOYÉ AVEC SUCCÈS');
+                                feedBack.attr('src', 'datas/imgs/carte/feedBackPositif.png');
+                            } else {
+                                // echec
+                                var message = data.message
+                                captionFeedBack.html('ERREUR : ' + message);
+                                feedBack.attr('src', 'datas/imgs/carte/feedBackNegatif.png');
+                            }
+                        })
+                        .catch((error) => {
+                            console.error(error);
+                            captionFeedBack.html('ERREUR : ' + error);
+                            feedBack.attr('src', 'datas/imgs/carte/feedBackNegatif.png');
+                        });
                 }
                 else
                     tel += num;

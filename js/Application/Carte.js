@@ -129,15 +129,6 @@ class Carte extends DivObject {
         var viewer = this._viewer;
         var div = this._balise;
 
-        // doubble ckick to reset to home zoom
-        viewer.addHandler('canvas-double-click', function (args) {
-            var targetZoomLevel = viewer.viewport.getHomeZoom();
-            viewer.viewport.zoomTo(
-                targetZoomLevel,
-                viewer.viewport.pointFromPixel(args.position, true));
-            viewer.viewport.applyConstraints();
-        });
-
         var zoomInBtn = new BtObject(div, "zoomInBtn");
         zoomInBtn.html("+");
         zoomInBtn.addClass('zoomButtons');

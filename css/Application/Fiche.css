@@ -120,9 +120,14 @@
 .slidePartage .champTel {
     font-size: 50px;
     padding: 15px;
-    margin: 15px 30px;
+    margin: 15px 30px 5px;
     height: 70px;
     background: #fff4;
+}
+
+.indicationTel {
+    font-size: 11px;
+    margin-left: 60px;
 }
 
 .divQR {
@@ -139,7 +144,7 @@
     width: 100%;
 }
 
-.captionQR, .captionTEL {
+.captionQR, .captionTEL, .captionFeedBack {
     position: absolute;
     bottom: 290px;
     font-size: 11px;
@@ -151,6 +156,11 @@
 
 .captionTEL {
     right: 40px;
+}
+
+.captionFeedBack {
+    left: 100px;
+    font-size: 20px;
 }
 
 .paveNum {
@@ -186,4 +196,10 @@
     left: 50%;
     font-weight: bold;
     transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.feedBack{
+    position: absolute;
+    right: 180px;
+    bottom: 30px;
 }

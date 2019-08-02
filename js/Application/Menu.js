@@ -133,15 +133,9 @@ class Menu extends DivObject {
         menu.supprimerPerenne();
         menu.supprimerJeu();
         $('.sousMenuListePoi').remove();
-        if ($(this).attr('lien') == 'local') {
-            $('#overlayPerenne').css('display', '');
-            $('#filterBackground').css('display', 'none');
-            console.log('perenne autour de moi');
-        } else {
-            $('#overlayPerenne').css('display', 'none');
-            $('#filterBackground').css('display', '');
-            menu.showSousMenu($(this));
-        }
+        $('#overlayPerenne').css('display', 'none');
+        $('#filterBackground').css('display', '');
+        menu.showSousMenu($(this));
     }
 
     supprimerCarte() {
@@ -274,7 +268,17 @@ class Menu extends DivObject {
         var json = menu._json.SousMenu[lien];
         $('.sousmenu').remove();
         var titre = menuElt.find('.elementMenu_titre').html();
-
+        
+        if ($(this).attr('lien') == 'local') {
+            $('#overlayPerenne').css('display', '');
+            $('#filterBackground').css('display', 'none');
+            var fp = new FichePerenne($('#Application'), 'fichePerenne', perennesJSON['autour de moi'], couleur);
+            fp.clickSignal.add(function () {
+                sMenu.clickPerenne.dispatch();
+            });
+            fp.init();
+            return;
+        }
         var sm = new SousMenu(menu._balise, json, titre, couleur, menu._scale, lien);
         sm._carte.carteOpenSignal.add(function () { menu.pauseBackground() });
         sm._carte.clickSignal.add(function () { menu._tempsInactivite = 0; });
