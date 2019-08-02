@@ -8,7 +8,7 @@
     font-family: 'OpenSans';
 }
 
-#menu #sousmenuCarte>* {
+#menu #sousmenuCarte>*, #elementsMenu>* {
     z-index: 11;
 }
 
@@ -19,7 +19,7 @@
     left: 0;
 }
 
-#elementsMenu>*, #elementsDeco>* {
+#elementsDeco>* {
     z-index: 10;
 }
 

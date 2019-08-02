@@ -29,7 +29,7 @@ var t;
 var application;
 
 // si l'on veut télécharger les jsons et images au démarrage
-var download = true;
+var download = false;
 
 function initApplication() {
     var img = document.createElement('IMG');

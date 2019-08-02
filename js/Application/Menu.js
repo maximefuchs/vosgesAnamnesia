@@ -268,8 +268,8 @@ class Menu extends DivObject {
         var json = menu._json.SousMenu[lien];
         $('.sousmenu').remove();
         var titre = menuElt.find('.elementMenu_titre').html();
-        
-        if ($(this).attr('lien') == 'local') {
+
+        if (lien == 'local') {
             $('#overlayPerenne').css('display', '');
             $('#filterBackground').css('display', 'none');
             var fp = new FichePerenne($('#Application'), 'fichePerenne', perennesJSON['autour de moi'], couleur);
@@ -277,27 +277,27 @@ class Menu extends DivObject {
                 sMenu.clickPerenne.dispatch();
             });
             fp.init();
-            return;
+        } else {
+            var sm = new SousMenu(menu._balise, json, titre, couleur, menu._scale, lien);
+            sm._carte.carteOpenSignal.add(function () { menu.pauseBackground() });
+            sm._carte.clickSignal.add(function () { menu._tempsInactivite = 0; });
+            sm.closeCarteSignal.add(menu.playBackground);
+            sm.clickPerenne.add(function () { menu._tempsInactivite = 0; });
+            sm.signalFermer.add(function () { menu.fermerSousMenu(menu); });
+            sm.stopBackSignal.add(function () {
+                menu.pauseBackground();
+                $('.backgroundImage').css('display', 'none');
+            });
+            menu._sousMenu = sm;
+
+            sm.init();
+            menu.moveDecoElements(menu);
+
+            setTimeout(function () {
+                menu.backgroundDiaporama = json.diaporama;
+                menu.displayBackground();
+            }, 2050);
         }
-        var sm = new SousMenu(menu._balise, json, titre, couleur, menu._scale, lien);
-        sm._carte.carteOpenSignal.add(function () { menu.pauseBackground() });
-        sm._carte.clickSignal.add(function () { menu._tempsInactivite = 0; });
-        sm.closeCarteSignal.add(menu.playBackground);
-        sm.clickPerenne.add(function () { menu._tempsInactivite = 0; });
-        sm.signalFermer.add(function () { menu.fermerSousMenu(menu); });
-        sm.stopBackSignal.add(function () {
-            menu.pauseBackground();
-            $('.backgroundImage').css('display', 'none');
-        });
-        menu._sousMenu = sm;
-
-        sm.init();
-        menu.moveDecoElements(menu);
-
-        setTimeout(function () {
-            menu.backgroundDiaporama = json.diaporama;
-            menu.displayBackground();
-        }, 2050);
     }
 
     fermerSousMenu(menu) {
