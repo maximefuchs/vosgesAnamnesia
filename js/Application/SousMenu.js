@@ -141,7 +141,7 @@ class SousMenu extends DivObject {
         });
 
 
-        this._inCarte = false; // pour savoir s'il faudra retirer ou non un étage dans _lien lorsque que l'on clique sur un élément 'carte' dans le menu de gauche
+        this._inSousMenu = false; // pour savoir s'il faudra retirer ou non un étage dans _lien lorsque que l'on clique sur un élément 'carte' dans le menu de gauche
 
     }
 
@@ -246,10 +246,12 @@ class SousMenu extends DivObject {
                 $('.sousMenuListePoi').remove();
                 $('#overlayPerenne').css('display', '');
 
-                if (sMenu._inCarte) {
+                if (sMenu._inSousMenu) {
                     sMenu.oldLienJson(sMenu);
-                    sMenu._inCarte = false;
+                    sMenu._inSousMenu = false;
                 }
+
+                $('.elementSousMenu').remove();
 
                 var fp = new FichePerenne($('#Application'), 'fichePerenne', sMenu.getJsonPerenne(sMenu, lien), couleur);
                 fp.clickSignal.add(function () {
@@ -264,9 +266,9 @@ class SousMenu extends DivObject {
                 $('.divBtnCarteElement').remove();
                 $('#overlayPerenne').css('display', 'none');
 
-                if (sMenu._inCarte) {
+                if (sMenu._inSousMenu) {
                     sMenu.oldLienJson(sMenu);
-                    sMenu._inCarte = false;
+                    sMenu._inSousMenu = false;
                 }
 
                 sMenu.displayPoiOnMap(sMenu.getJsonPoi(sMenu, lien));
@@ -279,10 +281,10 @@ class SousMenu extends DivObject {
                 $('.elementSousMenu').remove();
                 $('#overlayPerenne').css('display', 'none');
                 var jsonElements = json[num].sousmenu;
-                if (sMenu._inCarte)
+                if (sMenu._inSousMenu)
                     sMenu.oldLienJson(sMenu);
                 else
-                    sMenu._inCarte = true;
+                    sMenu._inSousMenu = true;
                 sMenu._lien.push(lien);
                 sMenu.sousElementsPOI(jsonElements);
                 break;
@@ -297,6 +299,10 @@ class SousMenu extends DivObject {
                 break;
 
             default:
+                if (lien !== undefined)
+                    sMenu._lien.push(lien);
+                sMenu._inSousMenu = true;
+                var jsonElements = json[num].sousmenu;
                 sMenu.affichageMenuElements(jsonElements);
                 break;
         }
@@ -395,7 +401,7 @@ class SousMenu extends DivObject {
                         sMenu.reinitializeContent();
                         $('.elementSousMenu').remove();
 
-                        sMenu._inCarte = true;
+                        sMenu._inSousMenu = true;
                         sMenu._lien.push(lien);
                         sMenu.affichageMenuGauche(sMenu, json, num, type, element._params.couleur);
                         break;
@@ -420,8 +426,8 @@ class SousMenu extends DivObject {
 
                     default:
                         if (lien !== undefined)
-                            // sMenu.updateJson(sMenu, lien);
                             sMenu._lien.push(lien);
+                        sMenu._inSousMenu = true;
                         sMenu.affichageMenuGauche(sMenu, json, num, type, element._params.couleur);
                         break;
                 }

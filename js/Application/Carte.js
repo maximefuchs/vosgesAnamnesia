@@ -203,9 +203,9 @@ class Carte extends DivObject {
             var poi = fiche._poi;
             poi._balise.css({ border: '', background: '' });
         });
+        var p = f._poi;
         $('#' + p._id + ' .pointer').css('display', 'none');
         
-        var p = f._poi;
         p.addClass('large');
         p.css('border', '5px solid ' + this._couleur);
         if (p._thumbnail != false) {
