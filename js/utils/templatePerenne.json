@@ -27,6 +27,71 @@
             "blocDroit1": "Le Parc naturel régional  des Ballons des Vosges s’organise autour d’un projet de territoire, « la charte », qui vise à assurer durablement la protection, la valorisation et le développement harmonieux de son territoire.  Il travaille aussi avec les autres territoires périphériques, notamment dans le cadre des liens noués avec 5 villes-portes et 2 communautés d’agglomération. ",
             "imgSlider2": [],
             "blocDroit2": ""
+        },
+        "points d'accueil": {
+            "munster": {
+                "titre": "Munster",
+                "imgTop": "datas/imgs/perenne/parc/munster.jpg",
+                "soustitre": "Dialoguer, sensibiliser et être compris par les habitants et les visiteurs. Pour atteindre ces objectifs, le Parc naturel régional des Ballons des Vosges dispose de différents points d’accueil. Ces lieux vivants et ouverts sont de formidables points de départ pour partir à la découverte du sud du massif des Vosges. Ils proposent une documentation spécifique et différentes expositions temporaires.",
+                "blocGauche1": "<h2>Le siège du Parc naturel régional des Ballons des Vosges</h2>Il a pris place au cœur de la ville de Munster dans le bâtiment du Prélat de l’ancienne abbaye. Sa façade est inscrite aux Monuments Historiques. ",
+                "imgGauche": "datas/imgs/perenne/parc/munster.jpg",
+                "desImgGauche": "",
+                "blocGauche2": "Le rez-de-chaussée de la Maison du Parc sera fermé jusqu’en septembre 2019 dans le cadre des travaux permettant d’accueillir la future Médiathèque de la ville de Munster. Un espace réservé au Parc naturel régional des Ballons des Vosges lui permettra de poursuivre sa mission d’information et de sensibilisation des publics.",
+                "imgSlider1": [],
+                "blocSlider1": "<h3>Maison du Parc</h3>1 cour de l’abbaye<br>68140 Munster<br>03 89 77 90 34<br>info@parc-ballons-vosges.fr",
+                "blocDroit1": "",
+                "imgSlider2": [],
+                "blocDroit2": "<h3>Le bâtiment du Prélat</h3>Il s’agit du vestige le plus important de l’ancienne abbaye bénédictine. Il a conservé l’essentiel de son aspect extérieur d’origine. Il a été érigé entre 1682 et 1686 sur ce qui subsistait de l’abbaye après la guerre de Trente Ans (1618-1648) par Dom Charles Marchand et Dom Louis de La Grange. Après 1791, l’abbaye ferme définitivement ses portes et est vendue comme bien national. La maison du Prélat connaît alors diverses utilisations. Elle devient hôpital militaire, maison d’habitation, puis entre 1940 et 1988, elle accueille le siège du bureau central des manufactures Hartmann et Fils.  La ville de Munster rachète ce bâtiment en 1988 et le rénove entre 1992 et 1994.<br>Depuis le 25 juin 1994, elle abrite l’administration du Parc naturel régional des Ballons des Vosges, l’Office de Tourisme de la Vallée de Munster et un restaurant."
+            },
+            "chateau": {
+                "titre": "Haut-du-Them/Château-Lambert",
+                "imgTop": "datas/imgs/perenne/parc/chateau.jpg",
+                "soustitre": "Dialoguer, sensibiliser et être compris par les habitants et les visiteurs. Pour atteindre ces objectifs, le Parc naturel régional des Ballons des Vosges dispose de différents points d’accueil. Ces lieux vivants et ouverts sont de formidables points de départ pour partir à la découverte du sud du massif des Vosges. Ils proposent une documentation spécifique et différentes expositions temporaires.",
+                "blocGauche1": "",
+                "imgGauche": "datas/imgs/perenne/parc/chateau.jpg",
+                "desImgGauche": "",
+                "blocGauche2": "<h2>Espace Nature Culture</h2>Le hameau de Château-Lambert dans le petit village comtois du Haut-du-Them situé en Haute-Saône accueille depuis l’été 2009, l’Espace Nature Culture réalisé par le Conseil départemental de la Haute-Saône. Ce bâtiment comprend les bureaux de la Maison de la Nature des Vosges Saônoises, de la Réserve Naturelle des Ballons Comtois et du Parc naturel régional des Ballons des Vosges. Ouvert toute l’année et gratuitement, 250 m2 sont destinés à l’accueil des visiteurs.  Une exposition permanente présente les richesses naturelles et culturelles des Vosges Saônoises. Une boutique et un coin lecture pour les enfants complètent la visite.",
+                "imgSlider1": [],
+                "blocSlider1": "<h3>Espace Nature Culture</h3>35, chemin du Harderet<br>Château-Lambert<br>70440 Haut-du-Them Château-Lambert<br>03 84 20 49 84<br>enc@parc-ballons-vosges.fr",
+                "blocDroit1": "<h3>Le label Tourisme et Handicap</h3>Labellisé Tourisme et Handicap en 2013, l’Espace Nature Culture est adapté à l’accueil de personnes handicapées (cognitif, moteur et visuel).<br><br><i>www.tourisme-handicap.gouv.fr</i><br>Ce site internet permet aux particuliers de découvrir la marque nationale Tourisme & Handicap (T&H) et ses valeurs. Il intègre un moteur de recherche qui permet de trouver les établissements labellisés partout en France selon des besoins spécifiques.",
+                "imgSlider2": [],
+                "blocDroit2": ""
+            },
+            "grand ballon": {
+                "titre": "Grand Ballon",
+                "imgTop": "datas/imgs/perenne/parc/ballon.jpg",
+                "soustitre": "Dialoguer, sensibiliser et être compris par les habitants et les visiteurs. Pour atteindre ces objectifs, le Parc naturel régional des Ballons des Vosges dispose de différents points d’accueil. Dialoguer, sensibiliser et être compris par les habitants et les visiteurs. Pour atteindre ces objectifs, le Parc naturel régional des Ballons des Vosges dispose de différents points d’accueil.",
+                "blocGauche1": "",
+                "imgGauche": "datas/imgs/perenne/parc/ballon.jpg",
+                "desImgGauche": "",
+                "blocGauche2": "",
+                "imgSlider1": [
+                    "datas/imgs/perenne/parc/ballonCarte.jpg"
+                ],
+                "blocSlider1": "<h3>Le Grand Ballon</h3>68360 Geishouse",
+                "blocDroit1": "<h3>Le bâtiment du Club Vosgien de Strasbourg</h3>Ce bâtiment, entièrement en bois, a été construit en 1930. Tombé en ruines et inutilisable depuis 20 ans, il fut détruit puis reconstruit en automne 1999. Le bâtiment construit en HQE (Haute Qualité Environnementale) a été inauguré le 20 mai 2001. Il est composé d’une salle de réunions et du point d’information et d’exposition du Parc naturel régional des Ballons des Vosges.",
+                "imgSlider2": [],
+                "blocDroit2": "<h2>Le point d’accueil estival du Grand Ballon</h2>Aménagé dans un bâtiment du Club Vosgien de Strasbourg le point d’accueil offre des informations sur le Parc et les autres lieux de sensibilisation de la grande crête. Il accueille chaque été une exposition temporaire. Une boutique permet de garder des souvenirs du plus haut sommet des Vosges. Les Hautes-Vosges offrent une étonnante diversité de milieux naturels liée au relief, aux variations géologiques mais surtout aux conditions climatiques. Ces milieux sont exceptionnels : landes, hautes chaumes, hêtraies et tourbières d’altitude, forêts. Pas moins de 67 espèces de plantes et 19 espèces d’animaux vertébrés sont considérés comme très rares à rarissimes.<br><br>En parcourant la route des crêtes, le point d’accueil estival du Grand Ballon vous permet de partir à la découverte des Hautes-Vosges. Grâce à ces lieux de rencontres, espaces de nature préservés, votre balade sur les Hautes-Vosges prendra de nouvelles dimensions : celles de la diversité, du secret et des sensations."
+            },
+            "schlucht": {
+                "titre": "Col de la Schlucht",
+                "imgTop": "datas/imgs/perenne/parc/schlucht.jpg",
+                "soustitre": "Dialoguer, sensibiliser et être compris par les habitants et les visiteurs. Pour atteindre ces objectifs, le Parc naturel régional des Ballons des Vosges dispose de différents points d’accueil. Ces lieux vivants et ouverts sont de formidables points de départ pour partir à la découverte du sud du massif des Vosges. Ils proposent une documentation spécifique et différentes expositions temporaires.",
+                "blocGauche1": "<h2>Le Tétras au Col de la Schlucht</h2>Au coeur du site rénové du col de la Schlucht, le Tétras, bâtiment du Département des Vosges, accueille le public. <br>Pour ce premier été, le Parc naturel régional des Ballons des Vosges s’associe aux deux offices de tourisme de la Vallée de Munster et des Hautes-Vosges – Gérardmer.<br><br>Partez à la découverte du massif vosgien et de ses vallées haut-rhinoises et vosgiennes.<br><br>Parce que la marche à pied est le meilleur moyen de découvrir les Hautes-Vosges, des balades accompagnées sont proposées tout au long de l’été 2019 au départ du col de la Schlucht et sur 16 autres sites situés le long de la route des crêtes.",
+                "imgGauche": "datas/imgs/perenne/parc/schlucht.jpg",
+                "desImgGauche": "",
+                "blocGauche2": "",
+                "imgSlider1": [],
+                "blocSlider1": "<h3>ACCUEIL TÉTRAS AU COL DE LA SCHLUCHT</h3>Ouvert  du 12 juillet au 30 septembre 2019<br>tous les jours – 10h à 13h et 14h à 17h30<br>03 89 77 90 20 <br>schlucht@parc-ballons-vosges.fr",
+                "blocDroit1": "",
+                "imgSlider2": [
+                    "datas/imgs/perenne/parc/schlucht1.jpg",
+                    "datas/imgs/perenne/parc/schlucht2.jpg",
+                    "datas/imgs/perenne/parc/schlucht3.jpg",
+                    "datas/imgs/perenne/parc/schlucht4.jpg"
+                ],
+                "blocDroit2": ""
+            }
         }
     },
     "La marque Parc": {
@@ -47,17 +112,22 @@
     },
     "paysage": {
         "hautes-vosges": {
-            "titre": "hautes vosges",
-            "imgTop": "",
-            "soustitre": "",
+            "titre": "Hautes-Vosges",
+            "imgTop": "datas/imgs/perenne/paysage/hautesVosges.jpg",
+            "soustitre": "Ce joyau offre une étonnante diversité de milieux naturels liée au relief, aux variations géologiques mais surtout aux conditions climatiques. Ses milieux sont exceptionnels : landes, pelouses des hautes chaumes, hêtraies et tourbières d'altitude, forêts subnaturelles (proches d'un état nature qui évoluent sans intervention de l'homme), érablières sur éboulis, formations primaires des hauts de cirques glaciaires.",
             "blocGauche1": "",
-            "imgGauche": "",
+            "imgGauche": "datas/imgs/perenne/paysage/hautesVosges.jpg",
             "desImgGauche": "",
-            "blocGauche2": "",
+            "blocGauche2": "Pas moins de 67 espèces de plantes et 19 espèces d’animaux vertébrés sont considérées comme très rares à rarissimes, à l’instar du Grand Tétras, espèce symbole des forêts sauvages. Hêtres et sapins dominent sur les versants boisés. Plus bas, le climat permet le développement du chêne et du hêtre. Ces joyaux aux milieux fragiles reconnus au niveau européen bénéficient de protections réglementaires : 5 Réserves Naturelles Nationales dont 4 sont gérées ou cogérées par le Parc des Ballons des Vosges, 3 Réserves Naturelles Régionales ont également été créées. La plupart des sommets des Hautes-Vosges portent des noms à consonances germaniques qui rappellent une ancienne colonisation des crêtes par des pasteurs et des marcaires alsaciens et lorrains venus sous l’impulsion des Ducs avec leurs troupeaux sur les immenses territoires possédés par les abbayes alsaciennes de Munster et de Murbach. (en savoir plus). Amorcé dés le XIXème et renforcé dans les années 1970, l’agriculture de montagne souffre d’un exode massif. Les marcaires complètent alors leurs revenus grâce au développement de la randonnée sous l’impulsion du Club vosgien dés 1870. Dans ce massif, les routes permettent un accès facile aux sommets. Le concept de la ferme-auberge apparaît et cette nouvelle activité relance l’activité pastorale. Recherchées et appréciées pour ses paysages et sa quiétude, les Hautes-Vosges sont très fréquentées.<br><br>La route des crêtes, route historique construite pendant le 1er conflit mondial est devenue aujourd’hui une route touristique qui permet d’accéder avec une grande facilité à ce patrimoine naturel et à ces paysages emblématiques. Pour le Parc des Ballons des Vosges, il s’agit donc de concilier sur les Hautes-Vosges l’accueil des visiteurs et la préservation des patrimoines.",
             "imgSlider1": [],
             "blocSlider1": "",
             "blocDroit1": "",
-            "imgSlider2": [],
+            "imgSlider2": [
+                "datas/imgs/perenne/paysage/hautesVosges1.jpg",
+                "datas/imgs/perenne/paysage/hautesVosges2.jpg",
+                "datas/imgs/perenne/paysage/hautesVosges3.jpg",
+                "datas/imgs/perenne/paysage/hautesVosges4.jpg"
+            ],
             "blocDroit2": ""
         },
         "ballons comptois": {
@@ -265,7 +335,7 @@
                     "datas/imgs/perenne/nature/ravins2.jpg",
                     "datas/imgs/perenne/nature/ravins3.jpg",
                     "datas/imgs/perenne/nature/ravins4.jpg"
-               ],
+                ],
                 "blocDroit2": ""
             },
             "pelouses calcaires": {
@@ -284,7 +354,7 @@
                     "datas/imgs/perenne/nature/calcaire2.jpg",
                     "datas/imgs/perenne/nature/calcaire3.jpg",
                     "datas/imgs/perenne/nature/calcaire4.jpg"
-               ],
+                ],
                 "blocDroit2": ""
             }
         },
@@ -300,11 +370,11 @@
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/nature/geologie1.jpg",
-                    "datas/imgs/perenne/nature/geologie2.jpg",
-                    "datas/imgs/perenne/nature/geologie3.jpg",
-                    "datas/imgs/perenne/nature/geologie4.jpg"
-               ],
+                "datas/imgs/perenne/nature/geologie1.jpg",
+                "datas/imgs/perenne/nature/geologie2.jpg",
+                "datas/imgs/perenne/nature/geologie3.jpg",
+                "datas/imgs/perenne/nature/geologie4.jpg"
+            ],
             "blocDroit2": ""
         },
         "espaces proteges": {
@@ -319,11 +389,11 @@
             "blocSlider1": "",
             "blocDroit1": "Les zones de protection de biotope sont mises en place sous l’autorité du Préfet par arrêté préfectoral et ont pour objet de préserver les milieux de vie des espèces animales et végétales protégées par la loi. L’arrêté préfectoral de protection de biotope (APPB) liste les activités interdites et les activités réglementées nécessaires à la protection des habitats des espèces visées.<br>15 des 20 zones de protection de biotope mises en place sur le territoire du Parc permettent de renforcer la quiétude dans les zones les plus sensibles. Elles représentent 6 985 ha, soit 2,4% sur le territoire du Parc.",
             "imgSlider2": [
-                    "datas/imgs/perenne/nature/protegees1.jpg",
-                    "datas/imgs/perenne/nature/protegees2.jpg",
-                    "datas/imgs/perenne/nature/protegees3.jpg",
-                    "datas/imgs/perenne/nature/protegees4.jpg"
-               ],
+                "datas/imgs/perenne/nature/protegees1.jpg",
+                "datas/imgs/perenne/nature/protegees2.jpg",
+                "datas/imgs/perenne/nature/protegees3.jpg",
+                "datas/imgs/perenne/nature/protegees4.jpg"
+            ],
             "blocDroit2": "Les réserves biologiques sont mises en place dans les forêts publiques sous l’autorité des ministres en charge de l’agriculture et de l’écologie par arrêté interministériel. Il existe deux types de réserves biologiques : les réserves dites « intégrales » (RBI) dans lesquelles l’exploitation forestière est proscrite pour préserver le caractère naturel d’une forêt et les réserves dites « dirigées » (RBD) où les interventions sylvicoles restent possibles mais principalement orientées dans un but de conservation de la biodiversité forestière.<br>15 réserves biologiques ont été mises en place à l’échelle du Parc. Deux d’entre elles réglementent les activités humaines pour préserver la quiétude de la faune. Elles représentent 4 354 ha, soit 1,5% du territoire du Parc."
         }
     },
@@ -340,11 +410,11 @@
             "blocSlider1": "",
             "blocDroit1": "L’industrie ancienne fut rurale et étroitement liée aux conditions géographiques. Les nombreux cours d’eau, la richesse du sous-sol, la densité des forêts furent autant d’éléments favorables à la naissance de l’industrie dont le moteur fut la roue à eau, du Moyen-âge jusqu’au milieu du XIX° siècle puis la turbine et la vapeur. ",
             "imgSlider2": [
-                    "datas/imgs/perenne/culture/industriel1.jpg",
-                    "datas/imgs/perenne/culture/industriel2.jpg",
-                    "datas/imgs/perenne/culture/industriel3.jpg",
-                    "datas/imgs/perenne/culture/industriel4.jpg"
-               ],
+                "datas/imgs/perenne/culture/industriel1.jpg",
+                "datas/imgs/perenne/culture/industriel2.jpg",
+                "datas/imgs/perenne/culture/industriel3.jpg",
+                "datas/imgs/perenne/culture/industriel4.jpg"
+            ],
             "blocDroit2": ""
         },
         "thermal": {
@@ -359,8 +429,8 @@
             "blocSlider1": "",
             "blocDroit1": "<h2>Plombières-les-Bains</h2>Le paysage et la ville de Plombières-les-Bains témoignent des deux mille ans de thermalisme. Dès le XVIII° siècle, de nombreuses personnalités du monde politique et artistique font la renommée des lieux. Si Napoléon 1er nationalise au début du XIX° siècle une partie des sources, c’est Napoléon III qui créera la société d’exploitation des sources. Les travaux qu’il fit exécuter pour la création d’un 3ème établissement, les Bains Napoléon, ont permis la mise à jour des vestiges romains : canalisations, gradins de pierre de la piscine primitive visibles au Bain Romain.  Il sera également à l’origine du Casino et du Parc Tivoli à Plombières. La ville possède 27 sources chaudes faiblement minéralisées mais riches en oligo-éléments. Les eaux de Plombières jaillissent à des températures comprises entre 57 et 84 degrés : idéales pour se relaxer, elles sont aussi indiquées dans le traitement des affections digestives et rhumatismales.",
             "imgSlider2": [
-                    "datas/imgs/perenne/culture/thermal2.jpg"
-               ],
+                "datas/imgs/perenne/culture/thermal2.jpg"
+            ],
             "blocDroit2": ""
         },
         "memoire": {
@@ -375,11 +445,11 @@
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/culture/memoire1.jpg",
-                    "datas/imgs/perenne/culture/memoire2.jpg",
-                    "datas/imgs/perenne/culture/memoire3.jpg",
-                    "datas/imgs/perenne/culture/memoire4.jpg"
-               ],
+                "datas/imgs/perenne/culture/memoire1.jpg",
+                "datas/imgs/perenne/culture/memoire2.jpg",
+                "datas/imgs/perenne/culture/memoire3.jpg",
+                "datas/imgs/perenne/culture/memoire4.jpg"
+            ],
             "blocDroit2": ""
         },
         "religieux": {
@@ -394,11 +464,11 @@
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/culture/religieux1.jpg",
-                    "datas/imgs/perenne/culture/religieux2.jpg",
-                    "datas/imgs/perenne/culture/religieux3.jpg",
-                    "datas/imgs/perenne/culture/religieux4.jpg"
-               ],
+                "datas/imgs/perenne/culture/religieux1.jpg",
+                "datas/imgs/perenne/culture/religieux2.jpg",
+                "datas/imgs/perenne/culture/religieux3.jpg",
+                "datas/imgs/perenne/culture/religieux4.jpg"
+            ],
             "blocDroit2": ""
         },
         "culturel immatériel": {
@@ -413,10 +483,10 @@
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/culture/immateriel1.jpg",
-                    "datas/imgs/perenne/culture/immateriel2.jpg",
-                    "datas/imgs/perenne/culture/immateriel3.jpg"
-               ],
+                "datas/imgs/perenne/culture/immateriel1.jpg",
+                "datas/imgs/perenne/culture/immateriel2.jpg",
+                "datas/imgs/perenne/culture/immateriel3.jpg"
+            ],
             "blocDroit2": ""
         },
         "bati rural": {
@@ -431,11 +501,11 @@
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/culture/rural1.jpg",
-                    "datas/imgs/perenne/culture/rural2.jpg",
-                    "datas/imgs/perenne/culture/rural3.jpg",
-                    "datas/imgs/perenne/culture/rural4.jpg"
-               ],
+                "datas/imgs/perenne/culture/rural1.jpg",
+                "datas/imgs/perenne/culture/rural2.jpg",
+                "datas/imgs/perenne/culture/rural3.jpg",
+                "datas/imgs/perenne/culture/rural4.jpg"
+            ],
             "blocDroit2": "<h2>De la marcairie à la ferme auberge</h2>Petites fermes d’estive implantées dans les pâturages à mi-pente ou sur les hautes chaumes, les marcairies abritaient le marcaire et ses bêtes à la belle saison de mai à septembre. Il y fabriquait le fromage de munster ou géromé. Longue construction, la marcairie est sans étage, basse, trapue. Elle se blottit dans un repli de terrain afin de se protéger du vent. Les murs de pierre grossièrement taillés sont épais pour lutter contre la rudesse du climat. De petites ouvertures empêchent la chaleur de s’échapper. Les façades les plus exposées sont recouvertes de bardages ou d’ardoises. A l’origine le logis du marcaire était très rudimentaire. L’espace étant réservé à la fabrication du fromage. Les marcairies détruites après la première guerre ont laissé place aux fermes-auberges plus spacieuses. La salle s’ouvre sur le paysage tandis que l’étable s’agrandit. Aujourd’hui la partie « auberge » prend une place prépondérante soulignant ainsi la tradition d’accueil, complémentaire à leur vocation pastorale qui caractérise les Hautes-Vosges. <h2>La ferme ajolaise ou des Vosges méridionales et son chalot</h2>Elle comprend plusieurs bâtiments aux fonctions bien définies qui s’ordonnent autour de la cour. La ferme, le four à pain, la fontaine, le bûcher et le chalot côtoient l’alambic, l’atelier de forge et le « rang à cochons ». Le toit est recouvert de laves en grès et les encadrements de porte sont aussi taillés dans cette pierre. Les meubles étaient traditionnellement réalisés en cerisier, bois provenant du verger familial. Le chalot, véritable « coffre-fort » de la ferme ajolaise a été fabriqué jusqu’à la Seconde Guerre mondiale. Cette annexe de la ferme des Vosges méridionales et des Vosges saônoises permettait de conserver, les céréales, les fruits, la charcuterie, l’alcool et autres trésors de la famille. Cette construction entièrement démontable est réalisée en assemblage de bois par imbrication et autosserage : tenons/mortaises sans clou ni vis ni colle. Elle est recouverte de laves de grès.<h2>La ferme saônoise et son charri</h2>Dans les Vosges saônoises, les fermes dispersées ont été construites au plus près des prairies pâturées. Elles sont de dimensions réduites et valorisent les matériaux locaux. Les encadrements des portes et des fenêtres sont en grès. Charpente et bardage sont en bois. De dimensions souvent modeste, elle est caractérisée par le porche, placé en avant de la grange centrale qui peut abriter un chariot. Les logements des hommes et des bêtes sont distribués de part et d’autres de ce charri."
         },
         "art et histoire": {
@@ -452,10 +522,10 @@
             "blocSlider1": "",
             "blocDroit1": "Le label “ Ville ou Pays d’art et d’histoire ” attribué par le ministère de la Culture et de la Communication qualifie des territoires, communes ou regroupements de communes qui, conscients des enjeux que représente l’appropriation de leur architecture et de leur patrimoine par les habitants, s’engagent dans une démarche active de connaissance, de conservation, de médiation et de soutien à la qualité architecturale et du cadre de vie. Le terme de patrimoine concerne aussi bien l’ensemble du patrimoine bâti de la ville que les patrimoines naturel, industriel, maritime, ainsi que la mémoire des habitants. Il s’agit donc d’intégrer dans la démarche tous les éléments qui contribuent à l’identité d’une ville ou d’un pays riche de son passé et fort de son dynamisme.",
             "imgSlider2": [
-                    "datas/imgs/perenne/culture/arts1.jpg",
-                    "datas/imgs/perenne/culture/arts2.jpg",
-                    "datas/imgs/perenne/culture/arts3.jpg"
-               ],
+                "datas/imgs/perenne/culture/arts1.jpg",
+                "datas/imgs/perenne/culture/arts2.jpg",
+                "datas/imgs/perenne/culture/arts3.jpg"
+            ],
             "blocDroit2": ""
         },
         "chateaux": {
@@ -470,11 +540,11 @@
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/culture/chateaux1.jpg",
-                    "datas/imgs/perenne/culture/chateaux2.jpg",
-                    "datas/imgs/perenne/culture/chateaux3.jpg",
-                    "datas/imgs/perenne/culture/chateaux4.jpg"
-               ],
+                "datas/imgs/perenne/culture/chateaux1.jpg",
+                "datas/imgs/perenne/culture/chateaux2.jpg",
+                "datas/imgs/perenne/culture/chateaux3.jpg",
+                "datas/imgs/perenne/culture/chateaux4.jpg"
+            ],
             "blocDroit2": ""
         }
     },
@@ -496,11 +566,11 @@
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/aDeguster/tresor1.jpg",
-                    "datas/imgs/perenne/aDeguster/tresor2.jpg",
-                    "datas/imgs/perenne/aDeguster/tresor3.jpg",
-                    "datas/imgs/perenne/aDeguster/tresor4.jpg"
-               ],
+                "datas/imgs/perenne/aDeguster/tresor1.jpg",
+                "datas/imgs/perenne/aDeguster/tresor2.jpg",
+                "datas/imgs/perenne/aDeguster/tresor3.jpg",
+                "datas/imgs/perenne/aDeguster/tresor4.jpg"
+            ],
             "blocDroit2": "<h2>Partenaires</h2>Le Parc a accompagné la naissance du gâteau avec le lycée JBS Chardin et l’IUT de Saint-Dié-des-Vosges. Il a animé la recherche de pâtissiers partenaires et la rédaction de la convention en concertation avec les fédérations de patissiers.  Un comité de suivi assurera le respect de la convention et accompagnera la mise en marché du gâteau. "
         }
     },
@@ -541,7 +611,7 @@
                     "datas/imgs/perenne/actiNature/pedestre2.jpg",
                     "datas/imgs/perenne/actiNature/pedestre3.jpg",
                     "datas/imgs/perenne/actiNature/pedestre4.jpg"
-               ],
+                ],
                 "blocDroit2": "<h2>La randonnée d’étape en étape</h2>En famille, en couple ou entre amis, pratiquez la randonnée sur plusieurs jours en toute liberté et partagez des moments inoubliables à la découverte des sentiers des Hautes Vosges et faites une halte dans l’un des 9 hébergements le temps d’une nuit ou d’un repas lors de votre randonnée itinérante.<h2>La randonnée accompagnée</h2>De nombreux professionnels proposent aux randonneurs des sorties à la demi-journée, la journée ou sur plusieurs jours. Formés aux milieux montagnards, ils permettent une découverte du territoire en toute sécurité et peuvent apporter un contenu thématique aux randonnées.<br><br>Plusieurs d’entre eux se sont engagés dans une pratique respectueuse de la nature et sont ainsi marqués « Valeurs Parc naturel régional » "
             },
             "route des cretes": {
@@ -576,11 +646,11 @@
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/actiNature/hiver1.jpg",
-                    "datas/imgs/perenne/actiNature/hiver2.jpg",
-                    "datas/imgs/perenne/actiNature/hiver3.jpg",
-                    "datas/imgs/perenne/actiNature/hiver4.jpg"
-               ],
+                "datas/imgs/perenne/actiNature/hiver1.jpg",
+                "datas/imgs/perenne/actiNature/hiver2.jpg",
+                "datas/imgs/perenne/actiNature/hiver3.jpg",
+                "datas/imgs/perenne/actiNature/hiver4.jpg"
+            ],
             "blocDroit2": "<h3>Horloge des neiges</h3>En période hivernale, l’enneigement est signalé dans les quotidiens régionaux : L’Alsace, Le Pays de Franche-Comté, l’Est Républicain, La Liberté de l’Est et les Dernières Nouvelles d’Alsace. Vous pouvez également contacter l’horloge des neiges au 03 89 41 34 76 ou directement les stations et les Offices de tourisme."
         },
         "aeromodelisme": {
@@ -595,11 +665,11 @@
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/actiNature/aero1.jpg",
-                    "datas/imgs/perenne/actiNature/aero2.jpg",
-                    "datas/imgs/perenne/actiNature/aero3.jpg",
-                    "datas/imgs/perenne/actiNature/aero4.jpg"
-               ],
+                "datas/imgs/perenne/actiNature/aero1.jpg",
+                "datas/imgs/perenne/actiNature/aero2.jpg",
+                "datas/imgs/perenne/actiNature/aero3.jpg",
+                "datas/imgs/perenne/actiNature/aero4.jpg"
+            ],
             "blocDroit2": ""
         },
         "loisirs nautiques": {
@@ -614,11 +684,11 @@
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/actiNature/nautique1.jpg",
-                    "datas/imgs/perenne/actiNature/nautique2.jpg",
-                    "datas/imgs/perenne/actiNature/nautique3.jpg",
-                    "datas/imgs/perenne/actiNature/nautique4.jpg"
-               ],
+                "datas/imgs/perenne/actiNature/nautique1.jpg",
+                "datas/imgs/perenne/actiNature/nautique2.jpg",
+                "datas/imgs/perenne/actiNature/nautique3.jpg",
+                "datas/imgs/perenne/actiNature/nautique4.jpg"
+            ],
             "blocDroit2": ""
         },
         "peche": {
@@ -633,11 +703,11 @@
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/actiNature/peche1.jpg",
-                    "datas/imgs/perenne/actiNature/peche2.jpg",
-                    "datas/imgs/perenne/actiNature/peche3.jpg",
-                    "datas/imgs/perenne/actiNature/peche4.jpg"
-               ],
+                "datas/imgs/perenne/actiNature/peche1.jpg",
+                "datas/imgs/perenne/actiNature/peche2.jpg",
+                "datas/imgs/perenne/actiNature/peche3.jpg",
+                "datas/imgs/perenne/actiNature/peche4.jpg"
+            ],
             "blocDroit2": "<h3>Et pour vos séjours pêche</h3>L’Office des Centres de Vacances et de Loisirs (ODCVL) organise également pour les enfants des séjours vacances et des classes d’environnement sur les thèmes respectifs de la pêche et de l’eau dans les Vosges.<h3>Les moniteurs guide de pêche des Vosges</h3>Professionnels diplômés, les guides de la Compagnie Vosges Nature & Pêche vous font partager leur passion de la pêche en proposant des séjours en demi-journées, journées en individuels ou en petit groupe de 2 à 3 pêcheurs."
         },
         "activites equestres": {
@@ -652,10 +722,10 @@
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/actiNature/equestre1.jpg",
-                    "datas/imgs/perenne/actiNature/equestre2.jpg",
-                    "datas/imgs/perenne/actiNature/equestre3.jpg"
-               ],
+                "datas/imgs/perenne/actiNature/equestre1.jpg",
+                "datas/imgs/perenne/actiNature/equestre2.jpg",
+                "datas/imgs/perenne/actiNature/equestre3.jpg"
+            ],
             "blocDroit2": ""
         },
         "vtt et cyclotourisme": {
@@ -672,11 +742,11 @@
             "blocSlider1": "",
             "blocDroit1": "<h3>Le VTT en toute liberté !</h3>Le vélo tout terrain, a pris un essor considérable avec la création de près de 100 circuits balisés et propose tous les niveaux de difficulté, adaptée à la randonnée en VTT, en famille.<br>Le balisage VTT effectué avec le symbole préconisé par la Fédération Française de cyclisme est imprimé en brun, et indique qu’il s’agit d’un Parc naturel régional.<br>Ces parcours sont accessibles en VTT à assistance électrique.Les adeptes du VTT de descente peuvent également s’exercer sur les pistes dédiées des 2 bike-parks sur le Parc, sur les domaines skiables du Lac Blanc (68) et de la Bresse-Hohneck (88).",
             "imgSlider2": [
-                    "datas/imgs/perenne/actiNature/vtt1.jpg",
-                    "datas/imgs/perenne/actiNature/vtt2.jpg",
-                    "datas/imgs/perenne/actiNature/vtt3.jpg",
-                    "datas/imgs/perenne/actiNature/vtt4.jpg"
-               ],
+                "datas/imgs/perenne/actiNature/vtt1.jpg",
+                "datas/imgs/perenne/actiNature/vtt2.jpg",
+                "datas/imgs/perenne/actiNature/vtt3.jpg",
+                "datas/imgs/perenne/actiNature/vtt4.jpg"
+            ],
             "blocDroit2": "<h2>Ecole de VTT des Hautes Vosges</h2>VTT à assistance électrique<br>Profitez du sport en famille !  L’activité comprend l’encadrement, le VTT et le casque. Balade découverte de 1h, 1h30, 2h, 2h30 ou journée.<br><br>Contact : <br>Ecole VTT des Hautes Vosges – station de ski de la Mauselaine<br>239, chemin de la Rayée – 88400 Gérardmer<br>06 33 84 01 90<br>www.ecolevtthautesvosges.com"
         },
         "escalade": {
@@ -708,11 +778,11 @@
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/actiNature/trail1.jpg",
-                    "datas/imgs/perenne/actiNature/trail2.jpg",
-                    "datas/imgs/perenne/actiNature/trail3.jpg",
-                    "datas/imgs/perenne/actiNature/trail4.jpg"
-               ],
+                "datas/imgs/perenne/actiNature/trail1.jpg",
+                "datas/imgs/perenne/actiNature/trail2.jpg",
+                "datas/imgs/perenne/actiNature/trail3.jpg",
+                "datas/imgs/perenne/actiNature/trail4.jpg"
+            ],
             "blocDroit2": "<h3>Pratiquez en toute quiétude !</h3><br>Afin de participer à la préservation de la faune sauvage et à sa quiétude, le Parc a développé un programme à destination des pratiquants de sports de nature afin de communiquer sur les bonnes pratiques à adopter, notamment lors d’une sortie trail :<br><br>Je prends connaissance des zones de quiétude et de la réglementation,<br>Je reste sur les itinéraires balisés dans les zones de quiétude,<br>Je respecte le silence de la nature,<br>Je tiens mon chien en laisse,<br>Je privilégie les activités en journée,"
         },
         "vol libre": {
@@ -727,11 +797,11 @@
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/actiNature/vol1.jpg",
-                    "datas/imgs/perenne/actiNature/vol2.jpg",
-                    "datas/imgs/perenne/actiNature/vol3.jpg",
-                    "datas/imgs/perenne/actiNature/vol4.jpg"
-               ],
+                "datas/imgs/perenne/actiNature/vol1.jpg",
+                "datas/imgs/perenne/actiNature/vol2.jpg",
+                "datas/imgs/perenne/actiNature/vol3.jpg",
+                "datas/imgs/perenne/actiNature/vol4.jpg"
+            ],
             "blocDroit2": ""
         }
     },
@@ -748,10 +818,10 @@
             "blocSlider1": "",
             "blocDroit1": "",
             "imgSlider2": [
-                    "datas/imgs/perenne/seDeplacer/train1.jpg",
-                    "datas/imgs/perenne/seDeplacer/train2.jpg",
-                    "datas/imgs/perenne/seDeplacer/train3.jpg"
-               ],
+                "datas/imgs/perenne/seDeplacer/train1.jpg",
+                "datas/imgs/perenne/seDeplacer/train2.jpg",
+                "datas/imgs/perenne/seDeplacer/train3.jpg"
+            ],
             "blocDroit2": "<h3>Les Transports Express Régionaux (TER)</h3>Les transports régionaux de voyageurs, désignés par le terme « TER » (Transport Express Régional) sont constitués par les services ferroviaires régionaux mais aussi par les services routiers effectués en substitution des services ferroviaires.<h2>Les bus TER</h2>ligne Cernay/Masevaux/Sewen<br>ligne Sélestat/Ste Marie-aux-Mines/Saint-Dié<br>ligne Remiremont/Bussang<br>ligne Remiremont/La Bresse<br>Il existe par ailleurs de nombreuses liaisons départementales en autocar proposées par des compagnies de transport.<br>Se renseigner auprès de l’Office de tourisme du secteur visité."
         },
         "pied": {
@@ -796,5 +866,46 @@
             "imgSlider2": [],
             "blocDroit2": "<h3>CoviEvent, l’organisateur du covoiturage</h3>CoviEvent est un outil en ligne simple et gratuit, dédié aux organisateurs d’événements privés et à leurs communautés (un colloque ou une activité associative ou encore une réunion de famille). L’idée de base est de partager une page sur laquelle tous les participants peuvent s’organiser sans avoir à s’appeler ou s’envoyer des emails et sans s’inscrire sur un site de covoiturage comme RoulezMalin.com.<br><br>Cet outil est destiné à 3 types de personnes :<br><br>celles qui veulent faciliter le covoiturage au sein de leur communauté pour se rendre à un événement (les organisateurs)<br>celles qui recherchent un véhicule afin de se rendre au lieu voulu (passagers)<br>et pour finir, les personnes qui veulent proposer des places dans leur véhicule (conducteurs)."
         }
+    },
+    "S'informer": {
+        "education": {
+            "titre": "Lieux de sensibilisation à l’environnement",
+            "imgTop": "datas/imgs/perenne/info/education.jpg",
+            "soustitre": "La diversité des paysages du Parc permet la pratique de nombreuses activités de pleine nature. Il accompagne plus particulièrement la pratique des activités respectueuses du territoire.",
+            "blocGauche1": "Plusieurs structures de découverte de la nature proposent aux petits comme aux plus grands un vaste programme d’animations, stages, balades, expositions, animations pédagogiques… Demandez les programmes !",
+            "imgGauche": "datas/imgs/perenne/info/education.jpg",
+            "desImgGauche": "",
+            "blocGauche2": "<br><h3>Vosges</h3>Association ETC…terra<br>(Environnement Territoire Citoyenneté)<br>9 rue des prés Secs – 88230 Fraize<br>03 29 52 48 06<br>contact@etcterra.fr <br>http://www.etcterra.fr/<br><br><i>Thème :</i> la citoyenneté et l’éco-responsabilité<br><i>Activité principale :</i> sensibilisation à l’environnement et au développement durable<br><i>Autres activités :</i> accompagnement pour la réalisation d’équipement de sensibilisation , création d’outils pédagogiques en lien avec l’écoresponsabilité et l’économie d’énergie et de découverte de l’environnement.<br><i>Espaces pédagogiques :</i> non<br><br><h3>Haut-Rhin</h3>Observatoire de la nature<br>1 chemin du Neuland – 68000 Colmar<br>03 89 20 38 90<br>info@observatoirenature.fr <br>www.observatoirenature.fr<br><br>L’association fait partie du réseau alsacien des Centres d’Initiation à la Nature et à l’Environnement (CINE) regroupés au sein de l’ARIENA et du réseau national des Centres Permanents d’Initiatives pour l’Environnement (CPIE).<br><br><i>Thème :</i> la forêt du Neuland<br><i>Activité principale :</i> sensibilisation à l’environnement et au développement durable, développement local.<br><i>Espaces pédagogiques :</i> un observatoire, un parcours santé et un parcours découverte en milieu forestier.<br><br><h3>Vivarium du moulin</h3>6 rue du moulin – 68610 Lautenbach-Zell<br>03 89 74 02 48<br>info@vivariumdumoulin.org <br>www.vivariumdumoulin.org <br><br>barbitiste_ventru (3) PNRBV:Alix <i>BadreThème :</i> entomofaune<br><i>Activité principale :</i> sensibilisation à la nature et à l’environnement pour tout public, développement local.<br><i>Espaces pédagogiques :</i> un vivarium : soixante espèces d’insectes et d’araignées vivants du monde entier sur 240 M2, une salle des élevages attenante, le jardin aux insectes. <br>",
+            "imgSlider1": [
+                "datas/imgs/perenne/info/education1.jpg",
+                "datas/imgs/perenne/info/education2.jpg",
+                "datas/imgs/perenne/info/education3.jpg"
+            ],
+            "blocSlider1": "",
+            "blocDroit1": "<br><h3>La Maison de la géologie et de l’environnement</h3>Place de l’Eglise  – 68780 Sentheim<br>03 69 77 12 41<br>geologie.sentheim@estvideo.fr <br>www.geologie-alsace.fr<br><br><i>Thème :</i> géologie, visites accompagnées par un géologue.<br><i>Activité principale :</i> sensibilisation à l’environnement et au développement durable, développement local.<br><i>Autres activités :</i> stages scolaires (primaire, collège, lycée). <br>Animations insectes hors du site.<br><i>Espaces pédagogiques :</i> Musée qui retrace l’histoire géologique du massif. Il présente les fossiles et minéraux de la vallée, sentier géologique où l’on peut observer les roches formées au cours des 350 derniers millions d’année.<br><br><h3>Atouts Hautes-Vosges</h3>Centre d’Initiation à la Nature et à l’Environnement du Rothenbach<br>Mairie – 68820 Wildenstein<br>03 89 82 20 12<br>ahv@club-internet.fr <br>cpie-hautes-vosges.com<br><br>L’association fait partie du réseau alsacien des Centres d’Initiation à la Nature et à l’Environnement (CINE) regroupés au sein de l’ARIENA et du réseau national des Centres Permanents d’Initiatives pour l’Environnement (CPIE).<br><i>Thème :</i>  Hautes-Vosges<br><i>Activité principale :</i> sensibilisation à la nature et à l’environnement pour tout public, développement local <br><i>Autres activités :</i> réalisation e travaux de conception : sentiers de découverte, outils pédagogiques…<br><i>Espace pédagogique :</i> le CINE (1200 m d’altitude) est ouvert au public durant la belle saison. Il est dédié à la découverte des Hautes-Vosges et à l’observation de la nature montagnarde et  à mi-chemin entre le Col de la Schlucht et le Markstein.         <br><br><h3>Haute-Saône</h3>Maison de la Nature des Vosges Saônoises<br>Espace Nature Culture <br>Château-Lambert  – 70440 Haut du Them <br>03 84 63 89 41 <br>mnvs@wanadoo.fr <br>mnvs.fr<br><br><i>Thème  :</i> les Vosges Saônoises<br><i>Activité principale :</i> sensibilisation à la nature et à l’environnement pour tout public, développement local.<br><i>Autres activités :</i>  séjour en classe verte, découverte de l’histoire et des patrimoines du plateau des Mille étangs en lien avec le musée de la montagne de Château-Lambert, formation conseil et accompagnement.<br><i>Espaces pédagogiques :</i> l’Espace Nature et Culture est situé dans un bâtiment de Haute Qualité Environnementale. Un livret pédagogique de découverte de l’espace d’interprétation est mis à disposition de scolaires.        <br><br><h3>Territoire de Belfort</h3>Maison départementale de l’environnement du Malsaucy<br>Site du Malsaucy<br>90300 Sermamagny – 90300 Sermamagny<br>03 84 29 18 12<br>maison.environnement@cg90.fr <br>www.cg90.fr/environnement/la-maison-departementale-de-lenvironnement <br><br><i>Thème :</i> lié à la base nautique. Présence d’une enseignante déléguée de la ligue de l’enseignement, professeur des écoles détachée de l’Éducation Nationale, est chargée de l’éducation à l’environnement pour les scolaires <br><i>Activité principale :</i> Accueil scolaires, ateliers, animations, conférences…<br><i>Autres activités :</i> séjour autour de la base nautique. Entrée libre. Les animations sont gratuites sauf mentions contraires.<br><i>Espaces pédagogiques :</i> le Biorama propose un parcours interactif en sept étapes pour acquérir les réflexes du parfait naturaliste, salle amphithéâtre de 80 places, mare pédagogique, observatoire pour oiseaux, le jardin de la douce…",
+            "imgSlider2": [
+                "datas/imgs/perenne/info/education4.jpg",
+                "datas/imgs/perenne/info/education5.jpg",
+                "datas/imgs/perenne/info/education6.jpg",
+                "datas/imgs/perenne/info/education7.jpg"
+            ],
+            "blocDroit2": ""
+        }
+    },
+    "autour de moi": {
+        "titre": "Autour de moi, Munster",
+        "imgTop": "datas/imgs/perenne/autourDeMoi/munster.jpg",
+        "soustitre": "Que faire aux alentours ?",
+        "blocGauche1": "",
+        "imgGauche": "datas/imgs/perenne/autourDeMoi/munsterGauche.jpg",
+        "desImgGauche": "",
+        "blocGauche2": "<h3>Balades et randonnées</h3><b>Le sentier du Petit Ballon – Steinberg</b><br>Départ du sentier depuis le pied du Petit Ballon . Menhirs naturels et myrtilles jalonnent le parcours au milieu des vaches. Vue imprenable sur la vallée de Munster et la plaine d’Alsace. Site tellurique. Nombreuses fermes auberges autour du Petit Ballon.<br><br><b>Le circuit historique Hohrodberg-Le Linge 1914/1918. </b><br>Cette balade vous permettra de découvrir les nombreuses traces subsistant de la bataille du Linge et de mieux comprendre le déroulement de cette tragédie humaine (brochure disponible à l’Office du Tourisme de Munster et en mairie de Hohrod ; téléchargeable sur www.cc-vallee-munster.fr)<br><br><b>Sentier du Galtz</b>. Au départ de l’église d’Ammerschwihr, la balade passe devant le câteau du Wineck avant de traverser la forêt. Elle permet de découvrir le magnifique panorama sur la plaine d’Alsace et sur les Vosges depuis le monument du Galtz.<br><br><b>Sentier botanique du vallon d’Aspach.</b> Une heure de balade douce au départ de la maison forestière de La Forge, le long de la piste cyclable pour commencer puis à travers la forêt à la découverte des différentes essences.<br><br><b>Balades à partir du Holandsbourg</b>, vers le château de Pflixbourg ou vers Husseren-les-château les possibilités de balades sont nombreuses et s’adaptent à toutes les envies et les capacités physiques.<br><br><b>Une ferme, une randonnée</b> Des itinéraires de balades à faire avant ou après le repas, sans difficulté particulière et dont la durée n’excède par une heure, ont été conçus par le Parc naturel régional des Ballons des Vosges en partenariat avec l’association des fermes auberges du Haut-Rhin. Ces balades mettent en valeur les points de vue, les curiosités naturelles et culturelles du secteur et évoquent l’activité agricole de la ferme. ",
+        "imgSlider1": [],
+        "blocSlider1": "",
+        "blocDroit1": "",
+        "imgSlider2": [
+            "datas/imgs/perenne/autourDeMoi/munster1.jpg"
+        ],
+        "blocDroit2": "<h3>Sites à découvrir </h3><b>Le champ de bataille du Linge</b><br>Randonnée très variée possible en toute saison qui traverse d’abord le champ de bataille du Linge à la découverte de la géographie et des vestiges d’un des lieux les plus meurtriers de la guerre 14-18.<br>Sur les hauteurs de Hohrodberg, en direction d’Orbey, un mémorial rappelle les durs combats qui s’y déroulèrent en 1915 et qui causèrent la mort de 15000 chasseurs français. Le Musée mémorial du Linge avec son champ de bataille de la Première Guerre mondiale est ouvert d’avril à novembre de 9h à 12h30 et de 14h à 18h.<br>www.linge1915.com <br>A voir également : le cimetière allemand sur la route du Linge.<br><br><b>La Maison du Fromage </b><br>L’illustre fromage de Munster a désormais sa maison en Alsace ! Suivez toutes les étapes de la fabrication de ce fameux fromage, un parcours riche de sens et de sensations : films, expositions, ateliers pédagogiques, visite de l’étable, démonstration de la fabrication du Munster, dégustation… Par petites touches, vous comprendrez au fil de la visite ce qui fait la beauté et l’originalité de cette vallée.<br>03 89 77 90 00<br>info@mdf-munster.fr – www.maisondufromage-munster.com<br><br><b>La route du fromage et les fermes auberges</b><br>Sur la route du Fromage en Alsace découvrez de façon originale la production et la fabrication du fromage et savourez toutes les spécialités gourmandes dont le Munster fermier dans les fromageries, auberges et fermes auberges.<br>routedufromage-munster.com/<br><br><b>Le Rothenbach</b><br>Le Centre Permanent d’Initiatives à l’Environnement du Rothenbach<br>A 1200 m d’altitude, sur les hautes-chaumes du Rothenbach, le Centre d’Initiation à la Nature et à l’Environnement vous ouvre ses portes durant la belle saison. Ce bâtiment d’accueil, dédié à la découverte des Hautes-Vosges et à l’observation de la nature montagnarde est situé à mi-chemin entre le Col de la Schlucht et le Markstein.<br>cpie-hautes-vosges.com<br><br><b>Le jardin d’altitude du Haut Chitelet</b><br>Au coeur du massif vosgien, à proximité de la route des Crètes, entouré de milieux naturels remarquables, le Jardin d’altitude du Haut Chitelet est totalement consacré à la flore des montagnes. Des rocailes thématiques accueillent les plantes des principaux massifs français, européens mais aussi d’Amérique du Nord et d’Asie. Ce sont plus de 2500 espèces qui prospèrent sous un climat montagnard et rude. Une place privilégiée est réservée à la flore vosgienne: plantes des forêts et des chaumes, flore des tourbières, fougères, arbustes montagnards, plantes médicinales… Le long de la Vologne, qui prend sa source dans le jardin, se développe une flore luxuriante qui apprécie les ambiances fraîches et humides. Le chalet d’accueil propose régulièrement des petites expositions.<br>www.jardinbotaniquedenancy.eu<br><br><b>Parc accrobranche : Form’Aventures</b><br>Form’Aventures, c’est 9 parcours différents d’acrobranches, du plus simple au plus  complexe qui feront le bonheur des   amoureux des épreuves physiques. Au fil de votre  parcours aventure, vous aurez à vous suspendre à des câbles, à marcher sur des  cordes, à vous jeter dans le vide, à réunir toutes vos forces en fin de parcours pour vous  agripper aux   lianes sans tomber dans les filets…<br>07 81 90 03 57<br>www.formaventures.com<br><br><b>Château du Hohlandsbourg</b><br>Édifié au XIIIe siècle, le château du Hohlandsbourg tombe quasiment dans l’oubli 500 ans plus tard. Aujourd’hui en partie restauré, ce monument historique de Wintzenheim vaut vraiment le détour. Avec un panorama incroyable c’est aujourd’hui un haut lieu de tourisme pour toute la famille. Prenez le temps de participer aux nombreuses animations qui vous sont proposées. Visite guidée, reconstitution historique ou banquet médiéval vous plongent au coeur de l’époque médiévale !<br>03 89 30 10 20<br>info@chateau-hohlandsbourg.com – chateau-hohlandsbourg.com<br><br><b>Musée de l’Ambulance Alpine – Mittlach</b><br>Découvrez un ancien hôpital militaire français, qui a servit à soigner les soldats et les civils blessés de 1915 à 1918. L’Ambulance Alpine aujourd’hui restaurée, est devenue un centre d’interprétation sur la guerre dans la vallée depuis son ouverture le 11 juillet 2015. Des bénévoles auront à coeur de vous guider à travers l’exposition. <br>https://www.mittlach.fr/ambulance_alpine.html"
     }
 }

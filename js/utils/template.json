@@ -508,13 +508,13 @@
                         {
                             "id": 1,
                             "titre": "Marchés paysans",
-                            "lien": "marches",
+                            "lien": "Marchés paysans",
                             "type": "poi"
                         },
                         {
                             "id": 2,
                             "titre": "Magasins paysans",
-                            "lien": "magasins",
+                            "lien": "Magasins paysans",
                             "type": "poi"
                         },
                         {
@@ -575,12 +575,6 @@
                             "id": 1,
                             "titre": "Parcs et jardins",
                             "lien": "Parcs et jardins",
-                            "type": "poi"
-                        },
-                        {
-                            "id": 2,
-                            "titre": "Lieux de sensibilisation à l'environnement",
-                            "lien": "lieux sensibilisation",
                             "type": "poi"
                         },
                         {
@@ -809,7 +803,6 @@
                             "id": 1,
                             "titre": "Balades et randonnées",
                             "lien": "balades",
-                            "type": "carte",
                             "sousmenu": [
                                 {
                                     "id": 0,
@@ -981,31 +974,30 @@
                             "id": 1,
                             "titre": "Points d'accueil du parc",
                             "texte": "Dialoguer sensibiliser et être compris par les habitants et les visiteurs. Pour atteindre ces objectifs, le Parc naturel régional des Ballons des Vosges dispose de différents points d’accueil. Ces lieux vivants et ouverts sont de formidables points de départ pour partir à la découverte du sud du massif des Vosges. Ils proposent une documentation spécifique et différentes expositions temporaires.",
-                            "type": "carte",
-                            "lien": "points d'accueil du parc",
+                            "lien": "points d'accueil",
                             "sousmenu": [
                                 {
                                     "id": 0,
-                                    "titre": "ENC",
-                                    "type": "poi",
-                                    "lien": "enc"
+                                    "titre": "Grand Ballon",
+                                    "type": "perenne",
+                                    "lien": "grand ballon"
                                 },
                                 {
                                     "id": 1,
                                     "titre": "Château Lambert",
-                                    "type": "poi",
-                                    "lien": "chateau lambert"
+                                    "type": "perenne",
+                                    "lien": "chateau"
                                 },
                                 {
                                     "id": 2,
                                     "titre": "Munster",
-                                    "type": "poi",
+                                    "type": "perenne",
                                     "lien": "munster"
                                 },
                                 {
                                     "id": 3,
                                     "titre": "Schlucht",
-                                    "type": "poi",
+                                    "type": "perenne",
                                     "lien": "schlucht"
                                 }
                             ]
@@ -1177,7 +1169,6 @@
                 },
                 "S'informer": {
                     "texte": "Les Offices du tourisme sont là pour donner une information complète : manger, dormir, marcher, visiter … Il suffit de contacter le plus proche de son lieu de vacances… 4 comités départementaux et 3 comités régionaux du tourisme diffusent également de la documentation.",
-                    "type": "carte",
                     "diaporama": [
                         {
                             "id": "diapo1",
@@ -1193,24 +1184,15 @@
                             "type": "poi"
                         },
                         {
-                            "id": 1,
-                            "titre": "Points d'informations touristiques",
-                            "lien": "informations",
-                            "type": "poi"
-                        },
-                        {
-                            "id": 2,
-                            "titre": "Points d'accueil du parc",
-                            "lien": "accueil",
-                            "type": "poi"
-                        },
-                        {
                             "id": 3,
-                            "titre": "Structures d'éducation à <span style='font-size:15px'>l'environnement</span>",
+                            "titre": "Lieux de sensibilisation à l’environnement",
                             "lien": "education",
-                            "type": "poi"
+                            "type": "perenne"
                         }
                     ]
+                },
+                "local": {
+                    "type": "perenne"
                 }
             }
         }
