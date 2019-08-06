@@ -83,7 +83,7 @@
     height: fit-content;
 }
 
-h2, h3{
+h2, h3 {
     margin: 15px 0;
 }
 
@@ -123,4 +123,21 @@ h2, h3{
 .pagePerenne .divImage div h1, .pagePerenne .divImage div h2, .pagePerenne .divImage div h3 {
     color: white!important;
     margin: 0 0 15px 0;
+}
+
+.listeInPerenne img {
+    width: 38%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.listeInPerenne.small img{
+    width: 28%;
+}
+
+.listeInPerenne p {
+    display: inline-block;
+    width: 58%;
+    margin-left: 4%;
+    font-size: 20px;
 }

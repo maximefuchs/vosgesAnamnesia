@@ -1,4 +1,4 @@
-#OSDandButtons:focus, #seadragon-viewer:focus, .openseadragon-container, .openseadragon-canvas{
+#OSDandButtons:focus, #seadragon-viewer:focus, .openseadragon-container, .openseadragon-canvas {
     outline: none;
 }
 
@@ -7,7 +7,8 @@
     height: 30px;
     cursor: pointer;
 }
-.poi.large{
+
+.poi.large {
     border-radius: 50%;
     width: 90px;
     height: 90px;
@@ -34,7 +35,7 @@
     cursor: pointer;
 }
 
-.zoomButtons{
+.zoomButtons {
     position: absolute;
     width: 70px;
     height: 70px;
@@ -46,25 +47,57 @@
     border: none;
 }
 
-#OSDandButtons{
+#OSDandButtons {
     width: 2790px;
     right: 0px;
 }
 
-#filterBackCarte{
+#filterBackCarte {
     width: 100%;
     left: 0px;
 }
 
-.navigator{
+.navigator {
     border: 2px solid white!important;
 }
 
-.displayregion{
+.displayregion {
     background: #FFF9!important;
     border: none!important;
 }
 
-.pointer{
+.pointer {
     overflow: unset;
+}
+
+#divOverlays {
+    position: absolute;
+    bottom: 700px;
+    right: 30px;
+    width: 250px;
+    padding: 20px;
+    background: white;
+    font-size: 20px;
+}
+
+#divOverlays div {
+    text-align: end;
+    line-height: 35px;
+    padding: 15px;
+    margin: 6px;
+    background: #eee;
+}
+
+#divOverlays .check {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 0 0 0 20px;
+    display: inline-block;
+    background: #999;
+    padding: 0;
+}
+
+#divOverlays .check.checked {
+    background: white;
 }

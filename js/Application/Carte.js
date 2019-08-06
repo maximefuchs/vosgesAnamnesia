@@ -25,6 +25,11 @@ class Carte extends DivObject {
         backFilter.css('background', 'url(datas/imgs/perenne/texture_fiche.png)');
 
         this._fiches = [];
+        this._layers = [];
+        for (var i = 0; i < jsonCarte.layer.length; i++) {
+            var img = new Img(this._balise, jsonCarte.layer[i].id, jsonCarte.layer[i].src);
+            this._layers.push(img);
+        }
 
         this.clickSignal = new signals.Signal();
         var carte = this;
@@ -163,15 +168,30 @@ class Carte extends DivObject {
     hideOSDtools() {
         $('#zoomInBtn').toggle();
         $('#zoomOutBtn').toggle();
+        $('#divOverlays').toggle();
     }
 
     setOverlays() {
+        for (let i = 0; i < this._layers.length; i++) {
+            this._viewer.addOverlay(layerToOverlay(this._layers[i]));
+        }
         for (let i = 0; i < this._pois.length; i++) {
             this._viewer.addOverlay(poiToOverlay(this._pois[i]));
         }
-        // for (let i = 0; i < this._layers.length; i++) {
-        //     this._viewer.addOverlay(layerToOverlay(this._layers[i]));
-        // }
+
+        $('#divOverlays').remove();
+        var divOverlays = new DivObject(this._balise, 'divOverlays');
+        var layers = this._jsonCarte.layer;
+        for (var i = 0; i < layers.length; i++) {
+            var layer = new DivObject(divOverlays._balise, 'overlayFor_' + layers[i].id);
+            layer.html('<span>' + layers[i].name + '</span><div class="check"></div>');
+            layer._balise.click(function () {
+                console.log($(this).attr('id'));
+                $(this).find('.check').toggleClass('checked');
+                $('#' + $(this).attr('id').split('_')[1]).toggle();
+            })
+        }
+        $('#divOverlays .check').css('border', '3px solid ' + this._couleur);
     }
 
     setPoiClickListeners() {
@@ -186,7 +206,7 @@ class Carte extends DivObject {
     }
 
     clickOnPoi(f, carte) {
-        
+
         $('.large').removeClass('large');
         $('.pointer').css('display', '');
         carte._fiches.forEach(fiche => {
@@ -196,7 +216,7 @@ class Carte extends DivObject {
         });
         var p = f._poi;
         $('#' + p._id + ' .pointer').css('display', 'none');
-        
+
         p.addClass('large');
         p.css('border', '5px solid ' + this._couleur);
         if (p._thumbnail != false) {

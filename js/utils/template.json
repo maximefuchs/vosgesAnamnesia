@@ -18,19 +18,9 @@
             },
             "layer": [
                 {
-                    "id": "plan",
-                    "src": "datas/imgs/carte/layer/plan-min.png",
-                    "color": "#FF0000"
-                },
-                {
-                    "id": "reseau",
-                    "src": "datas/imgs/carte/layer/reseau-min.png",
-                    "color": "#FFF000"
-                },
-                {
-                    "id": "eau",
-                    "src": "datas/imgs/carte/layer/eau-min.png",
-                    "color": "#FFFF00"
+                    "id": "limitesParc",
+                    "src": "datas/imgs/carte/layer/limitesParc.png", 
+                    "name": "Limites du parc"
                 }
             ]
         },
@@ -569,7 +559,7 @@
                             "id": 0,
                             "titre": "Routes touristiques",
                             "lien": "routes",
-                            "type": "poi"
+                            "type": "perenne"
                         },
                         {
                             "id": 1,
@@ -820,13 +810,13 @@
                                     "id": 2,
                                     "titre": "Balades 30 ans",
                                     "lien": "30 ans",
-                                    "type": "poi"
+                                    "type": "perenne"
                                 },
                                 {
                                     "id": 3,
                                     "titre": "Balades apéritives",
                                     "lien": "aperitives",
-                                    "type": "poi"
+                                    "type": "perenne"
                                 }
                             ]
                         },

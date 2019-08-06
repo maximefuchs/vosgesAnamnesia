@@ -74,7 +74,7 @@ function layerToOverlay(l) {
         width: 1,
         height: 1
     }
-    l._balise.toggle();
+    l.css('display', 'none');
     return overlay;
 }
 
@@ -89,16 +89,6 @@ function ficheToOverlay(f) {
         placement: 'CENTER'
     }
     return over;
-}
-
-
-function newpushPin() {
-    var img = document.createElement("img");
-    img.src = "http://upload.wikimedia.org/wikipedia/commons/7/7a/Red_Arrow_Right.svg";
-    img.width = 20;
-    img.id = "img_arrow_" + id;
-    id++;
-    return img;
 }
 
 function addClickHandler(overlay, viewer) {
