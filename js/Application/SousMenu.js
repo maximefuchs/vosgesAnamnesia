@@ -157,8 +157,9 @@ class SousMenu extends DivObject {
         this._btnFermer.tweenAnimate({ bottom: 5.5 * this._scale }, 0.6, 0.3);
         this.initSousMenuElement();
         this._divssSousMenu.tweenAnimate({ left: 0 });
-        if (this._json.type == 'carte') {
+        if (this._lien[0] == 'coeur') {
             this._carte.init();
+            this.displayPoiOnMap(favPOIS);
         }
     }
 

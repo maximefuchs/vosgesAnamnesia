@@ -27,6 +27,11 @@ var jeuxJsonFR;
 var jeuxJsonDE;
 var jeuxJsonEN;
 
+var favPOIS;
+var favPoisFR;
+var favPoisDE;
+var favPoisEN;
+
 var body;
 var StageWidth;
 var StageHeight;
@@ -91,18 +96,21 @@ function newApplication(lg) {
             jeuxJSON = jeuxJsonFR;
             poisJSON = poisJsonFR;
             perennesJSON = perennesJsonFR;
+            favPOIS = favPoisFR;
             break;
         case 'en':
             textesJSON = textesJsonEN;
             jeuxJSON = jeuxJsonEN;
             poisJSON = poisJsonEN;
             perennesJSON = perennesJsonEN;
+            favPOIS = favPoisEN;
             break;
         case 'de':
             textesJSON = textesJsonDE;
             jeuxJSON = jeuxJsonDE;
             poisJSON = poisJsonDE;
             perennesJSON = perennesJsonDE;
+            favPOIS = favPoisDE;
             break;
 
         default:
@@ -211,21 +219,29 @@ function downloadImages() {
     //     downloadFolder: mainFolder + "datas/imgs/carte/poi/download"
     // });
 
-    var imgs = extractJSON(poisJsonFR);
+    var imgs = extractPicFileLinks(poisJsonFR);
     require("electron").remote.require("electron-download-manager").bulkDownload({
         urls: imgs
     }, function (error, finished, errors) {
         if (error) {
             console.log("finished: " + finished);
             console.log("errors: " + errors);
-            createApplication();
+            getFavouritePOIs();
             return;
         }
 
         console.log("all finished");
-        createApplication();
+        getFavouritePOIs();
     });
+}
 
+function getFavouritePOIs() {
+
+    favPoisFR = extractCoeurPois(poisJsonFR);
+    favPoisEN = extractCoeurPois(poisJsonEN);
+    favPoisDE = extractCoeurPois(poisJsonDE);
+
+    createApplication();
 }
 
 
@@ -256,12 +272,12 @@ function somme(int) {
     return somme;
 }
 
-function extractJSON(obj, imgs) {
+function extractPicFileLinks(obj, imgs) {
     if (imgs === undefined)
         imgs = []
     for (const i in obj) {
         if (Array.isArray(obj[i]) || typeof obj[i] === 'object') {
-            imgs.concat(extractJSON(obj[i], imgs));
+            imgs.concat(extractPicFileLinks(obj[i], imgs));
         } else {
             if (i == 'thumbnail' || i == 'src') {
                 if (obj[i] != false) {
@@ -272,4 +288,22 @@ function extractJSON(obj, imgs) {
         }
     }
     return imgs;
+}
+
+function extractCoeurPois(obj, coeurs) {
+    if (coeurs === undefined)
+        coeurs = []
+    for (const i in obj) {
+        if (Array.isArray(obj[i]) || typeof obj[i] === 'object') {
+            // console.log('OBJECT');
+            coeurs.concat(extractCoeurPois(obj[i], coeurs));
+        } else {
+            if (i == 'favorite') {
+                if (obj[i] != false) {
+                    coeurs.push(obj);
+                }
+            }
+        }
+    }
+    return coeurs;
 }

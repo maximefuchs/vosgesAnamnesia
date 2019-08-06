@@ -8,7 +8,6 @@ class Application extends DivObject {
         this.addClass("page");
 
         this.lgSignal = new signals.Signal();
-        console.log(textesJSON);
 
         var _ = this;
         this._menu = new Menu(this._balise, textesJSON.Application.Menu);

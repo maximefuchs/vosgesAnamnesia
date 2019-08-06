@@ -364,18 +364,18 @@
                     "lien": "jeu",
                     "x": 3,
                     "y": 4,
-                    "taille": 2
-                },
-                {
-                    "id": 3,
-                    "couleur": "#FF173A",
-                    "src_fond": "#",
-                    "picto": "datas/imgs/menu/picto/coeur.png",
-                    "titre": "Coups de coeur",
-                    "lien": "coeur",
-                    "x": 5,
-                    "y": 4,
-                    "taille": 3
+                    "taille": 2,
+                    "ELEMENT COUP DE COEUR": {
+                        "id": 3,
+                        "couleur": "#FF173A",
+                        "src_fond": "#",
+                        "picto": "datas/imgs/menu/picto/coeur.png",
+                        "titre": "Coups de coeur",
+                        "lien": "coeur",
+                        "x": 5,
+                        "y": 4,
+                        "taille": 3
+                    }
                 },
                 {
                     "id": 4,
@@ -1183,6 +1183,11 @@
                 },
                 "local": {
                     "type": "perenne"
+                },
+                "coeur": {
+                    "texte": "Les coups de coeur du parc du Ballon des Vosges",
+                    "diaporama": [],
+                    "sousmenu": []
                 }
             }
         }
