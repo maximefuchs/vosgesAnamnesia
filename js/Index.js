@@ -6,14 +6,26 @@ Global.include('dev/js/Application.js');
 var langue;
 
 var textesJSON;
+var textesJsonFR;
+var textesJsonDE;
+var textesJsonEN;
+
 var paramsJSON;
 
 var poisJSON;
 var poisJsonFR;
 var poisJsonDE;
 var poisJsonEN;
+
 var perennesJSON;
+var perennesJsonFR;
+var perennesJsonDE;
+var perennesJsonEN;
+
 var jeuxJSON;
+var jeuxJsonFR;
+var jeuxJsonDE;
+var jeuxJsonEN;
 
 var body;
 var StageWidth;
@@ -28,8 +40,6 @@ var t;
 
 var application;
 
-// si l'on veut télécharger les jsons et images au démarrage
-var download = true;
 
 function initApplication() {
     var img = document.createElement('IMG');
@@ -39,10 +49,15 @@ function initApplication() {
     $('<img src="datas/buffer.gif">');
     //Chargement du fichier de params
     $.when($.getJSON("datas/params.json", finChargementParams),
-        $.getJSON("datas/texte.json", finChargementTexte),
-        $.getJSON("datas/jeu.json", finChargementJeu),
-        $.getJSON("datas/poi.json", chargeOldPoi),
-        $.getJSON("datas/perenne.json", finChargementPerenne)
+        $.getJSON("datas/texteFR.json", finChargementTexteFR),
+        $.getJSON("datas/texteDE.json", finChargementTexteDE),
+        $.getJSON("datas/texteEN.json", finChargementTexteEN),
+        $.getJSON("datas/jeuFR.json", finChargementJeuFR),
+        $.getJSON("datas/jeuDE.json", finChargementJeuDE),
+        $.getJSON("datas/jeuEN.json", finChargementJeuEN),
+        $.getJSON("datas/perenneFR.json", finChargementPerenneFR),
+        $.getJSON("datas/perenneDE.json", finChargementPerenneDE),
+        $.getJSON("datas/perenneEN.json", finChargementPerenneEN)
     ).then(chargementJsonPoiFR);
 };
 
@@ -57,10 +72,47 @@ function createApplication() {
 
     console.log(StageWidth + " - " + StageHeight);
 
-    if (download)
-        poisJSON = poisJsonFR;
-    application = new Application();
+    textesJSON = textesJsonFR;
+    jeuxJSON = jeuxJsonFR;
+    poisJSON = poisJsonFR;
+
+    newApplication();
 };
+
+function newApplication(lg) {
+    if (lg === undefined)
+        lg = 'fr';
+    $('#Application').remove();
+    console.log(lg);
+    langue = lg;
+    switch (lg) {
+        case 'fr':
+            textesJSON = textesJsonFR;
+            jeuxJSON = jeuxJsonFR;
+            poisJSON = poisJsonFR;
+            perennesJSON = perennesJsonFR;
+            break;
+        case 'en':
+            textesJSON = textesJsonEN;
+            jeuxJSON = jeuxJsonEN;
+            poisJSON = poisJsonEN;
+            perennesJSON = perennesJsonEN;
+            break;
+        case 'de':
+            textesJSON = textesJsonDE;
+            jeuxJSON = jeuxJsonDE;
+            poisJSON = poisJsonDE;
+            perennesJSON = perennesJsonDE;
+            break;
+
+        default:
+            break;
+    }
+    application = new Application();
+    application.lgSignal.add(function (lg) {
+        newApplication(lg);
+    });
+}
 
 
 function finChargementParams(data) {
@@ -75,42 +127,38 @@ function finChargementParams(data) {
 }
 
 
-function finChargementTexte(data) {
-    textesJSON = data;
-}
-function finChargementJeu(data) {
-    jeuxJSON = data;
-}
-function finChargementPerenne(data) {
-    perennesJSON = data;
-}
-function chargeOldPoi(data) {
-    poisJSON = data;
-}
+function finChargementTexteFR(data) { textesJsonFR = data; }
+function finChargementTexteDE(data) { textesJsonDE = data; }
+function finChargementTexteEN(data) { textesJsonEN = data; }
+
+function finChargementJeuFR(data) { jeuxJsonFR = data; }
+function finChargementJeuDE(data) { jeuxJsonDE = data; }
+function finChargementJeuEN(data) { jeuxJsonEN = data; }
+
+function finChargementPerenneFR(data) { perennesJsonFR = data; }
+function finChargementPerenneDE(data) { perennesJsonDE = data; }
+function finChargementPerenneEN(data) { perennesJsonEN = data; }
 
 function chargementJsonPoiFR() {
-    if (download) {
-        var token = 'ev79X7MuE';
-        var url = 'https://parc-ballons-vosges.fr/wp-json/wp/v2/exportjson/fr';
-        fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' }) })
-            .then(response => { return response.json(); })
-            .then(data => {
-                require('fs').writeFile(mainFolder + 'datas/poiFR.json', JSON.stringify(data), (err) => {
-                    if (err) {
-                        console.error(err.message);
-                        $.when($.getJSON(mainFolder + "datas/poiFR.json", function (data) { poisJsonFR = data; })).then(chargementJsonPoiEN);
-                    } else {
-                        poisJsonFR = data;
-                        chargementJsonPoiEN();
-                    }
-                });
-            })
-            .catch((error) => {
-                console.error(error);
-                $.when($.getJSON(mainFolder + "datas/poiFR.json", function (data) { poisJsonFR = data; })).then(chargementJsonPoiEN);
+    var token = 'ev79X7MuE';
+    var url = 'https://parc-ballons-vosges.fr/wp-json/wp/v2/exportjson/fr';
+    fetch(url, { method: 'GET', headers: new Headers({ 'password': token, 'Content-Type': 'application/json' }) })
+        .then(response => { return response.json(); })
+        .then(data => {
+            require('fs').writeFile(mainFolder + 'datas/poiFR.json', JSON.stringify(data), (err) => {
+                if (err) {
+                    console.error(err.message);
+                    $.when($.getJSON(mainFolder + "datas/poiFR.json", function (data) { poisJsonFR = data; })).then(chargementJsonPoiEN);
+                } else {
+                    poisJsonFR = data;
+                    chargementJsonPoiEN();
+                }
             });
-    } else
-        createApplication();
+        })
+        .catch((error) => {
+            console.error(error);
+            $.when($.getJSON(mainFolder + "datas/poiFR.json", function (data) { poisJsonFR = data; })).then(chargementJsonPoiEN);
+        });
 }
 function chargementJsonPoiEN() {
 

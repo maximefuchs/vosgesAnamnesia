@@ -7,7 +7,14 @@ class Application extends DivObject {
         super(body, "Application"); // parent : body, id : Application
         this.addClass("page");
 
+        this.lgSignal = new signals.Signal();
+        console.log(textesJSON);
+
+        var _ = this;
         this._menu = new Menu(this._balise, textesJSON.Application.Menu);
+        this._menu.langueSignal.add(function (langue) {
+            _.lgSignal.dispatch(langue);
+        });
         this.init();
     }
 

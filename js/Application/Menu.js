@@ -15,6 +15,8 @@ class Menu extends DivObject {
         this._fondImgs = [];
         this._couleursAssociees = [];
 
+        this.langueSignal = new signals.Signal();
+
         this.backgroundDiaporama = json.diaporama;
         var overlay = new Img(this._balise, 'filterBackground', 'datas/imgs/menu/diaporama/overlay_img.png');
         overlay.addClass('page');
@@ -159,9 +161,8 @@ class Menu extends DivObject {
         console.log('click langue');
         var instance = e.data.instance;
         var s = String($(this).attr('id'));
-
-        instance._langue = s.replace(instance._id + "_BtLang_", '');
-        console.log(instance._langue);
+        s = s.replace(instance._id + "_BtLang_", '');
+        instance.langueSignal.dispatch(s);
     }
 
     // fond d'écran changeant
