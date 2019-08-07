@@ -8,12 +8,16 @@ class ElementListePoi extends DivObject {
         var txt = new DivObject(divTexte._balise, 'txtLiPoiElt_' + this._id);
         txt.addClass('poiLiEltTexte');
         var ad = json.mainAddress;
-        var contact = ad.address;
 
-        if (ad.name !== undefined)
-            txt.html('<b>' + ad.name.toUpperCase() + '</b><br><p style="font-size:16px">' + contact + '</p>');
-        else
-            txt.html('<b>' + json.title.toUpperCase() + '</b><br><p style="font-size:16px">Unknown</p>')
+        if (ad !== undefined) {
+            if (ad.name !== undefined) {
+                var contact = ad.address;
+                txt.html('<b>' + ad.name.toUpperCase() + '</b><br><p style="font-size:16px">' + contact + '</p>');
+            } else
+                txt.html('<b>' + json.title.toUpperCase() + '</b><br><p style="font-size:16px">Unknown</p>')
+        } else
+            txt.html('<b>' + json.title.toUpperCase() + '</b>')
+
 
         this._balise.css({
             height: scale - 5 + 'px'

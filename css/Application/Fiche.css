@@ -92,7 +92,8 @@
     display: inline-block;
     cursor: pointer;
     font-size: 10px;
-    padding: 5%;
+    padding: 0 5%;
+    height: 100%;
     text-align: center;
     color: white;
     position: absolute;
@@ -100,6 +101,19 @@
 
 .divPartage img {
     height: 60px;
+    position: absolute;
+    top: 0;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.divPartage div {
+    position: absolute;
+    bottom: 50%;
+    left: 30px;
+    transform: translate(0, 45px);
 }
 
 .slidePartage {
@@ -198,7 +212,7 @@
     transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.feedBack{
+.feedBack {
     position: absolute;
     right: 180px;
     bottom: 30px;

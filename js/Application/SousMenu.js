@@ -246,6 +246,8 @@ class SousMenu extends DivObject {
                 $('.divBtnCarteElement').remove();
                 $('.sousMenuListePoi').remove();
                 $('#overlayPerenne').css('display', '');
+                sMenu._divText.tweenAnimate({ bottom: 4 * sMenu._scale + 'px' });
+                sMenu._divssSousMenu.tweenAnimate({ bottom: 4 * sMenu._scale + 'px' });
 
                 if (sMenu._inSousMenu) {
                     sMenu.oldLienJson(sMenu);
@@ -272,7 +274,8 @@ class SousMenu extends DivObject {
                     sMenu._inSousMenu = false;
                 }
 
-                sMenu.displayPoiOnMap(sMenu.getJsonPoi(sMenu, lien));
+                sMenu.displayPoiOnMap(lien == "communes" ? json[0].points : sMenu.getJsonPoi(sMenu, lien));
+                // sMenu.displayPoiOnMap(sMenu.getJsonPoi(sMenu, lien));
                 sMenu.affichageMenuGauche(sMenu, json, num, type, couleur);
                 break;
 
@@ -300,8 +303,15 @@ class SousMenu extends DivObject {
                 break;
 
             default:
+                if (sMenu._inSousMenu) {
+                    sMenu.oldLienJson(sMenu);
+                }
                 if (lien !== undefined)
                     sMenu._lien.push(lien);
+                $('.sousMenuListePoi').remove();
+                $('.divBtnCarteElement').remove();
+                sMenu._divText.tweenAnimate({ bottom: 4 * sMenu._scale + 'px' });
+                sMenu._divssSousMenu.tweenAnimate({ bottom: 4 * sMenu._scale + 'px' });
                 sMenu._inSousMenu = true;
                 var jsonElements = json[num].sousmenu;
                 sMenu.affichageMenuElements(jsonElements);
@@ -412,7 +422,8 @@ class SousMenu extends DivObject {
                         sMenu.reinitializeContent();
                         $('.elementSousMenu').remove();
 
-                        sMenu.displayPoiOnMap(sMenu.getJsonPoi(sMenu, lien));
+                        sMenu.displayPoiOnMap(lien == "communes" ? json[0].points : sMenu.getJsonPoi(sMenu, lien));
+                        // sMenu.displayPoiOnMap(sMenu.getJsonPoi(sMenu, lien));
                         sMenu.affichageMenuGauche(sMenu, json, num, type, element._params.couleur);
                         break;
 

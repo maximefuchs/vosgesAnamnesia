@@ -125,7 +125,7 @@
 
 /* ELEMENT LISTE POI */
 
-.sousMenuListePoi{
+.sousMenuListePoi {
   position: absolute;
   left: 0;
   background: white;
@@ -146,9 +146,9 @@
   background: #bbb;
 }
 
-.elementListePoi{
+.elementListePoi {
   width: 95%;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
   opacity: 0;
   margin-left: 60px;
 }
@@ -176,7 +176,7 @@
   background: white;
 }
 
-.iconCarteElement input { 
+.iconCarteElement input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -196,17 +196,17 @@
 .sliderSwitch:before {
   position: absolute;
   content: "";
-  height: 13px;
-  width: 10px;
-  left: 4px;
-  bottom: 8px;
+  width: 12px;
+  height: 12px;
+  bottom: 9px;
+  left: 3px;
   background-color: #bbb;
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 50%;
 }
 
-input:checked + .sliderSwitch:before {
+input:checked+.sliderSwitch:before {
   -webkit-transform: translateX(21px);
   -ms-transform: translateX(21px);
   transform: translateX(21px);

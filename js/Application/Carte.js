@@ -207,38 +207,45 @@ class Carte extends DivObject {
 
     clickOnPoi(f, carte) {
 
-        $('.large').removeClass('large');
-        $('.pointer').css('display', '');
-        carte._fiches.forEach(fiche => {
-            carte._viewer.removeOverlay(fiche._id);
-            var poi = fiche._poi;
-            poi._balise.css({ border: '', background: '' });
-        });
-        var p = f._poi;
-        $('#' + p._id + ' .pointer').css('display', 'none');
+        var isCommune = f._poi._subtitle === undefined;
 
-        p.addClass('large');
-        p.css('border', '5px solid ' + this._couleur);
-        if (p._thumbnail != false) {
-            var t = folderImgs;
-            var split = p._thumbnail.split('/');
-            t += split[split.length - 1];
-            var b = t;
+        if (!isCommune) {
+            $('.large').removeClass('large');
+            $('.pointer').css('display', '');
+            carte._fiches.forEach(fiche => {
+                carte._viewer.removeOverlay(fiche._id);
+                var poi = fiche._poi;
+                poi._balise.css({ border: '', background: '' });
+            });
+            var p = f._poi;
+            $('#' + p._id + ' .pointer').css('display', 'none');
+
+            p.addClass('large');
+            p.css('border', '5px solid ' + this._couleur);
+            if (p._thumbnail != false) {
+                var t = folderImgs;
+                var split = p._thumbnail.split('/');
+                t += split[split.length - 1];
+                var b = t;
+            } else {
+                var b = 'datas/imgs/menu/diaporama/3.jpg';
+            }
+            p._balise.css({ 'background': 'url(' + b + ')', 'background-size': 'cover', 'background-position': 'center' });
+            var overlay = poiToOverlay(p);
+            console.log(overlay);
+
+            f._balise.css('display', 'block');
+            carte._viewer.addOverlay(f._overlay);
+            carte.removeOverlay(f, p);
         } else {
-            var b = 'datas/imgs/menu/diaporama/3.jpg';
+            var p = f._poi;
+            var overlay = poiToOverlay(p);
         }
-        p._balise.css({ 'background': 'url(' + b + ')', 'background-size': 'cover', 'background-position': 'center' });
-        var overlay = poiToOverlay(p);
-        console.log(overlay);
-
-        f._balise.css('display', 'block');
-        carte._viewer.addOverlay(f._overlay);
-        carte.removeOverlay(f, p);
 
         var viewport = carte._viewer.viewport;
         var pt = new OpenSeadragon.Point(overlay.x, overlay.y);
         viewport.panTo(pt);
-        viewport.zoomTo(1.5);
+        viewport.zoomTo(isCommune ? 3 : 1.5);
     }
 
     removeOverlay(fiche, poi) {
