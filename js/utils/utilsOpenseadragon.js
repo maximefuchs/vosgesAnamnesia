@@ -8,6 +8,7 @@ function pow(base, exposant) {
     return Math.pow(base, exposant);
 }
 
+// distance entre deux points avec coordonnées connues
 function distanceBtw2Coord(lat1, lon1, lat2, lon2) {
     dLat = degreesToRadians(lat2 - lat1);
     dLon = degreesToRadians(lon2 - lon1);
@@ -19,7 +20,7 @@ function distanceBtw2Coord(lat1, lon1, lat2, lon2) {
 }
 
 
-// params : Poi , Poi json , Poi json
+// renvoi le json overlay (nécessaire pour openseadragon) correspondant aux paramètres du poi
 function poiToOverlay(p) {
     var origineCarte = textesJSON.Application.Carte.origineCarte;
     var finCarte = textesJSON.Application.Carte.finCarte;
@@ -53,8 +54,8 @@ function poiToOverlay(p) {
     pourcentageY = y / height;
 
     var overlay = {
-        element: p._balise[0],
-        poi: p,
+        element: p._balise[0], // balise html de l'élément
+        poi: p, // pour pouvoir le récupérer si besoin
         id: p._id,
         x: pourcentageX,
         y: pourcentageY,
@@ -63,7 +64,7 @@ function poiToOverlay(p) {
     return overlay;
 }
 
-// param : Img
+// param : Img.class
 function layerToOverlay(l) {
     var overlay = {
         element: l._balise[0],
@@ -89,36 +90,4 @@ function ficheToOverlay(f) {
         placement: 'CENTER'
     }
     return over;
-}
-
-function addClickHandler(overlay, viewer) {
-    var newOverlayId = 'fiche' + overlay.id;
-    var p = overlay.poi;
-    return new OpenSeadragon.MouseTracker({
-        element: overlay.id,
-        clickHandler: function (event) {
-            console.log("click on " + overlay.id);
-            var fiche = new Fiche(p._balise, p, newOverlayId);
-
-            var over = {
-                element: fiche._balise[0],
-                id: newOverlayId,
-                x: overlay.x,
-                y: overlay.y,
-                placement: 'CENTER'
-            }
-            viewer.addOverlay(over);
-            removeOverlay(newOverlayId, fiche, viewer);
-
-            // console.log(event);
-            // var target = event.originalEvent.target;
-            // if (target.matches('a')) {
-            //     if (target.getAttribute('target') === '_blank') {
-            //         window.open(target.getAttribute('href'));
-            //     } else {
-            //         location.href = target.getAttribute('href');
-            //     }
-            // }
-        }
-    });
 }

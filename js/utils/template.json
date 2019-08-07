@@ -19,7 +19,7 @@
             "layer": [
                 {
                     "id": "limitesParc",
-                    "src": "datas/imgs/carte/layer/limitesParc.png", 
+                    "src": "datas/imgs/carte/layer/limitesParc.png",
                     "name": "Limites du parc"
                 }
             ]
@@ -632,7 +632,7 @@
                                 },
                                 {
                                     "id": 3,
-                                    "titre": "Patrimoine industriel et savoir faire",
+                                    "titre": "Patrimoine industriel<br>et savoir faire",
                                     "lien": "Patrimoine industriel et savoir faire",
                                     "type": "poi"
                                 },
@@ -949,14 +949,1584 @@
                         {
                             "id": 0,
                             "titre": "Communes",
-                            "type": "carte",
+                            "type": "poi",
                             "lien": "communes",
-                            "sousmenu": [
+                            "points": [
                                 {
-                                    "id": 0,
-                                    "titre": "197 communes",
-                                    "lien": "197 communes",
-                                    "type": "poi"
+                                    "title": "Jungholtz",
+                                    "mainAddress": {
+                                        "long": 7.195769787,
+                                        "lat": 47.88578033
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Lièpvre",
+                                    "mainAddress": {
+                                        "long": 7.282110214,
+                                        "lat": 48.27101566
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Guebwiller",
+                                    "mainAddress": {
+                                        "long": 7.211900234,
+                                        "lat": 47.90884061
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Bergholtz",
+                                    "mainAddress": {
+                                        "long": 7.246809959,
+                                        "lat": 47.91892723
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Gunsbach",
+                                    "mainAddress": {
+                                        "long": 7.175439835,
+                                        "lat": 48.04646603
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Oberbruck",
+                                    "mainAddress": {
+                                        "long": 6.942639828,
+                                        "lat": 47.808691
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Storckensohn",
+                                    "mainAddress": {
+                                        "long": 6.958250046,
+                                        "lat": 47.87864165
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Mollau",
+                                    "mainAddress": {
+                                        "long": 6.973760128,
+                                        "lat": 47.87126179
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Sainte-Marie-aux-Mines",
+                                    "mainAddress": {
+                                        "long": 7.182209969,
+                                        "lat": 48.24569879
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Leimbach",
+                                    "mainAddress": {
+                                        "long": 7.102180004,
+                                        "lat": 47.79343261
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Thann",
+                                    "mainAddress": {
+                                        "long": 7.102369785,
+                                        "lat": 47.81068747
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Metzeral",
+                                    "mainAddress": {
+                                        "long": 7.070839882,
+                                        "lat": 48.01281557
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Wildenstein",
+                                    "mainAddress": {
+                                        "long": 6.960400105,
+                                        "lat": 47.97689292
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Oderen",
+                                    "mainAddress": {
+                                        "long": 6.975619793,
+                                        "lat": 47.90987911
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Lauw",
+                                    "mainAddress": {
+                                        "long": 7.018189907,
+                                        "lat": 47.75750114
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Kruth",
+                                    "mainAddress": {
+                                        "long": 6.964650154,
+                                        "lat": 47.93089867
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Kirchberg",
+                                    "mainAddress": {
+                                        "long": 6.956510067,
+                                        "lat": 47.79674628
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Dolleren",
+                                    "mainAddress": {
+                                        "long": 6.932720184,
+                                        "lat": 47.80568013
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Mittlach",
+                                    "mainAddress": {
+                                        "long": 7.032440186,
+                                        "lat": 48.00377523
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Stosswihr",
+                                    "mainAddress": {
+                                        "long": 7.104459763,
+                                        "lat": 48.05424197
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Sickert",
+                                    "mainAddress": {
+                                        "long": 6.979519844,
+                                        "lat": 47.78277157
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Saint-Amarin",
+                                    "mainAddress": {
+                                        "long": 7.031139851,
+                                        "lat": 47.8739037
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Malmerspach",
+                                    "mainAddress": {
+                                        "long": 7.03414011,
+                                        "lat": 47.86532381
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Ranspach",
+                                    "mainAddress": {
+                                        "long": 7.010350227,
+                                        "lat": 47.88611714
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Moosch",
+                                    "mainAddress": {
+                                        "long": 7.048679829,
+                                        "lat": 47.86146471
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Fellering",
+                                    "mainAddress": {
+                                        "long": 6.986720085,
+                                        "lat": 47.89604213
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Bourbach-le-Haut",
+                                    "mainAddress": {
+                                        "long": 7.029310226,
+                                        "lat": 47.79567595
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Masevaux-Niederbruck",
+                                    "mainAddress": {
+                                        "long": 6.996459961,
+                                        "lat": 47.77454499
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Luttenbach-près-Munster",
+                                    "mainAddress": {
+                                        "long": 7.117909908,
+                                        "lat": 48.03103634
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Orbey",
+                                    "mainAddress": {
+                                        "long": 7.160240173,
+                                        "lat": 48.12625561
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Rimbach-près-Guebwiller",
+                                    "mainAddress": {
+                                        "long": 7.154300213,
+                                        "lat": 47.90475078
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Aubure",
+                                    "mainAddress": {
+                                        "long": 7.221489906,
+                                        "lat": 48.19754226
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Soultzmatt",
+                                    "mainAddress": {
+                                        "long": 7.238790035,
+                                        "lat": 47.96075041
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Wegscheid",
+                                    "mainAddress": {
+                                        "long": 6.955840111,
+                                        "lat": 47.80289777
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Mitzach",
+                                    "mainAddress": {
+                                        "long": 7.004740238,
+                                        "lat": 47.87113398
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Husseren-Wesserling",
+                                    "mainAddress": {
+                                        "long": 6.989880085,
+                                        "lat": 47.88403221
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Sewen",
+                                    "mainAddress": {
+                                        "long": 6.90625,
+                                        "lat": 47.80722535
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Urbès",
+                                    "mainAddress": {
+                                        "long": 6.956940174,
+                                        "lat": 47.88351296
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Rimbach-près-Masevaux",
+                                    "mainAddress": {
+                                        "long": 6.95194006,
+                                        "lat": 47.82902738
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Rorschwihr",
+                                    "mainAddress": {
+                                        "long": 7.362679958,
+                                        "lat": 48.2172987
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Saint-Hippolyte",
+                                    "mainAddress": {
+                                        "long": 7.367929935,
+                                        "lat": 48.23329157
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Rodern",
+                                    "mainAddress": {
+                                        "long": 7.353519917,
+                                        "lat": 48.22510543
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Osenbach",
+                                    "mainAddress": {
+                                        "long": 7.217520237,
+                                        "lat": 47.98573311
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Wuenheim",
+                                    "mainAddress": {
+                                        "long": 7.207759857,
+                                        "lat": 47.87419948
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Wattwiller",
+                                    "mainAddress": {
+                                        "long": 7.178009987,
+                                        "lat": 47.83693523
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Buhl",
+                                    "mainAddress": {
+                                        "long": 7.186810017,
+                                        "lat": 47.92799589
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Willer-sur-Thur",
+                                    "mainAddress": {
+                                        "long": 7.071539879,
+                                        "lat": 47.84400895
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Linthal",
+                                    "mainAddress": {
+                                        "long": 7.12887001,
+                                        "lat": 47.94894873
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Lautenbach",
+                                    "mainAddress": {
+                                        "long": 7.157710075,
+                                        "lat": 47.9426769
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Voegtlinshoffen",
+                                    "mainAddress": {
+                                        "long": 7.282110214,
+                                        "lat": 48.01970002
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Thannenkirch",
+                                    "mainAddress": {
+                                        "long": 7.302000046,
+                                        "lat": 48.23175282
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Ribeauvillè",
+                                    "mainAddress": {
+                                        "long": 7.319069862,
+                                        "lat": 48.19464941
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Zellenberg",
+                                    "mainAddress": {
+                                        "long": 7.320040226,
+                                        "lat": 48.16903005
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Katzenthal",
+                                    "mainAddress": {
+                                        "long": 7.284200191,
+                                        "lat": 48.1081269
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Sentheim",
+                                    "mainAddress": {
+                                        "long": 7.051809788,
+                                        "lat": 47.75663709
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Walbach",
+                                    "mainAddress": {
+                                        "long": 7.224309921,
+                                        "lat": 48.06387043
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Muhlbach-sur-Munster",
+                                    "mainAddress": {
+                                        "long": 7.081590176,
+                                        "lat": 48.02511312
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Wasserbourg",
+                                    "mainAddress": {
+                                        "long": 7.160379887,
+                                        "lat": 48.00327481
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Hohrod",
+                                    "mainAddress": {
+                                        "long": 7.125,
+                                        "lat": 48.05414321
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Eschbach-au-Val",
+                                    "mainAddress": {
+                                        "long": 7.145959854,
+                                        "lat": 48.03069906
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Labaroche",
+                                    "mainAddress": {
+                                        "long": 7.204490185,
+                                        "lat": 48.11244925
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Lapoutroie",
+                                    "mainAddress": {
+                                        "long": 7.165750027,
+                                        "lat": 48.1533405
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Frèland",
+                                    "mainAddress": {
+                                        "long": 7.193459988,
+                                        "lat": 48.17092081
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Rammersmatt",
+                                    "mainAddress": {
+                                        "long": 7.069340229,
+                                        "lat": 47.79014678
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Bitschwiller-lès-Thann",
+                                    "mainAddress": {
+                                        "long": 7.079460144,
+                                        "lat": 47.8305711
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Steinbach",
+                                    "mainAddress": {
+                                        "long": 7.152490139,
+                                        "lat": 47.82173727
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Geishouse",
+                                    "mainAddress": {
+                                        "long": 7.05821991,
+                                        "lat": 47.88276193
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Goldbach-Altenbach",
+                                    "mainAddress": {
+                                        "long": 7.104800224,
+                                        "lat": 47.87426105
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Roderen",
+                                    "mainAddress": {
+                                        "long": 7.091179848,
+                                        "lat": 47.78059147
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Bourbach-le-Bas",
+                                    "mainAddress": {
+                                        "long": 7.059030056,
+                                        "lat": 47.77549369
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Bergholtz-Zell",
+                                    "mainAddress": {
+                                        "long": 7.233860016,
+                                        "lat": 47.92918171
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Orschwihr",
+                                    "mainAddress": {
+                                        "long": 7.233240128,
+                                        "lat": 47.93615034
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Soultz-Haut-Rhin",
+                                    "mainAddress": {
+                                        "long": 7.229969978,
+                                        "lat": 47.88633397
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Eguisheim",
+                                    "mainAddress": {
+                                        "long": 7.306499958,
+                                        "lat": 48.04324759
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Gueberschwihr",
+                                    "mainAddress": {
+                                        "long": 7.275819778,
+                                        "lat": 48.00391027
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Pfaffenheim",
+                                    "mainAddress": {
+                                        "long": 7.286310196,
+                                        "lat": 47.98426553
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Mittelwihr",
+                                    "mainAddress": {
+                                        "long": 7.320429802,
+                                        "lat": 48.15056182
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Bennwihr",
+                                    "mainAddress": {
+                                        "long": 7.324679852,
+                                        "lat": 48.14500169
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Ammerschwihr",
+                                    "mainAddress": {
+                                        "long": 7.281939983,
+                                        "lat": 48.12559296
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Breitenbach-Haut-Rhin",
+                                    "mainAddress": {
+                                        "long": 7.102250099,
+                                        "lat": 48.02314374
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Hattstatt",
+                                    "mainAddress": {
+                                        "long": 7.300280094,
+                                        "lat": 48.01103804
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Rimbach-Zell",
+                                    "mainAddress": {
+                                        "long": 7.176410198,
+                                        "lat": 47.90055008
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Murbach",
+                                    "mainAddress": {
+                                        "long": 7.157310009,
+                                        "lat": 47.92363939
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Munster",
+                                    "mainAddress": {
+                                        "long": 7.137139797,
+                                        "lat": 48.04136694
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Obermorschwihr",
+                                    "mainAddress": {
+                                        "long": 7.296239853,
+                                        "lat": 48.0184989
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Wettolsheim",
+                                    "mainAddress": {
+                                        "long": 7.297999859,
+                                        "lat": 48.05733052
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Le Bonhomme",
+                                    "mainAddress": {
+                                        "long": 7.11371994,
+                                        "lat": 48.17304123
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Wintzenheim",
+                                    "mainAddress": {
+                                        "long": 7.289760113,
+                                        "lat": 48.07310435
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Sainte-Croix-aux-Mines",
+                                    "mainAddress": {
+                                        "long": 7.227210045,
+                                        "lat": 48.26268448
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Rombach-le-Franc",
+                                    "mainAddress": {
+                                        "long": 7.263140202,
+                                        "lat": 48.28400639
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Lautenbach-Zell",
+                                    "mainAddress": {
+                                        "long": 7.146170139,
+                                        "lat": 47.9419445
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Bergheim",
+                                    "mainAddress": {
+                                        "long": 7.362160206,
+                                        "lat": 48.20564443
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Westhalten",
+                                    "mainAddress": {
+                                        "long": 7.25880003,
+                                        "lat": 47.95825982
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Soultzeren",
+                                    "mainAddress": {
+                                        "long": 7.102509975,
+                                        "lat": 48.06388049
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Uffholtz",
+                                    "mainAddress": {
+                                        "long": 7.178209782,
+                                        "lat": 47.8209876
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Kaysersberg Vignoble",
+                                    "mainAddress": {
+                                        "long": 7.259459972,
+                                        "lat": 48.14168442
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Hunawihr",
+                                    "mainAddress": {
+                                        "long": 7.309470177,
+                                        "lat": 48.18004126
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Riquewihr",
+                                    "mainAddress": {
+                                        "long": 7.297190189,
+                                        "lat": 48.16672643
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Beulotte-Saint-Laurent",
+                                    "mainAddress": {
+                                        "long": 6.678629875,
+                                        "lat": 47.86020928
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Fresse",
+                                    "mainAddress": {
+                                        "long": 6.65802002,
+                                        "lat": 47.75719882
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Sainte-Marie-en-Chanois",
+                                    "mainAddress": {
+                                        "long": 6.510350227,
+                                        "lat": 47.83360357
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Saint-Bresson",
+                                    "mainAddress": {
+                                        "long": 6.507150173,
+                                        "lat": 47.87019538
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Plancher-Bas",
+                                    "mainAddress": {
+                                        "long": 6.732329845,
+                                        "lat": 47.72051271
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Ronchamp",
+                                    "mainAddress": {
+                                        "long": 6.633100033,
+                                        "lat": 47.70023194
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Frahier-et-Chatebier",
+                                    "mainAddress": {
+                                        "long": 6.746409893,
+                                        "lat": 47.65976261
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Champagney",
+                                    "mainAddress": {
+                                        "long": 6.684599876,
+                                        "lat": 47.70496592
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Plancher-les-Mines",
+                                    "mainAddress": {
+                                        "long": 6.741419792,
+                                        "lat": 47.76132571
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Faucogney-et-la-Mer",
+                                    "mainAddress": {
+                                        "long": 6.56388998,
+                                        "lat": 47.84178393
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Clairegoutte",
+                                    "mainAddress": {
+                                        "long": 6.620419979,
+                                        "lat": 47.66373302
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Saint-Germain",
+                                    "mainAddress": {
+                                        "long": 6.531919956,
+                                        "lat": 47.72276838
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Melisey",
+                                    "mainAddress": {
+                                        "long": 6.580880165,
+                                        "lat": 47.75383012
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Montessaux",
+                                    "mainAddress": {
+                                        "long": 6.565780163,
+                                        "lat": 47.74141513
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Magny-Danigon",
+                                    "mainAddress": {
+                                        "long": 6.60187006,
+                                        "lat": 47.67485384
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "La Longine",
+                                    "mainAddress": {
+                                        "long": 6.589950085,
+                                        "lat": 47.88345609
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "La Voivre",
+                                    "mainAddress": {
+                                        "long": 6.537390232,
+                                        "lat": 47.8249584
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Miellin",
+                                    "mainAddress": {
+                                        "long": 6.737030029,
+                                        "lat": 47.81134199
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "La Rosière",
+                                    "mainAddress": {
+                                        "long": 6.623889923,
+                                        "lat": 47.91119252
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "La Montagne",
+                                    "mainAddress": {
+                                        "long": 6.593289852,
+                                        "lat": 47.9212132
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Raddon-et-Chapendu",
+                                    "mainAddress": {
+                                        "long": 6.470399857,
+                                        "lat": 47.84221553
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Amage",
+                                    "mainAddress": {
+                                        "long": 6.490159988,
+                                        "lat": 47.83739116
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Corravillers",
+                                    "mainAddress": {
+                                        "long": 6.622179985,
+                                        "lat": 47.89329927
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Les Fessey",
+                                    "mainAddress": {
+                                        "long": 6.517429829,
+                                        "lat": 47.81933973
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "La Lanterne-et-les-Armonts",
+                                    "mainAddress": {
+                                        "long": 6.527919769,
+                                        "lat": 47.79418171
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Ecromagny",
+                                    "mainAddress": {
+                                        "long": 6.562829971,
+                                        "lat": 47.79270996
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "La Proiselière-et-Langle",
+                                    "mainAddress": {
+                                        "long": 6.505149841,
+                                        "lat": 47.82701317
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Belmont",
+                                    "mainAddress": {
+                                        "long": 6.504199982,
+                                        "lat": 47.78581569
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "La Bruyère",
+                                    "mainAddress": {
+                                        "long": 6.481619835,
+                                        "lat": 47.83049699
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Belfahy",
+                                    "mainAddress": {
+                                        "long": 6.731719971,
+                                        "lat": 47.78352653
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Haut-du-Them-Chèteau-Lambert",
+                                    "mainAddress": {
+                                        "long": 6.72066021,
+                                        "lat": 47.84257249
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Fougerolles-Saint-Valbert",
+                                    "mainAddress": {
+                                        "long": 6.404829979,
+                                        "lat": 47.88558487
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Esmoulières",
+                                    "mainAddress": {
+                                        "long": 6.615670204,
+                                        "lat": 47.85295532
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Amont-et-Effreney",
+                                    "mainAddress": {
+                                        "long": 6.578070164,
+                                        "lat": 47.87795566
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Saulxures-sur-Moselotte",
+                                    "mainAddress": {
+                                        "long": 6.768300056,
+                                        "lat": 47.94869086
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Corcieux",
+                                    "mainAddress": {
+                                        "long": 6.882090092,
+                                        "lat": 48.17182125
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Gemaingoutte",
+                                    "mainAddress": {
+                                        "long": 7.086299896,
+                                        "lat": 48.25367492
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Bertrimoutier",
+                                    "mainAddress": {
+                                        "long": 7.052320004,
+                                        "lat": 48.27068853
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Combrimont",
+                                    "mainAddress": {
+                                        "long": 7.064149857,
+                                        "lat": 48.27639354
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Wisembach",
+                                    "mainAddress": {
+                                        "long": 7.104939938,
+                                        "lat": 48.25817153
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Lesseux",
+                                    "mainAddress": {
+                                        "long": 7.08314991,
+                                        "lat": 48.28504984
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Coinches",
+                                    "mainAddress": {
+                                        "long": 7.021729946,
+                                        "lat": 48.25290908
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Ban-de-Laveline",
+                                    "mainAddress": {
+                                        "long": 7.066110134,
+                                        "lat": 48.24523814
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Plainfaing",
+                                    "mainAddress": {
+                                        "long": 7.014800072,
+                                        "lat": 48.17265475
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "La Croix-aux-Mines",
+                                    "mainAddress": {
+                                        "long": 7.047440052,
+                                        "lat": 48.21933783
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "La Bresse",
+                                    "mainAddress": {
+                                        "long": 6.873660088,
+                                        "lat": 48.00393468
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Vagney",
+                                    "mainAddress": {
+                                        "long": 6.716060162,
+                                        "lat": 48.00872367
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Lièzey",
+                                    "mainAddress": {
+                                        "long": 6.804689884,
+                                        "lat": 48.09462123
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Granges-Aumontzey",
+                                    "mainAddress": {
+                                        "long": 6.789589882,
+                                        "lat": 48.14479417
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Rupt-sur-Moselle",
+                                    "mainAddress": {
+                                        "long": 6.660429955,
+                                        "lat": 47.92554733
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Ban-sur-Meurthe-Clefcy",
+                                    "mainAddress": {
+                                        "long": 6.980639935,
+                                        "lat": 48.17112877
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Le Mènil",
+                                    "mainAddress": {
+                                        "long": 6.779620171,
+                                        "lat": 47.90342017
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Bussang",
+                                    "mainAddress": {
+                                        "long": 6.853499889,
+                                        "lat": 47.88533721
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Le Thillot",
+                                    "mainAddress": {
+                                        "long": 6.763460159,
+                                        "lat": 47.88058864
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Ramonchamp",
+                                    "mainAddress": {
+                                        "long": 6.739029884,
+                                        "lat": 47.89367547
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Mandray",
+                                    "mainAddress": {
+                                        "long": 6.995950222,
+                                        "lat": 48.21721112
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "La Petite-Fosse",
+                                    "mainAddress": {
+                                        "long": 7.053870201,
+                                        "lat": 48.32130968
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Lusse",
+                                    "mainAddress": {
+                                        "long": 7.10394001,
+                                        "lat": 48.29257711
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Barbey-Seroux",
+                                    "mainAddress": {
+                                        "long": 6.839019775,
+                                        "lat": 48.1426477
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Ferdrupt",
+                                    "mainAddress": {
+                                        "long": 6.709859848,
+                                        "lat": 47.90728964
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Le Valtin",
+                                    "mainAddress": {
+                                        "long": 7.020569801,
+                                        "lat": 48.0965783
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Xonrupt-Longemer",
+                                    "mainAddress": {
+                                        "long": 6.925489902,
+                                        "lat": 48.0815589
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Sapois",
+                                    "mainAddress": {
+                                        "long": 6.746469975,
+                                        "lat": 48.01716433
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Gerbamont",
+                                    "mainAddress": {
+                                        "long": 6.752170086,
+                                        "lat": 48.00375506
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Basse-sur-le-Rupt",
+                                    "mainAddress": {
+                                        "long": 6.766980171,
+                                        "lat": 47.9893697
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Rochesson",
+                                    "mainAddress": {
+                                        "long": 6.785349846,
+                                        "lat": 48.02226771
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Gèrardmer",
+                                    "mainAddress": {
+                                        "long": 6.874720097,
+                                        "lat": 48.07337759
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Arrentès-de-Corcieux",
+                                    "mainAddress": {
+                                        "long": 6.864160061,
+                                        "lat": 48.14228247
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Gerbèpal",
+                                    "mainAddress": {
+                                        "long": 6.921299934,
+                                        "lat": 48.15093735
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Le Val-d'Ajol",
+                                    "mainAddress": {
+                                        "long": 6.484059811,
+                                        "lat": 47.92617732
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Girmont-Val-d'Ajol",
+                                    "mainAddress": {
+                                        "long": 6.55987978,
+                                        "lat": 47.95461367
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Cornimont",
+                                    "mainAddress": {
+                                        "long": 6.838029861,
+                                        "lat": 47.96329182
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Saint-Maurice-sur-Moselle",
+                                    "mainAddress": {
+                                        "long": 6.825600147,
+                                        "lat": 47.85933136
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Fresse-sur-Moselle",
+                                    "mainAddress": {
+                                        "long": 6.787529945,
+                                        "lat": 47.87567396
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Thièfosse",
+                                    "mainAddress": {
+                                        "long": 6.730820179,
+                                        "lat": 47.97112684
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Plombières-les-Bains",
+                                    "mainAddress": {
+                                        "long": 6.459050179,
+                                        "lat": 47.9654172
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Ventron",
+                                    "mainAddress": {
+                                        "long": 6.870940208,
+                                        "lat": 47.9406263
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Saint-Lèonard",
+                                    "mainAddress": {
+                                        "long": 6.945549965,
+                                        "lat": 48.21552949
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Fraize",
+                                    "mainAddress": {
+                                        "long": 7.002120018,
+                                        "lat": 48.18496001
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "La Grande-Fosse",
+                                    "mainAddress": {
+                                        "long": 7.068659782,
+                                        "lat": 48.33963225
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Lubine",
+                                    "mainAddress": {
+                                        "long": 7.150990009,
+                                        "lat": 48.31704641
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Provenchères-et-Colroy",
+                                    "mainAddress": {
+                                        "long": 7.079979897,
+                                        "lat": 48.30876817
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Rougegoutte",
+                                    "mainAddress": {
+                                        "long": 6.846829891,
+                                        "lat": 47.72967975
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Auxelles-Bas",
+                                    "mainAddress": {
+                                        "long": 6.780970097,
+                                        "lat": 47.73442919
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Evette-Salbert",
+                                    "mainAddress": {
+                                        "long": 6.80012989,
+                                        "lat": 47.6768666
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Lepuix",
+                                    "mainAddress": {
+                                        "long": 6.81814003,
+                                        "lat": 47.75931764
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Lachapelle-sous-Chaux",
+                                    "mainAddress": {
+                                        "long": 6.820980072,
+                                        "lat": 47.70519448
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Bourg-sous-Chètelet",
+                                    "mainAddress": {
+                                        "long": 6.948060036,
+                                        "lat": 47.7029464
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Grosmagny",
+                                    "mainAddress": {
+                                        "long": 6.884689808,
+                                        "lat": 47.72217139
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Giromagny",
+                                    "mainAddress": {
+                                        "long": 6.825319767,
+                                        "lat": 47.74177213
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Chaux",
+                                    "mainAddress": {
+                                        "long": 6.834559917,
+                                        "lat": 47.71155452
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Auxelles-Haut",
+                                    "mainAddress": {
+                                        "long": 6.770530224,
+                                        "lat": 47.74279096
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Petitmagny",
+                                    "mainAddress": {
+                                        "long": 6.898089886,
+                                        "lat": 47.72107224
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Rougemont-le-Chèteau",
+                                    "mainAddress": {
+                                        "long": 6.96833992,
+                                        "lat": 47.73596222
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Etueffont",
+                                    "mainAddress": {
+                                        "long": 6.920569897,
+                                        "lat": 47.72285525
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Anjoutey",
+                                    "mainAddress": {
+                                        "long": 6.932879925,
+                                        "lat": 47.70158522
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Riervescemont",
+                                    "mainAddress": {
+                                        "long": 6.885690212,
+                                        "lat": 47.76519875
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Vescemont",
+                                    "mainAddress": {
+                                        "long": 6.845580101,
+                                        "lat": 47.74347579
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Lamadeleine-Val-des-Anges",
+                                    "mainAddress": {
+                                        "long": 6.913889885,
+                                        "lat": 47.76070838
+                                    },
+                                    "communes": true
                                 }
                             ]
                         },
@@ -1042,20 +2612,13 @@
                                 {
                                     "id": 0,
                                     "titre": "agriculture",
-                                    "type": "carte",
                                     "lien": "agriculture",
                                     "sousmenu": [
                                         {
                                             "id": 0,
-                                            "titre": "Jus de fruits",
-                                            "lien": "jus de fruits",
-                                            "type": "poi"
-                                        },
-                                        {
-                                            "id": 1,
-                                            "titre": "Miel",
-                                            "lien": "miel",
-                                            "type": "poi"
+                                            "titre": "Jus de fruits et miel",
+                                            "lien": "jus de fruits et miel",
+                                            "type": "perenne"
                                         }
                                     ]
                                 },
@@ -1063,31 +2626,30 @@
                                     "id": 1,
                                     "titre": "artisanat et industrie",
                                     "lien": "artisanat",
-                                    "type": "carte",
                                     "sousmenu": [
                                         {
                                             "id": 0,
                                             "titre": "bardage bois",
                                             "lien": "bardage",
-                                            "type": "poi"
+                                            "type": "perenne"
                                         },
                                         {
                                             "id": 1,
                                             "titre": "jouets et mobilier en bois",
                                             "lien": "jouets",
-                                            "type": "poi"
+                                            "type": "perenne"
                                         },
                                         {
                                             "id": 2,
                                             "titre": "eaux de sources et minérales",
                                             "lien": "eaux",
-                                            "type": "poi"
+                                            "type": "perenne"
                                         },
                                         {
                                             "id": 3,
                                             "titre": "granit",
                                             "lien": "granit",
-                                            "type": "poi"
+                                            "type": "perenne"
                                         }
                                     ]
                                 },

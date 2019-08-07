@@ -108,6 +108,86 @@
             "blocDroit1": "",
             "imgSlider2": [],
             "blocDroit2": "<h2>Qu’apporte la marque aux entreprises et aux consommateurs ?</h2>La marque valorise les activités et les produits des Parcs naturels régionaux et encourage un développement économique durable dans leurs territoires. Elle est attribuée à des entreprises qui partagent avec le Parc les 3 valeurs suivantes :<br>L’attachement au territoire : les entreprises bénéficiaires sont localisées sur le territoire ou les prestations marquées se déroulent dans le Parc. Elles contribuent au développement local du territoire grâce aux retombées économiques générées. Ces bénéficiaires proposent des produits et/ou des services qui valorisent des éléments emblématiques du territoire et s’attachent à le faire découvrir.<br>La préservation de l’environnement : la marque met en valeur des activités respectueuses des milieux naturels et des professionnels actifs, à leur niveau, dans la préservation de leur environnement.<br>L’humain : la marque promeut des bénéficiaires qui favorisent l’écoute et se préoccupent du bien-être de leurs salariés, des habitants et des touristes. Ils partagent leur passion et jouent la carte du collectif et de la solidarité au sein du territoire."
+        },
+        "Par secteur d'activités": {
+            "agriculture": {
+                "jus de fruits et miel": {
+                    "titre": "Miel et jus de fruits",
+                    "imgTop": "datas/imgs/perenne/marqueParc/miel.jpg",
+                    "soustitre": "Encourager les circuits courts et faire connaître les produits et les savoir faire de son territoire sont deux actions essentielles pour le Parc des Ballons des Vosges.",
+                    "blocGauche1": "",
+                    "imgGauche": "datas/imgs/perenne/marqueParc/miel.jpg",
+                    "desImgGauche": "",
+                    "blocGauche2": "Le miel et les jus de fruit sont deux productions qui contribuent pleinement à la biodiversité de nos vallées, à la couleur et au goût de nos paysages. Abeilles et fleurs sont indissociables. Les abeilles contribuent à la reproduction de plus de 80 % des espèces de plantes à fleurs. Les apiculteurs sont donc des acteurs essentiels pour la biodiversité. Ceux qui s’engagent avec le Parc sont attentifs à utiliser des produits respectueux de l’environnement et de la santé des abeilles et ils privilégient l’accueil du public dans leur atelier. Les miels sont issus de la flore diversifiée du territoire : fleurs des prairies et des forêts de montagne. Les jus de fruit marqués par le Parc sont uniquement issus de vergers haute tige, une composante traditionnelle des paysages de nos vallées ou du vignoble. Ce sont des jus naturels, aux goûts subtils, reflets des nombreuses variétés locales. En valorisant les fruits de leurs pommiers, poiriers et autres fruitiers, les producteurs contribuent à maintenir un éco système riche en insectes, oiseaux et autres petits mammifères.",
+                    "imgSlider1": [],
+                    "blocSlider1": "",
+                    "blocDroit1": "",
+                    "imgSlider2": [],
+                    "blocDroit2": "<h2>Adresses</h2><b>Bernard Streicher</b><br><i>Miel</i><br>1 Grand Rue – 68380 Breitenbach-Haut-Rhin<br>03 89 77 26 91<br><br>Marie et Dominique Ganter<br>Miel, jus de pomme et autres fruits locaux issus des vergers traditionnels hautes tiges<br><b>La Taupré – 68240 Fréland</b><br><i>03 89 47 20 28</i><br>domganter@gmail.com<br>gitedelabeillebleue.fr<br><br>Érik Delfortrie<br><b>Miel</b><br><i>La Quioseri</i>e – 68650 Le Bonhomme<br>03 89 47 56 83<br>edelfortrie@free.fr<br><br><b>Patrick Georges</b><br><i>Miel</i><br>229a, Le Léman – 68910 Labaroche<br>fp.georges@wanadoo.fr<br><br>Olivier Gotorbe<br><b>Miel</b><br><i>8 zone arti</i>sanale – 68240 Fréland<br>03 89 71 93 37 – 03 89 71 80 56<br>olivier.gotorbe@hotmail.com<br><br><b>Jean Baltenweck et Yannick Mignot</b><br><i>Jus de pomme et autres fruits locaux issus des vergers traditionnels hautes tiges</i><br>6A rue du cimetière 68150 Ribeauvillé<br>03 89 73 34 45<br>yannick.mignot@wanadoo.fr"
+                }
+            },
+            "artisanat": {
+                "bardage": {
+                    "titre": "Bardage bois",
+                    "imgTop": "datas/imgs/perenne/marqueParc/bardage.jpg",
+                    "soustitre": "Encourager les circuits courts et faire connaître les produits et les savoir faire de son territoire sont deux actions essentielles pour le Parc des Ballons des Vosges.",
+                    "blocGauche1": "",
+                    "imgGauche": "datas/imgs/perenne/marqueParc/bardage.jpg",
+                    "desImgGauche": "",
+                    "blocGauche2": "Le bardage bois permet de revêtir l’ossature d’un bâtiment. Il était utilisé traditionnellement pour revêtir les fermes des vallées, les petites granges de montagne, ou certains bâtiments industriels car la ressource forestière est abondante sur le territoire du Parc dont les deux tiers sont couverts de forêts. Aujourd’hui, ces planches en bois peuvent être fixées sur des constructions neuves mais aussi redonner un coup de jeune à des bâtiments défraîchis. Elles peuvent être apposées sur tous types de supports comme le béton, le bois ou les parois maçonnées et prendre, selon les goûts de chacun et selon les lieux, une forme plus contemporaine.<br><br>Les planches sont issues de bois récoltés dans les forêts du massif vosgien. Les essences présentant une bonne durabilité naturelle comme le mélèze, le douglas, le pin et le châtaigner sont privilégiées. Pour les autres, comme le sapin et l’épicéa, le traitement, quand il est réalisé, doit être conforme aux exigences de santé et d’environnement suivant les normes du Centre Technique du Bois. Lorsque la coupe de l’arbre est faite pendant la période hors sève, elle favorise la préservation naturelle du bois.<br><br>De la sélection du bois en forêt à la pose du bardage, la fabrication du produit qui a lieu sur le territoire du Parc fait l’objet de l’intervention attentive et experte de nombreux corps de métiers : forestier, scieur, charpentier et menuisier. Certains artisans sont engagés dans une démarche haute qualité environnementale (HQE®).",
+                    "imgSlider1": [],
+                    "blocSlider1": "",
+                    "blocDroit1": "",
+                    "imgSlider2": [],
+                    "blocDroit2": "<h2>Adresses</h2><b>Naviliat Sarl – scierie, charpente, couverture, zinguerie</b><br><i>scierie, charpente, couverture, zinguerie</i><br>28 rue Joffre – 68550 Saint-Amarin<br><b>03 89 82 11 34</b><br><br><b>Entreprise Fuchs – charpente, ossature bois, toitures, escaliers</b><br><i>charpente, ossature bois, toitures, escaliers</i><br>9 rue Gassel – 68121 Urbès<br><b>03 89 39 19 95</b><br><br><b>Arnold Fils Sarl – scierie, charpente, couverture, menuiserie</b><br><i>scierie, charpente, ossature bois, couverture, menuiserie</i><br>22, rue des Croix – 68820 Kruth<<br>03 89 82 24 71<br>secretariat@arnoldfils.fr<br><b>arnoldfils.fr</b><br><br><b>Écobois, Christian Zerr</b><br><i>charpente, ossature bois</i><br>3 Kalbach – 68140 Munster<br><b>09 71 26 31 76</b><br><br><b>Schreck Frères</b><br><i>Charpente Menuiserie</i><br>322A Chèvremont – 68370 Orb<ey<br>03 89 72 93 80<br>schreckfreres.com"
+                },
+                "jouets": {
+                    "titre": "Jouets en bois",
+                    "imgTop": "datas/imgs/perenne/marqueParc/jouets.jpg",
+                    "soustitre": "Encourager les circuits courts et faire connaître les produits et les savoir faire de son territoire sont deux actions essentielles pour le Parc des Ballons des Vosges.",
+                    "blocGauche1": "",
+                    "imgGauche": "datas/imgs/perenne/marqueParc/jouets.jpg",
+                    "desImgGauche": "",
+                    "blocGauche2": "Le territoire du Parc est largement couvert de forêts et la fabrication d’objets en bois était une activité traditionnelle pour les agriculteurs. <br>Ceux-ci fabriquaient surtout des objets utilitaires pour l’élevage et la transformation du fromage. Aujourd’hui, quelques artisans conçoivent et réalisent des objets de décoration et des jouets pour les enfants comme des animaux en forme de puzzles, des portes manteaux, des lampes. Le bois d’érable, un bois local de bel aspect, tient une place privilégiée. D’autres essences comme l’acacia, le noyer, le merisier, le pommier, sont  également utilisées dans la mesure où leur origine est locale. Ces objets, de création originale, sont décorés avec grand soin ou personnalisés à la demande. Avec le Parc, l’artisan s’engage à préserver l’environnement lors, par exemple, de l’élimination des déchets.",
+                    "imgSlider1": [],
+                    "blocSlider1": "",
+                    "blocDroit1": "",
+                    "imgSlider2": [],
+                    "blocDroit2": "<h2>Adresse</h2><b>Bernard Aubry</b><br><i>Jouets en bois</i><br>82 bis Grande Rue 88160 Le Ménil<br>03 29 28 17 56<br>bernard.aubry084@orange.fr<br>atelier-vosges.wix.com/jouets-bois<br><br><b>Christine et Philippe Quintard – L’Atelier de Planois</b><br><i>Jouets en bois</i><br>24 CD 34 de Planois 88120 Basse sur-le-Rupt<br>03 29 24 82 60<br>atelierdeplanois@orange.fr<br>atelierdeplanois.fr"
+                },
+                "eaux": {
+                    "titre": "Eaux de sources naturelles",
+                    "imgTop": "datas/imgs/perenne/marqueParc/eaux.jpg",
+                    "soustitre": "Encourager les circuits courts et faire connaître les produits et les savoir faire de son territoire sont deux actions essentielles pour le Parc des Ballons des Vosges.",
+                    "blocGauche1": "",
+                    "imgGauche": "datas/imgs/perenne/marqueParc/eaux.jpg",
+                    "desImgGauche": "",
+                    "blocGauche2": "L’embouteillage d’eaux de sources et d’eaux minérales est une activité qui s’est développée depuis la fin du XVIIIème siècle, sur le territoire du Parc. Le massif des Vosges est réputé comme le château d’eau des prairies environnantes. Plusieurs entreprises continuent d’exploiter cette ressource en mettant en valeur leur engagement pour le territoire. Les critères d’attribution de la marque Parc portant sur :<br><br> -  la ressource en eau qui doit provenir du territoire<br> -  le processus d’exploitation conduit dans une démarche de réduction constante de son impact écologique<br> -  la relation entre l’activité et le territoire qui concerne notamment l’emploi local, la communication de l’entreprise et son implication dans la vie locale.",
+                    "imgSlider1": [],
+                    "blocSlider1": "",
+                    "blocDroit1": "",
+                    "imgSlider2": [],
+                    "blocDroit2": "<h2>Adresse</h2><b>Sources de Soultzmatt </b><br>5 rue Nessel – 68570 Soultzmatt<br>03 89 47 00 06<br>sourcesdesoultzmatt.fr<br><br><b>Carola </b><br>48 Route de Bergheim, 68150 Ribeauvillé <br>03 89 73 24 24 <br>www.carola.fr<br>contact@carola.fr <br><br><b>Wattwiller</b><br>2 Rue de Guebwiller, 68700 Wattwiller <br>03 89 75 76 77<br>www.wattwiller.com <br>contact@wattwiller.com"
+                },
+                "granit": {
+                    "titre": "Granit gris-bleu des Vosges",
+                    "imgTop": "datas/imgs/perenne/marqueParc/granit.jpg",
+                    "soustitre": "Encourager les circuits courts et faire connaître les produits et les savoir faire de son territoire sont deux actions essentielles pour le Parc des Ballons des Vosges.",
+                    "blocGauche1": "",
+                    "imgGauche": "datas/imgs/perenne/marqueParc/granit.jpg",
+                    "desImgGauche": "",
+                    "blocGauche2": "L’extraction et le travail du granit sont des activités historiquement présentes sur le massif vosgien depuis des siècles et emblématiques du secteur vosgien du Parc naturel régional des Ballons des Vosges.<br><br>Les qualités intrinsèques de ce matériau ainsi que les savoir-faire nécessaires pour le façonner sont largement reconnus, souvent bien au-delà de la montagne vosgienne. Le « gris-bleu » est un type de granit réputé et présent uniquement sur les Hautes-Vosges. Essentiellement extrait à La Bresse, on retrouve ce granit sur bon nombre de places publiques, constructions ou monuments du territoire ou des villes du Grand est.<br><br>L’entreprise Petitjean, implantée à La Bresse, transforme le gris-bleu extrait à quelques kilomètres au Col de Grosse-Pierre grâce au savoir-faire de ses 80 salariés acquis grâce à des générations de professionnels mais également d’autres acteurs du territoire comme le centre de formation des métiers de la pierre de Remiremont. La stratégie de développement de l’entreprise Petitjean a été récompensée par l’attribution de la marque Valeurs Parc en avril 2018, en effet consciente de la vulnérabilité de cette ressource elle s’emploie à valoriser au maximum chaque partie du gisement exploité. Cette valorisation est ainsi rendue possible grâce à un savoir-faire de précision ainsi qu’à une commercialisation sur des marchés à haute valeur ajoutée. Au-delà de sa forte implication pour le territoire, l’entreprise bénéficie de la marque en raison d’une gestion écologique de la carrière exemplaire mais également grâce à une gestion sociale exemplaire, intégrant notamment la formation et la proximité. Partenaire historique d’actions locales, elle est un ambassadeur de choix pour les entreprises du réseau marque Valeurs ainsi que pour le Parc naturel régional des ballons des Vosges.",
+                    "imgSlider1": [],
+                    "blocSlider1": "",
+                    "blocDroit1": "",
+                    "imgSlider2": [
+                        "datas/imgs/perenne/marqueParc/granit1.jpg",
+                        "datas/imgs/perenne/marqueParc/granit2.jpg",
+                        "datas/imgs/perenne/marqueParc/granit3.jpg"
+                    ],
+                    "blocDroit2": "<h2>Adresse</h2><b>Graniterie Petitjean</b><br>14 chemin des Ecorces<br>88250 La Bresse<br>Tél: 03 29 25 55 55<br>Fax. 03 29 25 48 47<br>http://www.granitpetitjean.fr/"
+                }
+            }
         }
     },
     "paysage": {

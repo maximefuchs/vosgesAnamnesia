@@ -1,20 +1,5 @@
 class Global {
 
-    // Fonction qui récupére la texte de la langue
-    static getTexteLangue(json, l) {
-        var s;
-        if (l === undefined) {
-            l = langue;
-        }
-        if (json[l]) {
-            this.s = json[l];
-        } else {
-            this.s = "inexistant " + l;
-        }
-        console.log(this.s);
-        return this.s;
-    }
-
     static getLangue(){
         return langue;
     }
@@ -42,15 +27,4 @@ class Global {
         oScript.rel = "stylesheet";
         document.head.appendChild(oScript);
     }
-
-    static array_move(arr, old_index, new_index) {
-        if (new_index >= arr.length) {
-            var k = new_index - arr.length + 1;
-            while (k--) {
-                arr.push(undefined);
-            }
-        }
-        arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
-        return arr; // for testing
-    };
 }

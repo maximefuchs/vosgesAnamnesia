@@ -9,7 +9,7 @@ class ElementListePoi extends DivObject {
         txt.addClass('poiLiEltTexte');
         var ad = json.mainAddress;
 
-        if (ad !== undefined) {
+        if (ad !== undefined) { // si vrai = commune
             if (ad.name !== undefined) {
                 var contact = ad.address;
                 txt.html('<b>' + ad.name.toUpperCase() + '</b><br><p style="font-size:16px">' + contact + '</p>');

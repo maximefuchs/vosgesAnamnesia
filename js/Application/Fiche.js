@@ -17,6 +17,9 @@ class Fiche extends DivObject {
         this._couleur = couleur;
         // this._langue = paramsJSON.langueParDefault;
 
+        // mise en place de cette variable car les pois pour les communes seront différents
+        // = pas de contenu dans la fiche
+        // on ne l'affiche pas, mais on a besoin d'une fiche associée afin de récupérer le poi et du coup les coordonnées
         var isCommune = poi._subtitle === undefined;
         if (!isCommune) {
 
@@ -37,6 +40,7 @@ class Fiche extends DivObject {
             this._texte.addClass('paraScroll');
 
 
+            // div pour l'adresse et le bouton de partage de la fiche
             var bottom = new DivObject(this._divTexte._balise, "divBottom_" + id);
             bottom.addClass('divBottom');
             bottom.css('background', couleur.split(')')[0] + ', 0.85)');
@@ -59,7 +63,6 @@ class Fiche extends DivObject {
             divPartage.addClass('divPartage');
             divPartage.css('background', couleur);
 
-            // var tel = '<svg id="CalqueTEL_' + this._id + '" data-name="Calque tel ' + this._id + '" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.97 48.57"><defs><style>.ccls-1{fill:' + couleur + ';}.ccls-2,.ccls-3{fill:#fff;}.ccls-3{stroke:' + couleur + ';stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title>sms</title><rect class="ccls-1" width="26" height="48.57" rx="2.86" ry="2.86"/><rect class="ccls-2" x="2.02" y="5.02" width="21.95" height="37.69" rx="1.69" ry="1.69"/><circle class="ccls-2" cx="13" cy="45.93" r="1.4"/><rect class="ccls-2" x="10.62" y="1.67" width="4.76" height="0.97" rx="0.49" ry="0.49"/><path class="ccls-3" d="M234.52,339.74a10.45,10.45,0,0,0-9.91,13.85l-4.16,4.09h6.72a10.47,10.47,0,1,0,7.35-17.94Z" transform="translate(-209.02 -327.79)"/><path class="ccls-1" d="M230.17,350.21a1,1,0,0,1,.26-.72,1,1,0,0,1,.75-.25,1,1,0,0,1,.73.25.94.94,0,0,1,.27.72,1,1,0,0,1-.27.72,1.17,1.17,0,0,1-1.47,0A.94.94,0,0,1,230.17,350.21Z" transform="translate(209.02 -327.79)"/><path class="ccls-1" d="M233.51,350.21a1,1,0,0,1,.26-.72,1.24,1.24,0,0,1,1.49,0,1,1,0,0,1,.26.72,1,1,0,0,1-.27.72,1.17,1.17,0,0,1-1.47,0A.94.94,0,0,1,233.51,350.21Z" transform="translate(-209.02 -327.79)"/><path class="ccls-1" d="M236.86,350.21a.94.94,0,0,1,.25-.72,1,1,0,0,1,.75-.25,1,1,0,0,1,.74.25,1,1,0,0,1,.26.72,1,1,0,0,1-.26.72,1.18,1.18,0,0,1-1.48,0A.94.94,0,0,1,236.86,350.21Z" transform="translate(209.02 -327.79)"/></svg>';
             var partage = '<img src="datas/imgs/carte/partage.svg">';
             divPartage.html(partage + '<div>PARTAGER LA FICHE</div>');
             divPartage._balise.click({ fiche: this }, this.clickPartage);
@@ -72,13 +75,14 @@ class Fiche extends DivObject {
                 galerie.push(t);
             });
 
-            var subContent = poi._subcontent;
+            var subContent = poi._subcontent; // voir la structure de l'export pour comprendre
+            // un poi a un attribut galerie mais a aussi un attribut subcontent qui lui peut aussi avoir un attribut galerie
             var txtContent = "";
             subContent.forEach(element => {
                 txtContent += "<h3>" + element.title + "</h3>";
                 txtContent += element.text;
                 element.galerie.forEach(pic => {
-                    var t = folderImgs;;
+                    var t = folderImgs;
                     var split = pic.src.split('/');
                     t += split[split.length - 1];
                     galerie.push(t);
@@ -87,9 +91,7 @@ class Fiche extends DivObject {
 
             this._texte.html(poi._text + txtContent);
             var s = $('<style></style>')
-                .html(".fiche .paraScroll::-webkit-scrollbar-thumb {\
-        background: "+ couleur + "; \
-      }");
+                .html(".fiche .paraScroll::-webkit-scrollbar-thumb {background: "+ couleur + "; }");
             this._texte._balise.after(s);
 
             if (poi._thumbnail != false) {
@@ -119,7 +121,7 @@ class Fiche extends DivObject {
             this._balise.toggle();
 
             this._divSlider = divSlider;
-        
+
         } // if(commune)
 
     }

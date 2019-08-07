@@ -36,6 +36,7 @@ var body;
 var StageWidth;
 var StageHeight;
 
+// lieu de téléchargement des photos pour les POIs
 var loc = window.location.pathname;
 var mainFolder = loc.substring(1, loc.lastIndexOf('/')) + '/';
 var s = loc.split('/');
@@ -47,11 +48,11 @@ var application;
 
 
 function initApplication() {
+    // mise en place d'un buffer
     var img = document.createElement('IMG');
     img.setAttribute("src", "datas/buffer.gif");
     img.setAttribute("id", "bufferContent");
     document.body.appendChild(img);
-    $('<img src="datas/buffer.gif">');
     //Chargement du fichier de params
     $.when($.getJSON("datas/params.json", finChargementParams),
         $.getJSON("datas/texteFR.json", finChargementTexteFR),
@@ -69,22 +70,17 @@ function initApplication() {
 function createApplication() {
     console.log("createApplication");
     $('#bufferContent').remove();
-
     body = $("body");
 
     StageWidth = body.width();
     StageHeight = body.height();
-
     console.log(StageWidth + " - " + StageHeight);
-
-    textesJSON = textesJsonFR;
-    jeuxJSON = jeuxJsonFR;
-    poisJSON = poisJsonFR;
 
     newApplication();
 };
 
 function newApplication(lg) {
+    // fr au démarrage
     if (lg === undefined)
         lg = 'fr';
     $('#Application').remove();
@@ -128,10 +124,6 @@ function finChargementParams(data) {
     paramsJSON = data;
     langue = paramsJSON.langueParDefault;
     console.log("langue : " + langue);
-    if (paramsJSON.hideCursor) {
-        $("html").css("cursor", "none");
-        $("body").css("cursor", "none");
-    }
 }
 
 
@@ -147,6 +139,8 @@ function finChargementPerenneFR(data) { perennesJsonFR = data; }
 function finChargementPerenneDE(data) { perennesJsonDE = data; }
 function finChargementPerenneEN(data) { perennesJsonEN = data; }
 
+// récupération des json des POIs sur l'export du parc
+// dans le cas d'un échec, on reprend l'ancien fichier qui est sauvegardé
 function chargementJsonPoiFR() {
     var token = 'ev79X7MuE';
     var url = 'https://parc-ballons-vosges.fr/wp-json/wp/v2/exportjson/fr';
@@ -213,13 +207,13 @@ function chargementJsonPoiDE() {
         });
 }
 
+// téléchargement des images pour les POIs
 function downloadImages() {
 
-    // require("electron").remote.require("electron-download-manager").register({
-    //     downloadFolder: mainFolder + "datas/imgs/carte/poi/download"
-    // });
-
+    // récupération de tous les liens amenant vers une image
     var imgs = extractPicFileLinks(poisJsonFR);
+
+    // une photo ayant le même nom qu'un élément déjà dans le dossier ne sera pas à nouveau téléchargé
     require("electron").remote.require("electron-download-manager").bulkDownload({
         urls: imgs
     }, function (error, finished, errors) {
@@ -235,6 +229,7 @@ function downloadImages() {
     });
 }
 
+// extraction des POIs "coup de coeur"
 function getFavouritePOIs() {
 
     favPoisFR = extractCoeurPois(poisJsonFR);
@@ -249,10 +244,6 @@ function getFavouritePOIs() {
 /****************  UTILS   ***********************/
 /*************************************************/
 
-/**
- * Shuffles array in place.
- * @param {Array} a items An array containing the items.
- */
 function shuffle(a) {
     var j, x, i;
     for (i = a.length - 1; i > 0; i--) {

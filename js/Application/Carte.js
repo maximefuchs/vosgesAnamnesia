@@ -106,7 +106,7 @@ class Carte extends DivObject {
             tileSources: {
                 Image: {
                     xmlns: "http://schemas.microsoft.com/deepzoom/2009",
-                    Url: Global.getTexteLangue(this._jsonCarte.img, "fr"),
+                    Url: this._jsonCarte.img,
                     Format: "jpg",
                     Overlap: "1",
                     TileSize: "256",

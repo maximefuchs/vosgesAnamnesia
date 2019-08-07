@@ -19,30 +19,15 @@ class ElementSousMenu extends BlocMenu {
         titre.html(this._json.titre.toUpperCase());
     }
 
-    init(decalage) {
-        if (decalage === undefined)
-            decalage = 0;
+    init() {
         this._balise.css({
             "width": this._taille,
             "height": this._taille,
-            "left": this._x + decalage,
+            "left": this._x,
             "bottom": this._y,
             "background": this._couleur,
             "opacity": 0
         });
         this.tweenAnimate({ opacity: this._params.opacity }, 0.6 + this._params.num * 0.1, 0.5);
-    }
-
-    close() {
-        this.tweenAnimate({
-            bottom: this._y + this._taille,
-            opacity: 0,
-            onComplete: this.delete,
-            onCompleteParams: [this]
-        }
-            , 0, 0.3);
-    }
-    delete(elt) {
-        elt._balise.remove();
     }
 }

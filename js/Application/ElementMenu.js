@@ -20,11 +20,13 @@ class ElementMenu extends BlocMenu {
         var titre = new BaliseObject(this._front._balise, 'h1');
         titre.addClass('elementMenu_titre'); titre.html(this._titre);
 
-        if (this._picto != "#") {
+        // posibilité qu'il n'y ait pas de picto
+        if (this._picto != "") {
             var pictogramme = new Img(this._front._balise, this._id + "_picto", this._picto);
             pictogramme.addClass('elementMenu_picto');
         }
 
+        // si image de fond d'écran, la couleur doit être transparente
         var frontBackColor = this._src_fond != '#' ? this._couleur + 'A5' : this._couleur;
         this._front.css('background', frontBackColor);
 

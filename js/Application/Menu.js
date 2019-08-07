@@ -28,10 +28,14 @@ class Menu extends DivObject {
         this.backPause = false;
         this._setIntervalFonction = 0; // id of the setInterval founction used to switch between background images
 
-        var scale = 140;
+        var scale = 140; // unité en pixels pour la taille d'un élément. Beaucoup d'éléments repose sur ce chiffre
+        // le changer modifiera donc tous ces éléments de la bonne manière
+        // cependant, comme ce n'est pas accessible dans le css, tout n'est pas lié à ce chiffre
         this._scale = scale;
 
         this._sousMenu = null;
+
+        // VEILLE
         this._tempsInactivite = 0;
         var tempsInactifMax = paramsJSON.tempsInactivity;
         var menu = this;
@@ -50,8 +54,7 @@ class Menu extends DivObject {
         });
 
 
-        var maxHeight = 0;
-
+        
         this._divEltsMenu = new DivObject(this._parent, "elementsMenu");
 
         var bandeauLangues = new DivObject(this._divEltsMenu._balise, "bandeauLangues");
@@ -59,34 +62,30 @@ class Menu extends DivObject {
         this._btnLangues = [];
         for (var i = 0; i < paramsJSON.langues.length; i++) {
             var langue = paramsJSON.langues[i].langue;
-            var bt = new DivObject(bandeauLangues._balise,
-                this._id + "_BtLang_" + langue);
+            var bt = new DivObject(bandeauLangues._balise, this._id + "_BtLang_" + langue);
             bt.addClass("menuBtn");
             bt.addClass("menuBtnLangue");
             if (langue == Global.getLangue())
-                bt.addClass('menuBtnLangueSelect')
+            bt.addClass('menuBtnLangueSelect')
             var right = 40 + 120 * i;
             bt.css('right', right + 'px');
             bt.append('<div class="menuBtnLangueTexte">'
-                + String(langue).toUpperCase()
-                + '</div>');
+            + String(langue).toUpperCase()
+            + '</div>');
             this._btnLangues.push(bt);
-
+            
             bt._balise.on("click touchstart", null, { instance: this }, this.clickElementMenuLang);
         }
+        
+        var maxHeight = 0; // pour la taille des divs. On va récupérer l'élément le plus haut pour avoir la taille max
 
         this._menuElements = [];
         for (let i = 0; i < json.element.length; i++) {
-            console.log("new menu element : " + i);
             var element = new ElementMenu(this._divEltsMenu._balise, json.element[i], scale);
             var bas = element._y + element._taille;
             if (bas > maxHeight) { maxHeight = bas; }
             this._menuElements.push(element);
         }
-
-        this._sousMenuElement = [];
-        // permet d'avoir facilement accès aux sous éléments et de savoir si un menu est ouvert
-        // vide si pas de sous menu ouvert
 
         this._decoMenuElements = [];
         this._divEltsDeco = new DivObject(this._balise, "elementsDeco");
@@ -162,7 +161,7 @@ class Menu extends DivObject {
         var instance = e.data.instance;
         var s = String($(this).attr('id'));
         s = s.replace(instance._id + "_BtLang_", '');
-        instance.langueSignal.dispatch(s);
+        instance.langueSignal.dispatch(s); // redemarrage de l'interface avec changement des fichiers json
     }
 
     // fond d'écran changeant
@@ -208,6 +207,8 @@ class Menu extends DivObject {
         menu._balise.toggle();
     }
 
+    // "rangement" de tous les éléments en bas de l'écran
+    // celui qui a été séléctionné reste plus grand
     tidyElements(menu, id) {
         var left = 0;
         var tailleSelect = 2.5;
@@ -301,6 +302,7 @@ class Menu extends DivObject {
         }
     }
 
+    // animation de fermeture du sous menu
     fermerSousMenu(menu) {
         $('.backgroundImage').css('display', 'block');
         menu.supprimerCarte();
@@ -322,6 +324,7 @@ class Menu extends DivObject {
 
     // GETTERS
 
+    // mets à jour les photos de fond
     set backgroundDiaporama(imagesJson) {
         for (let i = 0; i < this._fondImgs.length; i++) {
             this._fondImgs[i]._balise.remove();

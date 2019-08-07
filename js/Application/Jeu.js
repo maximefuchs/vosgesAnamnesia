@@ -49,6 +49,8 @@ class Jeu extends DivObject {
         }
     }
 
+    // non mis en place dans l'app
+    // il suffit de le rajouter dans le json
     memory() {
         $('#menu').css('display', 'none');
         $('#elementsMenu').css('display', 'none');
@@ -540,8 +542,6 @@ class Jeu extends DivObject {
         }
 
         flore.init();
-
-
     }
 
     faune() {

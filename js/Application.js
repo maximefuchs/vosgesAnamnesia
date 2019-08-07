@@ -7,6 +7,7 @@ class Application extends DivObject {
         super(body, "Application"); // parent : body, id : Application
         this.addClass("page");
 
+        // signal pour changement de langue
         this.lgSignal = new signals.Signal();
 
         var _ = this;
@@ -20,11 +21,5 @@ class Application extends DivObject {
     init() {
         console.log("APPLICATION INIT");
         this._menu.init();
-    }
-
-    texte() {
-        this._carte.texte();
-        // this._menuLang.texte();
-        this._diaporama.texte();
     }
 }

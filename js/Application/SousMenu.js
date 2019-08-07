@@ -17,10 +17,10 @@ class SousMenu extends DivObject {
         this._jsonPoi = poisJSON[lien];
         this._jsonPerenne = perennesJSON[lien];
 
-        console.log(poisJSON);
-        console.log(lien);
-        console.log(this._jsonPoi);
-        console.log(this._jsonPerenne);
+        // console.log(poisJSON);
+        // console.log(lien);
+        // console.log(this._jsonPoi);
+        // console.log(this._jsonPerenne);
 
         this._carte = new Carte(
             $('#Application'),
@@ -29,7 +29,7 @@ class SousMenu extends DivObject {
 
         this.signalFermer = new signals.Signal();
         this.closeCarteSignal = new signals.Signal();
-        this.stopBackSignal = new signals.Signal();
+        this.stopBackSignal = new signals.Signal(); // pour arrêter le défilement des images en background
         this.clickPerenne = new signals.Signal();
 
         this.css('bottom', 1 * scale);
@@ -55,9 +55,11 @@ class SousMenu extends DivObject {
         if (size > 65) { size = 65; }
         if (size < 37) { size = 37; }
         titre.html(s);
-        titre.css('color', couleur);
-        titre.css('font-size', size + 'px');
-        titre.css('margin-top', '-20px');
+        titre._balise.css({
+            color: couleur,
+            'font-size': size + 'px',
+            'margin-top': '-20px'
+        });
         this._titre = titre;
 
         var texte = new BaliseObject(this._divText._balise, 'p', 'txt_' + this._id);
@@ -66,6 +68,7 @@ class SousMenu extends DivObject {
             'max-height': 1.8 * scale,
             'margin-top': 0.3 * scale
         });
+        // scroll couleur
         var st = $('<style></style>')
             .html('#txt_' + this._id + "::-webkit-scrollbar-thumb {\
             background: "+ couleur + "; \
@@ -89,9 +92,11 @@ class SousMenu extends DivObject {
             $('#filterBackground').css('display', '');
             $('#overlayPerenne').css('display', 'none');
             if (ssMenu.btnShouldClose) {
+                // fermer le sous menu, revenir au menu principal
                 ssMenu.close();
                 ssMenu.signalFermer.dispatch();
             } else {
+                // revenir au menu précédent
                 $('#jeu').remove();
                 $('.sousMenuListePoi').remove();
                 $('.divBtnCarteElement').remove();
@@ -114,20 +119,9 @@ class SousMenu extends DivObject {
             }
         });
 
-        /////////////////////////////////////////
-
-        ////////////////////////////////
         // sous elements
-
         this._sousMenuElements = [];
         this.affichageMenuElements(json.sousmenu);
-
-
-
-        ///////////////////////////////////
-
-        //////////////////////////////////
-        // if sous menu
 
         this._divssSousMenu = new DivObject(this._balise, 'ssSousMenu_' + this._id);
         this._divssSousMenu.addClass('ssSousMenu');
@@ -141,7 +135,8 @@ class SousMenu extends DivObject {
         });
 
 
-        this._inSousMenu = false; // pour savoir s'il faudra retirer ou non un étage dans _lien lorsque que l'on clique sur un élément 'carte' dans le menu de gauche
+        this._inSousMenu = false; 
+        // pour savoir s'il faudra retirer ou non un étage dans _lien lorsque que l'on clique sur un élément 'carte' ou 'menu' dans le menu de gauche
 
     }
 
@@ -158,6 +153,7 @@ class SousMenu extends DivObject {
         this.initSousMenuElement();
         this._divssSousMenu.tweenAnimate({ left: 0 });
         if (this._lien[0] == 'coeur') {
+            console.log('coup de coeur');
             this._carte.init();
             this.displayPoiOnMap(favPOIS);
         }
@@ -169,6 +165,7 @@ class SousMenu extends DivObject {
         });
     }
 
+    // animation de fermeture du sous menu
     close() {
         $('#filterBackground').css('display', '');
         $('#elementsDeco').css('display', '');
@@ -180,6 +177,7 @@ class SousMenu extends DivObject {
         this._divssSousMenu.tweenAnimate({ left: - 2 * this._scale });
     }
 
+    // gestion de l'affichage du petit menu à gauche
     affichageMenuGauche(sMenu, json, num, type, couleur) {
         sMenu._btnFermer.html('<span class="noRotation">⤺</span>');
         sMenu.btnShouldClose = false;
@@ -203,7 +201,7 @@ class SousMenu extends DivObject {
         for (var i = 0; i < json.length; i++) {
             var span = new BaliseObject(divLeft._balise, 'span', 'spanSSMenu_' + i);
             span.html(json[i].titre.toUpperCase());
-            span.attr('num', i);
+            span.attr('num', i); // pour pouvoir récupérer le numéro lorsque l'on clique dessus
             if (i == num) { span.addClass('selected'); }
             span._balise.click(function () {
                 sMenu.clickMenuGauche(sMenu, $(this).attr('num'), json, couleur);
@@ -224,6 +222,7 @@ class SousMenu extends DivObject {
         }
     }
 
+    // gestion d'un clic sur un élément du menu de gauche
     clickMenuGauche(sMenu, num, json, couleur) {
         var type = json[num].type;
         var lien = json[num].lien;
@@ -245,20 +244,21 @@ class SousMenu extends DivObject {
                 sMenu.reinitializeContent();
                 $('.divBtnCarteElement').remove();
                 $('.sousMenuListePoi').remove();
+                $('.elementSousMenu').remove();
                 $('#overlayPerenne').css('display', '');
                 sMenu._divText.tweenAnimate({ bottom: 4 * sMenu._scale + 'px' });
                 sMenu._divssSousMenu.tweenAnimate({ bottom: 4 * sMenu._scale + 'px' });
+                // fermeture et animations de tout ce qui est déjà à l'écran
 
+                // check si besoin de descendre dans l'arborescence des éléments
                 if (sMenu._inSousMenu) {
                     sMenu.oldLienJson(sMenu);
                     sMenu._inSousMenu = false;
                 }
 
-                $('.elementSousMenu').remove();
-
                 var fp = new FichePerenne($('#Application'), 'fichePerenne', sMenu.getJsonPerenne(sMenu, lien), couleur);
                 fp.clickSignal.add(function () {
-                    sMenu.clickPerenne.dispatch();
+                    sMenu.clickPerenne.dispatch(); // pour la veille
                 });
                 fp.init();
                 break;
@@ -275,7 +275,6 @@ class SousMenu extends DivObject {
                 }
 
                 sMenu.displayPoiOnMap(lien == "communes" ? json[0].points : sMenu.getJsonPoi(sMenu, lien));
-                // sMenu.displayPoiOnMap(sMenu.getJsonPoi(sMenu, lien));
                 sMenu.affichageMenuGauche(sMenu, json, num, type, couleur);
                 break;
 
@@ -296,13 +295,13 @@ class SousMenu extends DivObject {
             case 'jeu':
                 var jeu = new Jeu($('#Application'), lien, couleur, sMenu._scale);
                 jeu.clickSignal.add(function () {
-                    sMenu.clickPerenne.dispatch(); // remet le compteur pour la veille à 0
+                    sMenu.clickPerenne.dispatch(); // veille
                 });
                 jeu.init();
                 sMenu.affichageMenuGauche(sMenu, json, num, type, couleur);
                 break;
 
-            default:
+            default: // type sous menu
                 if (sMenu._inSousMenu) {
                     sMenu.oldLienJson(sMenu);
                 }
@@ -319,7 +318,8 @@ class SousMenu extends DivObject {
         }
     }
 
-
+    // récupération des éléments json pour les éléments des pérennes et des POIs
+    // on repère notre emplacement dans l'aborescence grace au tableau this._lien
     getJsonPoi(sMenu, lien) {
         console.log(sMenu._lien);
         console.log(lien);
@@ -341,6 +341,7 @@ class SousMenu extends DivObject {
         return json[lien];
     }
 
+    // reculer d'un noeud dans l'arborescence + maj des variable contenant les éléments de pérenne et pois correspondant
     oldLienJson(sMenu) {
         sMenu._lien.pop();
         var newJsonPoi = poisJSON;
@@ -375,15 +376,15 @@ class SousMenu extends DivObject {
         var smlp = new SousMenuListePoi(sMenu._parent, 'sousMenuListePOI', json, sMenu._scale, sMenu._couleur);
         smlp.clickSignal.add(function (num) {
             console.log(num);
-            sMenu._carte.clickOnPoi(sMenu._carte._fiches[num], sMenu._carte);
+            sMenu._carte.clickOnPoi(sMenu._carte._fiches[num], sMenu._carte); // ouverture de la fiche correspondante lors d'un clic sur un élément de la liste
         });
         setTimeout(function () {
             sMenu._carte.initPOIsandFiches(json);
             sMenu._carte.init();
-        }, 1000);
+        }, 1000); // timer pour performances au niveau graphisme
     }
 
-    // AFFICHAGE DE SOUS ELEMENTS DE MENU NORMAUX
+    // AFFICHAGE DE SOUS ELEMENTS DE MENU NORMAUX ( = les carrés)
     // LIENS VERS UNE FICHE PERENNE, UNE CARTE, OU UN AUTRE SOUS MENU
     affichageMenuElements(json) {
         this.sousMenuElements = json;
@@ -451,6 +452,8 @@ class SousMenu extends DivObject {
 
     // remove old elements and display the new ones
     // buttons are filters for poi overlays
+
+    // sous menu pour les POIs avec des filtres
     sousElementsPOI(json) {
         var sMenu = this;
         sMenu.sousMenuElements = [];
@@ -502,6 +505,7 @@ class SousMenu extends DivObject {
         sMenu.displayPoiOnMap(allPOIs);
     }
 
+    // affichage des éléments sous menu
     set sousMenuElements(jsonElements) {
         $('.elementSousMenu').remove();
         this._sousMenuElements = [];

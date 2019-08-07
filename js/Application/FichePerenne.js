@@ -16,12 +16,6 @@ class FichePerenne extends DivObject {
         this._json = json;
         this._couleur = couleur;
 
-        var loremShort = 'Ut dolor ea irure laboris est do. Enim labore non aute duis exercitation voluptate consectetur eu sint non occaecat adipisicing.';
-        var lorem = 'Est laborum mollit ea excepteur ullamco sunt sint commodo exercitation esse consequat elit. Duis elit minim mollit et deserunt culpa laboris minim cillum et in sint incididunt. Magna consequat incididunt officia deserunt. Velit voluptate proident ex ad ut sunt anim aliqua Lorem aliqua proident nisi. Mollit et incididunt mollit exercitation mollit qui excepteur non. Ad laborum anim tempor sint. Adipisicing proident ea officia anim ut minim minim culpa.';
-        var loremLong = 'Irure ea Lorem ad sint ex laboris laborum commodo sint incididunt. Magna non in excepteur nulla eu pariatur duis qui sit. Do irure ex adipisicing quis Lorem magna.Est excepteur sit sint aute ea commodo irure esse cupidatat ipsum. Quis culpa qui cillum aute veniam cillum elit ipsum nulla deserunt labore nulla nulla. Ad et Lorem irure veniam tempor. Anim aute amet nisi minim et nostrud. Lorem velit eiusmod aliqua non amet aliquip ex proident in velit cillum nostrud. Enim id adipisicing ullamco sit tempor velit.Excepteur voluptate commodo dolor exercitation excepteur quis quis. Non cillum laboris nostrud pariatur laboris. Duis esse eu velit nisi aute eu aliquip ipsum ex ex et. Tempor elit nulla magna qui. Tempor commodo voluptate et laborum sint aliqua dolore. Eu commodo aliquip aliqua ex adipisicing velit magna. Esse consectetur occaecat ipsum deserunt tempor non elit et.'
-        var loremTitre = 'Irure ea Lorem ad sint ex laboris laborum';
-        var titreH2 = '<h2>Titre un peu long</h2>'
-
         this.signaux = {
             finFermer: new signals.Signal()
         }
@@ -57,8 +51,7 @@ class FichePerenne extends DivObject {
         titre.addClass('topTitre');
         // titre.html(loremTitre.toUpperCase());
         titre.html(json.titre.toUpperCase());
-
-        ////////////////////
+        // TOP //////////////////
 
         var divContain = new DivObject(this._balise, 'divContain_' + this._id);
         divContain.addClass('divContain');
@@ -70,11 +63,9 @@ class FichePerenne extends DivObject {
         divLeft.addClass('flex');
 
         var introLeft = new BaliseObject(divLeft._balise, 'b', 'introLeft_' + this._id);
-        // introLeft.html(loremShort);
         introLeft.html(json.soustitre);
 
         var paraLeft = new BaliseObject(divLeft._balise, 'p', 'paraLeft_' + this._id);
-        // paraLeft.html('<h2>'+loremTitre+'</h2>'+loremLong);
         paraLeft.html(json.blocGauche1);
         paraLeft.css('margin-top', '30px');
 
@@ -84,18 +75,14 @@ class FichePerenne extends DivObject {
         var img = new Img(divImage._balise, 'imgLeft_' + this._id, json.imgGauche);
         var divTextImage = new DivObject(divImage._balise, 'divTextImage_' + this._id);
         divTextImage.css('background', couleur);
-        // divTextImage.html(titreH2 + loremShort);
         divTextImage.html(json.desImgGauche);
 
         //TEXTE
 
         var text = new DivObject(divLeft._balise, 'textLeft_' + this._id);
         text.css('margin-top', '100px');
-        // text.html(titreH2 + loremLong + loremLong + loremLong + loremLong);
         text.html(json.blocGauche2);
-
-        ////////////////////////
-        /////////////////////////
+        // GAUCHE //////////////////////
 
         /////////////////////////////
         // DROITE
@@ -114,12 +101,10 @@ class FichePerenne extends DivObject {
         var squareRight = new DivObject(divSliderComm._balise, 'squareRight_' + this._id);
         squareRight.addClass('squareRight');
         squareRight.css('background', couleur);
-        // squareRight.html(titreH2 + loremShort);
         squareRight.html(json.blocSlider1);
 
         var textRight = new DivObject(divRight._balise, 'textRight_' + this._id);
         textRight.addClass('textRight');
-        // textRight.html(titreH2 + loremLong);
         textRight.html(json.blocDroit1);
 
         ////////// deuxième slider
@@ -137,9 +122,7 @@ class FichePerenne extends DivObject {
         // divBottom.html(titreH2 + lorem);
         divBottom.html(json.blocDroit2);
 
-
-        ///////////////////////////
-        //////////////////////////
+        // DROITE /////////////////////////
 
 
         this.css('opacity', 0);
@@ -147,11 +130,6 @@ class FichePerenne extends DivObject {
 
     init() {
         TweenLite.to(this._balise, 1, { opacity: 1 });
-    }
-
-    fermerFiche(element) {
-        TweenLite.to(this._balise, 1, { opacity: 0, onComplete: this.supprimerFiche, onCompleteParams: [this] });
-        this.finFermerSignal.dispatch(element);
     }
 
     supprimerFiche(fiche) {
