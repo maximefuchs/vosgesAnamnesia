@@ -1,10 +1,7 @@
 {
     "Application": {
         "Carte": {
-            "img": {
-                "fr": "datas/imgs/carte/carte_tuiles_FR/",
-                "en": "datas/imgs/carte/carte_EN.jpg"
-            },
+            "img": "datas/imgs/carte/carte_tuiles/",
             "boutonsCarte": "datas/imgs/interface/boutons_carte/",
             "origineCarte": {
                 "id": "origineCarte",
@@ -2578,13 +2575,865 @@
                             "id": 4,
                             "titre": "Sommets",
                             "type": "poi",
-                            "lien": "sommets"
+                            "lien": "sommets",
+                            "points": [
+                                {
+                                    "title": "le Grand Ballon (1 424 m)",
+                                    "mainAddress": {
+                                        "lat": 47.8744,
+                                        "long": 7.0985
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "le Storkenkopf (1 366 m)",
+                                    "mainAddress": {
+                                        "lat": 47.8781,
+                                        "long": 7.0821
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "le Hohneck (1 363 m)",
+                                    "mainAddress": {
+                                        "lat": 48.0115,
+                                        "long": 7.0161
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "le Kastelberg (1 350 m)",
+                                    "mainAddress": {
+                                        "lat": 47.995,
+                                        "long": 7.001
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "le Klintzkopf (1 330 m)",
+                                    "mainAddress": {
+                                        "lat": 47.9232,
+                                        "long": 7.056
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "le Rothenbachkopf (1 316 m)",
+                                    "mainAddress": {
+                                        "lat": 47.9738,
+                                        "long": 6.9804
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "le Lauchenkopf (1 314 m)",
+                                    "mainAddress": {
+                                        "lat": 47.9297,
+                                        "long": 7.0395
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "le Batteriekopf (1 311 m)",
+                                    "mainAddress": {
+                                        "lat": 47.9674,
+                                        "long": 6.9804
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "le Haut de Falimont (1 306 m)",
+                                    "mainAddress": {
+                                        "lat": 48.017,
+                                        "long": 7.0093
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "le Gazon du Faing (1 306 m)",
+                                    "mainAddress": {
+                                        "lat": 48.0877,
+                                        "long": 7.0793
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "le Rainkopf (1 305 m)",
+                                    "mainAddress": {
+                                        "lat": 47.9839,
+                                        "long": 6.9832
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "le Gazon de Faîte (1 303 m)",
+                                    "mainAddress": {
+                                        "lat": 48.0758,
+                                        "long": 7.0683
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "le Soultzereneck (1 302 m)",
+                                    "mainAddress": {
+                                        "lat": 48.0877,
+                                        "long": 7.0793
+                                    },
+                                    "communes": true
+                                }
+                            ]
                         },
                         {
                             "id": 5,
                             "titre": "Cols",
                             "type": "poi",
-                            "lien": "cols"
+                            "lien": "cols",
+                            "points": [
+                                {
+                                    "title": "Col du Litschhof",
+                                    "mainAddress": {
+                                        "lat": 49.05639,
+                                        "long": 7.79
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Hichtenbach",
+                                    "mainAddress": {
+                                        "lat": 49.04278,
+                                        "long": 7.7222
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Wittschoessel",
+                                    "mainAddress": {
+                                        "lat": 49.02556,
+                                        "long": 7.67278
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de Wineckerthal",
+                                    "mainAddress": {
+                                        "lat": 49.02083,
+                                        "long": 7.6825
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Kuhlaegersattel",
+                                    "mainAddress": {
+                                        "lat": 49.01806,
+                                        "long": 7.75139
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Widerschall",
+                                    "mainAddress": {
+                                        "lat": 49.0167,
+                                        "long": 7.44889
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col des deux Schlossberg",
+                                    "mainAddress": {
+                                        "lat": 49.01611,
+                                        "long": 7.3775
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Molloch",
+                                    "mainAddress": {
+                                        "lat": 48.99944,
+                                        "long": 7.5972
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de l’Angelsberg",
+                                    "mainAddress": {
+                                        "lat": 48.99139,
+                                        "long": 7.5975
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Petit Dunkelthal",
+                                    "mainAddress": {
+                                        "lat": 48.99056,
+                                        "long": 7.52444
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Grand Dunkelthal",
+                                    "mainAddress": {
+                                        "lat": 48.98917,
+                                        "long": 7.53278
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Riesthal",
+                                    "mainAddress": {
+                                        "lat": 48.9861,
+                                        "long": 7.61
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Pottaschkopf",
+                                    "mainAddress": {
+                                        "lat": 48.98583,
+                                        "long": 7.62167
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de la Liese",
+                                    "mainAddress": {
+                                        "lat": 48.98167,
+                                        "long": 7.66806
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Grand Hirschthal",
+                                    "mainAddress": {
+                                        "lat": 48.96722,
+                                        "long": 7.56139
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de la Melch",
+                                    "mainAddress": {
+                                        "lat": 48.96417,
+                                        "long": 7.44222
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Kammbuehl",
+                                    "mainAddress": {
+                                        "lat": 48.96194,
+                                        "long": 7.4639
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Schlangenthal",
+                                    "mainAddress": {
+                                        "lat": 48.96167,
+                                        "long": 7.56556
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de l’Ungerthal",
+                                    "mainAddress": {
+                                        "lat": 48.95417,
+                                        "long": 7.58556
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Holdereck",
+                                    "mainAddress": {
+                                        "lat": 48.95306,
+                                        "long": 7.57694
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de Steige",
+                                    "mainAddress": {
+                                        "lat": 48.94111,
+                                        "long": 7.52861
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Pfaffeneck",
+                                    "mainAddress": {
+                                        "lat": 48.885,
+                                        "long": 7.35139
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de la Schleif",
+                                    "mainAddress": {
+                                        "lat": 48.63361,
+                                        "long": 7.25972
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Salzleckkopf",
+                                    "mainAddress": {
+                                        "lat": 48.6472,
+                                        "long": 7.215
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Hohwalsch",
+                                    "mainAddress": {
+                                        "lat": 48.6278,
+                                        "long": 7.17667
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Brechpunkt",
+                                    "mainAddress": {
+                                        "lat": 48.60528,
+                                        "long": 7.18583
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Sandplatz",
+                                    "mainAddress": {
+                                        "lat": 48.60306,
+                                        "long": 7.25472
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de Lendenstein",
+                                    "mainAddress": {
+                                        "lat": 48.60167,
+                                        "long": 7.1075
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Roule-Bacon",
+                                    "mainAddress": {
+                                        "lat": 48.52889,
+                                        "long": 7.10222
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de la Charaille",
+                                    "mainAddress": {
+                                        "lat": 48.51972,
+                                        "long": 7.06889
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Sapin de Marie-Louise",
+                                    "mainAddress": {
+                                        "lat": 48.51889,
+                                        "long": 7.00167
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col d’Entre-les-Deux-Donons",
+                                    "mainAddress": {
+                                        "lat": 48.51806,
+                                        "long": 7.16778
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de la Sablière",
+                                    "mainAddress": {
+                                        "lat": 48.51194,
+                                        "long": 7.00611
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de la Borne",
+                                    "mainAddress": {
+                                        "lat": 48.49472,
+                                        "long": 6.99972
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col Wolfsgrube",
+                                    "mainAddress": {
+                                        "lat": 48.49361,
+                                        "long": 7.35694
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col Pourrio",
+                                    "mainAddress": {
+                                        "lat": 48.4917,
+                                        "long": 7.09361
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col d’Asson",
+                                    "mainAddress": {
+                                        "lat": 48.49028,
+                                        "long": 7.0725
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Brechpunkt",
+                                    "mainAddress": {
+                                        "lat": 48.48917,
+                                        "long": 7.30611
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Jaegertaennel",
+                                    "mainAddress": {
+                                        "lat": 48.46972,
+                                        "long": 7.33917
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Heidenkopf",
+                                    "mainAddress": {
+                                        "lat": 48.4694,
+                                        "long": 7.37389
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de la Franzluhr",
+                                    "mainAddress": {
+                                        "lat": 48.44694,
+                                        "long": 7.2944
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de la Perheux",
+                                    "mainAddress": {
+                                        "lat": 48.42833,
+                                        "long": 7.21667
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col Schaufelshald",
+                                    "mainAddress": {
+                                        "lat": 48.42833,
+                                        "long": 7.21667
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de Bellevue",
+                                    "mainAddress": {
+                                        "lat": 48.3833,
+                                        "long": 7.32472
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de l’Ungersberg",
+                                    "mainAddress": {
+                                        "lat": 48.3722,
+                                        "long": 7.35
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Blanc Noyer",
+                                    "mainAddress": {
+                                        "lat": 48.34889,
+                                        "long": 7.23111
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de la Crénée",
+                                    "mainAddress": {
+                                        "lat": 48.32639,
+                                        "long": 6.95389
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de la Hingrie",
+                                    "mainAddress": {
+                                        "lat": 48.30806,
+                                        "long": 7.19556
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Bon Dieu",
+                                    "mainAddress": {
+                                        "lat": 48.3225,
+                                        "long": 6.96528
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Petit-Haut",
+                                    "mainAddress": {
+                                        "lat": 48.30056,
+                                        "long": 7.27722
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de Raleine",
+                                    "mainAddress": {
+                                        "lat": 48.29806,
+                                        "long": 7.17278
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de Noirmont",
+                                    "mainAddress": {
+                                        "lat": 48.2275,
+                                        "long": 6.87111
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col Trapin des Saules",
+                                    "mainAddress": {
+                                        "lat": 48.21083,
+                                        "long": 6.8575
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de la Croisette",
+                                    "mainAddress": {
+                                        "lat": 48.22278,
+                                        "long": 6.83361
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col des Huttes",
+                                    "mainAddress": {
+                                        "lat": 48.21417,
+                                        "long": 6.84889
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col des Journaux",
+                                    "mainAddress": {
+                                        "lat": 48.19806,
+                                        "long": 7.03167
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de la Gueule du Loup",
+                                    "mainAddress": {
+                                        "lat": 48.18389,
+                                        "long": 6.83028
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de Châmont",
+                                    "mainAddress": {
+                                        "lat": 48.17056,
+                                        "long": 7.16667
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Reposoir",
+                                    "mainAddress": {
+                                        "lat": 48.15583,
+                                        "long": 6.99278
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de la Borne de Saint-Dié",
+                                    "mainAddress": {
+                                        "lat": 48.14417,
+                                        "long": 7.00361
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col d’Osseux",
+                                    "mainAddress": {
+                                        "lat": 48.14361,
+                                        "long": 6.95806
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de Bermont",
+                                    "mainAddress": {
+                                        "lat": 48.13694,
+                                        "long": 7.14972
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Herrenwassen",
+                                    "mainAddress": {
+                                        "lat": 48.13139,
+                                        "long": 7.2175
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Sifflet",
+                                    "mainAddress": {
+                                        "lat": 48.10722,
+                                        "long": 7.01
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Port des Planches",
+                                    "mainAddress": {
+                                        "lat": 48.0925,
+                                        "long": 6.97556
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de la Brande",
+                                    "mainAddress": {
+                                        "lat": 48.07333,
+                                        "long": 6.9722
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col des Harengs Marinés",
+                                    "mainAddress": {
+                                        "lat": 48.07111,
+                                        "long": 6.97194
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de Malakoff",
+                                    "mainAddress": {
+                                        "lat": 48.07056,
+                                        "long": 6.31639
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Singe",
+                                    "mainAddress": {
+                                        "lat": 48.06806,
+                                        "long": 6.67944
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de Thiaville",
+                                    "mainAddress": {
+                                        "lat": 48.04306,
+                                        "long": 6.99972
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de Cheneau",
+                                    "mainAddress": {
+                                        "lat": 48.00028,
+                                        "long": 6.6639
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de Menufosse",
+                                    "mainAddress": {
+                                        "lat": 47.9975,
+                                        "long": 6.80694
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Collet Mansuy",
+                                    "mainAddress": {
+                                        "lat": 47.99583,
+                                        "long": 6.89889
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Haut de Fouchure",
+                                    "mainAddress": {
+                                        "lat": 47.9944,
+                                        "long": 6.7722
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de Pourri Faing",
+                                    "mainAddress": {
+                                        "lat": 47.99333,
+                                        "long": 6.94694
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de la Vierge",
+                                    "mainAddress": {
+                                        "lat": 47.99028,
+                                        "long": 6.92694
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Collet Rouge Moussé",
+                                    "mainAddress": {
+                                        "lat": 47.98361,
+                                        "long": 6.90806
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col des Hayes",
+                                    "mainAddress": {
+                                        "lat": 47.98278,
+                                        "long": 6.79861
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Lansau",
+                                    "mainAddress": {
+                                        "lat": 47.98083,
+                                        "long": 6.81083
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de Boenlesgrab",
+                                    "mainAddress": {
+                                        "lat": 47.97639,
+                                        "long": 7.14806
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de la Burotte",
+                                    "mainAddress": {
+                                        "lat": 47.97639,
+                                        "long": 6.75583
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Bockloch",
+                                    "mainAddress": {
+                                        "lat": 47.975,
+                                        "long": 6.93444
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de Lauvy",
+                                    "mainAddress": {
+                                        "lat": 47.97139,
+                                        "long": 6.80806
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Lansau",
+                                    "mainAddress": {
+                                        "lat": 47.98083,
+                                        "long": 6.81083
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de Xiard",
+                                    "mainAddress": {
+                                        "lat": 47.96556,
+                                        "long": 6.70472
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col des Echarges",
+                                    "mainAddress": {
+                                        "lat": 47.9556,
+                                        "long": 6.90139
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de la Place des Bois",
+                                    "mainAddress": {
+                                        "lat": 47.955,
+                                        "long": 6.89611
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de Lauchen",
+                                    "mainAddress": {
+                                        "lat": 47.95083,
+                                        "long": 7.06028
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Broché",
+                                    "mainAddress": {
+                                        "lat": 47.94028,
+                                        "long": 6.7306
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col du Rhamné",
+                                    "mainAddress": {
+                                        "lat": 47.93694,
+                                        "long": 6.735
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de Morbieux",
+                                    "mainAddress": {
+                                        "lat": 47.92444,
+                                        "long": 6.76167
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de la Sûre",
+                                    "mainAddress": {
+                                        "lat": 47.91917,
+                                        "long": 6.72889
+                                    },
+                                    "communes": true
+                                },
+                                {
+                                    "title": "Col de Grumbach",
+                                    "mainAddress": {
+                                        "lat": 47.82694,
+                                        "long": 7.105
+                                    },
+                                    "communes": true
+                                }
+                            ]
                         }
                     ]
                 },

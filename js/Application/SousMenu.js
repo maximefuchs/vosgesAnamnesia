@@ -135,7 +135,7 @@ class SousMenu extends DivObject {
         });
 
 
-        this._inSousMenu = false; 
+        this._inSousMenu = false;
         // pour savoir s'il faudra retirer ou non un étage dans _lien lorsque que l'on clique sur un élément 'carte' ou 'menu' dans le menu de gauche
 
     }
@@ -274,7 +274,23 @@ class SousMenu extends DivObject {
                     sMenu._inSousMenu = false;
                 }
 
-                sMenu.displayPoiOnMap(lien == "communes" ? json[0].points : sMenu.getJsonPoi(sMenu, lien));
+                var toDisp;
+                switch (lien) {
+                    case "communes":
+                    case "sommets":
+                    case "cols":
+                        json.forEach(j => {
+                            if (j.lien == lien)
+                                toDisp = j.points;
+                        });
+
+                        break;
+
+                    default:
+                        toDisp = sMenu.getJsonPoi(sMenu, lien);
+                        break;
+                }
+                sMenu.displayPoiOnMap(toDisp);
                 sMenu.affichageMenuGauche(sMenu, json, num, type, couleur);
                 break;
 
@@ -423,8 +439,23 @@ class SousMenu extends DivObject {
                         sMenu.reinitializeContent();
                         $('.elementSousMenu').remove();
 
-                        sMenu.displayPoiOnMap(lien == "communes" ? json[0].points : sMenu.getJsonPoi(sMenu, lien));
-                        // sMenu.displayPoiOnMap(sMenu.getJsonPoi(sMenu, lien));
+                        var toDisp;
+                        switch (lien) {
+                            case "communes":
+                            case "sommets":
+                            case "cols":
+                                json.forEach(j => {
+                                    if (j.lien == lien)
+                                        toDisp = j.points;
+                                });
+
+                                break;
+
+                            default:
+                                toDisp = sMenu.getJsonPoi(sMenu, lien);
+                                break;
+                        }
+                        sMenu.displayPoiOnMap(toDisp);
                         sMenu.affichageMenuGauche(sMenu, json, num, type, element._params.couleur);
                         break;
 
