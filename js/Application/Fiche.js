@@ -130,6 +130,7 @@ class Fiche extends DivObject {
         var f = e.data.fiche;
         var site = f._poi._site
 
+        $('.slidePartage').remove();
         var slidePartage = new DivObject(f._divSlider._balise, 'slidePartage_' + f._id);
         slidePartage.addClass('slidePartage');
         slidePartage.css('background', f._couleur);
